@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <settings>
+    <customer>
+      <ID>
+        002
+      </ID>
+      <name>
+        Evangel Classical School
+      </name>
+      <nickname>
+        ECS
+      </nickname>
+      <title>
+        ECS Family Connection
+      </title>
+      <banner>
+        url('/_tenant/images/x.jpg')
+      </banner>
+      <backsplash>
+        url('/_tenant/images/cropped-ECS-2016-45.jpg')
+      </backsplash>
+      <logo>
+        url('/_tenant/images/raggantssbs_or.png')
+      </logo>
+      <nav_logo>
+        /_tenant/images/raggantssbs_or.png
+      </nav_logo>
+      <tagline>
+        Risus est bellum.
+      </tagline>
+      <special1> <!--Home Page Mission Statement Image-->
+        url('/_tenant/images/Mission.png')
+      </special1>
+      <visibility1> <!--Prayer Request visibility - Elders (for Church); Board (for School) -->
+        School Board Only
+      </visibility1>
+      <visibility2> <!--Prayer Request destination - Church Family; School Family -->
+        Your school family (Board approval required)
+      </visibility2>
+      <prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
+        New prayer requests to our school family require Admin approval.
+        School family will be notified as soon as it's approved.
+      </prayerapproval>
+      <contact>
+        firebird@hoeglund.com
+      </contact>
+    </customer>
+    <theme>
+      ECS
+    </theme>
+  </settings>

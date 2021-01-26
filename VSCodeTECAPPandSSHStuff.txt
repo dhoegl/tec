@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=9cMWR-EGFuY&feature=emb_logo
+https://www.youtube.com/watch?v=aMi4GXZVxSk&feature=emb_logo
+
+ssh-keygen -t rsa -b 4096 -C "r745qco5e1i1@ourfamilyconnections.org"
+
+cat ~/.ssh/id_rsa.pub
+
+ssh://r745qco5e1i1@ourfamilyconnections.org/home/r745qco5e1i1/public_html/tecapp
+
+TECAPP SSH Key
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAufhWR1A9wquGr6OjRFaw3N6wTctpnkFxn7z32Udpmp2QEmJgmG7YrziJfbJSZk9KBmW2L5BN9jZeXeJ0tIp/1ZLWET7N7nE23YIsqlPjwX9K5G7w5rIn6rNOvV1uMLlpMF/S5nO10guaVk2YY4yc2a9s+4IiQq7ZjMAEcQKTsFeum2td1GEwTWXwoHyda08tM+VGGCSr4l+5F5ms/ReJYD0dn0BlkZrfZOjhmBLHzJi8KeOMfZwQYWPay+EYP374a2Z9Yp134Us8t03jaFJt/OL4rxonrl8bKJ9EB+xXqJZVOwuHD7l8cqFteR/4vJQ65j/khimy94fddoGRjKY18ZwOGw7nO1gumXJsm+RPHXdf3F5IGxL2GJWOsgouWiIuOragQXKgw5FxR/Fq4XM5aGR+wyf+cYXQwzf79ULBfiQFR2i0o5q7RdcFQXVORbYjcrHhsr64SLkFf94B4iDPlHEla4LJ8Zd4K4xiBFwBVFHX2vcnd8Kfndnfza4+COEUqZZaVE4hTJ8QnuoQU6a9Ii2eCWTGAVhc7ZJU5f7QssglrVAolw5F6+nBuRcsoQrjK/xfpmpkAQbEyTRFCb54gobJ68i56hhW+j4oglIzj6cK3elpeIPIZAYdpsYxu+1CBxOJH7OWaIlvONpMEvRDGdNPG4eYsQ1hgRxmp+8svzc= r745qco5e1i1@ourfamilyconnections.org
+
+ssh -T git@github.com
+
+git clone git@github.com:dhoegl/tecapp.git
+
+Dnh3Ohop
+
+git config receive.denyCurrentBranch updateInstead

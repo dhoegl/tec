@@ -1,0 +1,1 @@
+SELECT Surname, Name_1, Name_2, Address, City, State, Zip, Phone_Home, Phone_Cell1, Phone_Cell2, Email_1, Email_2 FROM db_tecapp.directory where idDirectory = '20';

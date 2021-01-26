@@ -1,0 +1,5 @@
+Approve Registrant
+ofc_regadmin.php (RegistrantUpdate) : select from admin approved registrant, extract new registrant data from DOM
+-> ofc_approve_registrant.js : parse the DOM data, and ajax send to update Directory and Login tables
+-> ajax_update_new_registrant.php : Update Directory and Login tables, launch sendmail to new registrant
+-> ofc_sendmail.php : Send email to new registrant to inform of approval

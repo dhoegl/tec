@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <settings>
+    <customer>
+      <ID> <!--Unique customer ID used to segregate environments and data-->
+        002
+      </ID>
+      <name> <!--Formal customer name-->
+        Evangel Classical School
+      </name>
+      <nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
+        ECS
+      </nickname>
+      <domain> <!--Actual URL to access the Site-->
+        ofctest.ourfamilyconnections.org
+      </domain>
+      <title> <!--Webpage Title – this is what’s shown on browser tab-->
+        ECS Family Connection
+      </title>
+      <reg_notify_from>
+        <!--From email address when new registrant approved by RegAdmin-->
+        admin@ourfamilyconnections.org
+      </reg_notify_from>
+      <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
+        http://evangelcs.org
+      </homepage>
+      <banner> <!--Webpage banner image-->
+        url('/_tenant/images/xxxxxxx')
+      </banner>
+      <backsplash> <!--Shown on homepage-->
+        url('/_tenant/images/cropped-ECS-2016-45.jpg')
+      </backsplash>
+      <logo> <!--Customer’s logo image-->
+        url('/_tenant/images/raggantssbs_or.png')
+      </logo>
+      <nav_logo> <!--Navigation Bar image-->
+        /_tenant/images/raggantssbs_or.png
+      </nav_logo>
+      <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
+        Risus est bellum.
+      </tagline>
+      <special1> <!--Home Page Mission Statement Image-->
+        url('/_tenant/images/Mission.png')
+      </special1>
+      <visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
+        School Board Only
+      </visibility1>
+      <visibility2> <!--Prayer Request destination - Church Family; School Family -->
+        Your school family (Board approval required)
+      </visibility2>
+      <prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
+        New prayer requests to our school family require Admin approval.
+        School family will be notified as soon as it's approved.
+      </prayerapproval>
+      <contact>
+        mailto:firebird@hoeglund.com
+      </contact>
+<!-- Use theme to identify tenant.css file for customer-->
+      <theme>ECS</theme>
+<!-- Use services-directory to specify whether Directory feature is enabled for customer-->
+      <services-directory>YES</services-directory>
+<!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
+      <services-calendar>YES</services-calendar>
+<!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
+      <services-prayer>NO</services-prayer>
+<!-- Use to services-events specify whether Events feature is enabled for customer-->
+      <services-events>NO</services-events>
+    </customer>
+  </settings>

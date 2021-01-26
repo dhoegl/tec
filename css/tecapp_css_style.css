@@ -1,0 +1,852 @@
+/*Check screen-size and modify tables for small form-factor media*/
+/*show help text on screen*/
+/*hide help text on screen when width >= 768px*/
+/* @media screen and (max-width: 767px){
+    .small-screen-modify {
+        width: 75%;
+    }
+    .small-screen-alert {
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 20em;
+        width: 18px;
+    }
+} */
+/* Hide the + and - icons when screen width is wide enough to display all columns */
+/* TECAPP Profile child table */
+@media screen and (min-width: 849px) {
+	table#childdata .dtr-control {
+		visibility: hidden;
+	}
+	.dtr-childcolumn {
+		visibility: hidden;
+	}
+    /* .small-screen-alert {
+        display: none;
+    } */
+}
+/* Hide the + and - icons when screen width is wide enough to display all columns */
+/* TECAPP Directory table */
+@media screen and (min-width: 808px) {
+	table#familytable2 .dtr-control {
+		visibility: hidden;
+	}
+	.dtr-familycolumn {
+		visibility: hidden;
+	}
+    /* .small-screen-alert {
+        display: none;
+    } */
+}
+
+/* Hide the + and - icons when screen width is wide enough to display all columns */
+/* TECAPP Regadmin unregistered applicants table */
+@media screen and (min-width: 1634px) {
+	table#unregisteredapplicant .dtr-control {
+		visibility: hidden;
+	}
+	.dtr-regcolumn {
+		visibility: hidden;
+	}
+}
+
+
+.profile_bg {
+    /*background-color: #B4A7D6;*/
+    /*background-color: #c9c9c9;*/
+    background: url('../_tenant/images/cropped-ECS-2016-51.jpg') no-repeat center center fixed;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+}
+.profile_bgdir {
+    /* background-color: #FFF2CC;*/
+    /*background-color: #c9c9c9;*/
+    background: url('../images/background.png') no-repeat center center fixed;
+}
+#profiletablechildren {
+    font-size: smaller;
+}
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+}
+.navbar-brand a
+{
+    text-decoration: none;
+}
+.bg-inverse
+{
+    color: #fff;
+}
+.ofc_welcome_background
+ {
+    background: url('../images/master_welcome.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.church_logo
+{
+    background-image: url('../images/trinity_logo_web.png');
+}
+.church_home_banner
+{
+   width: 100%;
+   height: auto;
+}
+.church_home_banner
+{
+    background: url('../images/waterfall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.pad-left
+{
+    padding-left: 50px;
+}
+.margin-left
+{
+    margin-left: 25px;
+}
+.well
+{
+    margin: 0px;
+}
+.appstyle
+{
+    background-color: #c9c9c9;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #292b2c;
+}
+.agk 
+{
+    margin-bottom: 1.5rem !important;
+}
+.rp 
+{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.ahy 
+{
+    padding-top: 1.5rem !important;
+}
+.by 
+{
+    width: 1230px;
+    max-width: 100%;
+    width: 990px;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.dq {
+    margin-right: -15px;
+    margin-left: -15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.bqq .rv 
+{
+    height: 150px;
+    background-size: cover;
+}
+
+#footer {
+    background-color: gray;
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+}
+/* allow space between footer and main body */
+.bottom-buffer { 
+    margin-bottom: 50px;
+}
+/******************** Button Styles *************************/
+/******************** Button Styles *************************/
+.button_flat_green {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 0px;
+}
+.button_flat_green_small {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 0px;
+}
+.button_flat_blue {
+    background-color: #0800ff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 0px;
+}
+.button_flat_blue_small {
+    background-color: #0800ff;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+}
+.button_flat_blue_tiny {
+    background-color: #0800ff;
+    border: none;
+    color: white;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 0px;
+}
+.button_flat_red_small {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: square-button;
+    -webkit-border-radius: 0px;
+}
+
+/********************** Styles for Bootstrap Modal Popups ***************************/
+.modaleditform {
+	background-color: #dfe4fa;
+	font-size: 14px;
+}
+#editprofiletable {
+    background-color: #ffffff;   
+}
+#editcalendartable {
+    background-color: #EBECFF;    
+}
+#editchildrentable {
+    background-color: #EBECFF;
+}
+#praytable {
+    background-color: #EBECFF;
+}
+#praycontent {
+    background-color: #EBECFF;
+}
+#child1alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#child1alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child2alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child3alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child4alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child5alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child6alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}#child7alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#child8alert {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+/********************** Directory Page View Formatting ***********************/
+.dirviewname {
+	font-variant: small-caps;
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+td.dtr-control {
+	/* background: url(../images/details_open.png) no-repeat center center; */
+    /* cursor: pointer; */
+	/* font-family: 'Font Awesome 5 Free';
+	content: '\f055';
+	vertical-align: middle;
+	font-weight: 900; */
+    background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.parent td.dtr-control {
+    background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+}
+
+/********************** Style for POPUP OVERLAY ***************************/
+	#my_popup {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+#my_popup_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup,
+#my_popup_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup2 OVERLAY */
+	#my_popup2 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup2 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup2 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+#my_popup2_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup2,
+#my_popup2_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup2 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup2 {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup3 OVERLAY */
+	#my_popup3 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup3 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup3 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	#my_popup3 h4 {
+	color: darkgreen;
+	font-size:14px;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+/*border: 1px solid black;*/
+	}	
+#my_popup3_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup3,
+#my_popup3_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup3 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup3 {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup4 OVERLAY */
+	#my_popup4 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup4 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup4 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	#my_popup4 h4 {
+	color: darkgreen;
+	font-size:14px;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+/*border: 1px solid black;*/
+	}	
+#my_popup4_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup4,
+#my_popup4_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup4 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup4 {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup5 OVERLAY */
+	#my_popup5 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup5 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup5 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	#my_popup5 h4 {
+	color: darkgreen;
+	font-size:14px;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+/*border: 1px solid black;*/
+	}	
+#my_popup5_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup5,
+#my_popup5_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup5 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup5 {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup6 OVERLAY */
+	#my_popup6 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup6 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup6 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	#my_popup6 h4 {
+	color: darkgreen;
+	font-size:14px;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+/*border: 1px solid black;*/
+	}	
+#my_popup6_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup6,
+#my_popup6_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup6 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup6 {
+  transform: translateX(0) translateY(0);
+}
+
+/* style for Popup7 OVERLAY */
+	#my_popup7 {
+		background-color: #EBECFF;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:1.0;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+
+	#my_popup7 h2 {
+		background:url(/images/trinity_logo.png) 0 50% no-repeat;
+		color: black;		
+		margin:0px;
+		padding:10px 0 10px 45px;
+/*		border-bottom:1px solid #333;*/
+		font-size:20px;
+	}
+	#my_popup7 a {
+		background-color:#FFF;
+		display:none;
+		width:250px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	#my_popup7 h4 {
+	color: darkgreen;
+	font-size:14px;
+	text-align: left;
+	padding: 10px 0px 0px 10px;
+/*border: 1px solid black;*/
+	}	
+#my_popup7_background {
+  transition: all 0.3s 0.3s;
+}
+#my_popup7,
+#my_popup7_wrapper {
+  transition: all 0.3s ease-out;
+}
+#my_popup7 {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #my_popup7 {
+  transform: translateX(0) translateY(0);
+}
+
+
+/********************** Password Register *************************/
+#register .short
+{
+    margin-left:5px;
+    color:#FF0000;
+}
+#register .weak
+{
+    margin-left:5px;
+    color:#0000FF;
+}
+#register .good
+{
+    margin-left:5px;
+    color:#006400;
+}
+#register .strong
+{
+    margin-left:5px;
+    font-weight: bold;
+    color:#006400;
+}
+#register .nomatch
+{
+    margin-left:5px;
+    color:#FF0000;
+}
+#register .match
+{
+    margin-left:5px;
+    font-weight: bold;
+    color:#006400;
+}
+#register .available
+{
+    margin-left:5px;
+    font-weight: bold;
+    color:#006400;
+}
+#register .used
+{
+    margin-left:5px;
+    font-weight: bold;
+    color:#FF0000;
+}
+/********************** Register Notify *********************************/
+#register_content {
+	background-color: lightblue;
+	float:left;
+	width:210px;
+	padding: 0px 10px 10px 10px;
+	display:inline;
+}
+/******  Data Table Rows (ofc_regadmin for family selection) **********/
+#approvedmemberslist tbody tr.selected {
+    background-color: #B0BED9
+}
+
+/******************* Mimic Hyperlink font-style - used for Prayer List Titles on small mobile devices *****************/
+.faux_hyperlink {
+    color: #0000FF !important; /*blue - IMPORTANT overrides all other CSS tags for this Class */
+    text-decoration: underline !important; /*IMPORTANT overrides all other CSS tags for this Class */
+    font-weight: bold;
+}
+
+
+/******************* TECAPP CSS STYLES *****************/
+html {
+    overflow-x: hidden;
+}
+    body {
+    padding-top: 3rem;
+    overflow-x: hidden;
+  }
+#intro {
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.top-nav-collapse {
+    background-color: #24355C;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }
