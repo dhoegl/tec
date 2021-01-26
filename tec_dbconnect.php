@@ -1,6 +1,6 @@
 <?php
 session_start();
-	$host="localhost"; // Host name
+	$host="localhost"; // Host name - LINUX required
 	$username="db_tecapp"; // Mysql username
 	$password="Thr33Bl!ndM!c3"; // Mysql password
 	$db_name="db_tecapp"; // Database name
