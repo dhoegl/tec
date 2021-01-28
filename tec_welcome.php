@@ -20,8 +20,8 @@ session_start();
     <link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
     <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
-    <link href="css/tecapp_css_style.css" rel="stylesheet" />
-    <link href="css/tecapp_welcome_style.css" rel="stylesheet" />
+    <link href="css/tec_css_style.css" rel="stylesheet" />
+    <link href="css/tec_welcome_style.css" rel="stylesheet" />
 
   <style type="text/css">
     /* Chart.js */
@@ -54,7 +54,7 @@ session_start();
         <!-- Navbar -->
 <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-dark primary-color"> -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark orange darken-4">
-    <a class="navbar-brand" href="tecapp_welcome.php">
+    <a class="navbar-brand" href="tec_welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span>
     </a>
@@ -75,7 +75,7 @@ session_start();
         }
         else
         {
-            $homeurl = "location:tecapp_home.php";
+            $homeurl = "location:tec_home.php";
             header($homeurl);
         }
     ?>
@@ -99,7 +99,7 @@ session_start();
                                     <i class="white-text"></i>Please sign in
                                 </h3>
                             </div><!--text-center-->
-                            <form name="form1" method="post" class="text-center" action="tecapp_checklogin.php">
+                            <form name="form1" method="post" class="text-center" action="tec_checklogin.php">
                                 <div class="md-form">
                                     <i class="white-text active"></i>
                                     <input type="text" id="form-user" name="myusername" class="white-text form-control" />
@@ -117,8 +117,8 @@ session_start();
                             <div>
                                 <!--btn-->
                                 <span>
-                                    <a class="btn btn-primary" href="tecapp_register.php" role="button">Register</a>
-                                    <a class="btn btn-danger" href="tecapp_recover.php" role="button">Forgot Password</a>
+                                    <a class="btn btn-primary" href="tec_register.php" role="button">Register</a>
+                                    <a class="btn btn-danger" href="tec_recover.php" role="button">Forgot Password</a>
                                 </span>
                                 <h6 class="text-center white-text">
                                     If you have not yet registered, click on the REGISTER button above, and fill out your information on the form
@@ -178,7 +178,7 @@ session_start();
                     <!-- Copyright -->
                     <div class="text-center">
                         <?php
-                        require_once('includes/tecapp_footer.php')
+                        require_once('includes/tec_footer.php')
                         ?>
                     </div><!-- text -->
                     <!-- Copyright -->
@@ -194,8 +194,8 @@ session_start();
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
-    <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script>
+    <!-- Tenant Configuration JavaScript Call in tec_nav -->
+    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
     <!--<script>
         new WOW().init();
     </script>-->
