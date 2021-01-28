@@ -1,5 +1,5 @@
 <?php
-header( 'Location: http://tecapp.ourfamilyconnections.org/tecapp_welcome.php' ) ;
+header( 'Location: http://tec.ourfamilyconnections.org/tec_welcome.php' ) ;
 // echo "I'm Alive!";
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-    require_once('tecapp_dbconnect.php');
+    require_once('tec_dbconnect.php');
 
 // Load the jquery libraries
 echo "<script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>";
@@ -97,7 +97,7 @@ if($row_count == 1)
                     else
                 {
                     session_destroy();
-                    header("location:tecapp_welcome.php");
+                    header("location:tec_welcome.php");
                     /* Enter Error Handler */
                 }
             }
@@ -106,20 +106,20 @@ if($row_count == 1)
                     $_SESSION['firstname'] = $_SESSION['username'];
             }
             mysqli_close($mysql);
-            header("location:tecapp_login_success.php");
+            header("location:tec_login_success.php");
         }
         else
         {
             // Throw alert if user has not yet been activated
             mysqli_close($mysql);
-            include('includes/tecapp_credalert2.php');
+            include('includes/tec_credalert2.php');
         }
     }
 }
  else {
         $rowcount = 0;
 	// Throw alert if improper login credentials attempted
-	include('includes/tecapp_credalerts.php');
+	include('includes/tec_credalerts.php');
     }
 // mysqli_free_result($user_cred_verify);
 // $sqlquery->free();
