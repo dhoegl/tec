@@ -887,7 +887,7 @@ var jQ55 = jQuery.noConflict();
                                 </tr>
                             </tfoot>
                         </table>
-                   </div> table-responsive
+                   </div>
                 </div><!--card-body-->
             </div><!--card-->
         </div><!--col-->
