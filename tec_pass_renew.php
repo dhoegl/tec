@@ -206,6 +206,64 @@ function focus_on_start()
     </div> <!-- row -->
 </div> <!-- container -->
 
+<?php
+	$submit = $_POST['resetsubmit'];
+	$clear = $_POST['clear'];
+
+	if($clear) //		echo "Clear was clicked";
+	{
+		$password = "";
+		$repeatpassword = "";
+	}
+	if ($submit) //		echo "Submit was clicked";
+	{
+		$password = strip_tags($_POST['password']);
+		$repeatpassword = strip_tags($_POST['repeatpassword']);
+		$date = date("Y-m-d");
+		if($password==$repeatpassword)
+		{
+		//Update user password
+			$password = md5($password);
+			// $password_update_query = "UPDATE " . $_SESSION['logintablename'] . " SET password = '" . $password . "', temp_pass_key = '', temp_pass_expire = '' WHERE username = '" . $username . "'";
+			$password_update_query = "UPDATE " . $_SESSION['logintablename'] . " SET password = ?, temp_pass_key = '', temp_pass_expire = '' WHERE username = '" . $username . "'";
+			$password_update = $mysql->prepare($password_update_query);
+			$password_update->bind_param("s",$password);
+			$password_update->execute();
+			$password_update->close();
+			// DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
+
+			// Access Log entry
+			$client_ip = stripslashes($_SERVER['REMOTE_ADDR']);
+			$client_browser = stripslashes($_SERVER['HTTP_USER_AGENT']);
+			$accessquery = $mysql->query("INSERT INTO " . $_SESSION['accesslogtable'] . "(type, member_id, user_id, client_ip, client_browser) VALUES ('Password Reset', '" . $_SESSION['idDirectory'] . "', '" . $_SESSION['username'] . "', '" . $client_ip . "', '" . $client_browser . "')");
+			if($accessquery->error) {
+				echo " SQL query access log entry error. Error:" . $accessquery->errno . " " . $accessquery->error;
+			}
+
+			// Alert user that password has been reset
+			echo
+			"
+				<script type='text/javascript'>
+					alert('You have successfully reset your password. You will now be re-directed to the Home Page to login with your new password.');
+					window.open('http://tec.ourfamilyconnections.org', '_self');
+				</script>
+			";
+		}
+		else {
+			$password = "";
+			$repeatpassword = "";
+			echo
+			"
+				<script type='text/javascript'>
+					alert('Your passwords do not match. Re-check your entry and try again.');
+					document.getElementById('resetform').reset();
+					location.reload(false);
+				</script>
+			";
+		}
+	}
+?> 
+
   <!-- SCRIPTS -->
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
