@@ -217,8 +217,8 @@ function focus_on_start()
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
-		$password = $_POST['password'];
-		$repeatpassword = $_POST['repeatpassword'];
+		$password = $_POST['passwordname'];
+		$repeatpassword = $_POST['repeatpasswordname'];
 		$date = date("Y-m-d");
 		if($password==$repeatpassword)
 		{
