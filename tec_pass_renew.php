@@ -143,7 +143,7 @@ function focus_on_start()
 			"
 				<script type='text/javascript'>
 					alert('You have improperly accessed this page. Returning to the Home Page.');
-					window.open('http://trinityevangel.ourfamilyconnections.org', '_self');
+					window.open('http://tec.ourfamilyconnections.org', '_self');
 				</script>
 			";
 	}	
@@ -187,12 +187,12 @@ function focus_on_start()
             	<h3 class="text-center">Reset your Password</h3>
 				<form name='resetform' id="password_reset_form" action='' method="POST">
 					<div class="form-group">
-        				<label for="password">Choose a Password: <strong><font color="red">*   </font></strong><span id="password_result"></span></label>
+        				<label for="password">Choose a Password: <strong><font color="red">*   </font><span id="password_result"></span></strong></label>
         				<input type="password" class="form-control" name="passwordname" id="password" aria-describedby="emailHelp" placeholder="StrongPassword">
         				</input>
 						<p>
 						</p>
-        				<label for="repeatpassword">Re-enter your Password: <strong><font color="red">*   </font></strong><span id="password_match"></span></label>
+        				<label for="repeatpassword">Re-enter your Password: <strong><font color="red">*   </font><span id="password_match"></span></strong></label>
         				<input type="password" class="form-control" name="repeatpasswordname" id="repeatpassword" aria-describedby="emailHelp" placeholder="StrongPassword">
         				</input>
 					</div>
