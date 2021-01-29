@@ -5,7 +5,7 @@
 //session_destroy();
 error_reporting(E_ERROR);
 
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 
 if(isset($_POST['username']) )
 {

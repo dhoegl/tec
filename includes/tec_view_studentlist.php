@@ -33,7 +33,7 @@
                     }
                   ],
                 "ajax": {
-                    url: 'services/tecapp_getstudentlist.php',
+                    url: 'services/tec_getstudentlist.php',
                     type: 'POST',
                     dataType: 'json',
                     data: { profile_id: $profile_id, schoolname: schoolnametext }

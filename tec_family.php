@@ -2,10 +2,10 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
-    require_once('tecapp_dbconnect.php');
+    require_once('tec_dbconnect.php');
     require_once('fpdf/fpdf.php');
     // Event Log  trap
     include('../includes/event_logs_update.php');
@@ -36,8 +36,8 @@ if(!$_SESSION['logged in']) {
 <!-- <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
-  <!-- Test custom styles (Includes TECAPP style details) -->
-  <link href="css/tecapp_css_style.css" rel="stylesheet">
+  <!-- Test custom styles (Includes TEC style details) -->
+  <link href="css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
   <!--CSS Scripts for Datatables Bootstrap 4 Responsive functions    -->
@@ -62,7 +62,7 @@ if(!$_SESSION['logged in']) {
     // echo "console.log('ARRIVED at script to include familylist2');";
     // echo "</script>";
     // Get Family Details List
-    include('includes/tecapp_view_familylist2.php');
+    include('includes/tec_view_familylist2.php');
 ?>
     
 
@@ -72,8 +72,8 @@ if(!$_SESSION['logged in']) {
     <!--Navbar-->
     <?php
         $activeparam = '3'; // sets nav element highlight
-        require_once('tecapp_nav.php');
-        require_once('includes/tecapp_footer.php');
+        require_once('tec_nav.php');
+        require_once('includes/tec_footer.php');
     ?>
     
     <!-- Intro Section -->
@@ -182,7 +182,7 @@ if(!$_SESSION['logged in']) {
                             <tbody>
                             <?php
                                 // Get Active Family List
-                                // include('includes/tecapp_getfamilylist2.php');
+                                // include('includes/tec_getfamilylist2.php');
                             ?>
                             </tbody>
                             <tfoot class="table-dark">
@@ -209,7 +209,7 @@ if(!$_SESSION['logged in']) {
   <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-  <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
+  <!-- Tenant Configuration JavaScript Call in tec_nav -->
     <!-- ***** THESE ARE BEING TESTED -->
     <!-- Works kind of -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
@@ -223,7 +223,7 @@ if(!$_SESSION['logged in']) {
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script>
+    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
     <!-- Call Image Verify jQuery script -->
     <script src="/js/image_verify.js"></script>
     

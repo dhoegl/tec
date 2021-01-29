@@ -134,7 +134,7 @@ $(document).ready(function()
 
 // </editor-fold>
 
-// <editor-fold desc="Validate User Name is available - from tecapp_username_check.js">
+// <editor-fold desc="Validate User Name is available - from tec_username_check.js">
 
     $('#username').focusout(function(){
         var unique_user = $('#unique_user').html();
@@ -173,7 +173,7 @@ $(document).ready(function()
     //if username already exists, alert user and disallow from continuing
     //check for existing username
             var username_check = $.ajax({
-                    url: 'services/tecapp_username_check.php',
+                    url: 'services/tec_username_check.php',
                     type: 'POST',
                     dataType: 'json',
                     data: { username: username }

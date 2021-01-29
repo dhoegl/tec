@@ -1,6 +1,6 @@
 <?php  
 session_start();
-    require_once('tecapp_dbconnect.php');
+    require_once('tec_dbconnect.php');
 
 /*		Access Log entry  */
 	$client_ip = stripslashes($_SERVER['REMOTE_ADDR']);
@@ -13,5 +13,5 @@ session_start();
 /*		Access Log entry  */
 
 session_destroy();
-header("location:tecapp_welcome.php");
+header("location:tec_welcome.php");
 ?>

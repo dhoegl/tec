@@ -2,7 +2,7 @@
 // Insert profile photo into file system - called from image_verify.js
 // NOTE: profile photo files are pre-pended with user's family profile ID ($_SESSION['IDdirectory']) + hyphen (e.g. 157-photo.jpg)
 
-	require_once('tecapp_dbconnect.php');
+	require_once('tec_dbconnect.php');
 
 	if(isset($_FILES["file"]["type"]))
 	{

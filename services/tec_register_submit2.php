@@ -1,7 +1,7 @@
 <?php
 // Last Updated: 12/08/2020: Stripped most code away to verify functions work
 
-    require_once('../tecapp_dbconnect.php');
+    require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
 
@@ -44,12 +44,12 @@ if(isset($_POST['registersubmit']))
     // Get Profile ID from above Insert
     $regInsert_DirID = $mysql->insert_id;
     echo "<script language='javascript'>";
-    echo "console.log('tecapp_register_submit.php - idDirectory = " . $regInsert_DirID . "');";
+    echo "console.log('tec_register_submit.php - idDirectory = " . $regInsert_DirID . "');";
     echo "</script>";
     
     // insert Registrant into Login table
     $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES ('$church_code','$user_name','$pass_word','$regInsert_DirID','$first_name','$last_name','$gender','$email_address','$full_name')";
-    $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See tecapp_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
     $regdirtableupdate->close();
     // DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
@@ -57,8 +57,8 @@ if(isset($_POST['registersubmit']))
 
     // Send notification email to Admins for ACCEPT/REJECT
     $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
-    $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See tecapp_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
-    $regmaillink = "http://tecapp.ourfamilyconnections.org";
+    $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    $regmaillink = "http://tec.ourfamilyconnections.org";
     while ($regmailrow = $regmailquery->fetch_assoc())
     {
         $regmailtest = $regmailrow['email_addr'];
@@ -73,15 +73,15 @@ if(isset($_POST['registersubmit']))
     mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
 
     // Temp validation that report error is working
-    eventLogUpdate('report error', 'tecapp_register_submit.php', 'Error: NONE', 'YAY!!');
+    eventLogUpdate('report error', 'tec_register_submit.php', 'Error: NONE', 'YAY!!');
 
 }
 else {
     echo "<script language='javascript'>";
     echo "alert('>>>Exited out of new user Registration. Contact your admin with error code #3001');";
     echo "</script>";
-    // eventLogUpdate('report error', 'tecapp_register_submit.php', 'Error: ' . $mysql->error , 'Error #: ' . $mysql->errno);
-    header("location:../tecapp_welcome.php");
+    // eventLogUpdate('report error', 'tec_register_submit.php', 'Error: ' . $mysql->error , 'Error #: ' . $mysql->errno);
+    header("location:../tec_welcome.php");
 }
 
 ?>
@@ -106,7 +106,7 @@ else {
     <!-- Custom styles for this template -->
     <link href="../css/jumbotron.css" rel="stylesheet">
     <!-- Extended styles for this page -->
-    <link href="../css/tecapp_css_style.css" rel="stylesheet">
+    <link href="../css/tec_css_style.css" rel="stylesheet">
     
 <!-- Initialize jquery js script -->
     <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -120,7 +120,7 @@ else {
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="navbar-header">
-            <a class="navbar-brand" href="../tecapp_welcome.php">TEC Family Connections</a>
+            <a class="navbar-brand" href="../tec_welcome.php">TEC Family Connections</a>
         </div>
     </nav>
     <div class="view" style="background-image: url('../images/master_welcome3.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
@@ -164,7 +164,7 @@ else {
                                     </h4>
                                     <h4></h4>
                                     <h4 class="white-text text-center">
-                                        <i class="white-text"></i>Click <a href="http://tecapp.ourfamilyconnections.org/tecapp_welcome.php">HERE</a> to return to the Sign In page.
+                                        <i class="white-text"></i>Click <a href="http://tec.ourfamilyconnections.org/tec_welcome.php">HERE</a> to return to the Sign In page.
                                     </h4>
                                 </div><!--text-center-->
                             </div>

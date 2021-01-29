@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once 'tecapp_dbconnect.php';
+require_once 'tec_dbconnect.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -50,7 +50,7 @@ require_once 'tecapp_dbconnect.php';
 ?>
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="tecapp_welcome.php">OurFamilyConnections</a>
+        <a class="navbar-brand" href="tec_welcome.php">OurFamilyConnections</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">
@@ -84,7 +84,7 @@ require_once 'tecapp_dbconnect.php';
 <!--            <div class="card bg-light border-primary m-3">-->
             <div class="card bg-light border-primary p-3">
                 <h3 class="text-center">Please enter your username below</h3>
-                <form name='passwordreset' id="reset" action='services/tecapp_recover_submit.php' method="POST">
+                <form name='passwordreset' id="reset" action='services/tec_recover_submit.php' method="POST">
                     <div class="form-group">
                         <label for="emailaddress">
                             Enter your username:

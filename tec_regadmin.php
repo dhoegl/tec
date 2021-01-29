@@ -3,18 +3,18 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
 $sessname = session_name();
 $sessid = session_id();
 $profileID = $_SESSION['idDirectory'];
-require_once('tecapp_dbconnect.php');
+require_once('tec_dbconnect.php');
 
 
 //Query for users requesting to register but not yet approved
 $sqlquery = "SELECT * FROM " . $_SESSION['logintablename'] . " WHERE active = 0";
-$result = $mysql->query($sqlquery) or die("A database error occurred when trying to select registrants for Dir and Login Table. See tecapp_regadmin.php. Error : " . $mysql->errno . " : " . $mysql->error);
+$result = $mysql->query($sqlquery) or die("A database error occurred when trying to select registrants for Dir and Login Table. See tec_regadmin.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
 // Mysql_num_row is count of table rows returned. Expect at least 1
 $count = $result->num_rows;
@@ -43,8 +43,8 @@ $count = $result->num_rows;
     <!-- <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
-    <!-- Test custom styles (Includes TECAPP style details) -->
-    <link href="css/tecapp_css_style.css" rel="stylesheet">
+    <!-- Test custom styles (Includes tec style details) -->
+    <link href="css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
 
@@ -72,11 +72,11 @@ $count = $result->num_rows;
 <!-- jQuery functions & scripts -->
     <?php
 // Get User Login details
-    include('includes/tecapp_get_loggedinuser.php');
+    include('includes/tec_get_loggedinuser.php');
     // Get Unregistered Applicant List
-    include('includes/tecapp_view_unregisteredapplicantslist.php');
+    include('includes/tec_view_unregisteredapplicantslist.php');
     // Get Approved Members List
-    include('includes/tecapp_view_approvedmembers.php');
+    include('includes/tec_view_approvedmembers.php');
     // Get Approve Registrant Script
     // include('/services/ofc_approve_registrant.php');
     ?>
@@ -95,7 +95,7 @@ $count = $result->num_rows;
             $script = $result.script,
             $line = $result.line;
 
-        alert("A problem has occurred with your registrant approval/rejection. Please notify your administrator with the following error: 'tecapp_regadmin-" + $result + "'");
+        alert("A problem has occurred with your registrant approval/rejection. Please notify your administrator with the following error: 'tec_regadmin-" + $result + "'");
         console.log("data = " + $result);
         console.log("Status = " + $status);
         console.log("Script = " + $script);
@@ -114,7 +114,7 @@ $count = $result->num_rows;
             var Last = "LastName = " + data6;
             var Email = "Email = " + data7;
             var $Response = Selected + " " + DirID + " " + LoginID + " " + Gender + " " + First + " " + Last + " " + Email;
-            console.log("tecapp_approve_registrant : Response = " + $Response);
+            console.log("tec_approve_registrant : Response = " + $Response);
             jQ10.ajax({
                 url: '../services/ajax_update_new_registrant.php',
                 type: 'POST',
@@ -241,7 +241,7 @@ jQ10(document).ready(function () {
         }
 		$approveclickbuttonid = LoginID;
 		// console.log("$approve loginID clicked = " + $approveclickbuttonid);
-		$approveURL = "tecapp_newregistrantaccept.php?registerid=" + $approveclickbuttonid;
+		$approveURL = "tec_newregistrantaccept.php?registerid=" + $approveclickbuttonid;
         // console.log("approveURL = " + $approveURL);
 
 // **************************** Get Which Approved Member SELECT button was selected ********************
@@ -388,7 +388,7 @@ jQ11(document).ready(function () {
         }
         $rejectclickbuttonid = LoginID;
         // console.log("$reject loginID clicked = " + $rejectclickbuttonid);
-        $rejectURL = "tecapp_newregistrantreject.php?registerid=" + $rejectclickbuttonid;
+        $rejectURL = "tec_newregistrantreject.php?registerid=" + $rejectclickbuttonid;
         // console.log("rejectURL = " + $rejectURL);
 
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
@@ -498,7 +498,7 @@ var jQ12 = jQuery.noConflict();
 
 
     		// console.log("Send Email button clicked");
-    		var sendaddress = 'tecapp_get_registrant_email_address.php';
+    		var sendaddress = 'tec_get_registrant_email_address.php';
     		jQ30.getJSON(sendaddress, {registrantID: $clickbuttonid
     		}, function (data) {
     			// console.log(data);
@@ -519,8 +519,8 @@ var jQ12 = jQuery.noConflict();
     <!--Navbar-->
     <?php
     $activeparam = '9'; // sets nav element highlight
-    require_once('tecapp_nav.php');
-    require_once('includes/tecapp_footer.php');
+    require_once('tec_nav.php');
+    require_once('includes/tec_footer.php');
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
@@ -750,7 +750,7 @@ var jQ12 = jQuery.noConflict();
     <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-    <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
+    <!-- Tenant Configuration JavaScript Call in tec_nav -->
     <!-- Datatables JavaScript plugins - Bootstrap-specific -->
     <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
@@ -762,7 +762,7 @@ var jQ12 = jQuery.noConflict();
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script>
+    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
     <!-- Call Image Verify jQuery script -->
     <script src="js/image_verify.js"></script>
 

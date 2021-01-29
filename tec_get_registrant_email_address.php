@@ -4,8 +4,8 @@ if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-/* Get email address of selected registrant - called from tecapp_regadmin.php */
-    require_once('tecapp_dbconnect.php');
+/* Get email address of selected registrant - called from tec_regadmin.php */
+    require_once('tec_dbconnect.php');
     
 	if ( !isset($_GET['registrantID'])) {
 		 echo 'Required data is missing';

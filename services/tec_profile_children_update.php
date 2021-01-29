@@ -1,15 +1,15 @@
 <?php
 // ***************************************************************
-// Process profile update - CHILDREN (name, gender, birthdate, etc.) INFO: Called from tecapp_profile.php
+// Process profile update - CHILDREN (name, gender, birthdate, etc.) INFO: Called from tec_profile.php
 // Called ffrom ofc_profile.php form submit for Children entry
 // Last Updated: 12/26/2020: Working on pre-Delete prompt
 session_start();
 if(!$_SESSION['logged in']) {
-	header("location:../tecapp_welcome.php");
+	header("location:../tec_welcome.php");
 	exit();
 }
 
-require('../tecapp_dbconnect.php');
+require('../tec_dbconnect.php');
 // Event Log Update trap
 include('../includes/event_logs_update.php');
 
@@ -45,14 +45,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_1_Name = '" . $child_name . "', Child_1_BDay_Date = '" . $child_bday . "', Child_1_Gender = '" . $child_gender . "', Child_1_Email = '" . $child_email . "', Child_1_School = '" . $child_school . "', Child_1_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 1 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '1'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -63,17 +63,17 @@ switch ($submit_child)
         // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_1_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 1 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '1'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "1";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -107,14 +107,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_2_Name = '" . $child_name . "', Child_2_BDay_Date = '" . $child_bday . "', Child_2_Gender = '" . $child_gender . "', Child_2_Email = '" . $child_email . "', Child_2_School = '" . $child_school . "', Child_2_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 2 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '2'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -125,17 +125,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_2_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 2 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '2'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "2";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -168,14 +168,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_3_Name = '" . $child_name . "', Child_3_BDay_Date = '" . $child_bday . "', Child_3_Gender = '" . $child_gender . "', Child_3_Email = '" . $child_email . "', Child_3_School = '" . $child_school . "', Child_3_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 3 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '3'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -186,17 +186,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_3_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 3 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '3'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "3";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -230,14 +230,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_4_Name = '" . $child_name . "', Child_4_BDay_Date = '" . $child_bday . "', Child_4_Gender = '" . $child_gender . "', Child_4_Email = '" . $child_email . "', Child_4_School = '" . $child_school . "', Child_4_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 4 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '4'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -248,17 +248,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_4_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 4 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '4'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "4";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -293,14 +293,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_5_Name = '" . $child_name . "', Child_5_BDay_Date = '" . $child_bday . "', Child_5_Gender = '" . $child_gender . "', Child_5_Email = '" . $child_email . "', Child_5_School = '" . $child_school . "', Child_5_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 5 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '5'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -311,17 +311,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_5_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 5 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '5'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "5";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -355,14 +355,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_6_Name = '" . $child_name . "', Child_6_BDay_Date = '" . $child_bday . "', Child_6_Gender = '" . $child_gender . "', Child_6_Email = '" . $child_email . "', Child_6_School = '" . $child_school . "', Child_6_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 6 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '6'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -373,17 +373,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_6_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 6 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '6'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "6";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -418,14 +418,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_7_Name = '" . $child_name . "', Child_7_BDay_Date = '" . $child_bday . "', Child_7_Gender = '" . $child_gender . "', Child_7_Email = '" . $child_email . "', Child_7_School = '" . $child_school . "', Child_7_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 7 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '7'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -436,17 +436,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_7_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 7 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '7'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "7";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -481,14 +481,14 @@ switch ($submit_child)
         }
         // *********** Update Directory table **************/
 	    $childupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_8_Name = '" . $child_name . "', Child_8_BDay_Date = '" . $child_bday . "', Child_8_Gender = '" . $child_gender . "', Child_8_Email = '" . $child_email . "', Child_8_School = '" . $child_school . "', Child_8_Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+	    $childupdate = $mysql->query($childupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
 	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Update-Child 8 in directory table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
 
 
         // *********** Add/Update children table **************/
         // Check if child exists in children table
         $childtablecheckquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '8'";
-        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tecapp_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
+        $childtablecheck = $mysql->query($childtablecheckquery) or die("A database error occurred when trying to check whether child exists in childtable. See tec_profile_children_update.php. Error #: " . $mysql->errno . " : " . $mysql->error);
         $childtablecheckcount = $childtablecheck->num_rows;
 
         if ($childtablecheckcount == 0)
@@ -499,17 +499,17 @@ switch ($submit_child)
             // Add child table entry ID to Directory Table
             $ChildInsert_DirID = $mysql->insert_id;
             $childtableupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Child_8_ChildID = '" . $ChildInsert_DirID . "'  WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child ID in Directory table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
     	    eventLogUpdate('profile_update', $ChildInsert_DirID . " : " . $child_name . " : " . $child_bday . " : " . $child_gender . " : " . $child_email . " : " . $child_school . " : " . $child_grade, 'Profile Add-Child 8 in children table:' , 'idDirectory= ' . $_SESSION["Famview_Profile"]);
         }
         else
         {
             // If child does exist
             $childtableupdatequery = "UPDATE " . $_SESSION['childtablename'] . " SET Name = '" . $child_name . "', Birthdate = '" . $child_bday . "', Gender = '" . $child_gender . "', Email = '" . $child_email . "', School = '" . $child_school . "', Grade = '" . $child_grade . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND child_entry_chron = '8'";
-            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tecapp_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+            $childtableupdate = $mysql->query($childtableupdatequery) or die("A database error occurred when trying to update child info. See tec_profile_children_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
             $chronvar = "8";
             $childUpdate_IDquery = "SELECT * FROM " . $_SESSION['childtablename'] . " WHERE child_entry_chron = " . $chronvar;
-            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tecapp_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
+            $childUpdate_ID = $mysql->query($childUpdate_IDquery) or die("A database error occurred when trying to get child ID when updating children table. See tec_profile_children_update.php. Error:" . $mysql->errno . " : " . $mysql->error);
             while($activerow = $childUpdate_ID->fetch_assoc()){
                 $childUpdate_IDvalue = $activerow['childID'];
             }
@@ -517,5 +517,5 @@ switch ($submit_child)
         }
         break;
 }
-header("location:../tecapp_profile.php?id=" . $_SESSION["Famview_Profile"]);
+header("location:../tec_profile.php?id=" . $_SESSION["Famview_Profile"]);
 ?>

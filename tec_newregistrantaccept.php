@@ -1,16 +1,16 @@
 <?php
-// From tecapp_regadmin.php
+// From tec_regadmin.php
 // Triggered when Accept button clicked
 // Last Update: 2020/12/09
 
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
 
-require_once('tecapp_dbconnect.php');
+require_once('tec_dbconnect.php');
 
 // $verifyacceptcountdir = 0;
 $register_id = $_GET['registerid'];
@@ -39,14 +39,14 @@ if($row['active']==0)
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-    <link href="css/tecapp_style.css" rel="stylesheet" type="text/css" />
+    <link href="css/tec_style.css" rel="stylesheet" type="text/css" />
     <title>Approve Prayer Request to Our Family Connections</title>
 
     <!-- Load the jquery libraries -->
     <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
 
     <!-- Load the New Prayer Accept listener -->
-    <script type='text/javascript' src='/js/tecapp_new_registrant_accept_click.js'></script>
+    <script type='text/javascript' src='/js/tec_new_registrant_accept_click.js'></script>
 
 
 

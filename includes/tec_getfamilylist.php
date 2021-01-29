@@ -4,7 +4,7 @@ if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-   require_once('tecapp_dbconnect.php');
+   require_once('tec_dbconnect.php');
 
 /*Query active directory listing: status = 1 */
    $activefamilyquery = $mysql->query("SELECT * FROM " . $_SESSION['dirtablename'] . " WHERE Status = 1") or die(" SQL query error at active family list. Error:" . $mysql->errno . " : " . $mysql->error);
@@ -23,7 +23,7 @@ if(!$_SESSION['logged in']) {
 		if(!$activerow['Internet_Restrict']){
             //echo "<tr><td>" . "<a href='/ofc_profile.php?id=" . $activerow['idDirectory'] . "'>view</a>"."</td>";
             //echo "<tr><td><button type='button' class='btn btn-success'>View</button></td>";
-            echo "<tr><td><a class='btn btn-success' href='/tecapp_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
+            echo "<tr><td><a class='btn btn-success' href='/tec_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
         }
 			else {
 				echo "<tr><td>" . "view" . "</td>";

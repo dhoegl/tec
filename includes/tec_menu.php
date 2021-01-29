@@ -7,14 +7,14 @@
         echo "<script language='javascript'>";
         echo "console.log('activeparam  = 1');";
         echo "</script>";
-        echo '<li class="nav-item active"><a class="nav-link" href="tecapp_home.php">Home</a></li>';
+        echo '<li class="nav-item active"><a class="nav-link" href="tec_home.php">Home</a></li>';
         echo '<li class="nav-item active" id="calendar_service"><a class="nav-link" href="ofc_calendar.php">Calendar</a></li>';
         echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="ofc_prayer.php">Prayer</a></li>';
         echo '<li class="nav-item active" id="events_service"><a class="nav-link" href="#">Events</a></li>';
     }
     else
     {
-        echo '<li class="nav-item"><a class="nav-link" href="tecapp_home.php">Home</a></li>';
+        echo '<li class="nav-item"><a class="nav-link" href="tec_home.php">Home</a></li>';
     }
     if($activeparam == '2')
     {
@@ -81,9 +81,9 @@
         }
     }
     //echo '<li class="nav-item"><a class="nav-link" href="../services/ofc_sendmailtest.php">Test Send Email</a></li>';
-    echo '<li class="nav-item"><a class="nav-link" href="tecapp_logout.php">Logout</a></li>';
+    echo '<li class="nav-item"><a class="nav-link" href="tec_logout.php">Logout</a></li>';
 
-    echo"<script language='javascript'  src='/js/tecapp_config_ajax_call.js'></script>";
+    echo"<script language='javascript'  src='/js/tec_config_ajax_call.js'></script>";
 ?>
 
 

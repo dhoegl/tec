@@ -5,7 +5,7 @@ session_start();
 if(!$_SESSION['logged in']) 
 {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
 else 
@@ -13,7 +13,7 @@ else
     if(isset($_GET['id']) ) {
         $profileID = $_GET['id'];
         echo "<script language='javascript'>";
-        echo "console.log('At tecapp_profile - profileID = " . $profileID . "');";
+        echo "console.log('At tec_profile - profileID = " . $profileID . "');";
         echo "console.log('SuperUser Status = " . $_SESSION['super_admin'] . "');";
         echo "</script>";
     $_SESSION["Famview_Profile"] = $profileID;
@@ -25,15 +25,15 @@ else
         {
 		    $MyView = 'N';
         }
-        require_once('tecapp_dbconnect.php');
+        require_once('tec_dbconnect.php');
     }
     else 
     {
         echo "<script language='javascript'>";
-        echo "console.log('At tecapp_profile - wrong profileID = " . $profileID . "');";
+        echo "console.log('At tec_profile - wrong profileID = " . $profileID . "');";
         echo "</script>";
         session_destroy();
-        header("location:tecapp_welcome.php");
+        header("location:tec_welcome.php");
         exit();
     }
 
@@ -81,8 +81,8 @@ else
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
-  <!-- Test custom styles (Includes TECAPP style details) -->
-  <link href="css/tecapp_css_style.css" rel="stylesheet">
+  <!-- Test custom styles (Includes tec style details) -->
+  <link href="css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
     <!-- Datatables stylesheet - Bootstrap-specific -->
@@ -140,7 +140,7 @@ else
         var $profile_id = <?php echo "'" . $profileID . "'"; ?>;
         var $fullname = <?php echo "'" . $_SESSION['fullname'] . "'"; ?>;
         var $idDirectory = <?php echo "'" . $_SESSION['idDirectory'] . "'"; ?>;
-        console.log('At tecapp_profile Extract Family Data - profile_id = ' + $profile_id);
+        console.log('At tec_profile Extract Family Data - profile_id = ' + $profile_id);
     </script>
 
 
@@ -149,7 +149,7 @@ else
         var jQ05 = jQuery.noConflict();
         jQ05(document).ready(function() {
             var request = jQ05.ajax({
-		url: 'services/tecapp_get_profile.php',
+		url: 'services/tec_get_profile.php',
 		type: 'POST',
 		dataType: 'json',
 		data: { profile_id: $profile_id}
@@ -745,13 +745,13 @@ var jQ55 = jQuery.noConflict();
     // echo "console.log('ARRIVED at script to include familylist, childlist, studentlist');";
     // echo "</script>";
 // Get Family Details List
-    //    include('includes/tecapp_view_familylist.php');
+    //    include('includes/tec_view_familylist.php');
 // Get Child List
-       include('includes/tecapp_view_childlist.php');
+       include('includes/tec_view_childlist.php');
 // Get Student List
-    //    include('/includes/tecapp_view_studentlist.php');
+    //    include('/includes/tec_view_studentlist.php');
 // Setup for child delete script
-    // include('services/tecapp_profile_children_delete.php');
+    // include('services/tec_profile_children_delete.php');
 ?>
 
 
@@ -762,8 +762,8 @@ var jQ55 = jQuery.noConflict();
   <!--Navbar-->
             <?php
             $activeparam = '2'; // sets nav element highlight
-            require_once('tecapp_nav.php');
-            require_once('includes/tecapp_footer.php');
+            require_once('tec_nav.php');
+            require_once('includes/tec_footer.php');
             ?>
 
 <!-- Start Here -->
@@ -949,7 +949,7 @@ var jQ55 = jQuery.noConflict();
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light p-2" name='editcontact' method='post' action='/services/tecapp_profile_contact_update.php'> 		
+                <form class="text-center border border-light p-2" name='editcontact' method='post' action='/services/tec_profile_contact_update.php'> 		
                     <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
@@ -1104,7 +1104,7 @@ var jQ55 = jQuery.noConflict();
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light p-2" name='editcalendar' method='post' action='services/tecapp_profile_calendar_update.php'> 		
+                <form class="text-center border border-light p-2" name='editcalendar' method='post' action='services/tec_profile_calendar_update.php'> 		
                     <table id="editcalendartable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="border border-light p-2">
                             <div class="md-form">
@@ -1171,7 +1171,7 @@ var jQ55 = jQuery.noConflict();
             </button>
         </div>
     <div class="modal-body">
-<form class="text-center border border-light p-2" name='editchildren' method='post' action='services/tecapp_profile_children_update.php'>
+<form class="text-center border border-light p-2" name='editchildren' method='post' action='services/tec_profile_children_update.php'>
 <!-- CHILD TABS -->
         <div class="container-fluid">
             <div class="row">
@@ -2115,7 +2115,7 @@ var jQ55 = jQuery.noConflict();
   <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-  <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
+  <!-- Tenant Configuration JavaScript Call in tec_nav -->
   <!-- Datatables JavaScript plugins - Bootstrap-specific -->
     <!-- Works kind of -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
@@ -2124,11 +2124,11 @@ var jQ55 = jQuery.noConflict();
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
   <!-- Call config details based on Tenant Config info -->
-  <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script>
+  <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
   <!-- Call Image Verify jQuery script -->
   <script src="js/image_verify.js"></script>
   <!-- Setup for child delete script -->
-  <script type="text/javascript" src="/js/tecapp_profile_children_delete.js"></script>
+  <script type="text/javascript" src="/js/tec_profile_children_delete.js"></script>
 
 </body>
 </html>

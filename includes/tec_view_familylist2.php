@@ -1,13 +1,13 @@
 <script type="text/javascript" charset="utf-8">
 // ****************************** Extract Children Data **************************************
-    // console.log("ARRIVED at tecapp_view_familylist2 script");
+    // console.log("ARRIVED at tec_view_familylist2 script");
     var jQ15 = jQuery.noConflict();
     jQ15(document).ready(function () {
         var DTRequest = jQ15('#familytable2').DataTable({
         //"processing": true,
         //"serverSide": true,
         "ajax": {
-            url: 'includes/tecapp_getfamilylist2.php',
+            url: 'includes/tec_getfamilylist2.php',
             type: 'GET',
             },
         "order": [[ 2, 'asc' ]],

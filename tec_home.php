@@ -1,11 +1,11 @@
 <?php
 //Last Updated 11/27/2020
-//TECAPP check if logged in
+//TEC check if logged in
 
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
 else {
@@ -29,8 +29,8 @@ else {
   <link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
-  <!-- Test custom styles (Includes TECAPP style details) -->
-  <link href="css/tecapp_home.css" rel="stylesheet">
+  <!-- Test custom styles (Includes TEC style details) -->
+  <link href="css/tec_home.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,8 +39,8 @@ else {
         <!--Navbar-->
         <?php
                 $activeparam = '1'; // sets nav element highlight
-                require_once('tecapp_nav.php');
-                require_once('includes/tecapp_footer.php');
+                require_once('tec_nav.php');
+                require_once('includes/tec_footer.php');
             ?>
 <!-- </header> -->
 
@@ -74,8 +74,8 @@ else {
   <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
-  <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
-  <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script>
+  <!-- Tenant Configuration JavaScript Call in tec_nav -->
+  <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
 </body>
 
 </html>

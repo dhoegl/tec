@@ -6,7 +6,7 @@ jQ8(document).ready(function() {
     jQ8('#unregisteredapplicant').DataTable({
 //			"processing": true,
 //			"serverSide": true,
-        "ajax": "../includes/tecapp_getunregisteredapplicant.php",
+        "ajax": "../includes/tec_getunregisteredapplicant.php",
 //			"bJQueryUI": true,
 //			"sScrollY": "300px",
 //			"bPaginate": true,

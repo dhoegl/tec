@@ -1,13 +1,13 @@
 <?php
-// tecapp_getapprovedmembers
-// called from tecapp_view_approvedmembers
+// tec_getapprovedmembers
+// called from tec_view_approvedmembers
 // Last Updated: 2020/12/10
 session_start();
 if(!$_SESSION['logged in']) {
     session_destroy();
     exit();
 }
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 /* Query registered members listing from Directory table: status = 1 */
 $approvedmembersquery = "SELECT idDirectory, church_ID, Surname, Name_1, Name_2 FROM " . $_SESSION['dirtablename'] . " WHERE status = '1'";
 $approvedmembersqueryresult = $mysql->query($approvedmembersquery) or die(" Approved members query error. Error:" . $mysql->error);

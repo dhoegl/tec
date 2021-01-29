@@ -203,13 +203,13 @@ function xmlParser(xml) {
         var prayerapprovaltextcontent = document.getElementById("newprayernotice");
         prayerapprovaltextcontent.innerHTML = prayerapprovaltext;
     }
-    //Get contact text (the 'Contact Us' email address embedded at tecapp_home) from config.xml
+    //Get contact text (the 'Contact Us' email address embedded at tec_home) from config.xml
     var contacttext;
     contacttext = (navJQ(xml).find('contact').text());
     if (document.getElementById("contactus")) {
         document.getElementById("contactus").href = contacttext;
     }
-    //Get homepage text (the 'Go To Home Page' link embedded at tecapp_home) from config.xml
+    //Get homepage text (the 'Go To Home Page' link embedded at tec_home) from config.xml
     var homepagetext;
     homepagetext = (navJQ(xml).find('homepage').text());
     if (document.getElementById("gotosite")) {

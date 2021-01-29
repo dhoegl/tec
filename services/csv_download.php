@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once('../tecapp_dbconnect.php');
-/* Download OFC Directory to CSV file; called from 'tecapp_family.php */
+require_once('../tec_dbconnect.php');
+/* Download OFC Directory to CSV file; called from 'tec_family.php */
 $output = "";
 
 //if(isset($_POST['export_csv']))

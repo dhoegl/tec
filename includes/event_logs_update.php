@@ -9,8 +9,8 @@ if(!$_SESSION['logged in'] && !$_SESSION['register_check']) {
 echo '<script language="javascript">';
 echo "console.log('Entered into event_logs_update.php. Register_Check = " . $_SESSION['register_check'] . "');";
 echo '</script>';
-	// header("location:../tecapp_welcome.php");
-    header("location:tecapp_welcome.php");
+	// header("location:../tec_welcome.php");
+    header("location:tec_welcome.php");
     exit();
 }
 // *********************************************
@@ -24,7 +24,7 @@ echo '</script>';
 
 
 	function eventLogUpdate($logpointer, $logwho, $logwhat, $logmetric) {
-        require('../tecapp_dbconnect.php');
+        require('../tec_dbconnect.php');
 
         if($logpointer == "admin_update") {
             $eventlogquery = "INSERT INTO " . $_SESSION['eventlogadminupdate'] . "(log_admin_update_who, log_admin_update_what, log_admin_update_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";

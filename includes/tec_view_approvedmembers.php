@@ -8,7 +8,7 @@ jQ9(document).ready(function() {
     jQ9('#approvedmemberslist').DataTable({
         //			"processing": true,
         //			"serverSide": true,
-        "ajax": "../includes/tecapp_getapprovedmembers.php",
+        "ajax": "../includes/tec_getapprovedmembers.php",
         //			"bJQueryUI": true,
         //			"sScrollY": "300px",
         //			"bPaginate": true,

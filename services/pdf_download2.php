@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 require_once('../fpdf/fpdf.php');
 
 $output = "";

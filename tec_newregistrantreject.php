@@ -1,16 +1,16 @@
 <?php
-// From tecapp_regadmin.php
+// From tec_regadmin.php
 // Triggered when Reject button clicked
 // Last Update: 2020/12/09
 
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecapp_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
 
-require_once('tecapp_dbconnect.php');
+require_once('tec_dbconnect.php');
 
 // $verifyacceptcountdir = 0;
 $register_id = $_GET['registerid'];

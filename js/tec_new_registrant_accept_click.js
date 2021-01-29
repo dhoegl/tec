@@ -1,6 +1,6 @@
 // New Registrant Accept Listener
 // Detect new Registrant Accept click
-// From tecapp_newregistrantaccept.php
+// From tec_newregistrantaccept.php
 // Last Updated: 2020/12/09
 // Used to re-direct admin user back to calling page
 // But is disabled at the moment
@@ -15,7 +15,7 @@ jQ150(document).ready(function () {
         $approveclickbuttonid = registerid;
         console.log("Approve Registrant button clicked");
         console.log("$approve registerid clicked = " + $approveclickbuttonid);
-        $approveURL = "tecapp_newregistrantaccept.php?registerid=" + $approveclickbuttonid;
+        $approveURL = "tec_newregistrantaccept.php?registerid=" + $approveclickbuttonid;
         //		$approveURL = "bing.com";
         console.log("approveURL = " + $approveURL);
         //		window.open($approveURL);

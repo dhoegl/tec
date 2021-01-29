@@ -9,7 +9,7 @@
         TEC
       </nickname>
       <domain> <!--Actual URL to access the Site-->
-        tecapp.ourfamilyconnections.org
+        tec.ourfamilyconnections.org
       </domain>
       <reg_notify_from>
         <!--From email address when new registrant approved by RegAdmin-->

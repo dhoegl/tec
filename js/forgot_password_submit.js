@@ -11,7 +11,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
     //Updated
     var jQpwr = jQuery.noConflict();
     var request = jQpwr.ajax({
-        url: '../services/tecapp_password_reset_seed.php',
+        url: '../services/tec_password_reset_seed.php',
         type: 'POST',
         dataType: 'json',
         data: { email_address: reset_submit, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID }
@@ -25,7 +25,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
         console.log("ajax response data for password reset = " + teststat);
         console.log("ajax response text for password reset = " + teststat2);
         alert("Check your email and follow the instructions to reset your password.");
-        window.location = "http://tecapp.ourfamilyconnections.org/tecapp_welcome.php";
+        window.location = "http://tec.ourfamilyconnections.org/tec_welcome.php";
         // location.reload();
         return result;
     })

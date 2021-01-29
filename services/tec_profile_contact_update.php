@@ -1,16 +1,16 @@
 <?php
 session_start();
 if(!$_SESSION['logged in']) {
-	header("location:../tecapp_welcome.php");
+	header("location:../tec_welcome.php");
 	exit();
 }
 
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 //include_once('/includes/event_logs_update.php');
 
 
 
-/* Process profile update -CONTACT INFO: Called from tecapp_profile.php */
+/* Process profile update -CONTACT INFO: Called from tec_profile.php */
 if(isset($_POST['submitcontact']))
 	{
 	$his_first = filter_input(INPUT_POST, 'hisfirstname');
@@ -29,18 +29,18 @@ if(isset($_POST['submitcontact']))
 
 	// $contactupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Name_1 = '" . $his_first . "', Name_2 = '" . $her_first . "', Surname = '" . $last_name . "', Address = '" . $street_address1 . "', Address2 = '" . $street_address2 . "', City = '" . $my_city . "', State = '" . $my_state . "', Zip = '" . $my_zip . "', Phone_Home = '" . $my_homephone . "', Phone_Cell1 = '" . $his_cell . "', Phone_Cell2 = '" . $her_cell . "', Email_1 = '" . $his_email . "', Email_2 = '" . $her_email . "' WHERE idDirectory = '". $_SESSION['idDirectory'] . "'";
 	$contactupdatequery = "UPDATE " . $_SESSION['dirtablename'] . " SET Name_1 = '" . $his_first . "', Name_2 = '" . $her_first . "', Surname = '" . $last_name . "', Address = '" . $street_address1 . "', Address2 = '" . $street_address2 . "', City = '" . $my_city . "', State = '" . $my_state . "', Zip = '" . $my_zip . "', Phone_Home = '" . $my_homephone . "', Phone_Cell1 = '" . $his_cell . "', Phone_Cell2 = '" . $her_cell . "', Email_1 = '" . $his_email . "', Email_2 = '" . $her_email . "' WHERE idDirectory = '". 	$_SESSION["Famview_Profile"] . "'";
-	$contactupdate = $mysql->query($contactupdatequery) or die("A database error occurred when trying to update contact info. See tecapp_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+	$contactupdate = $mysql->query($contactupdatequery) or die("A database error occurred when trying to update contact info. See tec_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
 //	eventLogUpdate('profile_update', $last_name, 'Profile Update : Contact : DirectoryID = ', $_SESSION['idDirectory']);
 
     $loginemailupdatequery_him = "UPDATE " . $_SESSION['logintablename'] . " SET email_addr = '" . $his_email . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND gender = 'M'";
-	$loginemailupdate_him = $mysql->query($loginemailupdatequery_him) or die("A database error occurred when trying to update login email info. See tecapp_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+	$loginemailupdate_him = $mysql->query($loginemailupdatequery_him) or die("A database error occurred when trying to update login email info. See tec_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
 	$loginemailupdatequery_her = "UPDATE " . $_SESSION['logintablename'] . " SET email_addr = '" . $her_email . "' WHERE idDirectory = '". $_SESSION["Famview_Profile"] . "' AND gender = 'F'";
-	$loginemailupdate_her = $mysql->query($loginemailupdatequery_her) or die("A database error occurred when trying to update login email info. See tecapp_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
+	$loginemailupdate_her = $mysql->query($loginemailupdatequery_her) or die("A database error occurred when trying to update login email info. See tec_profile_contact_update.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
     }
     else {
 	echo "isset didn't work";
 	}
 
-header("location:../tecapp_profile.php?id=" . $_SESSION["Famview_Profile"]);
+header("location:../tec_profile.php?id=" . $_SESSION["Famview_Profile"]);
 ?>

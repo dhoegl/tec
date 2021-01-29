@@ -7,7 +7,7 @@
 //	exit();
 //}
 
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 //include_once('/includes/event_logs_update.php');
 
 if(isset($_POST['password_reset']))
@@ -31,10 +31,10 @@ if(isset($_POST['password_reset']))
         {
             echo "<script language='javascript'>";
             echo "alert('You must select a valid username. Please re-enter your username.');";
-            echo "window.location(//tecapp.ourfamilyconnections.org/tecapp_recover.php";
+            echo "window.location(//tec.ourfamilyconnections.org/tec_recover.php";
             echo "</script>";
             // exit('No rows');
-            header("location:../tecapp_recover.php");
+            header("location:../tec_recover.php");
         } // exit('No rows');
         while($row = $result->fetch_assoc()) {
             $LoginID = $row['login_ID'];
@@ -67,10 +67,10 @@ if(isset($_POST['password_reset']))
     }
 }
 elseif (isset($_POST['clear'])) { // Clear button clicked
-    header("location:../tecapp_recover.php");
+    header("location:../tec_recover.php");
 }
 elseif (isset($_POST['login'])) { // Login button clicked
-    header("location:../tecapp_welcome.php");
+    header("location:../tec_welcome.php");
 }
 ?>
 
@@ -103,8 +103,8 @@ elseif (isset($_POST['login'])) { // Login button clicked
 <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Extended styles for this page -->
     <!-- <link href="css/ofc_css_style.css" rel="stylesheet"> -->
-  <!-- Test custom styles (Includes TECAPP style details) -->
-  <link href="../css/tecapp_css_style.css" rel="stylesheet">
+  <!-- Test custom styles (Includes tec style details) -->
+  <link href="../css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="../_tenant/css/tenant.css" rel="stylesheet">
 
@@ -112,12 +112,12 @@ elseif (isset($_POST['login'])) { // Login button clicked
 <body>
 <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="../tecapp_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand" href="../tec_welcome.php">Trinity Evangel Church</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">
     <?php
-        // header("Location: http://tecapp.ourfamilyconnections.org");
+        // header("Location: http://tec.ourfamilyconnections.org");
     ?>
     <p>
     </p>

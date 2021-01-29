@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once 'tecapp_dbconnect.php';
+require_once 'tec_dbconnect.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -23,7 +23,7 @@ require_once 'tecapp_dbconnect.php';
     <!-- Custom styles for this template -->
     <!-- <link href="css/jumbotron.css" rel="stylesheet"> -->
     <!-- Extended styles for this page -->
-    <!-- <link href="css/tecapp_css_style.css" rel="stylesheet"> -->
+    <!-- <link href="css/tec_css_style.css" rel="stylesheet"> -->
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -45,8 +45,8 @@ require_once 'tecapp_dbconnect.php';
 <!-- <link href="css/jumbotron.css" rel="stylesheet"> -->
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <!-- <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
-  <!-- Test custom styles (Includes TECAPP style details) -->
-<link href="css/tecapp_css_style.css" rel="stylesheet">
+  <!-- Test custom styles (Includes tec style details) -->
+<link href="css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
 <link href="_tenant/css/tenant.css" rel="stylesheet">
 
@@ -73,17 +73,17 @@ require_once 'tecapp_dbconnect.php';
     $username = "";
     $password = "";
     $repeatpassword = "";
-    require_once('includes/tecapp_footer.php');
+    require_once('includes/tec_footer.php');
 
 ?>
 <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-dark orange darken-4">
-    <a class="navbar-brand" href="tecapp_welcome.php">
+    <a class="navbar-brand" href="tec_welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
         <span id="navbar_brand"></span> -->
 
 <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="tecapp_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand" href="tec_welcome.php">Trinity Evangel Church</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">
@@ -116,7 +116,7 @@ require_once 'tecapp_dbconnect.php';
         <div class="col-sm-6">
             <div class="card bg-light border-primary p-3">
                 <h3 class="text-center">Please enter your username below</h3>
-                <form name='passwordreset' id="reset" action='services/tecapp_recover_submit.php' method="POST">
+                <form name='passwordreset' id="reset" action='services/tec_recover_submit.php' method="POST">
                     <div class="form-group">
                         <label for="emailaddress">
                             Enter your username:
@@ -179,8 +179,8 @@ require_once 'tecapp_dbconnect.php';
 
     }
 ?>
-    <!-- Tenant Configuration JavaScript Call in tecapp_nav -->
-    <!-- <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script> -->
+    <!-- Tenant Configuration JavaScript Call in tec_nav -->
+    <!-- <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script> -->
 
 </body>
 </html>

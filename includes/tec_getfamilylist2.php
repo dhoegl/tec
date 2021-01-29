@@ -4,7 +4,7 @@ if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-   require_once('../tecapp_dbconnect.php');
+   require_once('../tec_dbconnect.php');
 //    echo "<script language='javascript'>";
 //    echo "console.log('ARRIVED at getfamilylist2');";
 //    echo "</script>";
@@ -32,10 +32,10 @@ if(!$_SESSION['logged in']) {
                 //echo "<tr><td>" . "<a href='/ofc_profile.php?id=" . $activerow['idDirectory'] . "'>view</a>"."</td>";
                 //echo "<tr><td><button type='button' class='btn btn-success'>View</button></td>";
                 $familycontrol = "<tr><td></td>";
-                $familyprofile = "<td><a class='btn btn-success' href='/tecapp_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
+                $familyprofile = "<td><a class='btn btn-success' href='/tec_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
                 // $familyprofile = "<td></td>";
 
-                // echo "<tr><td><a class='btn btn-success' href='/tecapp_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
+                // echo "<tr><td><a class='btn btn-success' href='/tec_profile.php?id=" . $activerow['idDirectory'] . "'>View</a></td>";
             }
             else 
             {

@@ -1,8 +1,8 @@
 <?php 
 //Version 08/18/2019 - Add Gender into registry (used to help determine Him/Her selection in Directory table
     session_start();
-    require_once 'tecapp_dbconnect.php';
-    // One-Time Session variable set - used for event_logs_update check at tecapp_register_submit.php
+    require_once 'tec_dbconnect.php';
+    // One-Time Session variable set - used for event_logs_update check at tec_register_submit.php
     $_SESSION['register_check'] = TRUE;
 
 ?>
@@ -42,7 +42,7 @@
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
     <!-- Extended styles for this page -->
-    <link href="css/tecapp_css_style.css" rel="stylesheet">
+    <link href="css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="_tenant/css/tenant.css" rel="stylesheet">
     
@@ -57,7 +57,7 @@
 <script type="text/javascript" src="js/reset_register_form.js"></script>
       
 <!-- Registration submission check script -->
-<script type="text/javascript" src="js/tecapp_register_submit_check.js"></script>
+<script type="text/javascript" src="js/tec_register_submit_check.js"></script>
 
 </head>
 
@@ -74,13 +74,13 @@
     $repeatpassword = "";
 
 // Add Footer to page
-    require_once('includes/tecapp_footer.php');
+    require_once('includes/tec_footer.php');
 ?>
 
 <!-- Navbar for Registration cycle only-->
 <nav class="navbar navbar-dark orange darken-4 fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="tecapp_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand" href="tec_welcome.php">Trinity Evangel Church</a>
     </div>
 </nav>
 <div class="container-fluid profile_bg">
@@ -140,7 +140,7 @@
                 <h4 align="center"><strong><font color="red">* All fields MUST be filled in</font></strong></h4>
 <!--                <h4 align="center"><strong>Note:</strong> Password must be at least 7 characters, contain one uppercase letter, one lowercase letter, and one number (0-9) or one special character.</h4>-->
                 <!--<form name='registernew' id="register" method="POST">-->
-                <form name='registernew' id="register" action='services/tecapp_register_submit.php' method="POST">
+                <form name='registernew' id="register" action='services/tec_register_submit.php' method="POST">
                     <div class="form-group">
                         <label for="confirmcode">I received a Confirmation Code:</label>
                         <div class="form-check churchcodecheck">
@@ -238,7 +238,7 @@
 ?>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <!-- <script type="text/javascript" src="/js/tecapp_config_ajax_call.js"></script> -->
+    <!-- <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script> -->
 
 </body>
 </html>

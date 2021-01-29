@@ -1,11 +1,11 @@
 <?php
 // Last Updated: 12/08/2020: Stripped most code away to verify functions work
 
-    require_once('../tecapp_dbconnect.php');
+    require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
     // Add Footer to page
-    // require_once('includes/tecapp_footer.php');
+    // require_once('includes/tec_footer.php');
 
 
 if(isset($_POST['registersubmit']))
@@ -44,12 +44,12 @@ if(isset($_POST['registersubmit']))
     // Get Profile ID from above Insert
     $regInsert_DirID = $mysql->insert_id;
     echo "<script language='javascript'>";
-    echo "console.log('tecapp_register_submit.php - idDirectory = " . $regInsert_DirID . "');";
+    echo "console.log('tec_register_submit.php - idDirectory = " . $regInsert_DirID . "');";
     echo "</script>";
     
     // insert Registrant into Login table
     $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES ('$church_code','$user_name','$pass_word','$regInsert_DirID','$first_name','$last_name','$gender','$email_address','$full_name')";
-    $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See tecapp_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
     $regdirtableupdate->close();
     // DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
@@ -57,8 +57,8 @@ if(isset($_POST['registersubmit']))
 
     // Send notification email to Admins for ACCEPT/REJECT
     $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
-    $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See tecapp_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
-    $regmaillink = "http://tecapp.ourfamilyconnections.org";
+    $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    $regmaillink = "http://tec.ourfamilyconnections.org";
     while ($regmailrow = $regmailquery->fetch_assoc())
     {
         $regmailtest = $regmailrow['email_addr'];
@@ -79,12 +79,12 @@ if(isset($_POST['registersubmit']))
     mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
 
     // Temp validation that report error is working
-    eventLogUpdate('report error', 'tecapp_register_submit.php', 'Error: NONE', 'YAY!!');
+    eventLogUpdate('report error', 'tec_register_submit.php', 'Error: NONE', 'YAY!!');
 
 }
 else {
-    // eventLogUpdate('report error', 'tecapp_register_submit.php', 'Error: ' . $mysql->error , 'Error #: ' . $mysql->errno);
-    header("location:../tecapp_register.php"); // Clear button clicked
+    // eventLogUpdate('report error', 'tec_register_submit.php', 'Error: ' . $mysql->error , 'Error #: ' . $mysql->errno);
+    header("location:../tec_register.php"); // Clear button clicked
 }
 
 ?>
@@ -120,7 +120,7 @@ else {
     <!-- Custom styles for this template -->
     <link href="../css/jumbotron.css" rel="stylesheet">
     <!-- Extended styles for this page -->
-    <link href="../css/tecapp_css_style.css" rel="stylesheet">
+    <link href="../css/tec_css_style.css" rel="stylesheet">
     <!-- Tenant-specific stylesheet -->
     <link href="../_tenant/css/tenant.css" rel="stylesheet">
     
@@ -136,7 +136,7 @@ else {
 <body>
     <!-- Navbar for Registration cycle only-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark Orange Darken-4">
-        <a class="navbar-brand font-weight-bolder" href="../tecapp_welcome.php">Trinity Evangel Church</a>
+        <a class="navbar-brand font-weight-bolder" href="../tec_welcome.php">Trinity Evangel Church</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -179,7 +179,7 @@ else {
                                             </h4>
                                             <h4></h4>
                                             <h4 class="font-weight-bolder">
-                                                Click <a href="http://tecapp.ourfamilyconnections.org/tecapp_welcome.php">HERE</a> to return to the Sign In page.
+                                                Click <a href="http://tec.ourfamilyconnections.org/tec_welcome.php">HERE</a> to return to the Sign In page.
                                             </h4>
                                         </div><!--text-center-->
                                     </div>

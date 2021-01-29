@@ -1,16 +1,16 @@
 <?php 
 session_start();
 if(!$_SESSION['logged in']) {
-	header("location:../tecapp_welcome.php");
+	header("location:../tec_welcome.php");
 	exit();
 }
 
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 //include_once('/includes/event_logs_update.php');
 
 
 
-/* Process profile update - CALENDAR (anniversary/birthday) INFO: Called from tecapp_profile.php */
+/* Process profile update - CALENDAR (anniversary/birthday) INFO: Called from tec_profile.php */
 if(isset($_POST['submitcalendar']))
 	{   
 	$my_anniv = $_POST['myanniversary'];
@@ -25,5 +25,5 @@ else {
 	echo "isset didn't work";
 	}
 
-header("location:../tecapp_profile.php?id=" . $_SESSION["Famview_Profile"]);
+header("location:../tec_profile.php?id=" . $_SESSION["Famview_Profile"]);
 ?>

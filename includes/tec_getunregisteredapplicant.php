@@ -6,7 +6,7 @@ if(!$_SESSION['logged in']) {
 	session_destroy();
 	exit();
 }
-require_once('../tecapp_dbconnect.php');
+require_once('../tec_dbconnect.php');
 /* Populate DataTable */
 /* Query unregistered applicant listing from Login table: active = 0 */
 $unregisteredquery = "SELECT login_ID AS loginID, church_ID AS churchcode, idDirectory AS idDirectory, username AS user, gender AS gender, register_date AS regdate, lastname AS lastname, firstname AS firstname, email_addr AS email FROM " . $_SESSION['logintablename'] . " WHERE active = '0'";
