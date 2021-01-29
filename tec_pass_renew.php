@@ -217,8 +217,8 @@ function focus_on_start()
 	}
 	if ($submit) //		echo "Submit was clicked";
 	{
-		$password = strip_tags($_POST['password']);
-		$repeatpassword = strip_tags($_POST['repeatpassword']);
+		$password = $_POST['password'];
+		$repeatpassword = $_POST['repeatpassword'];
 		$date = date("Y-m-d");
 		if($password==$repeatpassword)
 		{
@@ -235,7 +235,7 @@ function focus_on_start()
 			// Access Log entry
 			$client_ip = stripslashes($_SERVER['REMOTE_ADDR']);
 			$client_browser = stripslashes($_SERVER['HTTP_USER_AGENT']);
-			$accessquery = $mysql->query("INSERT INTO " . $_SESSION['accesslogtable'] . "(type, member_id, user_id, client_ip, client_browser) VALUES ('Password Reset', '" . $_SESSION['idDirectory'] . "', '" . $_SESSION['username'] . "', '" . $client_ip . "', '" . $client_browser . "')");
+			$accessquery = $mysql->query("INSERT INTO " . $_SESSION['accesslogtable'] . "(type, member_id, user_id, client_ip, client_browser) VALUES ('Password Reset', '" . $username . "', '" . $username . "', '" . $client_ip . "', '" . $client_browser . "')");
 			if($accessquery->error) {
 				echo " SQL query access log entry error. Error:" . $accessquery->errno . " " . $accessquery->error;
 			}
