@@ -222,10 +222,17 @@ function focus_on_start()
 		$date = date("Y-m-d");
 		if($password==$repeatpassword)
 		{
-		//Update user password
+			echo "<script language='javascript'>";
+			echo "console.log('User Name = " . $username . "');";
+			echo "console.log('Password = " . $password . "');";
+			echo "</script>";		
+			//Update user password
 			$password = md5($password);
 			// $password_update_query = "UPDATE " . $_SESSION['logintablename'] . " SET password = '" . $password . "', temp_pass_key = '', temp_pass_expire = '' WHERE username = '" . $username . "'";
 			$password_update_query = "UPDATE " . $_SESSION['logintablename'] . " SET password = ?, temp_pass_key = '', temp_pass_expire = '' WHERE username = '" . $username . "'";
+			echo "<script language='javascript'>";
+			echo "console.log('password_update_query = " . $password_update_query . "');";
+			echo "</script>";		
 			$password_update = $mysql->prepare($password_update_query);
 			$password_update->bind_param("s",$password);
 			$password_update->execute();
