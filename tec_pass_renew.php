@@ -107,7 +107,7 @@ function focus_on_start()
 				"
 					<script type='text/javascript'>
 						alert('Invalid Password Reset Key. Please check your email and try again');
-						window.open('http://trinityevangel.ourfamilyconnections.org', '_self');
+						window.open('http://tec.ourfamilyconnections.org', '_self');
 					</script>
 				";
 			}
@@ -120,7 +120,7 @@ function focus_on_start()
 						var curdate1 = '$curDate';
 						alert('curdate = ');
 						alert(curdate1);
-						window.open('http://trinityevangel.ourfamilyconnections.org', '_self');
+						window.open('http://tec.ourfamilyconnections.org', '_self');
 					</script>
 				";
 			}
@@ -132,7 +132,7 @@ function focus_on_start()
 			"
 				<script type='text/javascript'>
 					alert('Your username does not exist in our system. Return to the Home Page and request to reset your password');
-					// window.open('http://trinityevangel.ourfamilyconnections.org', '_self');
+					// window.open('http://tec.ourfamilyconnections.org', '_self');
 				</script>
 			";
 		}
