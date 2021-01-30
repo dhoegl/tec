@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once('../tec_dbconnect.php');
-/* Setup password reset seed; called from 'forgot_password_submit.js */
-
+// Updated 20210130
 //Tenant Configuration JavaScript Call
 // echo "<script type='text/javascript' src='../js/tec_config_ajax_call.js'></script>";
 

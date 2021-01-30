@@ -126,6 +126,9 @@ session_start();
                                 <h6 class="text-center white-text">
                                     If you forgot your password, click on the FORGOT PASSWORD button above to be sent a temporary password to your email address on file
                                 </h6>
+                                <p class="fs-6">
+                                    (version tec_20210130.1)
+                                </p>
                             </div><!--btn-->
                         </div><!--card-body-->
                     </div><!--card-->
