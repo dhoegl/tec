@@ -66,7 +66,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordmessage .= "<p>Hello <strong>" . $username3 . "</strong></p>";
     $passwordmessage .= "<p>A request to reset your password has been submitted to Ourfamilyconnections.</p>";
     $passwordmessage .= "<p>If you did not submit this request, please notify your church admins immediately. Otherwise, <strong>within the next 3 days</strong> click on the link below to be taken to the Password Reset page.</p>";
-    $passwordLink = "//tec.ourfamilyconnections.org/tec_pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
+    $passwordLink = "http://tec.ourfamilyconnections.org/tec_pass_renew.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($username3));
     $passwordmessage .= $passwordLink . "<br /><br />";
     $passwordmessage .= "<p><strong>NOTE: </strong>The link above will expire 3 days from now. If you do not reset your password within this timeframe, you must return to the <a href=" . $passwordmaillink . ">home page</a> and reset your password again.</p><br />";
     $passwordmessage .= "<p>Thank you!<br />The OurFamilyConnections team.</p></body></html>";
