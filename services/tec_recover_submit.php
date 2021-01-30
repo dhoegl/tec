@@ -117,7 +117,7 @@ elseif (isset($_POST['login'])) { // Login button clicked
 </nav>
 <div class="container-fluid profile_bg">
     <?php
-        // header("Location: http://tec.ourfamilyconnections.org");
+        // header("Location: //tec.ourfamilyconnections.org");
     ?>
     <p>
     </p>

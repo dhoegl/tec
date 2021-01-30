@@ -25,7 +25,7 @@ function resetrequest(reset_submit, first_submit, last_submit, user_submit, logi
         console.log("ajax response data for password reset = " + teststat);
         console.log("ajax response text for password reset = " + teststat2);
         alert("Check your email and follow the instructions to reset your password.");
-        window.location = "http://tec.ourfamilyconnections.org/tec_welcome.php";
+        window.location = "//tec.ourfamilyconnections.org/tec_welcome.php";
         // location.reload();
         return result;
     })
