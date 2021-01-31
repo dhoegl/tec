@@ -99,6 +99,7 @@ else
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!--******************************* Calculate Dates for Birthdays and Anniversaries **************************************-->
 <script type="text/javascript">
@@ -2131,7 +2132,7 @@ var jQ55 = jQuery.noConflict();
 
   <!-- SCRIPTS -->
 <!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
