@@ -792,7 +792,7 @@ var jQ55 = jQuery.noConflict();
         //     . '</div>';
             echo
             '<div class="row">'
-            . '<div class="col-sm-12">'
+            . '<div class="col-sm-12 mr-2 pt-2">'
                 // . '<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">'
                 //     . '<div class="btn-group mr-2 pt-2" role="group" aria-label="Button group with nested dropdown">'
                         . '<div class="dropdown">'
