@@ -49,6 +49,10 @@ session_start();
 
 </head>
 <body>
+  <!--Footer-->
+    <?php
+        require_once('includes/tec_footer.php');
+    ?>
 
     <header>
         <!-- Navbar -->
@@ -70,7 +74,7 @@ session_start();
             echo '</ul>';
             echo '<span class="nav-link">';
             // echo '<a class="btn btn-light" href="https://trinityevangelchurch.snappages.site/" role="button">Back to App</a>';
-            echo '<a class="btn btn-light" href="https://trinityevangel.org/" role="button">Go to TEC website</a>';
+            echo '<a class="btn btn-light" href="http://trinityevangel.org/" role="button">Go to TEC website</a>';
             echo '</span>';
         }
         else
@@ -173,21 +177,6 @@ session_start();
         <!--</div>-->
 
     <!--</main>-->
-
-        <!-- Footer -->
-        <footer class="page-footer font-small blue fixed-bottom">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-12">
-                    <!-- Copyright -->
-                    <div class="text-center">
-                        <?php
-                        require_once('includes/tec_footer.php')
-                        ?>
-                    </div><!-- text -->
-                    <!-- Copyright -->
-                </div>
-            </div>
-        </footer>
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
