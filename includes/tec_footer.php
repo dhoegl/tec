@@ -5,7 +5,7 @@
       <!-- Grid column -->
       <div class="col-md-7 col-lg-8">
         <!--Copyright-->
-        <p class="text-center text-md-left">© 2021 Copyright:
+        <p class="text-center">© 2021 Copyright:
           <a href="//tec.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
         </p>
       </div>
