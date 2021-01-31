@@ -1,8 +1,7 @@
 <!-- Footer -->
-<!-- <footer class="page-footer fixed-bottom font-small blue"> -->
 <footer class="page-footer fixed-bottom font-small orange accent-4">
 <div class="col-sm-4">
-  <span> </span>
+  <p>Test</p>
 </div>
   <!-- Copyright -->
   <div class="col-sm-4">
