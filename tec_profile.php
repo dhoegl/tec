@@ -90,15 +90,15 @@ else
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 
-    <!-- Jan20 Attempt -->
-    <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
   <!-- Call Moment js for date calc functions -->
   <script src="js/moment.js"></script>
   <!-- JQuery -->
   <!-- <script type="text/javascript" src="js/MDBootstrap4191/jquery.min.js"></script> -->
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- Jan20 Attempt -->
+    <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
 <!--******************************* Calculate Dates for Birthdays and Anniversaries **************************************-->
 <script type="text/javascript">
