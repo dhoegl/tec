@@ -797,7 +797,7 @@ var jQ55 = jQuery.noConflict();
                 // . '<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">'
                 //     . '<div class="btn-group mr-2 pt-2" role="group" aria-label="Button group with nested dropdown">'
                         . '<div class="dropdown">'
-                            .   '<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
+                            .   '<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-disabled="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
                                 .   'Edit Profile'
                             .   '</button>'
                             . '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
