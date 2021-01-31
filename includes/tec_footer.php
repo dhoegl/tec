@@ -3,7 +3,7 @@
     <!-- Grid row -->
     <div class="row">
       <!-- Grid column -->
-      <div class="col-md-7 col-lg-8">
+      <div class="col-12">
         <!--Copyright-->
         <p class="text-center">© 2021 Copyright:
           <a href="//tec.ourfamilyconnections.org"><strong> OurFamilyConnections.org</strong></a>
