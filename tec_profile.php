@@ -148,6 +148,15 @@ else
         alert("Copied the address: " + copyText.value);
     }
 </script>
+<script type="text/javascript">
+        function Copy() 
+            {
+                    //var Url = document.createElement("textarea");
+                    urlCopied.innerHTML = window.location.href;
+                    //Copied = Url.createTextRange();
+                    //Copied.execCommand("Copy");
+            }
+    </script>
 
 <!--******************************* Extract Family Data **************************************-->
 <script type="text/javascript" charset="utf-8">
@@ -840,6 +849,11 @@ var jQ55 = jQuery.noConflict();
                     <h5 class="card-text"><u>Address</u></h5>
                     <h6 class="card-text" id="profile_addr"></h6>
                         <button onclick="myFunction()">Copy address</button>
+                        <div>
+                            <input type="button" value="Copy Url" onclick="Copy();" />
+                            <br />
+                            <!-- Paste: <textarea id="urlCopied" rows="1" cols="30"></textarea> -->
+                        </div>
                     <h5 class="card-text"><u>Phone</u></h5>
                     <p class="card-text" id="profile_phone_home"></p>
                     <p class="card-text" id="profile_cell_him"></p>
