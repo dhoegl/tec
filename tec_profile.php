@@ -151,7 +151,7 @@ else
 <script type="text/javascript">
         function Copy() 
             {
-                var Url = document.getElementById("url");
+                var Url = document.getElementById("profile_addr");
                 Url.innerHTML = window.location.href;
                 console.log(Url.innerHTML)
                 Url.select();
