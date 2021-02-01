@@ -2149,10 +2149,9 @@ var jQ55 = jQuery.noConflict();
   <!-- MDB core JavaScript -->
   <!-- <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script> -->
   <!-- Tenant Configuration JavaScript Call in tec_nav -->
-  <!-- Datatables JavaScript plugins - Bootstrap-specific -->
-    <!-- Works kind of -->
-    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script> -->
+  <!-- Datatables JavaScript plugins -->
     <!-- Jan31 Attempt -->
+    <!-- Copied from https://www.datatables.net/download/index -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script>
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->

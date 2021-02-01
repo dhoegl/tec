@@ -211,8 +211,11 @@ if(!$_SESSION['logged in']) {
   <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
   <!-- Tenant Configuration JavaScript Call in tec_nav -->
     <!-- ***** THESE ARE BEING TESTED -->
+    <!-- Jan31 Attempt -->
+    <!-- Copied from https://www.datatables.net/download/index -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script>
     <!-- Works kind of -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script> -->
     <!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script> -->
 
     <!-- Works but not responsive -->
