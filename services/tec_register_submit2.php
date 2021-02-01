@@ -58,7 +58,7 @@ if(isset($_POST['registersubmit']))
     // Send notification email to Admins for ACCEPT/REJECT
     $regmailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
     $regmailquery = $mysql->query($regmailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
-    $regmaillink = "http://tec.ourfamilyconnections.org";
+    $regmaillink = "https://tec.ourfamilyconnections.org";
     while ($regmailrow = $regmailquery->fetch_assoc())
     {
         $regmailtest = $regmailrow['email_addr'];

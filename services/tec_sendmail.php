@@ -37,7 +37,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
             //    $regmaillink = "http://" . $_COOKIE[$cookie_name];
             //}
             //$regmaillink = "http://" . $_COOKIE[$cookie_name];
-            $regmaillink = "http://tec.ourfamilyconnections.org";
+            $regmaillink = "https://tec.ourfamilyconnections.org";
             $regmailto = $param6;
             $regmailsubject = "Approved access to TEC Family Connections"."\n..";
             $regmailmessage = "<html><body>";
