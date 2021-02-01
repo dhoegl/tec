@@ -151,10 +151,11 @@ else
 <script type="text/javascript">
         function Copy() 
             {
-                    //var Url = document.createElement("textarea");
-                    urlCopied.innerHTML = window.location.href;
-                    //Copied = Url.createTextRange();
-                    //Copied.execCommand("Copy");
+                var Url = document.getElementById("url");
+                Url.innerHTML = window.location.href;
+                console.log(Url.innerHTML)
+                Url.select();
+                document.execCommand("copy");            
             }
     </script>
 
