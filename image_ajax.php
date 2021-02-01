@@ -13,7 +13,7 @@
 		$temporary = explode(".", $_FILES["file"]["name"]);
 		$file_extension = end($temporary);
 		if ((($_FILES["file"]["type"] == "image/bmp") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/jpeg"))
-			&& ($_FILES["file"]["size"] < 2000000)//Approx. 2MB files can be uploaded.
+			&& ($_FILES["file"]["size"] < 4000000)//Approx. 4MB files can be uploaded.
 			&& in_array($file_extension, $validextensions))
 		{
             echo "<script language='javascript'>";

@@ -930,7 +930,7 @@ var jQ55 = jQuery.noConflict();
         </button>
       </div>
       <div class="modal-body">
-	<p><strong>NOTE:</strong> Photo must be less than 2MB, and in one of the following formats:</p> 
+	<p><strong>NOTE:</strong> Photo must be less than 4MB, and in one of the following formats:</p> 
             <ul>
                 <li>
                     .bmp; .jpg; .png
@@ -941,7 +941,7 @@ var jQ55 = jQuery.noConflict();
                     <div id="image_preview">
                         <img id="profile_pic_edit" width="200" height="auto" />
                     </div>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                    <input type="hidden" name="MAX_FILE_SIZE" value="4000000" />
                     <input name="file" type="file" id="file" required />
             <div id="message">
 
