@@ -95,7 +95,7 @@ $count = $result->num_rows;
             $script = $result.script,
             $line = $result.line;
 
-        alert("A problem has occurred with your registrant approval/rejection. Please notify your administrator with the following error: 'tec_regadmin-" + $result + "'");
+        alert("A problem has occurred with your registrant approval/rejection. Please notify your administrator with the following error: 'tec_regadmin: Error = " + $result + "'");
         console.log("data = " + $result);
         console.log("Status = " + $status);
         console.log("Script = " + $script);
