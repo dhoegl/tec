@@ -136,6 +136,17 @@ else
         }
     </script>
 
+<!--******************************* Copy Address to Clipboard **************************************-->
+<script>
+    function myFunction() 
+    {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Copied the address: " + copyText.value);
+    }
+</script>
 
 <!--******************************* Extract Family Data **************************************-->
 <script type="text/javascript" charset="utf-8">
@@ -823,10 +834,11 @@ var jQ55 = jQuery.noConflict();
         </div><!--col-xs-6-->
         <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card bg-light p-3 mt-2">
-                <!--<div class="card-body">-->
+<!-- ******************************* Profile Contact Details Card ************************************** -->
                     <h4 class="card-title text-center text-capitalize" id="profile_card">Name</h4>
                     <h5 class="card-text"><u>Address</u></h5>
                     <h6 class="card-text" id="profile_addr"></h6>
+                        <button onclick="myFunction()">Copy address</button>
                     <h5 class="card-text"><u>Phone</u></h5>
                     <p class="card-text" id="profile_phone_home"></p>
                     <p class="card-text" id="profile_cell_him"></p>
