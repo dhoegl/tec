@@ -141,6 +141,7 @@ else
     function myFunction() 
     {
         var copyText = document.getElementById("profile_addr");
+        console.log(copyText);
         copyText.select();
         copyText.setSelectionRange(0, 99999)
         document.execCommand("copy");
