@@ -43,7 +43,7 @@ if($row['active']==0)
     <title>Approve Prayer Request to Our Family Connections</title>
 
     <!-- Load the jquery libraries -->
-    <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>
 
     <!-- Load the New Prayer Accept listener -->
     <script type='text/javascript' src='/js/tec_new_registrant_accept_click.js'></script>

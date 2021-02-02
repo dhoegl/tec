@@ -3,7 +3,7 @@ session_start();
     require_once('tec_dbconnect.php');
 
 // Load the jquery libraries
-echo "<script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>";
+echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
 
 // username and password sent from form
 $myusername=$_POST['myusername'];

@@ -65,7 +65,7 @@ $count = $result->num_rows;
 
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 
 <!-- jQuery functions & scripts -->
 <!-- jQuery functions & scripts -->

@@ -52,7 +52,7 @@ if(!$_SESSION['logged in']) {
     <!-- <script type="text/javascript" src="js/MDBootstrap4191/jquery.min.js"></script> -->
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 
 
     

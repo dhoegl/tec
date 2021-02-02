@@ -16,7 +16,7 @@ if(isset($_POST['password_reset']))
     echo "<script language='javascript'>";
     echo "console.log('user_name = " . $user_name . "');";
     echo "</script>";
-    echo "<script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>";
+    echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
     // echo "<script type='text/javascript' src='../js/error_handler.js'></script>";
     echo "<script type='text/javascript' src='../js/forgot_password_submit.js'></script>";
     // echo "<script type='text/javascript'>src='../js/forgot_password_submit.js'</script>";
