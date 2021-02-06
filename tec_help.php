@@ -71,7 +71,7 @@ $count = $result->num_rows;
 <body>
     <!--Navbar-->
     <?php
-    $activeparam = '9'; // sets nav element highlight
+    $activeparam = '10'; // sets nav element highlight
     require_once('tec_nav.php');
     require_once('includes/tec_footer.php');
     ?>
