@@ -89,11 +89,14 @@ require_once('tec_dbconnect.php');
             </div><!-- Card -->
             </div><!-- Col-md-12 -->
         </div><!-- Row -->
-<!-- ******************************* Profile Photo Card ************************************** -->
-<div class="row pt-2">
-        <div class="col-xs-12 col-sm-6 col-lg-4">
+<!-- ******************************* Help Topics card ************************************** -->
+        <div class="row pt-2">
+            <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card bg-light border-primary p-3 mt-2">
-                    <img class="card-img-top" id="profile_pic" style="width: 100%; align-self: center" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title"><strong>HELP TOPICS</strong></h4>
+                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+                </div>
             </div> <!-- card -->
         </div><!--col-xs-6-->
         <div class="col-xs-12 col-sm-6 col-lg-4">
