@@ -335,6 +335,13 @@
     font-weight: bold;
     text-decoration: underline;
 }
+/********************** Contact Us Form formatting ***********************/
+#contactusform {
+	background-color: #dfe4fa;
+	font-size: 14px;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+ 
+}
 /********************** Directory Page View Formatting ***********************/
 .dirviewname {
 	font-variant: small-caps;
