@@ -112,20 +112,19 @@ require_once('tec_dbconnect.php');
             <div class="col-xs-12 col-sm-6 col-lg-4">
                 <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
-                        <h4 class="card-title font-weight-bold">CONTACT US</h4>
-                        <h6 class="card-text font-weight-bold my-2">Use the form below to send an email to our team. You should get a response within 24-48 hours.</h6>
-                        <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p>
-
-
-
-
         <!--Section: Contact Form-->
         <section class="section">
             <!--Section heading-->
-            <h2 class="section-heading h1 pt-4">Contact us</h2>
+            <h4 class="section-heading h1 pt-4 font-weight-bold">CONTACT US</h4>
+                        <!-- <h4 class="card-title font-weight-bold">CONTACT US</h4>
+                        <h6 class="card-text font-weight-bold my-2">Use the form below to send an email to our team. You should get a response within 24-48 hours.</h6>
+                        <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p> -->
+
+
+
+
             <!--Section description-->
-            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
-                esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam. Quia, minima?</p>
+            <p class="section-description">Use the form below to send an email to our team. You should get a response within 24-48 hours.</p>
             <div class="row">
                 <!--Grid column-->
                 <div class="col-md-8 col-xl-9">
@@ -211,13 +210,13 @@ require_once('tec_dbconnect.php');
 
             </div>
 
-        </section>
-        <!--Section: Contact Form-->
-
-        </div> <!-- card-body -->
+            </div> <!-- card-body -->
                 </div> <!-- card -->
             </div><!--col-xs-6-->
         </div><!-- row -->
+
+        </section>
+        <!--Section: Contact Form-->
 
 
 
