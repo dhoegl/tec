@@ -77,6 +77,20 @@ $count = $result->num_rows;
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
+    <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-image"
+                    style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center rgba-black-strong">
+                        <div class="w-100">
+                            <h3 class="card-title pt-2"><strong>WHAT CAN I DO HERE?</strong></h3>
+                            <p>The HELP you need - all in one place.</p>
+                        </div>
+                    </div>
+                </div><!-- Card -->
+            </div><!-- Col-md-12 -->
+        </div><!-- Row -->
     </div>
 
 
