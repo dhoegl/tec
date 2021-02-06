@@ -68,13 +68,13 @@ require_once('tec_dbconnect.php');
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer" id="backsplash">
-        <div class="row pt-2">
+        <!-- <div class="row pt-2">
             <div class="col-sm-12">
                 <p>
                     HI
                 </p>
-            </div><!-- col sm-12 -->
-        </div><!-- row -->
+            </div>
+        </div> -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="card card-image"
