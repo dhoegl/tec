@@ -78,6 +78,30 @@ $count = $result->num_rows;
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
     </div>
+
+
+    <!-- SCRIPTS -->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/MDBootstrap4191/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
+    <!-- Tenant Configuration JavaScript Call in tec_nav -->
+    <!-- Datatables JavaScript plugins - Bootstrap-specific -->
+    <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
+    <!-- Jan20 Attempt -->
+    <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
+    <!-- Tenant Configuration JavaScript Call -->
+    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
+    <!-- Call Image Verify jQuery script -->
+    <script src="js/image_verify.js"></script>
 </body>
 </html>
 
