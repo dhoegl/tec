@@ -128,7 +128,7 @@ require_once('tec_dbconnect.php');
                 </div> <!-- card -->
             </div><!--col-xs-6-->
             <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card bg-light p-3 mt-2">
+                <div class="card bg-light p-3 mt-2 my-2">
 <!-- ******************************* Profile Contact Details Card ************************************** -->
                     <h4 class="card-title text-center text-capitalize" id="profile_card2">Name</h4>
                     <h5 class="card-text"><u>Address</u></h5>
