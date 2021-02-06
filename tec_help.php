@@ -96,8 +96,8 @@ require_once('tec_dbconnect.php');
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold">HELP TOPICS</h4>
                         <h6 class="card-text font-weight-bold">Navigating the Directory site</h6>
-                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
-                        <button onclick="window.location.href='TEC_Directory_Help_Guide.pdf';">
+                        <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p>
+                        <button class="btn btn-primary" onclick="window.location.href='TEC_Directory_Help_Guide.pdf';">
                             Click here to view the Help Guide
                         </button>
                     </div> <!-- card-body -->
