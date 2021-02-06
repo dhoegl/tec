@@ -92,49 +92,30 @@ require_once('tec_dbconnect.php');
 <!-- ******************************* Help Topics card ************************************** -->
         <div class="row pt-2">
             <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card bg-light border-primary p-3 mt-2">
+                <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold">HELP TOPICS</h4>
-                        <h6 class="card-text font-weight-bold">Navigating the Directory site</h6>
+                        <h6 class="card-text font-weight-bold my-2">Navigating the Directory site</h6>
                         <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p>
                         <button class="btn btn-primary" onclick="window.location.href='TEC_Directory_Help_Guide.pdf';">
                             Click here to view the Help Guide
                         </button>
+                        <h6 class="card-text font-weight-bold my-2">Frequently Asked Questions</h6>
+                        <p class="card-text">You may find what you're after by taking a look at these topics. </p>
+                        <ul>
+                            <li>What if I'm lost?</li>
+                            <li>Where do I go to download a printable directory?</li>
+                        </ul>
                     </div> <!-- card-body -->
                 </div> <!-- card -->
             </div><!--col-xs-6-->
-            <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card bg-light p-3 mt-2">
-<!-- ******************************* Profile Contact Details Card ************************************** -->
-                    <h4 class="card-title text-center text-capitalize" id="profile_card">Name</h4>
-                    <h5 class="card-text"><u>Address</u></h5>
-                    <h6 class="card-text" id="profile_addr"></h6>
-                    <h5 class="card-text"><u>Phone</u></h5>
-                    <p class="card-text" id="profile_phone_home"></p>
-                    <p class="card-text" id="profile_cell_him"></p>
-                    <p class="card-text" id="profile_cell_her"></p>
-                    <h5 class="card-text"><u>Email</u></h5>
-                    <p class="card-text" id="profile_email_him"></p>
-                    <p class="card-text" id="profile_email_her"></p>
-                </div> <!-- card -->
-            </div><!--col-xs-6-->
-        </div><!-- row -->
-
-        <div class="row pt-2">
             <div class="col-xs-12 col-sm-6 col-lg-4">
                 <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
-                        <h4 class="card-title font-weight-bold">HELP TOPICS</h4>
-                        <h6 class="card-text font-weight-bold">Navigating the Directory site</h6>
-                        <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p>
+                        <h4 class="card-title font-weight-bold">CONTACT US</h4>
+                        <h6 class="card-text font-weight-bold my-2">Use the form below to send an email to our team. You should get a response within 24-48 hours.</h6>
+                        <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p>
                     </div> <!-- card-body -->
-                </div> <!-- card -->
-            </div><!--col-xs-6-->
-            <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card bg-light p-3 mt-2 my-2">
-<!-- ******************************* Profile Contact Details Card ************************************** -->
-                    <h4 class="card-title text-center text-capitalize" id="profile_card2">Name</h4>
-                    <h5 class="card-text"><u>Address</u></h5>
                 </div> <!-- card -->
             </div><!--col-xs-6-->
         </div><!-- row -->
