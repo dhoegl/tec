@@ -77,14 +77,14 @@ $count = $result->num_rows;
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
-    <div class="row pt-2">
+        <div class="row pt-2">
             <div class="col-sm-12">
                 <p>
                     HI
                 </p>
             </div><!-- col sm-12 -->
-    </div><!-- row -->
-         <div class="row">
+        </div><!-- row -->
+        <div class="row">
             <div class="col-sm-12">
                 <div class="card card-image"
                     style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
@@ -95,10 +95,35 @@ $count = $result->num_rows;
                             <p>Here are some tips and tricks to help you learn more about our site.</p>
                         </div>
                     </div>
-                </div><!-- Card -->
+            </div><!-- Card -->
             </div><!-- Col-md-12 -->
         </div><!-- Row -->
-    </div>
+<!-- ******************************* Profile Photo Card ************************************** -->
+<div class="row pt-2">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="card bg-light border-primary p-3 mt-2">
+                    <img class="card-img-top" id="profile_pic" style="width: 100%; align-self: center" alt="Card image cap">
+            </div> <!-- card -->
+        </div><!--col-xs-6-->
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="card bg-light p-3 mt-2">
+<!-- ******************************* Profile Contact Details Card ************************************** -->
+                    <h4 class="card-title text-center text-capitalize" id="profile_card">Name</h4>
+                    <h5 class="card-text"><u>Address</u></h5>
+                    <h6 class="card-text" id="profile_addr"></h6>
+                    <h5 class="card-text"><u>Phone</u></h5>
+                    <p class="card-text" id="profile_phone_home"></p>
+                    <p class="card-text" id="profile_cell_him"></p>
+                    <p class="card-text" id="profile_cell_her"></p>
+                    <h5 class="card-text"><u>Email</u></h5>
+                    <p class="card-text" id="profile_email_him"></p>
+                    <p class="card-text" id="profile_email_her"></p>
+                <!-- </div>  card-body -->
+            </div> <!-- card -->
+       </div><!--col-xs-6-->
+
+
+    </div><!-- Container -->
 
 
     <!-- SCRIPTS -->
