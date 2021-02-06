@@ -127,7 +127,7 @@ require_once('tec_dbconnect.php');
             <p class="section-description">Use the form below to send an email to our team. You should get a response within 24-48 hours.</p>
             <div class="row">
                 <!--Grid column-->
-                <div class="col-md-8 col-xl-9">
+                <div class="col-12">
                 <div class="modaleditform text-center border border-light p-2">
                     <form class="text-center border border-light p-2" id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
                         <!--Grid row-->
