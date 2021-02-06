@@ -91,7 +91,7 @@ $count = $result->num_rows;
                     <!-- Content -->
                     <div class="text-white text-center d-flex align-items-center rgba-black-strong">
                         <div class="w-100">
-                            <h3 class="card-title pt-2"><strong>WHAT CAN I DO HERE?</strong></h3>
+                            <h3 class="card-title pt-2"><strong>CAN YOU HELP ME?</strong></h3>
                             <p>The HELP you need - all in one place.</p>
                         </div>
                     </div>
