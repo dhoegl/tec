@@ -128,8 +128,8 @@ require_once('tec_dbconnect.php');
             <div class="row">
                 <!--Grid column-->
                 <div class="col-12">
-                <div class="modaleditform text-center border border-light p-2">
                     <form class="text-center border border-light p-2" id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
+                    <div class="modaleditform text-center border border-light p-2">
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
@@ -182,6 +182,7 @@ require_once('tec_dbconnect.php');
                             </div>
                         </div>
                         <!--Grid row-->
+                        </div>
 
                     </form>
 
@@ -194,7 +195,6 @@ require_once('tec_dbconnect.php');
 
             </div> <!-- card-body -->
                 </div> <!-- card -->
-            </div>
             </div><!--col-xs-6-->
         </div><!-- row -->
 
