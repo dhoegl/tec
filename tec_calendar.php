@@ -120,7 +120,7 @@ $count = $result->num_rows;
         <div class="col-sm-12">
             <p>
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Using this calendar
+                    Click here to learn about the Calendar
                 </button>
             </p>
         </div> <!-- col sm-12 -->
