@@ -100,7 +100,7 @@ require_once('tec_dbconnect.php');
                         <button class="btn btn-primary" onclick="window.location.href='TEC_Directory_Help_Guide.pdf';">
                             Click here to view the Help Guide
                         </button>
-                        <h6 class="card-text font-weight-bold my-2">Frequently Asked Questions</h6>
+                        <h6 class="card-text font-weight-bold mt-4 my-2">Frequently Asked Questions</h6>
                         <p class="card-text">You may find what you're after by taking a look at these topics. </p>
                         <ul>
                             <li>What if I'm lost?</li>
@@ -133,7 +133,7 @@ require_once('tec_dbconnect.php');
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="md-form">
                                     <div class="md-form">
                                         <input type="text" id="name" name="name" class="form-control">
@@ -142,9 +142,13 @@ require_once('tec_dbconnect.php');
                                 </div>
                             </div>
                             <!--Grid column-->
+                            </div>
+                        <!--Grid row-->
 
+                        <!--Grid row-->
+                        <div class="row">
                             <!--Grid column-->
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="md-form">
                                     <div class="md-form">
                                         <input type="text" id="email" name="email" class="form-control">
