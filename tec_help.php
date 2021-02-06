@@ -115,7 +115,7 @@ require_once('tec_dbconnect.php');
         <!--Section: Contact Form-->
         <section class="section">
             <!--Section heading-->
-            <h4 class="section-heading h1 pt-4 font-weight-bold">CONTACT US</h4>
+            <h4 class="section-heading pt-4 font-weight-bold">CONTACT US</h4>
                         <!-- <h4 class="card-title font-weight-bold">CONTACT US</h4>
                         <h6 class="card-text font-weight-bold my-2">Use the form below to send an email to our team. You should get a response within 24-48 hours.</h6>
                         <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p> -->
