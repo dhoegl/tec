@@ -71,7 +71,7 @@ require_once('tec_dbconnect.php');
         <div class="row pt-2">
             <div class="col-sm-12">
                 <p>
-                    HI
+                    
                 </p>
             </div>
         </div>
