@@ -1,5 +1,5 @@
 <?php
-//Last Updated 12/09/2020: Admin accept/reject script for unregistered applicants
+//Last Updated 02/06/2021: Help Page for tec.ourfamilyconnections.org
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
@@ -10,14 +10,6 @@ $sessname = session_name();
 $sessid = session_id();
 $profileID = $_SESSION['idDirectory'];
 require_once('tec_dbconnect.php');
-
-
-//Query for users requesting to register but not yet approved
-$sqlquery = "SELECT * FROM " . $_SESSION['logintablename'] . " WHERE active = 0";
-$result = $mysql->query($sqlquery) or die("A database error occurred when trying to select registrants for Dir and Login Table. See tec_regadmin.php. Error : " . $mysql->errno . " : " . $mysql->error);
-
-// Mysql_num_row is count of table rows returned. Expect at least 1
-$count = $result->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +28,6 @@ $count = $result->num_rows;
     <link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -76,7 +67,7 @@ $count = $result->num_rows;
     require_once('includes/tec_footer.php');
     ?>
     <!-- Intro Section -->
-    <div class="container-fluid profile_bg bottom-buffer">
+    <div class="container-fluid profile_bg bottom-buffer" id="backsplash">
         <div class="row pt-2">
             <div class="col-sm-12">
                 <p>
