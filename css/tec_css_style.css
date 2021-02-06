@@ -56,7 +56,8 @@
     /*background-color: #B4A7D6;*/
     /*background-color: #c9c9c9;*/
     background: url('../_tenant/images/cropped-ECS-2016-51.jpg') no-repeat center center fixed;
-    -webkit-background-size: auto;
+	background-size: cover;
+	-webkit-background-size: auto;
     -moz-background-size: auto;
     -o-background-size: auto;
     background-size: auto;
