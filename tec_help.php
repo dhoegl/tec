@@ -175,7 +175,8 @@ require_once('tec_dbconnect.php');
                             <div class="col-md-12">
 
                                 <div class="md-form">
-                                    <textarea type="text" id="message" name="message" class="md-textarea"></textarea>
+                                    <!-- <textarea type="text" id="message" name="message" class="md-textarea"></textarea> -->
+                                    <textarea type="text" id="message" name="message" class="form-control"></textarea>
                                     <label for="message">Your message</label>
                                 </div>
 
