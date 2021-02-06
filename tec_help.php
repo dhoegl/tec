@@ -119,7 +119,7 @@ require_once('tec_dbconnect.php');
 
         <div class="row pt-2">
             <div class="col-xs-12 col-sm-6 col-lg-4">
-                <div class="card bg-light border-primary p-3 mt-2">
+                <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold">HELP TOPICS</h4>
                         <h6 class="card-text font-weight-bold">Navigating the Directory site</h6>
