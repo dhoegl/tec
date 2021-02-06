@@ -91,7 +91,7 @@ require_once('tec_dbconnect.php');
         </div><!-- Row -->
 <!-- ******************************* Help Topics card ************************************** -->
         <div class="row pt-2">
-            <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-lg-6">
                 <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold">HELP TOPICS</h4>
@@ -109,13 +109,13 @@ require_once('tec_dbconnect.php');
                     </div> <!-- card-body -->
                 </div> <!-- card -->
             </div><!--col-xs-6-->
-            <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-lg-6">
                 <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
         <!--Section: Contact Form-->
         <section class="section">
             <!--Section heading-->
-            <h4 class="section-heading pt-4 font-weight-bold">CONTACT US</h4>
+            <h4 class="section-heading font-weight-bold">CONTACT US</h4>
                         <!-- <h4 class="card-title font-weight-bold">CONTACT US</h4>
                         <h6 class="card-text font-weight-bold my-2">Use the form below to send an email to our team. You should get a response within 24-48 hours.</h6>
                         <p class="card-text">Our comprehensive Help Guide is the first place to go to find out how to navigate our site. </p> -->
@@ -128,7 +128,7 @@ require_once('tec_dbconnect.php');
             <div class="row">
                 <!--Grid column-->
                 <div class="col-md-8 col-xl-9">
-                    <form id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
+                    <form class="text-center border border-light p-2" id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
@@ -189,25 +189,6 @@ require_once('tec_dbconnect.php');
                     </div> <div class="status" id="status"></div>
                 </div>
                 <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-4 col-xl-3">
-                    <ul class="contact-icons">
-                        <li><i class="fa fa-map-marker fa-2x"></i>
-                            <p>San Francisco, CA 94126, USA</p>
-                        </li>
-
-                        <li><i class="fa fa-phone fa-2x"></i>
-                            <p>+ 01 234 567 89</p>
-                        </li>
-
-                        <li><i class="fa fa-envelope fa-2x"></i>
-                            <p>contact@mdbootstrap.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
             </div>
 
             </div> <!-- card-body -->
