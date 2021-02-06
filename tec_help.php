@@ -79,14 +79,11 @@ $count = $result->num_rows;
     <div class="container-fluid profile_bg bottom-buffer">
     <div class="row pt-2">
             <div class="col-sm-12">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Using the Registration Admin page
-                </button>
-                <!--<button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#testalert" aria-expanded="false" aria-controls="testalert">
-                Test Alert
-            </button>-->
+                <p>
+                    HI
+                </p>
             </div><!-- col sm-12 -->
-        </div><!-- row -->
+    </div><!-- row -->
          <div class="row">
             <div class="col-sm-12">
                 <div class="card card-image"
