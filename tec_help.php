@@ -129,7 +129,7 @@ require_once('tec_dbconnect.php');
                 <!--Grid column-->
                 <div class="col-12">
                     <form class="text-center border border-light p-2" id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
-                    <div class="contactusform text-center border border-light p-2">
+                    <div class="text-center border border-light p-2" id="contactusform">
                         <!--Grid row-->
                         <div class="row">
                             <!--Grid column-->
