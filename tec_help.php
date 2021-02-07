@@ -102,8 +102,8 @@ require_once('tec_dbconnect.php');
                         </button>
                         <h6 class="card-text font-weight-bold mt-4 my-2">Frequently Asked Questions</h6>
                         <p class="card-text">You may find what you're after by taking a look at these topics. </p>
+                        <p class="card-text">Stay tuned for more questions soon!</p>
                         <ul>
-                            <li>What if I'm lost?</li>
                             <li>Where do I go to download a printable directory?</li>
                         </ul>
                     </div> <!-- card-body -->
@@ -128,7 +128,7 @@ require_once('tec_dbconnect.php');
             <div class="row">
                 <!--Grid column-->
                 <div class="col-12">
-                    <form class="text-center border border-dark p-2" id ="contact-form" name="contact-form" action="mail.php" method="POST"  onsubmit="return validateForm()" >
+                    <form class="text-center border border-dark p-2" id ="contact-form" name="contact-form" action="contactus_mail_engine.php" method="POST"  onsubmit="return validateForm()" >
                     <div class="text-center border border-dark p-2" id="contactusform">
                         <!--Grid row-->
                         <div class="row">
@@ -210,7 +210,66 @@ require_once('tec_dbconnect.php');
 
     </div><!-- Container -->
 
+<!-- Validate Contact Us email submission -->    
+<script>
+function validateForm() {
+    var x =  document.getElementById('name').value;
+    if (x == "") {
+        document.getElementById('status').innerHTML = "Name cannot be empty";
+        return false;
+    }
+    x =  document.getElementById('email').value;
+    if (x == "") {
+        document.getElementById('status').innerHTML = "Email cannot be empty";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(x)){
+            document.getElementById('status').innerHTML = "Email format invalid";
+            return false;
+        }
+    }
+    x =  document.getElementById('subject').value;
+    if (x == "") {
+        document.getElementById('status').innerHTML = "Subject cannot be empty";
+        return false;
+    }
+    x =  document.getElementById('message').value;
+    if (x == "") {
+        document.getElementById('status').innerHTML = "Message cannot be empty";
+        return false;
+    }
+ //get input field values data to be sent to server
+    document.getElementById('status').innerHTML = "Sending...";
+    formData = {
+        'name'     : $('input[name=name]').val(),
+        'email'    : $('input[name=email]').val(),
+        'subject'  : $('input[name=subject]').val(),
+        'message'  : $('textarea[name=message]').val()
+    };
 
+
+   $.ajax({
+    url : "contactus_mail_engine.php",
+    type: "POST",
+    data : formData,
+    success: function(data, textStatus, jqXHR)
+    {
+
+        $('#status').text(data.message);
+        if (data.code) //If mail was sent successfully, reset the form.
+        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+    },
+    error: function (jqXHR, textStatus, errorThrown)
+    {
+        $('#status').text(jqXHR);
+    }
+});
+
+
+
+}
+    </script>
     <!-- SCRIPTS -->
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
