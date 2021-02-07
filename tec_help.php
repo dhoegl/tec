@@ -103,9 +103,16 @@ require_once('tec_dbconnect.php');
                         <h6 class="card-text font-weight-bold mt-4 my-2">Frequently Asked Questions</h6>
                         <p class="card-text">You may find what you're after by taking a look at these topics. </p>
                         <p class="card-text">Stay tuned for more questions soon!</p>
-                        <ul>
-                            <li>Where do I go to download a printable directory?</li>
-                        </ul>
+
+                        <div class="faq_container">
+				            <div class="faq">
+					            <div class="faq_question">Where do I go to download a printable directory?</div>
+						        <div class="faq_answer_container">
+							        <div class="faq_answer">Answer goes here</div>
+						        </div>		
+				            </div>
+			            </div>
+
                     </div> <!-- card-body -->
                 </div> <!-- card -->
             </div><!--col-xs-6-->
@@ -265,12 +272,31 @@ function validateForm() {
         jQContactUs('#status').text(jqXHR);
     }
 });
-
-
-
 }
     </script>
-    <!-- SCRIPTS -->
+
+
+<script> // FAQ Jquery code
+jQuery(document).ready(function($)  {
+
+	$('.faq_question').click(function() {
+
+		if ($(this).parent().is('.open')){
+			$(this).closest('.faq').find('.faq_answer_container').animate({'height':'0'},500);
+			$(this).closest('.faq').removeClass('open');
+
+			}else{
+				var newHeight =$(this).closest('.faq').find('.faq_answer').height() +'px';
+				$(this).closest('.faq').find('.faq_answer_container').animate({'height':newHeight},500);
+				$(this).closest('.faq').addClass('open');
+			}
+
+	});
+	
+
+});
+</script>
+    <!-- JS SCRIPTS -->
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->

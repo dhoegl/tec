@@ -342,6 +342,20 @@
 	border: 1px solid rgba(0, 0, 0, 0.125);
  
 }
+/*FAQS*/
+.faq_question {
+	margin: 0px;
+	padding: 0px 0px 5px 0px;
+	display: inline-block;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.faq_answer_container {
+	height: 0px;
+	overflow: hidden;
+	padding: 0px;
+}
 /********************** Directory Page View Formatting ***********************/
 .dirviewname {
 	font-variant: small-caps;
