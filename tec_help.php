@@ -239,6 +239,7 @@ function validateForm() {
         document.getElementById('status').innerHTML = "Message cannot be empty";
         return false;
     }
+    var jQContactUs = jQuery.noConflict();
  //get input field values data to be sent to server
     document.getElementById('status').innerHTML = "Sending...";
     formData = {
@@ -248,7 +249,6 @@ function validateForm() {
         'message'  : jQContactUs('textarea[name=message]').val()
     };
 
-    var jQContactUs = jQuery.noConflict();
     jQContactUs.ajax({
     url : "contactus_mail_engine.php",
     type: "POST",
