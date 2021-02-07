@@ -342,6 +342,9 @@
 	border: 1px solid rgba(0, 0, 0, 0.125);
  
 }
+.contactus {
+	visibility: hidden;
+}
 /*FAQS*/
 .faq_question {
 	margin: 0px;

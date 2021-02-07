@@ -116,6 +116,12 @@ require_once('tec_dbconnect.php');
 							        <div class="faq_answer">Not at this time - stay tuned!</div>
 						        </div>		
 				            </div>
+				            <div class="faq">
+					            <div class="faq_question">Who do I contact if I have questions or need more details on how to use this site?</div>
+						        <div class="faq_answer_container">
+							        <div class="faq_answer">A Contact Form is being developed - in the mean-time, reach out to <a href="mailto:firebird@hoeglund.com">Dan Hoeglund</a>.</div>
+						        </div>		
+				            </div>
 			            </div>
 
                     </div> <!-- card-body -->
@@ -125,7 +131,7 @@ require_once('tec_dbconnect.php');
                 <div class="card bg-light border-primary p-3 mt-2 my-2">
                     <div class="card-body">
         <!--Section: Contact Form-->
-        <section class="section">
+        <section class="section contactus">
             <!--Section heading-->
             <h4 class="section-heading font-weight-bold">CONTACT US</h4>
                         <!-- <h4 class="card-title font-weight-bold">CONTACT US</h4>
