@@ -242,10 +242,10 @@ function validateForm() {
  //get input field values data to be sent to server
     document.getElementById('status').innerHTML = "Sending...";
     formData = {
-        'name'     : $('input[name=name]').val(),
-        'email'    : $('input[name=email]').val(),
-        'subject'  : $('input[name=subject]').val(),
-        'message'  : $('textarea[name=message]').val()
+        'name'     : jQContactUs('input[name=name]').val(),
+        'email'    : jQContactUs('input[name=email]').val(),
+        'subject'  : jQContactUs('input[name=subject]').val(),
+        'message'  : jQContactUs('textarea[name=message]').val()
     };
 
     var jQContactUs = jQuery.noConflict();
