@@ -116,8 +116,8 @@ require_once('tec_dbconnect.php');
 						        <div class="faq_answer_container">
 							        <div class="faq_answer">Not at this time - stay tuned!</div>
                                 </div>
-                                <hr style="height:2px; color: DarkOrange">		
-				            </div>
+                                <hr style="width:50%;text-align:left;margin-left:0">
+                            </div>
 				            <div class="faq">
 					            <div class="faq_question">Who do I contact if I have questions or need more details on how to use this site?</div>
 						        <div class="faq_answer_container">
