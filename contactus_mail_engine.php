@@ -28,7 +28,9 @@ if ($message === ''){
 $content="From: $name \nEmail: $email \nMessage: $message";
 $subject .= "- From Help page at Ourfamilyconnections";
 $recipient = "firebird@email.com";
-$mailheader = "From: $email \r\n";
+$mailheader = "From:" . $email . "\r\n";
+$mailheader .= "MIME-Version: 1.0\r\n";
+$mailheader .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 mail($recipient, $subject, $content, $mailheader) or die("Error!");
 print json_encode(array('message' => 'Email successfully sent!', 'code' => 1));
 exit();
