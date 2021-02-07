@@ -352,7 +352,7 @@
 	display: inline-block;
 	/* border: solid #FF8C00; */
 	cursor: pointer;
-	font-weight: bold;
+	font-weight: bolder;
 	color: green;
 }
 
