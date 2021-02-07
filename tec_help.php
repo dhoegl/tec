@@ -109,14 +109,14 @@ require_once('tec_dbconnect.php');
 						        <div class="faq_answer_container">
 							        <div class="faq_answer">Go to the <a href="tec_family.php">Directory</a> page and click on the blue button at the top-left of the page. You will find both a PDF version of the directory and a CSV version to copy into your favorite spreadheet.</div>
                                 </div>
-                                <!-- <hr style="height:2px; color: DarkOrange">		 -->
+                                <hr style="height:2px; color: DarkOrange">		
 				            </div>
 				            <div class="faq">
 					            <div class="faq_question note note-success">Is there a way to print out the calendar?</div>
 						        <div class="faq_answer_container">
 							        <div class="faq_answer">Not at this time - stay tuned!</div>
                                 </div>
-                                <!-- <hr style="width:50%;text-align:left;margin-left:0"> -->
+                                <hr style="width:50%;text-align:left;margin-left:0">
                             </div>
 				            <div class="faq">
 					            <div class="faq_question note note-success">Who do I contact if I have questions or need more details on how to use this site?</div>
