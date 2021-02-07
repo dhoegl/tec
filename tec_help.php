@@ -101,8 +101,7 @@ require_once('tec_dbconnect.php');
                             Click here to view the Help Guide
                         </button>
                         <h6 class="card-text font-weight-bold mt-4 my-2">Frequently Asked Questions</h6>
-                        <p class="card-text">You may find what you're after by taking a look at these topics. </p>
-                        <p class="card-text">Stay tuned for more questions soon!</p>
+                        <p class="card-text">You may find what you're after by taking a look at these topics. Just tap on the question for an answer. Stay tuned for more questions as they come in!</p>
 
                         <div class="faq_container">
 				            <div class="faq">
