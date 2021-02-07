@@ -107,7 +107,7 @@ require_once('tec_dbconnect.php');
 				            <div class="faq">
 					            <div class="faq_question">Where do I go to download a printable directory?</div>
 						        <div class="faq_answer_container">
-							        <div class="faq_answer">Go to the <a href="tec_family.php">Directory</a> page and click on the blue button at the top-left of the page. You will find both a PDF version of the directory and a CSV version to copy into your favorite spreadheet.</div>
+							        <div class="faq_answer">Go to the <a href="tec_family.php">Directory</a> page and click on the blue button at the top-left of the page. You will find both a PDF version of the directory and a CSV version to copy into your favorite spreadsheet.</div>
                                 </div>
                                 <hr style="height:2px; color: DarkOrange">		
 				            </div>
