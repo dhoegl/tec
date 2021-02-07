@@ -248,21 +248,21 @@ function validateForm() {
         'message'  : $('textarea[name=message]').val()
     };
 
-
-   $.ajax({
+    var jQContactUs = jQuery.noConflict();
+    jQContactUs.ajax({
     url : "contactus_mail_engine.php",
     type: "POST",
     data : formData,
     success: function(data, textStatus, jqXHR)
     {
 
-        $('#status').text(data.message);
+        jQContactUs('#status').text(data.message);
         if (data.code) //If mail was sent successfully, reset the form.
-        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+        jQContactUs('#contact-form').closest('form').find("input[type=text], textarea").val("");
     },
     error: function (jqXHR, textStatus, errorThrown)
     {
-        $('#status').text(jqXHR);
+        jQContactUs('#status').text(jqXHR);
     }
 });
 
