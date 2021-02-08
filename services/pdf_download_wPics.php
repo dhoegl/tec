@@ -87,7 +87,7 @@ function BasicTable($headers, $dataset)
     foreach($dataset as $row)
     {
             $profile='../profile_img/' . $row[13];
-            $this->Cell($w[0],30,Image('../profile_img/' . $row[13],0,0,30),0,1); // Profile Pic
+            $this->Cell($w[0],30,Image($profile,0,0,30),0,1); // Profile Pic
             // $this->Image('../profile_img/' . $row[13],0,0,30);
             $this->SetFont('Arial','B',12);
             $this->Cell($w[0],6,$row[0],0); // Last Name
