@@ -83,12 +83,13 @@ function BasicTable($headers, $dataset)
         $this->Cell($w[$i],7,$headers[$i],1,0,'C');
         // $this->MultiCell($w[$i],7,$headers[$i],1,'C');
     $this->Ln();
-	// Row Data
+    // Row Data
+    $h=0; // Height increment to insert profile pic
     foreach($dataset as $row)
     {
             $profile='../profile_img/' . $row[13];
             $this->Cell($w[0],30,' ',0,1); // Pic Block
-            $this->Image('../profile_img/' . $row[13],0,0,30);
+            $this->Image('../profile_img/' . $row[13],$h,0,30);
             $this->SetFont('Arial','B',12);
             $this->Cell($w[0],6,$row[0],0); // Last Name
             $this->SetFont('Arial','',8);
@@ -111,7 +112,8 @@ function BasicTable($headers, $dataset)
 			$this->Cell($w[8],6,$row[12],0,0); // Her Email
 			$this->Ln();
             $this->Cell(array_sum($w),0,'','T');
-			$this->Ln();
+            $this->Ln();
+            $h=$h+30;
     }
     // Closing line
     $this->Cell(array_sum($w),0,'','T');
