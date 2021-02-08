@@ -89,7 +89,7 @@ function BasicTable($headers, $dataset)
     {
             $profile='../profile_img/' . $row[13];
             $this->Cell($w[0],30,' ',0,1); // Pic Block
-            $this->Image('../profile_img/' . $row[13],$h,0,30);
+            $this->Image('../profile_img/' . $row[13],0,$h,30);
             $this->SetFont('Arial','B',12);
             $this->Cell($w[0],6,$row[0],0); // Last Name
             $this->SetFont('Arial','',8);
