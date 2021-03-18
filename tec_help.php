@@ -124,6 +124,13 @@ require_once('tec_dbconnect.php');
 							        <div class="faq_answer">A Contact Form is being developed - in the mean-time, reach out to <a href="mailto:firebird@hoeglund.com">Dan Hoeglund</a>.</div>
 						        </div>		
 				            </div>
+				            <div class="faq">
+					            <div class="faq_question">The old TEC Directory site allowed me to upload prayer requests. Why is this not available in the new site?</div>
+						        <div class="faq_answer_container">
+							        <div class="faq_answer">Prayer requests are enabled in the TEC App. However, knowing that the TEC App limits visibility to prayer requests to only the group it was submitted, we are considering the re-instatement of the prayer request functionality in the TEC Directory.</div>
+                                </div>
+                                <hr style="height:2px; color: DarkOrange">		
+				            </div>
 			            </div>
 
                     </div> <!-- card-body -->
