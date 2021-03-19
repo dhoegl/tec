@@ -15,7 +15,7 @@
 ?>
 <?PHP
 $sender = 'newfamilyrequest@ourfamilyconnections.org';
-$recipient = 'dhoegl@microsoft.com';
+$recipient = 'firebird@hoeglund.com';
 
 $subject = "php mail test";
 $message = "php test message";
