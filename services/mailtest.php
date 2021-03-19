@@ -26,10 +26,10 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 if (mail($recipient, $subject, $message, $headers))
 {
-    echo "Message accepted";
+    echo "Message accepted to: " . $recipient;
 }
 else
 {
-    echo "Error: Message not accepted";
+    echo "Error: Message not accepted to: " . $recipient;
 }
 ?>
