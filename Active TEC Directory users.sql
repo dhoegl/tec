@@ -1,0 +1,1 @@
+SELECT DISTINCT username, firstname, lastname, login_ID, idDirectory, email_addr FROM db_tecapp.login where active = '1' order by lastname;
