@@ -21,6 +21,8 @@ session_start();
     $local_schools="schools_wa_marysville";
 	$event_log_admin_update="Event_Log_Admin";
 	$event_log_error_update="Event_Log_Error";
+	$event_log_mail="Event_Log_Mail";
+
 
 	$_SESSION['logintablename'] = $login_tbl_name;
 	$_SESSION['dirtablename'] = $dir_tbl_name;
@@ -38,6 +40,7 @@ session_start();
     $_SESSION['eventlogprofileupdate'] = $event_log_profile_update;
 	$_SESSION['eventlogadminupdate'] = $event_log_admin_update;
 	$_SESSION['eventlogerrorupdate'] = $event_log_error_update;
+	$_SESSION['eventlogmail'] = $event_log_mail;
     $_SESSION['localschools'] = $local_schools;
 
 
