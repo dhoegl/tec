@@ -11,6 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel='icon' href='/_tenant/images/favicon.ico' type='image/x-icon' >
     <title>Welcome to TEC Family Connections</title>
 <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
