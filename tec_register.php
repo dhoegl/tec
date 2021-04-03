@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel='icon' href='/_tenant/images/favicon.ico' type='image/x-icon' >
     <title>Please Register</title>
 
   <!-- Font Awesome -->
