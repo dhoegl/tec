@@ -4,7 +4,7 @@
 
 
 session_start();
-if(!$_SESSION['logged in'] && !$_SESSION['register_check']) {
+if(!$_SESSION['logged in'] && !$_SESSION['register_check'] && !$_SESSION['password_reset']) {
 // Check entry into this file
 echo '<script language="javascript">';
 echo "console.log('Entered into event_logs_update.php. Register_Check = " . $_SESSION['register_check'] . "');";

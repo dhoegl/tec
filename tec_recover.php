@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once 'tec_dbconnect.php';
+$_SESSION['password_reset'] = TRUE;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
