@@ -1,72 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <settings>
     <customer>
-      <ID> <!--Unique customer ID used to segregate environments and data-->
-        0000x
-      </ID>
-      <name> <!--Formal customer name-->
-        xxxxxxxxxxxxxxxxxxxxxxx
-      </name>
-      <nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
-        xxx
-      </nickname>
-      <domain> <!--Actual URL to access the Site-->
-        xxxxxxxx.ourfamilyconnections.org
-      </domain>
-      <title> <!--Webpage Title – this is what’s shown on browser tab-->
-        xxxxxxxxxxxxxxxxxxxxxxxxxxx
-      </title>
-      <reg_notify_from>
-        <!--From email address when new registrant approved by RegAdmin-->
-        admin@ourfamilyconnections.org
-      </reg_notify_from>
-      <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
-        xxxxxxxxxxxxxxxxxxxxxxxxx
-      </homepage>
-      <banner> <!--Webpage banner image-->
-        url('/_tenant/images/xxxxxxx')
-      </banner>
-      <backsplash> <!--Shown on homepage-->
-        url('/_tenant/images/xxxxxxx')
-      </backsplash>
-      <backsplash_Welcome>
-        <!--Shown on Master Welcome Page (ofc_welcome.php)-->
-        url('/_tenant/images/cropped-ECS-2016-45.jpg')
-      </backsplash_Welcome>
-      <logo> <!--Customer’s logo image-->
-        url('/_tenant/images/xxxxxxx')
-      </logo>
-      <nav_logo> <!--Navigation Bar image-->
-        /_tenant/images/xxxxxxxxx
-      </nav_logo>
-      <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
-        xxxxxxxxxxxxx
-      </tagline>
-      <special1> <!--Home Page Mission Statement Image-->
-        url('/_tenant/images/xxxxxxxx')
-      </special1>
-      <visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
-        xxxxxxxxxxxxxx
-      </visibility1>
-      <visibility2> <!--Prayer Request destination - Church Family; School Family -->
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      </visibility2>
-      <prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-      </prayerapproval>
-      <contact>
-        mailto:firebird@hoeglund.com
-      </contact>
- <!-- Use theme to identify tenant.css file for customer-->
-      <theme>xxx</theme>
-<!-- Use services-directory to specify whether Directory feature is enabled for customer-->
-      <services-directory>YES</services-directory>
-<!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
-      <services-calendar>YES</services-calendar>
-<!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
-      <services-prayer>NO</services-prayer>
-<!-- Use services-events to specify whether Events feature is enabled for customer-->
-      <services-events>NO</services-events>
+      <ID>0000x</ID> <!--Unique customer ID used to segregate environments and data-->
+      <name>xxxxxxxxxxxxxxxxxxxxxxx</name> <!--Formal customer name-->
+      <nickname>xxx</nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
+      <domain>xxxxxxxx.ourfamilyconnections.org</domain>  <!--Actual URL to access the Site-->
+      <title>xxxxxxxxxxxxxxxxxxxxxxxxxxx</title> <!--Webpage Title – this is what’s shown on browser tab-->
+      <favicon><!-- <link rel='icon' href='favicon.ico' type='image/x-icon'/ > --></favicon> <!-- Browser tab icon image -->
+      <reg_notify_from>admin@ourfamilyconnections.org</reg_notify_from> <!--From email address when new registrant approved by RegAdmin-->
+      <homepage>xxxxxxxxxxxxxxxxxxxxxxxxx</homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
+      <homesplash>/_tenant/images/xxxxxx</homesplash> <!--Homepage Splash image-->
+      <banner>url('/_tenant/images/xxxxxxx')</banner>  <!--Webpage banner image-->
+      <banner_color>#000000</banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+      <banner_forecolor>#ffffff</banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+      <backsplash>url('/_tenant/images/xxxxxxx')</backsplash> <!--Shown on homepage-->
+      <backsplash_Welcome>url('/_tenant/images/cropped-ECS-2016-45.jpg')</backsplash_Welcome> <!--Shown on Master Welcome Page (ofc_welcome.php)-->
+      <logo>url('/_tenant/images/xxxxxxx')</logo> <!--Customer’s logo image-->
+      <nav_logo>/_tenant/images/xxxxxxxxx</nav_logo> <!--Navigation Bar image-->
+      <tagline>xxxxxxxxxxxxx</tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
+      <hometitle>###########################</hometitle> <!-- Highlighted Title Text on home screen -->
+      <homesubtitle>###########################</homesubtitle> <!-- Sub Title Text on home screen -->
+      <special1>url('/_tenant/images/xxxxxxxx')</special1> <!--Home Page Mission Statement Image-->
+      <visibility1>xxxxxxxxxxxxxx</visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
+      <visibility2>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</visibility2> <!--Prayer Request destination - Church Family; School Family -->
+      <prayerapproval>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.</prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
+      <contact>mailto:firebird@hoeglund.com</contact>
+      <theme>xxx</theme>  <!-- Use theme to identify tenant.css file for customer-->
+      <services-directory>YES</services-directory> <!-- Use services-directory to specify whether Directory feature is enabled for customer-->
+      <services-calendar>YES</services-calendar> <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
+      <services-prayer>NO</services-prayer> <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
+      <services-events>NO</services-events> <!-- Use services-events to specify whether Events feature is enabled for customer-->
     </customer>
   </settings>

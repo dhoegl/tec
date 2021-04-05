@@ -1,68 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <settings>
     <customer>
-      <ID> <!--Unique customer ID used to segregate environments and data-->
-        001
-      </ID>
-      <name> <!--Formal customer name-->
-        Trinity Evangel Church
-      </name>
-      <nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
-        TEC
-      </nickname>
-      <domain> <!--Actual URL to access the Site-->
-        ofctest.ourfamilyconnections.org
-      </domain>
-      <title> <!--Webpage Title – this is what’s shown on browser tab-->
-        TEC Family Connection
-      </title>
-      <reg_notify_from>
-        <!--From email address when new registrant approved by RegAdmin-->
-        admin@ourfamilyconnections.org
-      </reg_notify_from>
-      <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
-        http://trinityevangel.org
-      </homepage>
-      <banner> <!--Webpage banner image-->
-        url('/_tenant/images/x.jpg')
-      </banner>
-      <backsplash> <!--Shown on homepage-->
-        url('/_tenant/images/TEC_splash.jpg')
-      </backsplash>
-      <logo> <!--Customer’s logo image-->
-        url('/_tenant/images/trinity_logo.png')
-      </logo>
-      <nav_logo> <!--Navigation Bar image-->
-        /_tenant/images/trinity_logo.png
-      </nav_logo>
-      <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
-        Reformed and Still Reforming
-      </tagline>
-      <special1> <!--Home Page Mission Statement Image-->
-        url('/_tenant/images/x.jpg')
-      </special1>
-      <visibility1> <!--Prayer Request visibility - Elders (for Church); Board (for School) -->
-        Elders Only
-      </visibility1>
-      <visibility2> <!--Prayer Request destination - Church Family; School Family -->
-        Your church family (elder approval required)
-      </visibility2>
-      <prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
-        New prayer requests to our church family require elder approval.
-        Church family will be notified as soon as it's approved.
-      </prayerapproval>
-      <contact>
-        mailto:firebird@hoeglund.com
-      </contact>
-      <!-- Use theme to identify tenant.css file for customer-->
-      <theme>TEC</theme>
-      <!-- Use services-directory to specify whether Directory feature is enabled for customer-->
-      <services-directory>YES</services-directory>
-      <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
-      <services-calendar>YES</services-calendar>
-      <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
-      <services-prayer>YES</services-prayer>
-      <!-- Use services-events to specify whether Events feature is enabled for customer-->
-      <services-events>NO</services-events>
+      <ID>001</ID> <!--Unique customer ID used to segregate environments and data-->
+      <name>Trinity Evangel Church</name> <!--Formal customer name-->
+      <nickname>TEC</nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
+      <domain>ofctest.ourfamilyconnections.org</domain>  <!--Actual URL to access the Site-->
+      <title>TEC Family Connection</title> <!--Webpage Title – this is what’s shown on browser tab-->
+      <reg_notify_from>admin@ourfamilyconnections.org</reg_notify_from> <!--From email address when new registrant approved by RegAdmin-->
+      <homepage>http://trinityevangel.org</homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
+      <homesplash>/_tenant/images/xxxxxx</homesplash> <!--Homepage Splash image-->
+      <banner>url('/_tenant/images/x.jpg')</banner>  <!--Webpage banner image-->
+      <banner_color>#F05F2B</banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+      <banner_forecolor>#ffffff</banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+      <backsplash>url('/_tenant/images/TEC_splash.jpg')</backsplash> <!--Shown on homepage-->
+      <backsplash_Welcome>url('/_tenant/images/cropped-ECS-2016-45.jpg')</backsplash_Welcome> <!--Shown on Master Welcome Page (ofc_welcome.php)-->
+      <logo>url('/_tenant/images/trinity_logo.png')</logo> <!--Customer’s logo image-->
+      <nav_logo>/_tenant/images/trinity_logo.png</nav_logo> <!--Navigation Bar image-->
+      <tagline>Reformed and Still Reforming</tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
+      <hometitle>###########################</hometitle> <!-- Highlighted Title Text on home screen -->
+      <homesubtitle>###########################</homesubtitle> <!-- Sub Title Text on home screen -->
+      <special1>url('/_tenant/images/x.jpg')</special1> <!--Home Page Mission Statement Image-->
+      <visibility1>Elders Only</visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
+      <visibility2>Your church family (elder approval required)</visibility2> <!--Prayer Request destination - Church Family; School Family -->
+      <prayerapproval>New prayer requests to our church family require elder approval. Church family will be notified as soon as it's approved.</prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
+      <contact>mailto:firebird@hoeglund.com</contact>
+      <theme>TEC</theme>  <!-- Use theme to identify tenant.css file for customer-->
+      <services-directory>YES</services-directory> <!-- Use services-directory to specify whether Directory feature is enabled for customer-->
+      <services-calendar>YES</services-calendar> <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
+      <services-prayer>YES</services-prayer> <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
+      <services-events>NO</services-events> <!-- Use services-events to specify whether Events feature is enabled for customer-->
     </customer>
   </settings>
