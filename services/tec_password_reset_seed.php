@@ -1,7 +1,9 @@
 <?php
 session_start();
 require_once('../tec_dbconnect.php');
-// Updated 20210130
+include_once('../includes/event_logs_update.php');
+// Updated 20210405
+// Event log updates mail confirm
 //Tenant Configuration JavaScript Call
 // echo "<script type='text/javascript' src='../js/tec_config_ajax_call.js'></script>";
 
