@@ -87,7 +87,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
         eventLogUpdate('mail', "User: " .  $username3, " Password Reset email sent", "SUCCESS");
     }
     else {
-    //     eventLogUpdate('mail', "User: " .  $username3, "Password Reset email sent", "FAILED");
+        eventLogUpdate('mail', "User: " .  $username3, "Password Reset email sent", "FAILED");
     }
 
 
