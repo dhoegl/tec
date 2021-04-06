@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <settings>
+    <customer>
+      <!--Unique customer ID used to segregate environments and data-->
+      <ID>00001</ID>
+      <!--Formal customer name-->
+      <name>Trinity Evangel Church</name>
+      <nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
+        TEC
+      </nickname>
+      <domain> <!--Actual URL to access the Site-->
+        tec.ourfamilyconnections.org
+      </domain>
+      <reg_notify_from>
+        <!--From email address when new registrant approved by RegAdmin-->
+        admin@ourfamilyconnections.org
+      </reg_notify_from>
+      <title> <!--Webpage Title – this is what’s shown on browser tab-->
+        Trinity Evangel Church
+      </title>
+      <homepage> <!--Organization’s homepage – OurFamilyConnections homepage will link directly (via button-click) to your designated homepage-->
+        http://trinityevangel.org
+      </homepage>
+      <homesplash>/_tenant/images/xxxxxx</homesplash> <!--Homepage Splash image-->
+      <banner> <!--Webpage banner image-->
+        url('/_tenant/images/xxxxxxx')
+      </banner>
+      <banner_color>#F05F2B</banner_color> <!--Webpage top & bottom banner (header/footer) color-->
+      <banner_forecolor>#ffffff</banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+      <backsplash> <!--Shown on tec_home >> main homepage after logging in-->
+        url('/_tenant/images/cropped-ECS-2016-51.jpg')
+      </backsplash>
+      <backsplash_Welcome>
+        <!--Shown on Master Welcome Page (tec_welcome.php)-->
+        url('/_tenant/images/cropped-ECS-2016-51.jpg')
+      </backsplash_Welcome>
+      <logo> <!--Customer’s logo image-->
+        url('/_tenant/images/raggantssbs_or.png')
+      </logo>
+      <nav_logo> <!--Navigation Bar image-->
+        /_tenant/images/TEC App Icon 08.png
+      </nav_logo>
+      <tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
+        Reformed and Still Reforming.
+      </tagline>
+      <hometitle>###########################</hometitle> <!-- Highlighted Title Text on home screen -->
+      <homesubtitle>###########################</homesubtitle> <!-- Sub Title Text on home screen -->
+      <special1> <!--Home Page Mission Statement Image-->
+        url('/_tenant/images/Mission.png')
+      </special1>
+      <visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
+        Elders Only
+      </visibility1>
+      <visibility2> <!--Prayer Request destination - Church Family; School Family -->
+        Your Church Family (Board approval required)
+      </visibility2>
+      <prayerapproval> <!--Prayer Request approval notification - Church or School; Elder or Board/Administrator -->
+        New prayer requests to our church family require Admin approval.
+        Church family will be notified as soon as it's approved.
+      </prayerapproval>
+      <contact>
+        mailto:firebird@hoeglund.com
+      </contact>
+      <!-- Use theme to identify tenant.css file for customer-->
+      <theme>TEC</theme>
+      <!-- Use services-directory to specify whether Directory feature is enabled for customer-->
+      <services-directory>YES</services-directory>
+      <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
+      <services-calendar>YES</services-calendar>
+      <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
+      <services-prayer>NO</services-prayer>
+      <!-- Use services-events to specify whether Events feature is enabled for customer-->
+      <services-events>NO</services-events>
+    </customer>
+  </settings>
