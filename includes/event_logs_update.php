@@ -1,16 +1,14 @@
 <?php
 // Event Logging scripts
-// Updated 2020/12/30
+// Updated 2021/04/05
+// Enable mail script
 
 
 session_start();
 if(!$_SESSION['logged in'] && !$_SESSION['register_check'] && !$_SESSION['password_reset']) {
 // Check entry into this file
-echo '<script language="javascript">';
-echo "console.log('Entered into event_logs_update.php. Register_Check = " . $_SESSION['register_check'] . "');";
-echo '</script>';
 	// header("location:../tec_welcome.php");
-    header("location:tec_welcome.php");
+    header("location:../tec_welcome.php");
     exit();
 }
 // *********************************************

@@ -84,7 +84,7 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
             // <script language='javascript'>
             //     alert("Your password reset has been received.\nCheck your email and follow the instructions to reset your password.")
             // </script>
-    //     eventLogUpdate('mail', "User: " .  $username3, " Password Reset email sent", "SUCCESS");
+        eventLogUpdate('mail', "User: " .  $username3, " Password Reset email sent", "SUCCESS");
     }
     else {
     //     eventLogUpdate('mail', "User: " .  $username3, "Password Reset email sent", "FAILED");
