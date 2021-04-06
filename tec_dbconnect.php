@@ -22,6 +22,7 @@ session_start();
 	$event_log_admin_update="Event_Log_Admin";
 	$event_log_error_update="Event_Log_Error";
 	$event_log_mail="Event_Log_Mail";
+	$event_log_prayer="event_log_prayer";
 
 
 	$_SESSION['logintablename'] = $login_tbl_name;
@@ -40,6 +41,7 @@ session_start();
     $_SESSION['eventlogprofileupdate'] = $event_log_profile_update;
 	$_SESSION['eventlogadminupdate'] = $event_log_admin_update;
 	$_SESSION['eventlogerrorupdate'] = $event_log_error_update;
+	$_SESSION['eventlogprayer'] = $event_log_prayer;
 	$_SESSION['eventlogmail'] = $event_log_mail;
     $_SESSION['localschools'] = $local_schools;
 

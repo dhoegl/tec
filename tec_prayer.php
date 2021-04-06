@@ -1,32 +1,59 @@
 <?php 
 session_start();
+// Updated 20210406 - clean up for new TEC prayer module
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecwelcome.php");
+	header("location:../tec_welcome.php");
 	exit();
 }
+    require_once('../tec_dbconnect.php');
+    require_once('fpdf/fpdf.php');
+    // Event Log  trap
+    include('../includes/event_logs_update.php');
 
-   require_once('tec_dbconnect.php');
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-	<link href="css/ofcstyle.css" rel="stylesheet" type="text/css" />
-	<title>TEC - Active Prayer Log</title>
-<head>
+<!-- BOOTSTRAP - Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel='icon' href='/_tenant/images/favicon.ico' type='image/x-icon' >
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/MDBootstrap4191/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/MDBootstrap4191/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/MDBootstrap4191/style.css" rel="stylesheet">
 
-<!-- Load the jquery libraries -->
-<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+  <!-- Test custom styles (Includes tec style details) -->
+  <link href="css/tec_css_style.css" rel="stylesheet">
+    <!-- Tenant-specific stylesheet -->
+    <link href="_tenant/css/tenant.css" rel="stylesheet">
+    <!-- Datatables stylesheet - Bootstrap-specific -->
+    <!-- Jan20 Attempt -->
+    <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 
-<!-- Popup script from http://dev.vast.com/jquery-popup-overlay/ -->
-<script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
 
-<!--*******************************DataTables stylesheet data**************************************-->
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
-	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+  <!-- Call Moment js for date calc functions -->
+  <script src="js/moment.js"></script>
+  <!-- JQuery -->
+  <!-- <script type="text/javascript" src="js/MDBootstrap4191/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- Jan20 Attempt -->
+    <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
 
 <!-- jQuery functions & scripts -->
 <!-- jQuery functions & scripts -->
@@ -49,20 +76,19 @@ if(!$_SESSION['logged in']) {
  <script type="text/javascript">
 	var jQ20 = jQuery.noConflict();
 	jQ20(document).ready(function() {
-
 // Follow button
 	jQ20("#follow_button").click(function () {
 		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
 		var $followselect = 'follow';
 		var request = jQ20.ajax({
-		url: 'tec_update_follow_table.php',
+		url: '../services/tec_update_follow_table.php',
 		type: 'POST',
 		dataType: 'json',
 		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
 		});
 
 // Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		var checkfollow = 'tec_check_follow_table.php';
+		var checkfollow = '../services/tec_check_follow_table.php';
 			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
 			}, function (data) {
 				console.log(data);
@@ -85,7 +111,7 @@ if(!$_SESSION['logged in']) {
 
 // Unfollow button
 	jQ20("#unfollow_button").click(function () {
-		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
+		console.log("prayer unFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
 		var $followselect = 'unfollow';
 		var request = jQ20.ajax({
 		url: 'tec_update_follow_table.php',
@@ -117,6 +143,10 @@ if(!$_SESSION['logged in']) {
 });
 </script>
 
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+
 <!-- Process the Send Email buttons click action -->
 <!-- Process the Send Email buttons click action -->
  <script type="text/javascript">
@@ -127,7 +157,7 @@ if(!$_SESSION['logged in']) {
 // NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button
 	jQ30("#sendMail").click(function () {
 		console.log("Send Email button clicked");
-		var sendaddress = 'tec_get_prayer_email_address.php';
+		var sendaddress = '../services/tec_get_prayer_email_address.php';
 		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
 		}, function (data) {
 			console.log(data);
@@ -141,6 +171,9 @@ if(!$_SESSION['logged in']) {
 });
 
 </script>
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
 
 
 <!-- Get Which Prayer Item's 'Details' button was clicked -->
@@ -216,99 +249,120 @@ jQ9(document).ready(function () {
 
 </head>
 <body>
-<div id="container">
-	<div id="header">
 
-		<div id="header_text">
-			<p>Bringing</p>
-			<p>our Family</p>
-			<p>Together</p>
-		</div>
-		<ul>
-			<li> <a href='/tecwelcome.php'>Home</a></li>
+<!--Navbar-->
 <?php
-	require_once('tecmenu.php');
-
+$activeparam = '5'; // sets nav element highlight
+require_once('tec_nav.php');
+require_once('includes/tec_footer.php');
 ?>
-		</ul>
-	</div>
+<!-- Intro Section -->
+    <div class="container-fluid profile_bg bottom-buffer">
+        <div class="row pt-2">
+            <div class="col-sm-12">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    How to create and follow Prayer Requests
+                </button>
+            </div><!-- col sm-12 -->
+        </div><!-- row -->
+        <div class="collapse" id="collapseExample">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-body">
+                        <h4 class="card-title">
+                            Viewing Prayer Requests 
+                        </h4>
+                        <ul class="card-text">
+                            <li>The table below lists all recent prayer requests (and praises) from your church family</li>
+                            <li>Click on a header arrow to sort columns ascending or descending</li>
+                            <li>Use the Search box to locate a specific prayer request or to find a family member's specific request</li>
+                            <li>Navigate pages using the Page Selector at the bottom of the page</li>
+                            <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
+                            <li>Click the <span class="btn btn-success">Details</span> button on a row below to see more information about a specific prayer request</li>
+                            <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
+                        </ul>
+                    </div><!-- card -->
+                </div><!-- col-sm-6 -->
+                <div class="col-sm-6">
+                    <div class="card card-body">
+                        <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
+                        <ul class="card-text">
+                            <li>Create your own prayer requests allowing your church family to pray with you</li>
+                            <ul>
+                                <li>Click the <span class="btn btn-success">New Prayer Requests</span> button to create a new prayer request</li>
+                                <li>Enter your request details and click the <span class="btn btn-primary">Submit</span> button send it out</li>
+                                <li>PLEASE NOTE that all prayer requests are reviewed by our church elders before they are posted to the site</li>
+                            </ul>
+                            <li>Manage your existing prayer requests</li>
+                            <ul>
+                                <li>Click the <span class="btn btn-success">My Prayer Requests</span> button to update an existing prayer request</li>
+                                <li>On the Edit Prayer Request list popup:</li>
+                                <ul>
+                                    <li>Click the <span class="btn btn-primary">Update</span> button on the selected prayer request to update with any new information</li>
+                                    <li>Click the <span class="btn btn-primary">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </div><!-- card -->
+                </div><!-- col-sm-6 -->
+            </div><!-- row -->
+        </div><!-- collapse -->
 
-<div id="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-image"
+                        style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-black-strong">
+                            <div class="w-100">
+                                <h3 class="card-title pt-2"><strong>FAMILY PRAYER REQUESTS</strong></h3>
+                                <p>View, follow, and manage prayer requests.</p>
+                            </div>
+                        </div>
+                    </div><!-- Card -->
+                </div><!-- Col-md-12 -->
+            </div><!-- Row -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card bg-light border-primary px-2 my-2 w-100">
+                        <div class="card-body">
+                            <div class="table-responsive-xs">
+                                <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%">
+                                    <thead class="table-dark">>
+                                        <tr>
+                                            <th class="dtr-regcolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Family Member</th>
+                                            <th>Type</th>
+                                            <th>Answered</th>
+                                            <th>Quick Glance</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot class="table-dark">
+                                        <tr>
+                                            <th class="dtr-regcolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Family Member</th>
+                                            <th>Type</th>
+                                            <th>Answered</th>
+                                            <th>Quick Glance</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Row -->
+    </div> <!-- Container -->
 
-<div id="prayerlogleft">
-			<br>
-			<h2>Active Prayer Requests</h2>
-			<hr>
-	<table id="profiletableleftprayer">
-	<tr>
-	<td class="headerdetail">How do I use this prayer list?</td>
-	</tr>
-	<tr>
-		<td class="headercontent">
-			<strong>Click on &quotDetails&quot to</strong>
-		</td>
-	</tr>
-	<tr>
-		<td class="headercontent">
-			View more details about this prayer request		
-		</td>
-	</tr>
-	<tr>
-		<td class="headercontent">
-			Follow this prayer request to receive updates and/or answers to it in email		
-		</td>
-	</tr>
-	<tr>
-		<td class="headercontent">
-			Let the person know you care by sending an email		
-		</td>
-	</tr>
-	<tr>
-		<td class="headercontent">
-			<br>
-		</td>
-	</tr>
-	</table>
-
-
-
-
-<table id="activeprayertable" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Opened</th>
-                <th>Family Member</th>
-                <th>Type</th>
-                <th>Answered</th>
-                <th>Quick Glance</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>id</th>
-                <th>Opened</th>
-                <th>Family Member</th>
-                <th>Type</th>
-                <th>Answered</th>
-                <th>Quick Glance</th>
-                <th>Details</th>
-            </tr>
-        </tfoot>
-    </table>
-<p></p>
-<p></p>
-<p></p>
-</div>
-	<div id="footerline"></div>
-	</div>
-	
-<?php
-	require_once('/tecfooter.php');
-?>
-
-</div>
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
 
 
 <!-- ************************************* -->

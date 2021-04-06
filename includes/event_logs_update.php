@@ -26,26 +26,26 @@ if(!$_SESSION['logged in'] && !$_SESSION['register_check'] && !$_SESSION['passwo
 
         if($logpointer == "admin_update") {
             $eventlogquery = "INSERT INTO " . $_SESSION['eventlogadminupdate'] . "(log_admin_update_who, log_admin_update_what, log_admin_update_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Admin Update function failed at db INSERT. Please notify your administrator with the following. Error : " . $mysql->error);
+            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Admin Update function failed at db INSERT. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
         }
         elseif($logpointer == "mail") {
 
             $eventlogquery = "INSERT INTO " . $_SESSION['eventlogmail'] . "(log_mail_who, log_mail_what, log_mail_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Mail function failed at db INSERT. Please notify your administrator with the following. Error : " . mysql_errno() . mysql_error());
+            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Mail function failed at db INSERT. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
         }
         elseif($logpointer == "prayer") {
 
-            //$eventlogquery = "INSERT INTO " . $_SESSION['eventlogprayer'] . "(log_prayer_who, log_prayer_what, log_prayer_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            //$eventlogresult = $mysql->query($eventlogquery)or die("Event Log Prayer function failed at db INSERT. Please notify your administrator with the following. Error : " . mysql_errno() . mysql_error());
+            $eventlogquery = "INSERT INTO " . $_SESSION['eventlogprayer'] . "(log_prayer_who, log_prayer_what, log_prayer_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
+            $eventlogresult = $mysql->query($eventlogquery)or die("Event Log Prayer function failed at db INSERT. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
         }
         if($logpointer == "profile_update") {
             $eventlogquery = "INSERT INTO " . $_SESSION['eventlogprofileupdate'] . " (log_profile_update_who, log_profile_update_what, log_profile_update_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            $eventlogresult = $mysql->query($eventlogquery) or die("Event Log Insert function failed at db INSERT into Event_Log_Profile table. Please notify your administrator with the following. Error : " . $mysql->error);
+            $eventlogresult = $mysql->query($eventlogquery) or die("Event Log Insert function failed at db INSERT into Event_Log_Profile table. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
             //$eventlogresultcount = $eventlogresult->num_rows;
         }
         if($logpointer == "report error") {
             $eventlogquery = "INSERT INTO " . $_SESSION['eventlogerrorupdate'] . " (log_error_update_who, log_error_update_what, log_error_update_metric) VALUES ('$logwho', '$logwhat', '$logmetric')";
-            $eventlogresult = $mysql->query($eventlogquery) or die("Event Log Insert function failed at db INSERT into Event_Log_error table. Please notify your administrator with the following. Error : " . $mysql->error);
+            $eventlogresult = $mysql->query($eventlogquery) or die("Event Log Insert function failed at db INSERT into Event_Log_error table. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
             //$eventlogresultcount = $eventlogresult->num_rows;
         }
 
