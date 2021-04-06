@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <settings>
     <customer>
-      <ID>002</ID> <!--Unique customer ID used to segregate environments and data-->
+      <ID>00002</ID> <!--Unique customer ID used to segregate environments and data-->
       <name>Evangel Classical School</name> <!--Formal customer name-->
       <nickname>ECS</nickname> <!--Customer acronym – assists to shorten name when customer chooses to do so, also helps reduce page space is limited-->
       <domain>ecs.ourfamilyconnections.org</domain>  <!--Actual URL to access the Site-->
