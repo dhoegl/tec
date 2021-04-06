@@ -11,7 +11,7 @@
       <homesplash>/_tenant/images/xxxxxx</homesplash> <!--Homepage Splash image-->
       <banner>url('/_tenant/images/x.jpg')</banner>  <!--Webpage banner image-->
       <banner_color>#F05F2B</banner_color> <!--Webpage top & bottom banner (header/footer) color-->
-      <banner_forecolor>#ffffff</banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
+      <banner_forecolor>White</banner_forecolor> <!--Webpage top & bottom banner (header/footer) foreground color-->
       <backsplash>url('/_tenant/images/cropped-ECS-2016-51.jpg')</backsplash> <!--Shown on homepage-->
       <backsplash_Welcome>url('/_tenant/images/cropped-ECS-2016-51.jpg')</backsplash_Welcome> <!--Shown on Master Welcome Page (welcome.php)-->
       <logo>url('/_tenant/images/TEC App Icon 08.png')</logo> <!--Customer’s logo image-->
