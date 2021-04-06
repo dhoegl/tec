@@ -61,13 +61,13 @@ if(!$_SESSION['logged in']) {
 
 <?php
 // Get User Login details
-   include('/includes/tec_get_loggedinuser.php');
+//    include('/includes/tec_get_loggedinuser.php');
 
 // Get Active Prayer List
-   include('/includes/tec_view_activeprayerlist.php');
+//    include('/includes/tec_view_activeprayerlist.php');
    
 // Get Active Prayer jQuery
-   include('/includes/tec_get_activeprayer_jquery.php');
+//    include('/includes/tec_get_activeprayer_jquery.php');
    
 ?>
 
