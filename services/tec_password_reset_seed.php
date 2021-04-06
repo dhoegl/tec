@@ -78,8 +78,8 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordheaders = "From:" . $passwordfrom . "\r\n";
     $passwordheaders .= "MIME-Version: 1.0\r\n";
     $passwordheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
-    // $emailworks = mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
+    // mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
+    $emailworks = mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
     // if($emailworks){
             // <script language='javascript'>
             //     alert("Your password reset has been received.\nCheck your email and follow the instructions to reset your password.")
