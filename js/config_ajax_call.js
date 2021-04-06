@@ -48,6 +48,7 @@ function xmlParser(xml) {
     var pretrimnametext;
     pretrimnametext = (navJQ(xml).find('name').text());
     nametext = pretrimnametext.trim();
+    // $_SESSION['themename'] = nametext;
     //Add name to Pages
     if (document.getElementById("custname")) {
         var name_element = document.getElementById("custname");
@@ -79,10 +80,12 @@ function xmlParser(xml) {
     var pretrimdomaintext;
     pretrimdomaintext = (navJQ(xml).find('domain').text());
     domaintext = pretrimdomaintext.trim();
+    // $_SESSION['themedomain'] = domaintext;
     //Add domain to Pages
     if (document.getElementById("domainname")) {
         var domain_element = document.getElementById("domainname");
         domain_element.innerHTML = domaintext;
+        // domain_element.TextContent = domaintext;
     }
     if (document.getElementById("themedomain")) {
         var theme_domain_element = document.getElementById("themedomain");
@@ -112,7 +115,6 @@ function xmlParser(xml) {
     d.setTime(d.getTime() + (days_until_expire * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
     document.cookie = cookie_name + "=" + regnotifylink + ";" + expires + ";path=/";
-
 
     //Get banner header/footer background color from config.xml
     var bannercolor;
@@ -160,6 +162,7 @@ function xmlParser(xml) {
     if (document.getElementById("footercolor")) {
         document.getElementById("footercolor").style.color = bannerforecolor;
     }
+    
     //Get banner image name from config.xml
     var bannertext;
     bannertext = (navJQ(xml).find('banner').text());
@@ -204,6 +207,7 @@ function xmlParser(xml) {
         // document.getElementById("homesplash").style.backgroundImage = welcomesplash;
         document.getElementById("homesubtitle_text").innerHTML = homesubtitletext;
     }
+
     //Get backsplash_Welcome image (half-screen image on Master Splash screen) name from config.xml
     var backsplash_Welcome_text;
     backsplash_Welcome_text = (navJQ(xml).find('backsplash_Welcome').text());
@@ -273,10 +277,10 @@ function xmlParser(xml) {
     if (eventsservicetext == 'NO') {
         var testeventsservice = document.getElementById("events_service");
         testeventsservice.style.display = "none";
-        var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
-        testeventsserviceclass0.style.display = "none";
-        var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
-        testeventsserviceclass1.style.display = "none";
+        // var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
+        // testeventsserviceclass0.style.display = "none";
+        // var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
+        // testeventsserviceclass1.style.display = "none";
 
     }
 //***********************************************************************************************************
@@ -290,13 +294,13 @@ function xmlParser(xml) {
         var prayerapprovaltextcontent = document.getElementById("newprayernotice");
         prayerapprovaltextcontent.innerHTML = prayerapprovaltext;
     }
-    //Get contact text (the 'Contact Us' email address embedded at tec_home) from config.xml
+    //Get contact text (the 'Contact Us' email address embedded at home) from config.xml
     var contacttext;
     contacttext = (navJQ(xml).find('contact').text());
     if (document.getElementById("contactus")) {
         document.getElementById("contactus").href = contacttext;
     }
-    //Get homepage text (the 'Go To Home Page' link embedded at tec_home) from config.xml
+    //Get homepage text (the 'Go To Home Page' link embedded at home) from config.xml
     var homepagetext;
     homepagetext = (navJQ(xml).find('homepage').text());
     if (document.getElementById("gotosite")) {

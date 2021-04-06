@@ -132,7 +132,7 @@ session_start();
                                     If you forgot your password, click on the FORGOT PASSWORD button above to be sent a temporary password to your email address on file
                                 </h6>
                                 <p class="fs-6 text-start white-text">
-                                    (version tec_20210130.1)
+                                    (version tec_20210405.1)
                                 </p>
                             </div><!--btn-->
                         </div><!--card-body-->
