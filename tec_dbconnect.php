@@ -43,7 +43,6 @@ session_start();
 	$_SESSION['eventlogmail'] = $event_log_mail;
     $_SESSION['localschools'] = $local_schools;
 
-
         $mysql = new mysqli($host, $username, $password, $db_name);
         if ($mysql->connect_error){
 			echo "<script language='javascript'>";
