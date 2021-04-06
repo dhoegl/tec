@@ -80,15 +80,15 @@ if( isset($_POST[email_address]) && isset($_POST[first_name]) && isset($_POST[la
     $passwordheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     // mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
     $emailworks = mail($passwordmailto,$passwordsubject,$passwordmessage,$passwordheaders);
-    // if($emailworks){
+    if($emailworks){
             // <script language='javascript'>
             //     alert("Your password reset has been received.\nCheck your email and follow the instructions to reset your password.")
             // </script>
     //     eventLogUpdate('mail', "User: " .  $username3, " Password Reset email sent", "SUCCESS");
-    // }
-    // else {
+    }
+    else {
     //     eventLogUpdate('mail', "User: " .  $username3, "Password Reset email sent", "FAILED");
-    // }
+    }
 
 
 
