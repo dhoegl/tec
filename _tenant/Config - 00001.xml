@@ -27,7 +27,7 @@
       <theme>TEC</theme>  <!-- Use theme to identify tenant.css file for customer-->
       <services-directory>YES</services-directory> <!-- Use services-directory to specify whether Directory feature is enabled for customer-->
       <services-calendar>YES</services-calendar> <!-- Use services-calendar to specify whether Calendar feature is enabled for customer-->
-      <services-prayer>YES</services-prayer> <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
+      <services-prayer>NO</services-prayer> <!-- Use services-prayer to specify whether Prayer Request feature is enabled for customer-->
       <services-events>NO</services-events> <!-- Use services-events to specify whether Events feature is enabled for customer-->
     </customer>
   </settings>
