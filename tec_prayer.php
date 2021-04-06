@@ -3,13 +3,13 @@ session_start();
 // Updated 20210406 - clean up for new TEC prayer module
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:../tec_welcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
-    require_once('../tec_dbconnect.php');
+    require_once('tec_dbconnect.php');
     require_once('fpdf/fpdf.php');
     // Event Log  trap
-    include('../includes/event_logs_update.php');
+    include('includes/event_logs_update.php');
 
 ?>
 
@@ -81,7 +81,7 @@ if(!$_SESSION['logged in']) {
 		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
 		var $followselect = 'follow';
 		var request = jQ20.ajax({
-		url: '../services/tec_update_follow_table.php',
+		url: 'services/tec_update_follow_table.php',
 		type: 'POST',
 		dataType: 'json',
 		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
@@ -114,14 +114,14 @@ if(!$_SESSION['logged in']) {
 		console.log("prayer unFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
 		var $followselect = 'unfollow';
 		var request = jQ20.ajax({
-		url: 'tec_update_follow_table.php',
+		url: 'services/tec_update_follow_table.php',
 		type: 'POST',
 		dataType: 'json',
 		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
 		});
 
 // Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		var checkfollow = 'tec_check_follow_table.php';
+		var checkfollow = 'services/tec_check_follow_table.php';
 			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
 			}, function (data) {
 				console.log(data);
@@ -157,7 +157,7 @@ if(!$_SESSION['logged in']) {
 // NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button
 	jQ30("#sendMail").click(function () {
 		console.log("Send Email button clicked");
-		var sendaddress = '../services/tec_get_prayer_email_address.php';
+		var sendaddress = 'services/tec_get_prayer_email_address.php';
 		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
 		}, function (data) {
 			console.log(data);
@@ -227,7 +227,7 @@ jQ9(document).ready(function () {
 </script>
 
 <!-- Detect 'Details' button click -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
  var jQ4 = jQuery.noConflict();
 	jQ4(document).ready(function() {
 		jQ4("#activeprayertable").on("click", "button", function () {
@@ -243,8 +243,8 @@ jQ9(document).ready(function () {
 		}
 		});
 
- });
-</script>
+ }); 
+</script> -->
 
 
 </head>
