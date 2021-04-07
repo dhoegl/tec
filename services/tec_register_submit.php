@@ -1,5 +1,7 @@
 <?php
-// Last Updated: 12/08/2020: Stripped most code away to verify functions work
+// Last Updated: 20210406: Updated event log to trap when email is sent upon registration request submission
+// Stripped most code away to verify functions work
+//  Arrived here from tec_register.php
 
     require_once('../tec_dbconnect.php');
     // Event Log  trap
@@ -76,7 +78,13 @@ if(isset($_POST['registersubmit']))
     $regmailheaders = "From:" . $regmailfrom . "\r\n";
     $regmailheaders .= "MIME-Version: 1.0\r\n";
     $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+    $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+    if($emailworks){
+        eventLogUpdate('mail', "User: " .  $firstname . " " . $lastname, "Requesting access email to administrators", "SUCCESS");
+        }
+    else {
+        eventLogUpdate('mail', "User: " .  $firstname . " " . $lastname, "Requesting access email to administrators", "FAILED");
+    }
 
     // Temp validation that report error is working
     eventLogUpdate('report error', 'tec_register_submit.php', 'Error: NONE', 'YAY!!');

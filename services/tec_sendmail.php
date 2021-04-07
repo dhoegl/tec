@@ -8,9 +8,7 @@ if(!$_SESSION['logged in']) {
 	exit();
 }
 // This function will send email to alert users and admins
-// 12/27 Test Script to validate arrival into this code
-//include('../includes/event_logs_update.php');
-eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Email sent using tec_sendmail", "LoginID: " . "empty");
+include('../includes/event_logs_update.php');
 
 function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail
     //$mailtype = type of email to send
@@ -20,6 +18,8 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
     //$param4 = 'FirstName' - approved member's first name
     //$param5 = 'LastName' - approved member's last name
     //$param6 = 'Email' - approved member's email address
+    include('../includes/event_logs_update.php');
+
     Switch ($mailtype){
         case 'approved_member': // From ajax_update_new_registrant.php
             //$cookie_name = "reg_notify_from";
@@ -53,8 +53,14 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
             $regmailheaders .= "Reply-To:" . $regmailfrom . "\r\n";
             $regmailheaders .= "MIME-Version: 1.0\r\n";
             $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-            mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
-
+            $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
+            if($emailworks){
+                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
+                    }
+                else {
+                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
+                }
+    
             break;
         default:
     }
