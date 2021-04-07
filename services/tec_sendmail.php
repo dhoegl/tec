@@ -53,12 +53,12 @@ include('../includes/event_logs_update.php');
             $regmailheaders .= "MIME-Version: 1.0\r\n";
             $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
-            if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
-                    }
-                else {
-                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
-                }
+            // if($emailworks){
+            //         eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
+            //         }
+            //     else {
+            //         eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
+            //     }
     
             break;
         default:
