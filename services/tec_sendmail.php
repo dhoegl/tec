@@ -1,7 +1,9 @@
 <?php
 // Send Mail scripts
-// Updated 2020/12/09
+// 'approved_member' from ajax_update_new_registrant.php
+// Updated 20210407
 // Getting error when this script is 'include'd in ajax_update_new_registrant.php
+// Error resolved. Include statement at ajax_update_new_registrant is sufficient - removed the include from this file.
 session_start();
 if(!$_SESSION['logged in']) {
 	header("location:../tec_welcome.php");
@@ -16,8 +18,6 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
     //$param4 = 'FirstName' - approved member's first name
     //$param5 = 'LastName' - approved member's last name
     //$param6 = 'Email' - approved member's email address
-
-// include('../includes/event_logs_update.php');
 
     Switch ($mailtype){
         case 'approved_member': // From ajax_update_new_registrant.php
