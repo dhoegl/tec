@@ -5,7 +5,7 @@
     if ( isset($_POST['Selected']) ) {
         require('../tec_dbconnect.php');
         include('../includes/event_logs_update.php');
-        include('tec_sendmail.php');
+        include('../tec_sendmail.php');
         $Selected2 = $_POST['Selected'];
         $Directory2 = $_POST['Directory'];
         $Login2 = $_POST['Login'];
