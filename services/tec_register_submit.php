@@ -80,10 +80,16 @@ if(isset($_POST['registersubmit']))
     $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
     if($emailworks){
-        eventLogUpdate('mail', "User: " .  $firstname . " " . $lastname, "Requesting access email to administrators", "SUCCESS");
+        eventLogUpdate('mail', "User: " .  $first_name . " " . $last_name, "Requesting access email to administrators", "SUCCESS");
+        ?>   
+        <!-- Notify registrant that their request is being reviewed.  -->
+        <script language='javascript'>
+            alert("Your request has been successfully submitted.\nPlease allow 24-48 hours for our administrators to approve your request.");
+        </script>
+    <?php
         }
     else {
-        eventLogUpdate('mail', "User: " .  $firstname . " " . $lastname, "Requesting access email to administrators", "FAILED");
+        eventLogUpdate('mail', "User: " .  $first_name . " " . $last_name, "Requesting access email to administrators", "FAILED");
     }
 
     // Temp validation that report error is working
