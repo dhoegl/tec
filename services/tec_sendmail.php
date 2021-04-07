@@ -8,8 +8,6 @@ if(!$_SESSION['logged in']) {
 	exit();
 }
 // This function will send email to alert users and admins
-include('../includes/event_logs_update.php');
-
 function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param6) { // params based on each call to sendmail
     //$mailtype = type of email to send
     //$param1 = 'Selected' - which family the approved member is being added to
@@ -18,7 +16,8 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
     //$param4 = 'FirstName' - approved member's first name
     //$param5 = 'LastName' - approved member's last name
     //$param6 = 'Email' - approved member's email address
-    // include('../includes/event_logs_update.php');
+
+include('../includes/event_logs_update.php');
 
     Switch ($mailtype){
         case 'approved_member': // From ajax_update_new_registrant.php
