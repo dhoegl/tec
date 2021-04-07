@@ -246,16 +246,20 @@ function xmlParser(xml) {
     directoryservicetext = (navJQ(xml).find('services-directory').text());
     // console.log("directoryservicetext = " + directoryservicetext);
     if (directoryservicetext == 'NO') {
-        var testdirectoryservice = document.getElementById("directory_service");
-        testdirectoryservice.style.display = "none";
+        if (document.getElementById("directory_service")) {
+            var testdirectoryservice = document.getElementById("directory_service");
+            testdirectoryservice.style.display = "none";
+        }
     }
     // Check for 'Calendar Service' subscription (enables viewing of Calendar functionality) from config.xml
     var calendarservicetext;
     calendarservicetext = (navJQ(xml).find('services-calendar').text());
     // console.log("calendarservicetext = " + calendarservicetext);
     if (calendarservicetext == 'NO') {
-        var testcalendarservice = document.getElementById("calendar_service");
-        testcalendarservice.style.display = "none";
+        if(document.getElementById("calendar_service")) {
+            var testcalendarservice = document.getElementById("calendar_service");
+            testcalendarservice.style.display = "none";
+        }
     }
 
     // Check for 'Prayer Service' subscription (enables prayer request functionality) from config.xml
@@ -263,21 +267,24 @@ function xmlParser(xml) {
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     // console.log("prayerservicetext = " + prayerservicetext);
     if (prayerservicetext == 'NO') {
-        var testprayerservice = document.getElementById("prayer_service");
-        testprayerservice.style.display = "none";
+        if(document.getElementById("prayer_service")) {
+            var testprayerservice = document.getElementById("prayer_service");
+            testprayerservice.style.display = "none";
+        }
     }
     //Check for 'Events Service' subscription (enables Events management functionality) from config.xml
     var eventsservicetext;
     eventsservicetext = (navJQ(xml).find('services-events').text());
     // console.log("eventsservicetext = " + eventsservicetext);
     if (eventsservicetext == 'NO') {
-        var testeventsservice = document.getElementById("events_service");
-        testeventsservice.style.display = "none";
-        var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
-        testeventsserviceclass0.style.display = "none";
-        var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
-        testeventsserviceclass1.style.display = "none";
-
+        if(document.getElementById("events_service")) {
+            var testeventsservice = document.getElementById("events_service");
+            testeventsservice.style.display = "none";
+            // var testeventsserviceclass0 = document.getElementsByClassName("events_service")[0];
+            // testeventsserviceclass0.style.display = "none";
+            // var testeventsserviceclass1 = document.getElementsByClassName("events_service")[1];
+            // testeventsserviceclass1.style.display = "none";
+        }
     }
 //***********************************************************************************************************
 //***********************************************************************************************************

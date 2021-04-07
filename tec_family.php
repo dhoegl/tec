@@ -202,11 +202,6 @@ if(!$_SESSION['logged in']) {
             </div><!-- col-sm-12 -->
         </div><!-- row -->
     </div> <!-- Container -->
-<!-- Bug workaround due to service choice model -->
-<div id="directory_service"></div>
-<div id="calendar_service"></div>
-<div id="prayer_service"></div>
-<div id="events_service"></div>
 
   <!-- SCRIPTS -->
   <!-- Bootstrap tooltips -->
