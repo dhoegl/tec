@@ -94,6 +94,12 @@ if(isset($_POST['registersubmit']))
 
     // Temp validation that report error is working
     eventLogUpdate('report error', 'tec_register_submit.php', 'Error: NONE', 'YAY!!');
+    ?>   
+    <!-- Notify registrant that their request is being reviewed.  -->
+    <script language='javascript'>
+        alert("An error has occurred when attempting to submit your registration.\nPlease contact your OurFamilyConnections administrator.");
+    </script>
+<?php
 
 }
 else {
