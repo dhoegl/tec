@@ -239,7 +239,7 @@
 ?>
 
     <!-- Tenant Configuration JavaScript Call -->
-    <!-- <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script> -->
+    <script type="text/javascript" src="/js/tec_config_ajax_call.js"></script>
 
 </body>
 </html>
