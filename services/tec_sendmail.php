@@ -21,21 +21,6 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
 
     Switch ($mailtype){
         case 'approved_member': // From ajax_update_new_registrant.php
-            //$cookie_name = "reg_notify_from";
-            //if(!isset($_COOKIE[$cookie_name])) {
-                //echo "Cookie named '" . $cookie_name . "' is not set!";
-            //} else {
-                //echo "Cookie '" . $cookie_name . "' is set!<br>";
-                //$regmailfrom = $_COOKIE[$cookie_name];
-            //}
-            //$cookie_name = "reg_notify_link";
-            //if(!isset($_COOKIE[$cookie_name])) {
-                //echo "Cookie named '" . $cookie_name . "' is not set!";
-            //} else {
-                //echo "Cookie '" . $cookie_name . "' is set!<br>";
-            //    $regmaillink = "http://" . $_COOKIE[$cookie_name];
-            //}
-            //$regmaillink = "http://" . $_COOKIE[$cookie_name];
             $regmaillink = "https://tec.ourfamilyconnections.org";
             $regmailto = $param6;
             $regmailsubject = "Approved access to TEC Family Connections"."\n..";
@@ -53,12 +38,12 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
             $regmailheaders .= "MIME-Version: 1.0\r\n";
             $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
-            // if($emailworks){
-            //         eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
-            //         }
-            //     else {
-            //         eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
-            //     }
+            if($emailworks){
+                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
+                    }
+                else {
+                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
+                }
     
             break;
         default:
