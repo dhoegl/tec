@@ -14,10 +14,11 @@ if(!$_SESSION['logged in']) {
 		$activeprayercount = $activeprayerresult->num_rows;
 
 		$listarray = array();
-	
+		$empty_list = array();
+
 		if ($activeprayercount == 0)
 		{
-			$empty_list = "No prayer data";
+			$empty_list = array('data' => 'No prayer data');
 			echo json_encode($empty_list);
 		}
 		while($activerow = $activeprayerresult->fetch_assoc()) {
