@@ -749,7 +749,7 @@ var jQ55 = jQuery.noConflict();
     // echo "console.log('ARRIVED at script to include familylist, childlist, studentlist');";
     // echo "</script>";
 // Get Family Details List
-    //    include('includes/tec_view_familylist.php');
+    //    include('includes/tec_view_familylist2.php');
 // Get Child List
        include('includes/tec_view_childlist.php');
 // Get Student List
