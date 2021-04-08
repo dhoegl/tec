@@ -4,7 +4,7 @@ jQ40(document).ready(function() {
     jQ40('#activeprayertable').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "tec_getactiveprayer.php",
+        "ajax": "../tec_getactiveprayer.php",
         "orderClasses": false,
          "columnDefs": [ 
 			{
