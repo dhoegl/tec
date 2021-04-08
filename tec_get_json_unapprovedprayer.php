@@ -10,8 +10,8 @@ if(!$_SESSION['logged in']) {
 //	{
 /*Query unapproved prayer listing: visible = 3 (all) and status = 0 */
 		$unapprovedprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, m.Name_1 AS firsthim, m.Name_2 AS firsther, m.Surname AS last, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['dirtablename'] . " m on m.idDirectory = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='0' ORDER BY p.create_date DESC";
-		$unapprovedprayerresult = @mysql_query($unapprovedprayerquery) or die(" SQL query error at select active prayers. Error:" . mysql_errno() . " " . mysql_error());
-		$unapprovedprayercount = @mysql_num_rows($unapprovedprayerresult);
+		$unapprovedprayerresult = $mysql->query($unapprovedprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
+		$unapprovedprayercount = $unapprovedprayerresult->num_rows;
 
 		$listarray = array();
 
@@ -20,7 +20,7 @@ if(!$_SESSION['logged in']) {
 			echo "no prayer data";
 			exit();
 		}
-		while($unapprovedrow = @mysql_fetch_assoc($unapprovedprayerresult)) {
+		while($unapprovedrow = $unapprovedprayerresult->fetch_assoc()) {
 				$prayerupdate = date("M-d-Y", strtotime($unapprovedrow['prayerupdatedate']));
 				$prayerid = $unapprovedrow['prayerid'];
 				$prayer_title = $unapprovedrow['prayertitle'];

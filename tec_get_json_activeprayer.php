@@ -10,8 +10,8 @@ if(!$_SESSION['logged in']) {
 //	{
 /*Query active prayer listing: visible = 3 (all) and status = 1 */
 		$activeprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, m.Name_1 AS firsthim, m.Name_2 AS firsther, m.Surname AS last, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['dirtablename'] . " m on m.idDirectory = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' ORDER BY p.create_date DESC";
-		$activeprayerresult = @mysql_query($activeprayerquery) or die(" SQL query error at select active prayers. Error:" . mysql_errno() . " " . mysql_error());
-		$activeprayercount = @mysql_num_rows($activeprayerresult);
+		$activeprayerresult = $mysql->query($activeprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
+		$activeprayercount = $activeprayerresult->num_rows;
 
 		$listarray = array();
 
@@ -19,17 +19,17 @@ if(!$_SESSION['logged in']) {
 		{
 			echo "no prayer data";
 		}
-		while($activerow = @mysql_fetch_assoc($activeprayerresult)) {
+		while($activerow = $activeprayerresult->fetch_assoc()) {
 				$prayerupdate = date("M-d-Y", strtotime($activerow['prayerupdatedate']));
 				$prayerid = $activerow['prayerid'];
 				$prayer_title = $activerow['prayertitle'];
 				$prayer_text = $activerow['prayertext'];
 // Append Prayer Update text to initial active prayer text
 				$updateprayerquery = "SELECT * FROM " . $_SESSION['prayerupdate'] . " WHERE prayer_id = '" . $prayerid . "' order by update_id";
-				$updateprayerresult = @mysql_query($updateprayerquery) or die(" SQL query error at select from prayerupdate. Error:" . mysql_errno() . " " . mysql_error());
-				$updateprayercount = @mysql_num_rows($updateprayerresult);
+				$updateprayerresult = $mysql->query($updateprayerquery) or die(" SQL query error at select from prayerupdate. Error #: " . $mysql->errno . " : " . $mysql->error);
+				$updateprayercount = $updateprayerresult->num_rows;
 				if(!$updateprayercount == 0) {
-					while($updateprayerrow = @mysql_fetch_assoc($updateprayerresult)) {
+					while($updateprayerrow = $updateprayerresult->fetch_assoc()) {
 						$updateprayerdate = date("M-d-Y", strtotime($updateprayerrow['update_date']));
 						$updateprayertext = $updateprayerrow['update_text'];
 						$prayer_text .= "\r\n\r\n";

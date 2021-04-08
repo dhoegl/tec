@@ -1,7 +1,7 @@
 <script type="text/javascript">
  var jQ10 = jQuery.noConflict();
  jQ10(document).ready(function () {
-	var activeprayerjson = 'tec_get_json_activeprayer.php'
+	var activeprayerjson = '../tec_get_json_activeprayer.php'
 	jQ10("#activeprayertable tbody").on("click", function () {
 		jQ10("td.praypraise").empty();
 		jQ10("td.praydate").empty();
