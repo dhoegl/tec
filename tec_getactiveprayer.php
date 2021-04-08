@@ -14,7 +14,12 @@ if(!$_SESSION['logged in']) {
 		$activeprayercount = $activeprayerresult->num_rows;
 
 		$listarray = array();
-
+?>    
+		<script language='javascript'>
+			alert('Made it inside tec_getactiveprayer. Activeprayercount : ' + '<?php echo $activeprayercount; ?>')
+		</script>
+<?php
+	
 		if ($activeprayercount == 0)
 		{
 			echo "no prayer data";
