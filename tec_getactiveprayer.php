@@ -14,15 +14,11 @@ if(!$_SESSION['logged in']) {
 		$activeprayercount = $activeprayerresult->num_rows;
 
 		$listarray = array();
-?>    
-		<script language='javascript'>
-			alert('Made it inside tec_getactiveprayer. Activeprayercount : ' + '<?php echo $activeprayercount; ?>')
-		</script>
-<?php
 	
 		if ($activeprayercount == 0)
 		{
-			echo "no prayer data";
+			$empty_list = "No prayer data";
+			echo json_encode($empty_list);
 		}
 		while($activerow = $activeprayerresult->fetch_assoc()) {
 				$prayerupdate = date("M-d-Y", strtotime($activerow['prayerupdatedate']));
