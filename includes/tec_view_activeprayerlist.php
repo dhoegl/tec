@@ -4,7 +4,7 @@ jQ8(document).ready(function() {
     jQ8('#activeprayertable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
-        "ajax": "../tec_getactiveprayer.php",
+        "ajax": "tec_getactiveprayer.php",
 //			"bJQueryUI": true,
 //			"sScrollY": "600px",
 //			"bPaginate": true,
