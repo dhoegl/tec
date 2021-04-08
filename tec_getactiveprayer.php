@@ -22,6 +22,7 @@ if(!$_SESSION['logged in']) {
 			echo json_encode($empty_list);
 		}
 		while($activerow = $activeprayerresult->fetch_assoc()) {
+				$activeprayercontrol = "<tr><td></td>";
 				$prayerupdate = date("M-d-Y", strtotime($activerow['prayerupdatedate']));
 				$prayerid = $activerow['prayerid'];
 				$prayer_title = $activerow['prayertitle'];
@@ -40,7 +41,7 @@ if(!$_SESSION['logged in']) {
 
 				// Stores each database record to an array 
 //					$buildjson = array('prayerdate' => $prayerupdate, 'id' => $prayerid, 'title' => $prayer_title, 'prayertext' => $prayer_text, 'fullname' => $fullname, 'glance' => $glance); 
-					$buildjson = array($prayerid, $prayerupdate, $fullname, $praypraise, $prayanswer, $glance, $detail_button, $prayer_text); 
+					$buildjson = array($activeprayercontrol, $prayerid, $prayerupdate, $fullname, $praypraise, $prayanswer, $glance, $detail_button, $prayer_text); 
  					// Adds each array into the container array 
  					array_push($listarray, $buildjson); 
 			}
