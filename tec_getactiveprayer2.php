@@ -20,7 +20,7 @@ if(!$_SESSION['logged in']) {
 
 		if ($activeprayercount == 0)
 		{
-            $buildjson = array("no prayer data", " ", " ", " ", " ", " ", " ", " ", );
+            $buildjson = array("no prayer data", " ", " ", " ", " ", " ", " ", " ", " ", );
             array_push($listarray, $buildjson);
             $listarray = array('data' => $listarray);
             echo json_encode($listarray);
