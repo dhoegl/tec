@@ -40,7 +40,7 @@ if(!$_SESSION['logged in']) {
 					$prayanswer = "<td> </td>";
 				}
 				$prayer_title = "<td>" . $activerow['prayertitle'] . "</td>";
-				$glance = "<td>" . substr($activerow['prayertext'],0,50) . "...</td>";
+				$glance = "<td>" . substr($activerow['prayertext'],0,75) . "...</td>";
 				$detail_button = "<td><a class='btn btn-success' href='#'>Details</a></td>";
 				$prayer_text = "<td>" . $activerow['prayertext'] . "</td></tr>";
 
