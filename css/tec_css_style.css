@@ -56,7 +56,7 @@
 	table#activeprayertable .dtr-control {
 		visibility: hidden;
 	}
-	table#activeprayertable .dtr-regcolumn {
+	.dtr-prayercolumn {
 		visibility: hidden;
 	}
     /* .small-screen-alert {

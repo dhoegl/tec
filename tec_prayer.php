@@ -331,7 +331,7 @@ require_once('includes/tec_footer.php');
                                 <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%">
                                     <thead class="table-dark">>
                                         <tr>
-                                            <th class="dtr-regcolumn"></th>
+                                            <th class="dtr-prayercolumn"></th>
                                             <th>id</th>
                                             <th>Opened</th>
                                             <th>Family Member</th>
@@ -344,7 +344,7 @@ require_once('includes/tec_footer.php');
                                     </thead>
                                     <tfoot class="table-dark">
                                         <tr>
-                                            <th class="dtr-regcolumn"></th>
+                                            <th class="dtr-prayercolumn"></th>
                                             <th>id</th>
                                             <th>Opened</th>
                                             <th>Family Member</th>
