@@ -36,32 +36,28 @@ jQ8(document).ready(function() {
        		"targets": [ 1 ] 
        		},
 			{
-       		className: "prayer_id",
-       		"targets": [ 2 ] 
-       		},
-			{
         		className: "prayer_who",
-        		"targets": [ 3 ] 
+        		"targets": [ 2 ] 
         	},
 			{
         		className: "type",
-        		"targets": [ 4 ] 
+        		"targets": [ 3 ] 
         	},
 			{
         		className: "prayer_answer",
-        		"targets": [ 5 ] 
+        		"targets": [ 4 ] 
         	},
 			{
         		className: "prayer_title",
-        		"targets": [ 6 ] 
+        		"targets": [ 5 ] 
         	},
 			{
         		className: "detailscolumn",
-        		"targets": [ 7 ] 
+        		"targets": [ 6 ] 
         	},
 			{
         		className: "full_text", "visible": false,
-        		"targets": [ 8 ] 
+        		"targets": [ 7 ] 
         	}
         ]
 
