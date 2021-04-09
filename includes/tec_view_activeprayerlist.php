@@ -23,7 +23,7 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
 			"columnDefs": [ 
 			{
-            "targets": -3,
+            "targets": -2,
             "data": null,
             "defaultContent": "<a class='btn btn-success'>Details</a>"
 			},
