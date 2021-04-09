@@ -53,9 +53,9 @@
 /* Hide the + and - icons when screen width is wide enough to display all columns */
 /* tec Directory table */
 @media screen and (min-width: 870px) {
-	/* table#activeprayertable .dtr-control {
+	table#activeprayertable .dtr-control {
 		visibility: hidden;
-	} */
+	}
 	table#activeprayertable .dtr-regcolumn {
 		visibility: hidden;
 	}
