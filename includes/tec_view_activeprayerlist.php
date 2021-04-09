@@ -23,7 +23,7 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
 			"columnDefs": [ 
 			{
-            "targets": -1,
+            "targets": -2,
             "data": null,
             "defaultContent": "<a class='btn btn-success'>Details</a>"
 			},
@@ -34,30 +34,34 @@ jQ8(document).ready(function() {
 			{
        		className: "prayer_update",
        		"targets": [ 1 ] 
-       	},
+       		},
+			{
+       		className: "prayer_id",
+       		"targets": [ 2 ] 
+       		},
 			{
         		className: "prayer_who",
-        		"targets": [ 2 ] 
-        	},
-			{
-        		className: "type",
         		"targets": [ 3 ] 
         	},
 			{
-        		className: "prayer_answer",
+        		className: "type",
         		"targets": [ 4 ] 
         	},
 			{
-        		className: "prayer_title",
+        		className: "prayer_answer",
         		"targets": [ 5 ] 
         	},
 			{
-        		className: "detailscolumn",
+        		className: "prayer_title",
         		"targets": [ 6 ] 
         	},
 			{
-        		className: "full_text", "visible": false,
+        		className: "detailscolumn",
         		"targets": [ 7 ] 
+        	},
+			{
+        		className: "full_text", "visible": false,
+        		"targets": [ 8 ] 
         	}
         ]
 
