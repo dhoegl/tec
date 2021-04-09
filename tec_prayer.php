@@ -49,8 +49,8 @@ if(!$_SESSION['logged in']) {
   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
 
 
@@ -322,6 +322,7 @@ require_once('includes/tec_footer.php');
                     </div><!-- Card -->
                 </div><!-- Col-md-12 -->
             </div><!-- Row -->
+<!-- ******************************* Active Prayer List Card ************************************** -->
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card bg-light border-primary px-2 my-2 w-100">
@@ -442,7 +443,8 @@ require_once('includes/tec_footer.php');
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script> -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script>
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
