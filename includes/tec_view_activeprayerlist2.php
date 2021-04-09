@@ -32,7 +32,7 @@ jQ8(document).ready(function() {
             },
 			{
         		className: "full_text", "visible": false,
-        		targets: [ -1 ] 
+        		targets: [ -0 ] 
         	}
         ]
 
