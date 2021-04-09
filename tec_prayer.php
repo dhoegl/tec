@@ -64,7 +64,7 @@ if(!$_SESSION['logged in']) {
    include('includes/tec_get_loggedinuser.php');
 
 // Get Active Prayer List
-   include('includes/tec_view_activeprayerlist.php');
+   include('includes/tec_view_activeprayerlist2.php');
    
 // Get Active Prayer jQuery
    include('includes/tec_get_activeprayer_jquery.php');
@@ -337,6 +337,7 @@ require_once('includes/tec_footer.php');
                                             <th>Family Member</th>
                                             <th>Type</th>
                                             <th>Answered</th>
+                                            <th>Title</th>
                                             <th>Quick Glance</th>
                                             <th>Details</th>
                                         </tr>
@@ -349,6 +350,7 @@ require_once('includes/tec_footer.php');
                                             <th>Family Member</th>
                                             <th>Type</th>
                                             <th>Answered</th>
+                                            <th>Title</th>
                                             <th>Quick Glance</th>
                                             <th>Details</th>
                                         </tr>
