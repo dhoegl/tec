@@ -1,5 +1,6 @@
 <script type="text/javascript" charset="utf-8">
 // ****************************** Extract Children Data **************************************
+// Called by tec_family (directory)
     // console.log("ARRIVED at tec_view_familylist2 script");
     var jQ15 = jQuery.noConflict();
     jQ15(document).ready(function () {

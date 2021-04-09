@@ -1,4 +1,6 @@
 <script type="text/javascript">
+// ****************************** Extract Actkve Prayer Data **************************************
+// Called by tec_prayer.php
 var jQ8 = jQuery.noConflict();
 jQ8(document).ready(function() {
     jQ8('#activeprayertable').DataTable({
@@ -23,7 +25,7 @@ jQ8(document).ready(function() {
 			{
             "targets": -2,
             "data": null,
-            "defaultContent": "<button class='my_popup_open button_flat_green_small'>Details</button>"
+            "defaultContent": "<a class='btn btn-success'>Details</a>"
 			},
 			{
         		className: "indexcol",
