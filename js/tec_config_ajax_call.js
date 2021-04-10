@@ -267,6 +267,7 @@ function xmlParser(xml) {
     var superuser;
     var username;
     var superuser_status;
+    var data2;
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     console.log("prayerservicetext = " + prayerservicetext);
     //Check to see if Super User is logged in
@@ -277,9 +278,9 @@ function xmlParser(xml) {
         dataType: 'json',
         data: { superuser: username }
     });
-    superuser_check.done(function(data){
-        console.log(data);
-        if (data.responseJSON == 'SUPERUSER'){ 
+    superuser_check.done(function(data2){
+        console.log(data2);
+        if (data2.responseJSON == 'SUPERUSER'){ 
             superuser = '1';
         }
         else{
