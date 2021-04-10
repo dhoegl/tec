@@ -266,6 +266,7 @@ function xmlParser(xml) {
     var prayerservicetext;
     var superuser;
     var username;
+    var superuser_status;
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     console.log("prayerservicetext = " + prayerservicetext);
     //Check to see if Super User is logged in
