@@ -264,9 +264,26 @@ function xmlParser(xml) {
 
     // Check for 'Prayer Service' subscription (enables prayer request functionality) from config.xml
     var prayerservicetext;
+    var superuser;
+    var username;
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     console.log("prayerservicetext = " + prayerservicetext);
-    var superuser="<?php echo $_SESSION['super_admin'];?>";
+    //Check to see if Super User is logged in
+    var sucheckJQ = jQuery.noConflict();
+    var superuser_check = sucheckJQ.ajax({
+        url: 'services/tec_superuser_check.php',
+        type: 'POST',
+        dataType: 'json',
+        data: { superuser: username }
+    });
+    superuser_check.done(function(data){
+    if (data.superuser_status == 'SUPERUSER'){ 
+        superuser = '1';
+    }
+    else{
+        superuser = '0';        
+    }
+
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
         if(document.getElementById("prayer_service")) {
