@@ -281,14 +281,14 @@ function xmlParser(xml) {
     superuser_check.done(function(data2){
         console.log(data2);
         if (data2.responseJSON == 'SUPERUSER'){ 
-            superuser = '1';
+            superuser = 1;
         }
         else{
-            superuser = '0';        
+            superuser = 0;        
         }
     });
 
-    console.log("superuser = " . superuser);
+    console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
         if(document.getElementById("prayer_service")) {
             var testprayerservice = document.getElementById("prayer_service");
