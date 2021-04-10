@@ -279,7 +279,7 @@ function xmlParser(xml) {
     });
     superuser_check.done(function(data){
         console.log(data);
-        if (data.responseText == 'SUPERUSER'){ 
+        if (data.responseJSON == 'SUPERUSER'){ 
             superuser = '1';
         }
         else{
