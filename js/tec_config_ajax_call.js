@@ -283,6 +283,7 @@ function xmlParser(xml) {
     else{
         superuser = '0';        
     }
+});
 
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
