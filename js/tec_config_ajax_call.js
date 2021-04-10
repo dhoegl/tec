@@ -275,7 +275,7 @@ function xmlParser(xml) {
     //Check for 'Events Service' subscription (enables Events management functionality) from config.xml
     var eventsservicetext;
     eventsservicetext = (navJQ(xml).find('services-events').text());
-    // console.log("eventsservicetext = " + eventsservicetext);
+    console.log("eventsservicetext = " + eventsservicetext);
     if (eventsservicetext == 'NO') {
         if(document.getElementById("events_service")) {
             var testeventsservice = document.getElementById("events_service");
