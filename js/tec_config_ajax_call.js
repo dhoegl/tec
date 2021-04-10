@@ -288,7 +288,7 @@ function xmlParser(xml) {
         }
     });
 
-    console.log("superuser = " + superuser);
+    console.log("superuser = " . superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
         if(document.getElementById("prayer_service")) {
             var testprayerservice = document.getElementById("prayer_service");
