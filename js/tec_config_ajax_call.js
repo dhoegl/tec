@@ -278,13 +278,14 @@ function xmlParser(xml) {
         data: { superuser: username }
     });
     superuser_check.done(function(data){
-    if (data.superuser_status == 'SUPERUSER'){ 
-        superuser = '1';
-    }
-    else{
-        superuser = '0';        
-    }
-});
+        console.log(data);
+        if (data.responseText == 'SUPERUSER'){ 
+            superuser = '1';
+        }
+        else{
+            superuser = '0';        
+        }
+    });
 
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {

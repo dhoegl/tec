@@ -5,7 +5,6 @@
 //session_start();
 //session_destroy();
 error_reporting(E_ERROR);
-
 require_once('../tec_dbconnect.php');
 
 if(isset($_POST['superuser']) )
