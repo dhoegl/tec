@@ -280,12 +280,12 @@ function xmlParser(xml) {
     });
     superuser_check.done(function(data2){
         console.log(data2);
-        if (data2.responseJSON == 'SUPERUSER'){ 
-            superuser = 1;
-        }
-        else{
-            superuser = 0;        
-        }
+        // if (data2.responseJSON == 'SUPERUSER'){ 
+        //     superuser = 1;
+        // }
+        // else{
+        //     superuser = 0;        
+        // }
     });
 
     console.log("superuser = " + superuser);
