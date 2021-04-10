@@ -65,11 +65,11 @@
         {
           if($activeparam == '5')
           {
-              echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
+              echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
           }
           else
           {
-              echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
+              echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
           }
         }
         if($activeparam == '6')
