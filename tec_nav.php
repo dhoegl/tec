@@ -61,13 +61,16 @@
         {
             echo '<li class="nav-item" id="calendar_service"><a class="nav-link" href="tec_calendar.php">Calendar</a></li>';
         }
-        if($activeparam == '5')
+        if($_SESSION['super_admin'] == '1')
         {
-            echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
-        }
-        else
-        {
-            echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
+          if($activeparam == '5')
+          {
+              echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
+          }
+          else
+          {
+              echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="#">Prayer</a></li>';
+          }
         }
         if($activeparam == '6')
         {
