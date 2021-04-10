@@ -265,7 +265,7 @@ function xmlParser(xml) {
     // Check for 'Prayer Service' subscription (enables prayer request functionality) from config.xml
     var prayerservicetext;
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
-    // console.log("prayerservicetext = " + prayerservicetext);
+    console.log("prayerservicetext = " + prayerservicetext);
     if (prayerservicetext == 'NO') {
         var superuser='<?php echo $_SESSION["super_admin"];?>';
         if(superuser != '1') {
