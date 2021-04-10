@@ -267,7 +267,8 @@ function xmlParser(xml) {
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     // console.log("prayerservicetext = " + prayerservicetext);
     if (prayerservicetext == 'NO') {
-        if($_SESSION['super_admin'] != '1') {
+        var superuser='<?php echo _SESSION['super_admin'];?>';
+        if(superuser != '1') {
            if(document.getElementById("prayer_service")) {
                 var testprayerservice = document.getElementById("prayer_service");
                 testprayerservice.style.display = "none";
