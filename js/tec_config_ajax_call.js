@@ -278,8 +278,8 @@ function xmlParser(xml) {
         dataType: 'json',
         data: { superuser: username }
     });
-    superuser_check.done(function(data2){
-        console.log(data2);
+    superuser_check.done(function(result, status, xhr){
+        console.log(result);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
         // }
