@@ -259,17 +259,17 @@ require_once('includes/tec_footer.php');
 <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
         <div class="row pt-2">
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     How to...
                 </button>
             </div><!-- col sm-4 -->
-			<div class="col-sm-4">
+			<div class="col-xs-4">
 					<button class="btn btn-success btn-sm" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
 						New
 					</button>
 				</div><!-- col sm-4 -->
-				<div class="col-sm-4">
+				<div class="col-xs-4">
 					<button class="btn btn-success btn-sm" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
 						Edit
 					</button>
