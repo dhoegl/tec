@@ -279,7 +279,7 @@ function xmlParser(xml) {
         data: { superuser: username }
     });
     superuser_check.done(function(result, status, xhr){
-        console.log('result = ' . result);
+        console.log('result = ' + result);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
         // }
@@ -288,7 +288,7 @@ function xmlParser(xml) {
         // }
     });
     superuser_check.fail(function(jqXHR, textStatus, errorThrown){
-        console.log('fail result = ' . textStatus);
+        console.log('fail result = ' + textStatus);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
         // }
