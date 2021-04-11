@@ -259,11 +259,21 @@ require_once('includes/tec_footer.php');
 <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
         <div class="row pt-2">
-            <div class="col-sm-12">
+            <div class="col-sm-4">
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     How to create and follow Prayer Requests
                 </button>
-            </div><!-- col sm-12 -->
+            </div><!-- col sm-4 -->
+            <div class="col-sm-4">
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
+                    New Prayer Request
+                </button>
+            </div><!-- col sm-4 -->
+            <div class="col-sm-4">
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseMyPrayer" aria-expanded="false" aria-controls="collapseMyPrayer">
+                    Manage My Prayer Requests
+                </button>
+            </div><!-- col sm-4 -->
         </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
