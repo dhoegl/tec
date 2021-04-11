@@ -272,13 +272,14 @@ function xmlParser(xml) {
     console.log("prayerservicetext = " + prayerservicetext);
     //Check to see if Super User is logged in
     var sucheckJQ = jQuery.noConflict();
-    sucheckJQ.ajax({
+    var blah = sucheckJQ.ajax({
         url: '../services/tec_superuser_check.php',
         type: 'POST',
         // dataType: 'json',
         data: { superuser: username }
+    });
     // superuser_check.done(function(result, status, xhr){
-    .done(function(result, status, xhr){
+    blah.done(function(result, status, xhr){
             console.log('result = ' + result);
             if (result == 'SUPERUSER'){ 
                 superuser = '1';
@@ -286,11 +287,11 @@ function xmlParser(xml) {
             else{
                 superuser = '0';        
             }
-    })
+    });
         // fail: function(jqXHR, textStatus, errorThrown){
         //     console.log('fail result = ' + textStatus);
         // }
-    .fail(function(jqXHR, textStatus, errorThrown){
+    blah.fail(function(jqXHR, textStatus, errorThrown){
         console.log('fail result = ' + textStatus);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
@@ -298,8 +299,8 @@ function xmlParser(xml) {
         // else{
         //     superuser = 0;        
         // }
-    })
-});
+    });
+
 
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
