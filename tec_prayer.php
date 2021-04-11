@@ -264,12 +264,23 @@ require_once('includes/tec_footer.php');
                     How to...
                 </button>
             </div><!-- col xs-6 -->
-			<div class="col-xs-6">
-					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
+			<!-- <div class="col-xs-6">
+					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRequests" aria-expanded="false" aria-controls="collapseRequests">
 						My Requests
 					</button>
-				</div><!-- col xs-6 -->
-        </div><!-- row -->
+			</div> -->
+			<div class="col-xs-6">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						My Requests
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<button class="dropdown-item" data-toggle="modal" data-target="#ModalNewRequest" type="button">New Prayer Request</button>
+						<button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">Manage Existing Requests</button>
+					</div>
+				</div><!-- dropdown -->
+        	</div><!-- col xs-6 -->
+		</div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
                 <div class="col-sm-6">
