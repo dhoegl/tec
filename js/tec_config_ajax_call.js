@@ -273,7 +273,7 @@ function xmlParser(xml) {
     //Check to see if Super User is logged in
     var sucheckJQ = jQuery.noConflict();
     sucheckJQ.ajax({
-        url: 'services/tec_superuser_check.php',
+        url: '../services/tec_superuser_check.php',
         type: 'POST',
         // dataType: 'json',
         data: { superuser: username },
