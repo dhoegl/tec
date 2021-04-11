@@ -276,10 +276,9 @@ function xmlParser(xml) {
         url: '../services/tec_superuser_check.php',
         type: 'POST',
         // dataType: 'json',
-        data: { superuser: username },
-    // });
+        data: { superuser: username }
     // superuser_check.done(function(result, status, xhr){
-        done: function(result, status, xhr){
+    .done(function(result, status, xhr){
             console.log('result = ' + result);
             if (result == 'SUPERUSER'){ 
                 superuser = '1';
@@ -287,19 +286,20 @@ function xmlParser(xml) {
             else{
                 superuser = '0';        
             }
-        },
-        fail: function(jqXHR, textStatus, errorThrown){
-            console.log('fail result = ' + textStatus);
-        }
-    // superuser_check.fail(function(jqXHR, textStatus, errorThrown){
-        // console.log('fail result = ' + textStatus);
+    })
+        // fail: function(jqXHR, textStatus, errorThrown){
+        //     console.log('fail result = ' + textStatus);
+        // }
+    .fail(function(jqXHR, textStatus, errorThrown){
+        console.log('fail result = ' + textStatus);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
         // }
         // else{
         //     superuser = 0;        
         // }
-    });
+    })
+});
 
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
