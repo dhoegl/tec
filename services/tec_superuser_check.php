@@ -22,7 +22,7 @@ if(isset($_POST['superuser']) )
         }
     }
 }
-$responseJSON = json_encode($response);
+// $responseJSON = json_encode($response);
 //    header('Content-type: application/json');
-echo $responseJSON;
+echo $response;
 ?>
