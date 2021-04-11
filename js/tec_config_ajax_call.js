@@ -275,11 +275,11 @@ function xmlParser(xml) {
     var superuser_check = sucheckJQ.ajax({
         url: 'services/tec_superuser_check.php',
         type: 'POST',
-        dataType: 'json',
+        // dataType: 'json',
         data: { superuser: username }
     });
     superuser_check.done(function(result, status, xhr){
-        console.log(result);
+        console.log('result = ' . result);
         // if (data2.responseJSON == 'SUPERUSER'){ 
         //     superuser = 1;
         // }

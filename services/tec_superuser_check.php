@@ -15,10 +15,10 @@ if(isset($_POST['superuser']) )
 	while($superusercheckstat = $superusercheckquery->fetch_assoc()){
         $superuserstatus = $superusercheckstat['admin_superuser'];
         if($superuserstatus == '1'){
-            $response->superuser_status = "SUPERUSER";
+            $response="SUPERUSER";
         }
         else{
-            $response->superuser_status = "NONSUPER";
+            $response="NONSUPER";
         }
     }
 }
