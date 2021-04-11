@@ -276,7 +276,7 @@ function xmlParser(xml) {
         url: '../services/tec_superuser_check.php',
         type: 'POST',
         // dataType: 'json',
-        data: { superuser: username },
+        data: { superuser1: username },
     // });
     // superuser_check.done(function(result, status, xhr){
         done: function(result, status, xhr){
