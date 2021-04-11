@@ -1,5 +1,5 @@
 /* Tenant-specific CSS File*/
-/* Customer 002 - TEC*/
+/* Customer 00002 - TEC*/
 
 #ModalContactInfo .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
@@ -54,7 +54,6 @@
     margin: 0px;
     padding: 10px 0 10px 145px;
     font-size: 20px;
-    #ModalPrayerInfo .modal-header h5
 }
 #ModalPrayerReject .modal-header h5 {
     background: url('/_tenant/images/raggantssbs_or.png') 0 50% no-repeat;
