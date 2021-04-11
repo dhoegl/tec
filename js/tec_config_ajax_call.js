@@ -264,7 +264,7 @@ function xmlParser(xml) {
 
     // Check for 'Prayer Service' subscription (enables prayer request functionality) from config.xml
     var prayerservicetext;
-    var superuser;
+    var superuser = 'check';
     var username;
     var superuser_status;
     var data2;
