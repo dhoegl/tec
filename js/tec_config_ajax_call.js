@@ -263,52 +263,52 @@ function xmlParser(xml) {
     }
 
     // Check for 'Prayer Service' subscription (enables prayer request functionality) from config.xml
+    // NOTE::: PrayerService check is enabled for special visibility for Superuser role only
+    // The following script is configured to check if user has this role
+    // If yes (superuser = '1', the Prayer menu item will be visible only for superuser)
+    // All others will remain in-line with services-prayer config status in config.xml
     var prayerservicetext;
-    var superuser = 'check';
+    var superuser;
     var username;
-    var superuser_status;
-    var data2;
     prayerservicetext = (navJQ(xml).find('services-prayer').text());
     console.log("prayerservicetext = " + prayerservicetext);
     //Check to see if Super User is logged in
     var sucheckJQ = jQuery.noConflict();
-    var blah = sucheckJQ.ajax({
+    var superuser_check = sucheckJQ.ajax({
         url: '../services/tec_superuser_check.php',
         type: 'POST',
         // dataType: 'json',
         data: { superuser: username }
     });
-    // superuser_check.done(function(result, status, xhr){
-    blah.done(function(result, status, xhr){
-            console.log('result = ' + result);
-            if (result == 'SUPERUSER'){ 
-                superuser = '1';
+    superuser_check.done(function(result, status, xhr){
+        console.log('result = ' + result);
+        if (result == 'SUPERUSER'){ 
+            superuser = '1';
+        // Display Prayer menu item regardless of whether services-prayer is YES or NO
+        }
+        else{
+            superuser = '0';        
+            if (prayerservicetext == 'NO' && superuser != '1') {
+                if(document.getElementById("prayer_service")) {
+                    var testprayerservice = document.getElementById("prayer_service");
+                    testprayerservice.style.display = "none";
+                }
             }
-            else{
-                superuser = '0';        
-            }
-            console.log("superuser = " + superuser);
-        });
-        // fail: function(jqXHR, textStatus, errorThrown){
-        //     console.log('fail result = ' + textStatus);
-        // }
-    blah.fail(function(jqXHR, textStatus, errorThrown){
+        }
+        console.log("superuser = " + superuser);
+    });
+    superuser_check.fail(function(jqXHR, textStatus, errorThrown){
         console.log('fail result = ' + textStatus);
-        // if (data2.responseJSON == 'SUPERUSER'){ 
-        //     superuser = 1;
-        // }
-        // else{
-        //     superuser = 0;        
-        // }
+        // Hide Prayer menu item if unable to verify Superuser
+        if (prayerservicetext == 'NO') {
+            if(document.getElementById("prayer_service")) {
+                var testprayerservice = document.getElementById("prayer_service");
+                testprayerservice.style.display = "none";
+            }
+        }
     });
 
 
-    if (prayerservicetext == 'NO' && superuser != '1') {
-        if(document.getElementById("prayer_service")) {
-            var testprayerservice = document.getElementById("prayer_service");
-            testprayerservice.style.display = "none";
-        }
-    }
     //Check for 'Events Service' subscription (enables Events management functionality) from config.xml
     var eventsservicetext;
     eventsservicetext = (navJQ(xml).find('services-events').text());
