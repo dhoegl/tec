@@ -287,6 +287,15 @@ function xmlParser(xml) {
         //     superuser = 0;        
         // }
     });
+    superuser_check.fail(function(jqXHR, textStatus, errorThrown){
+        console.log('fail result = ' . textStatus);
+        // if (data2.responseJSON == 'SUPERUSER'){ 
+        //     superuser = 1;
+        // }
+        // else{
+        //     superuser = 0;        
+        // }
+    });
 
     console.log("superuser = " + superuser);
     if (prayerservicetext == 'NO' && superuser != '1') {
