@@ -266,12 +266,12 @@ require_once('includes/tec_footer.php');
             </div><!-- col sm-4 -->
 			<div class="col-sm-4">
 					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
-						New Request
+						New
 					</button>
 				</div><!-- col sm-4 -->
 				<div class="col-sm-4">
 					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseNewPrayer" aria-expanded="false" aria-controls="collapseNewPrayer">
-						Edit Request
+						Edit
 					</button>
 				</div><!-- col sm-4 -->
         </div><!-- row -->
