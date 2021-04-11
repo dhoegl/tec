@@ -7,8 +7,8 @@
 error_reporting(E_ERROR);
 require_once('../tec_dbconnect.php');
 
-if(isset($_POST['superuser']) )
-{
+// if(isset($_POST['superuser']) )
+// {
     $logged_in_user = $_SESSION['user_id'];
 // ?>    
 //     <script language='javascript'>
@@ -26,7 +26,7 @@ if(isset($_POST['superuser']) )
             $response="NONSUPER";
         }
     }
-}
+// }
 // $responseJSON = json_encode($response);
 //    header('Content-type: application/json');
 echo $response;
