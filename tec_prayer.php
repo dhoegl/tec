@@ -315,7 +315,7 @@ require_once('includes/tec_footer.php');
 				</div><!-- col sm-6 -->
 				<div class="col-sm-6">
 					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseMyPrayer" aria-expanded="false" aria-controls="collapseMyPrayer">
-						Manage My Prayer Requests
+					My Prayer Requests
 					</button>
 				</div><!-- col sm-6 -->
 			</div><!-- row -->
