@@ -88,7 +88,7 @@ if(!$_SESSION['logged in']) {
 		});
 
 // Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		var checkfollow = '../services/tec_check_follow_table.php';
+		var checkfollow = 'services/tec_check_follow_table.php';
 			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
 			}, function (data) {
 				console.log(data);
@@ -202,7 +202,7 @@ jQ9(document).ready(function () {
 			console.log("followprayerID = " + $clickbuttonid);
 			console.log("followprayerWho = " + $loggedusername);
 			console.log("followprayerDir = " + $loggedidDirectory);
-			var checkfollow = 'tec_check_follow_table.php';
+			var checkfollow = 'services/tec_check_follow_table.php';
 				jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
 				}, function (data) {
 					console.log(data);
