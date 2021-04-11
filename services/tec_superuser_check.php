@@ -10,11 +10,6 @@ require_once('../tec_dbconnect.php');
 // if(isset($_POST['superuser']) )
 // {
     $logged_in_user = $_SESSION['user_id'];
-// ?>    
-//     <script language='javascript'>
-//         console.log('logged_in_user : ' + '<?php echo $logged_in_user; ?>')
-//     </script>
-// <?php
     $response = "";
 	$superusercheckquery = $mysql->query("SELECT admin_superuser FROM " . $_SESSION['logintablename'] . " WHERE login_ID = '$logged_in_user'") or die("Super user check function failed at db SELECT. Please notify your administrator with the following. Error# : " . $mysql->errno . " : " . $mysql->error);
 	while($superusercheckstat = $superusercheckquery->fetch_assoc()){
