@@ -281,12 +281,12 @@ function xmlParser(xml) {
     // superuser_check.done(function(result, status, xhr){
         done: function(result, status, xhr){
             console.log('result = ' + result);
-            // if (data2.responseJSON == 'SUPERUSER'){ 
-            //     superuser = 1;
-            // }
-            // else{
-            //     superuser = 0;        
-            // }
+            if (result == 'SUPERUSER'){ 
+                superuser = '1';
+            }
+            else{
+                superuser = '0';        
+            }
         },
         fail: function(jqXHR, textStatus, errorThrown){
             console.log('fail result = ' + textStatus);
