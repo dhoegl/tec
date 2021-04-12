@@ -408,7 +408,7 @@ require_once('includes/tec_footer.php');
                 				<div class="col-9">
                     				<select class="custom-select" name="visibility" id="visibility">
                         				<option value="Elders">Elders Only</option>
-                        				<option value="AllChurch">Your Church Family (elder approval required)</option>
+                        				<option value="AllChurch" selected>Your Church Family (elder approval required)</option>
                     				</select>
                 				</div>
             				</div><!-- row -->
