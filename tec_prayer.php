@@ -402,15 +402,17 @@ require_once('includes/tec_footer.php');
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
                             <div class="row">
-							<label for="visibility">Visibility: <strong><font color="red">*</font></strong></label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input vischeckelders" type="radio" name="visibility" id="codeelders" value="Elders Only">
-                                <label class="form-check-label" for="codeelders">Male</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input vischeckallchurch" type="radio" name="visibility" id="codeallchurch" value="Your Church Family (elder approval required)" checked>
-                                <label class="form-check-label" for="codeallchurch">Female</label>
-                        </div>
+								<label for="visibility">Visibility: <strong><font color="red">*</font></strong></label>
+    		                    <div class="form-check form-check-inline">
+            	        	        <input class="form-check-input vischeckelders" type="radio" name="visibility" id="codeelders" value="Elders">
+                            	    <label class="form-check-label" for="codeelders">Elders Only</label>
+                		        </div>
+		                        <div class="form-check form-check-inline">
+        		                    <input class="form-check-input vischeckallchurch" type="radio" name="visibility" id="codeallchurch" value="AllChurch" checked>
+                	                <label class="form-check-label" for="codeallchurch">Your Church Family (elder approval required)</label>
+                    		    </div>
+							</div><!-- row -->
+							<div class="row">
                                 <div class="col-3">
                                     <label for="hisfirstname">His Name:</label>
                                 </div>
