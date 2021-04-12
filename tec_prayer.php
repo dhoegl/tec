@@ -397,7 +397,7 @@ require_once('includes/tec_footer.php');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light" name='newprayer' method='post' action=''> 		
+                <form class="text-center border border-light p-2" name='newprayer' method='post' action=''> 		
                     <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
