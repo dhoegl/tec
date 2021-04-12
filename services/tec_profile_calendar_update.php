@@ -6,7 +6,7 @@ if(!$_SESSION['logged in']) {
 }
 
 require_once('../tec_dbconnect.php');
-//include_once('/includes/event_logs_update.php');
+include_once('../includes/event_logs_update.php');
 
 
 
