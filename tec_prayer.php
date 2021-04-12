@@ -413,6 +413,17 @@ require_once('includes/tec_footer.php');
                 				</div>
             				</div><!-- row -->
 							<div class="row">
+			    	            <div class="col-3">
+                    				<label for="visibility">Select Pray/Praise:</label>
+                				</div>
+                				<div class="col-9">
+                    				<select class="custom-select" name="praypraise" id="praypraise">
+                        				<option value="Prayer" selected>Prayer Request</option>
+                        				<option value="Praise">Praise</option>
+                    				</select>
+                				</div>
+            				</div><!-- row -->
+							<div class="row">
                                 <div class="col-3">
                                     <label for="hisfirstname">His Name:</label>
                                 </div>
