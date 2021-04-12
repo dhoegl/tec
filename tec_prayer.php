@@ -457,6 +457,81 @@ require_once('includes/tec_footer.php');
 </div>
 
 
+
+<!--***************************** Existing Prayer Request MODAL ***********************************-->
+<!--***************************** Existing Prayer Request MODAL ***********************************-->
+<!--***************************** Existing Prayer Request MODAL ***********************************-->
+
+<div class="modal fade" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="text-center border border-light p-2" name='existprayer' method='post' action=''> 		
+                    <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
+                        <div class="modaleditform text-center border border-light p-2">
+                            <div class="table-responsive">
+								<div class="row">
+			    	            <div class="col-3">
+                    				<label for="visibility">Select Visibility:</label>
+                				</div>
+                				<div class="col-9">
+                    				<select class="custom-select" name="visibility" id="visibility">
+                        				<option value="Elders">Elders Only</option>
+                        				<option value="AllChurch" selected>Your Church Family (approval required)</option>
+                    				</select>
+                				</div>
+            				</div><!-- row -->
+							<div class="row">
+			    	            <div class="col-3">
+                    				<label for="visibility">Select Pray/Praise:</label>
+                				</div>
+                				<div class="col-9">
+                    				<select class="custom-select" name="praypraise" id="praypraise">
+                        				<option value="Prayer" selected>Prayer Request</option>
+                        				<option value="Praise">Praise</option>
+                    				</select>
+                				</div>
+            				</div><!-- row -->
+							<div class="row">
+                                <div class="col-3">
+                                    <label for="praytitle">Title:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
+                                </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="praydetails">Details:</label>
+                                </div>
+                                <div class="col-9">
+                                    <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
+                                </div>
+                            </div><!-- row -->
+                            </div> <!--Table Responsive-->
+                        </div> <!-- text-center -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="3" align='right'>
+                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- ************************************* -->
 <!-- View Prayer Details OVERLAY dialog            -->
 <!-- ************************************* -->
