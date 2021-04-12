@@ -271,7 +271,7 @@ require_once('includes/tec_footer.php');
 			</div> -->
 			<div class="col-xs-6">
 				<div class="dropdown">
-					<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						My Requests
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
