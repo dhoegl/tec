@@ -472,49 +472,38 @@ require_once('includes/tec_footer.php');
                 </button>
             </div>
             <div class="modal-body">
+				<h6>
+					<span id="loginApprove"></span>
+					<span id="churchcodeApprove"></span>
+					<span id="usernameApprove"></span>
+					<!--<span id="firstnameApprove"></span>
+					<span id="lastnameApprove"></span>-->
+					<span id="fullnameApprove"></span>
+					<span id="genderApprove"></span>
+				</h6>
+                <hr />
+                <h4>
+                    My Existing Active Prayer Requests
+                </h4>
+                <h6>
+                    Select from list of prayer requests below to update
+                </h6>
                 <form class="text-center border border-light p-2" name='existprayer' method='post' action=''> 		
-                    <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
+                    <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
 								<div class="row">
-			    	            <div class="col-3">
-                    				<label for="visibility">Select Visibility:</label>
-                				</div>
-                				<div class="col-9">
-                    				<select class="custom-select" name="visibility" id="visibility">
-                        				<option value="Elders">Elders Only</option>
-                        				<option value="AllChurch" selected>Your Church Family (approval required)</option>
-                    				</select>
-                				</div>
-            				</div><!-- row -->
-							<div class="row">
-			    	            <div class="col-3">
-                    				<label for="visibility">Select Pray/Praise:</label>
-                				</div>
-                				<div class="col-9">
-                    				<select class="custom-select" name="praypraise" id="praypraise">
-                        				<option value="Prayer" selected>Prayer Request</option>
-                        				<option value="Praise">Praise</option>
-                    				</select>
-                				</div>
-            				</div><!-- row -->
-							<div class="row">
-                                <div class="col-3">
-                                    <label for="praytitle">Title:</label>
-                                </div>
-                                <div class="col-9">
-                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
-                                </div>
-                            </div><!-- row -->
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="praydetails">Details:</label>
-                                </div>
-                                <div class="col-9">
-                                    <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
-                                </div>
-                            </div><!-- row -->
-                            </div> <!--Table Responsive-->
+			    	        	    <div class="col-3">
+                    					<label for="visibility">Select from list:</label>
+                					</div>
+                					<div class="col-9">
+                    					<select class="custom-select" name="visibility" id="visibility">
+                        					<option value="Elders">Elders Only</option>
+                        					<option value="AllChurch" selected>Your Church Family (approval required)</option>
+                    					</select>
+                					</div>
+            					</div><!-- row -->
+                        	</div> <!--Table Responsive-->
                         </div> <!-- text-center -->
                         <tr>
                             <td></td>
@@ -531,6 +520,74 @@ require_once('includes/tec_footer.php');
     </div>
 </div>
 
+    <!--***************************** Approve Registrant MODAL ***********************************-->
+    <!--***************************** Approve Registrant MODAL ***********************************-->
+    <!--***************************** Approve Registrant MODAL ***********************************-->
+
+    <div class="modal fade" id="ModalApproveRegistrant" tabindex="-1" role="dialog" aria-labelledby="ModalApproveReg" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalApproveReg">
+                        Approve Registrant
+                        <br />
+                        Click
+                        <strong>Approve Yes or Cancel</strong> when done.
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal-header -->
+                <div class="modal-body">
+                    <h6>
+                        <span id="loginApprove"></span>
+                        <span id="churchcodeApprove"></span>
+                        <span id="usernameApprove"></span>
+                        <!--<span id="firstnameApprove"></span>
+                        <span id="lastnameApprove"></span>-->
+                        <span id="fullnameApprove"></span>
+                        <span id="genderApprove"></span>
+                    </h6>
+                    <hr />
+                    <h4>
+                        Connect Registrant to Family
+                    </h4>
+                    <h6>
+                        If this registrant is part of an existing family, select from list below to correlate
+                    </h6>
+                    <table id="approvedmemberslist" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <!--	<table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">-->
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>ID</th>
+                                <th>Code</th>
+                                <th>Last Name</th>
+                                <th>His Name</th>
+                                <th>Her Name</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Select</th>
+                                <th>ID</th>
+                                <th>Code</th>
+                                <th>Last Name</th>
+                                <th>His Name</th>
+                                <th>Her Name</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <form name='approvereg' method='post' action="javascript:void(0);">
+                        <div class="modal-footer">
+                            <input type="submit" name="approveregsubmit" id="modal_approve_submit" class="btn btn-primary" value="Approve Yes" />
+                            <button type="button" id="modal_cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div><!-- modal-footer -->
+                    </form>
+                </div><!-- modal-body -->
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!-- modal-fade -->
 
 <!-- ************************************* -->
 <!-- View Prayer Details OVERLAY dialog            -->
