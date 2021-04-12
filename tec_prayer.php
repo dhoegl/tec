@@ -397,21 +397,21 @@ require_once('includes/tec_footer.php');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light p-2" name='editcontact' method='post' action='/services/tec_profile_contact_update.php'> 		
+                <form class="text-center border border-light p-2" name='newprayer' method='post' action=''> 		
                     <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
-                            <div class="row">
-								<label for="visibility">Visibility: <strong><font color="red">*</font></strong></label>
-    		                    <div class="form-check form-check-inline">
-            	        	        <input class="form-check-input vischeckelders" type="radio" name="visibility" id="codeelders" value="Elders">
-                            	    <label class="form-check-label" for="codeelders">Elders Only</label>
-                		        </div>
-		                        <div class="form-check form-check-inline">
-        		                    <input class="form-check-input vischeckallchurch" type="radio" name="visibility" id="codeallchurch" value="AllChurch" checked>
-                	                <label class="form-check-label" for="codeallchurch">Your Church Family (elder approval required)</label>
-                    		    </div>
-							</div><!-- row -->
+								<div class="row">
+			    	            <div class="col-3">
+                    				<label for="visibility">Visibility:</label>
+                				</div>
+                				<div class="col-9">
+                    				<select class="custom-select" name="visibility" id="visibility">
+                        				<option value="Elders">Elders Only</option>
+                        				<option value="AllChurch">Your Church Family (elder approval required)</option>
+                    				</select>
+                				</div>
+            				</div><!-- row -->
 							<div class="row">
                                 <div class="col-3">
                                     <label for="hisfirstname">His Name:</label>
