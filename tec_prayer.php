@@ -403,7 +403,7 @@ require_once('includes/tec_footer.php');
                             <div class="table-responsive">
 								<div class="row">
 			    	            <div class="col-3">
-                    				<label for="visibility">Visibility:</label>
+                    				<label for="visibility">Select Visibility:</label>
                 				</div>
                 				<div class="col-9">
                     				<select class="custom-select" name="visibility" id="visibility">
