@@ -275,7 +275,7 @@ require_once('includes/tec_footer.php');
 						My Requests
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<button class="dropdown-item" data-toggle="modal" data-target="#ModalNewRequest" type="button">New Prayer Request</button>
+						<button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
 						<button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">Manage Existing Requests</button>
 					</div>
 				</div><!-- dropdown -->
@@ -387,7 +387,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** New Prayer Request MODAL ***********************************-->
 <!--***************************** New Prayer Request MODAL ***********************************-->
 
-<div class="modal fade" id="ModalNewRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
