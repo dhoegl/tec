@@ -408,7 +408,7 @@ require_once('includes/tec_footer.php');
                 				<div class="col-9">
                     				<select class="custom-select" name="visibility" id="visibility">
                         				<option value="Elders">Elders Only</option>
-                        				<option value="AllChurch" selected>Your Church Family (elder approval required)</option>
+                        				<option value="AllChurch" selected>Your Church Family (approval required)</option>
                     				</select>
                 				</div>
             				</div><!-- row -->
@@ -445,7 +445,7 @@ require_once('includes/tec_footer.php');
                             <td></td>
                             <td></td>
                             <td colspan="3" align='right'>
-                                <button type="submit" name="submitcontact" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             </td>
                         </tr>
