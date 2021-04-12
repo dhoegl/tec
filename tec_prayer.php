@@ -391,7 +391,7 @@ require_once('includes/tec_footer.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Prayer Request<br>Click <strong>Save Changes</strong> when done.</h5>
+                <h5 class="modal-title" id="exampleModalLabel">New Prayer Request<br>Click <strong>Submit</strong> when done.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -402,6 +402,15 @@ require_once('includes/tec_footer.php');
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
                             <div class="row">
+							<label for="visibility">Visibility: <strong><font color="red">*</font></strong></label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input vischeckelders" type="radio" name="visibility" id="codeelders" value="Elders Only">
+                                <label class="form-check-label" for="codeelders">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input vischeckallchurch" type="radio" name="visibility" id="codeallchurch" value="Your Church Family (elder approval required)" checked>
+                                <label class="form-check-label" for="codeallchurch">Female</label>
+                        </div>
                                 <div class="col-3">
                                     <label for="hisfirstname">His Name:</label>
                                 </div>
@@ -455,7 +464,7 @@ require_once('includes/tec_footer.php');
                             <td></td>
                             <td></td>
                             <td colspan="3" align='right'>
-                                <button type="submit" name="submitcontact" class="btn btn-primary">Save changes</button>
+                                <button type="submit" name="submitcontact" class="btn btn-primary">Submit</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             </td>
                         </tr>
