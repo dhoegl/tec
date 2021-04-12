@@ -425,52 +425,20 @@ require_once('includes/tec_footer.php');
             				</div><!-- row -->
 							<div class="row">
                                 <div class="col-3">
-                                    <label for="hisfirstname">His Name:</label>
+                                    <label for="praytitle">Title:</label>
                                 </div>
                                 <div class="col-9">
-                                    <input placeholder="Enter first name" type="text" id="hisfirstname" name='hisfirstname' class="form-control" />
+                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
                                 </div>
-                            </div>
+                            </div><!-- row -->
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="herfirstname">Her Name:</label>
+                                    <label for="praydetails">Details:</label>
                                 </div>
                                 <div class="col-9">
-                                    <input placeholder="Enter first name" type="text" id="herfirstname" name='herfirstname' class="form-control" />
+                                    <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="mystate">State/Province:</label>
-                                </div>
-                                <div class="col-9">
-                                    <select class="custom-select" name="mystate" id="mystate">
-                                        <?php
-                                            $states_query = "SELECT * from " . $_SESSION['statestablename'];
-                                            $statesresult = $mysql->query($states_query) or die(" SQL query error. Error:" . $mysql->errno . " : " . $mysql->error);
-                                            while($states_row = $statesresult->fetch_assoc())
-                                            {
-                                                $states_optionvalue = $states_row['state_abbrev'] . " - " . $states_row['state_name'];
-                                                $selectedstate = $states_row['state_abbrev'];		
-                                                echo "<option value='" . $states_optionvalue . "'";
-                                                if($selectedstate == $recordState)
-                                                {
-                                                    echo " selected='selected'";
-                                                }
-                                            echo ">" . $states_optionvalue . "</option>";
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div> <!--Row-->
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="heremail">Her Email:</label>
-                                </div>
-                                <div class="col-9">
-                                    <input placeholder="Her email address" type="email" id="heremail" name='heremail' class="form-control" />
-                                </div>
-                            </div> <!--Row-->
+                            </div><!-- row -->
                             </div> <!--Table Responsive-->
                         </div> <!-- text-center -->
                         <tr>
