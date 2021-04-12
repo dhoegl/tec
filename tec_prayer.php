@@ -383,6 +383,90 @@ require_once('includes/tec_footer.php');
 <!-- ******** LEFT OFF HERE -->
 
 
+<!--***************************** New Prayer Request MODAL ***********************************-->
+<!--***************************** New Prayer Request MODAL ***********************************-->
+<!--***************************** New Prayer Request MODAL ***********************************-->
+
+<div class="modal fade" id="ModalNewRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Prayer Request<br>Click <strong>Save Changes</strong> when done.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="text-center border border-light p-2" name='editcontact' method='post' action='/services/tec_profile_contact_update.php'> 		
+                    <table id="editprofiletable" border='0' cellpadding='0' cellspacing='1' >
+                        <div class="modaleditform text-center border border-light p-2">
+                            <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="hisfirstname">His Name:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input placeholder="Enter first name" type="text" id="hisfirstname" name='hisfirstname' class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="herfirstname">Her Name:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input placeholder="Enter first name" type="text" id="herfirstname" name='herfirstname' class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="mystate">State/Province:</label>
+                                </div>
+                                <div class="col-9">
+                                    <select class="custom-select" name="mystate" id="mystate">
+                                        <?php
+                                            $states_query = "SELECT * from " . $_SESSION['statestablename'];
+                                            $statesresult = $mysql->query($states_query) or die(" SQL query error. Error:" . $mysql->errno . " : " . $mysql->error);
+                                            while($states_row = $statesresult->fetch_assoc())
+                                            {
+                                                $states_optionvalue = $states_row['state_abbrev'] . " - " . $states_row['state_name'];
+                                                $selectedstate = $states_row['state_abbrev'];		
+                                                echo "<option value='" . $states_optionvalue . "'";
+                                                if($selectedstate == $recordState)
+                                                {
+                                                    echo " selected='selected'";
+                                                }
+                                            echo ">" . $states_optionvalue . "</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div> <!--Row-->
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="heremail">Her Email:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input placeholder="Her email address" type="email" id="heremail" name='heremail' class="form-control" />
+                                </div>
+                            </div> <!--Row-->
+                            </div> <!--Table Responsive-->
+                        </div> <!-- text-center -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="3" align='right'>
+                                <button type="submit" name="submitcontact" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- ************************************* -->
 <!-- View Prayer Details OVERLAY dialog            -->
 <!-- ************************************* -->
