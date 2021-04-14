@@ -589,6 +589,65 @@ require_once('includes/tec_footer.php');
         </div><!-- modal-dialog -->
     </div><!-- modal-fade -->
 
+
+
+
+<!--***************************** View Prayer Request Details MODAL ***********************************-->
+<!--***************************** View Prayer Request Details MODAL ***********************************-->
+<!--***************************** View Prayer Request Details MODAL ***********************************-->
+
+<div class="modal fade" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">View Prayer Request Details<br>Click <strong>Submit</strong> when done.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="text-center border border-light p-2" name='newprayer' method='post' action=''> 		
+                    <table id="viewpraytable" border='0' cellpadding='0' cellspacing='1' >
+                        <div class="modaleditform text-center border border-light p-2">
+                            <div class="table-responsive">
+								<tbody>
+									<tr>
+										<td>Type:</td>
+										<td>Placeholder</td>
+									</tr>
+									<tr>
+										<td>Date:</td>
+										<td>Placeholder</td>
+									</tr>
+									<tr>
+										<td>From:</td>
+										<td>Placeholder</td>
+									</tr>
+									<tr>
+										<td>Title:</td>
+										<td>Placeholder</td>
+									</tr>
+								</tbody>
+							</table>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td colspan="3" align='right'>
+                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <!-- ************************************* -->
 <!-- View Prayer Details OVERLAY dialog            -->
 <!-- ************************************* -->
