@@ -29,11 +29,11 @@ jQ8(document).ready(function() {
             {
         		className: "indexcol",
                 orderable: false,
-                targets:   [ 0 ]
+                targets:   [ 1 ]
             },
             {
         		className: "prayer_update",
-                targets:   [ 1 ]
+                targets:   [ 2 ]
             },
 			{
         		className: "full_text", "visible": false,
