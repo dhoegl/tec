@@ -31,6 +31,10 @@ jQ8(document).ready(function() {
                 orderable: false,
                 targets:   [ 0 ]
             },
+            {
+        		className: "prayer_update",
+                targets:   [ 1 ]
+            },
 			{
         		className: "full_text", "visible": false,
         		targets: [ -0 ] 
