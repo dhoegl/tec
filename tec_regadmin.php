@@ -588,7 +588,9 @@ var jQ12 = jQuery.noConflict();
                 <div class="card bg-light border-primary px-2 my-2 w-100">
                     <div class="card-body">
                         <div class="table-responsive-xs">
-                            <table id="unregisteredapplicant" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <!-- <table id="unregisteredapplicant" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
+                            <!-- <table id="familytable2" class="table table-sm table-striped 'display responsive nowrap'" width="100%"> -->
+                            <table id="unregisteredapplicant" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
                                 <thead class="table-dark">
                                     <tr>
                                     <th class="dtr-regcolumn"></th>
