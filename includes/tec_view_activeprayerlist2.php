@@ -32,7 +32,6 @@ jQ8(document).ready(function() {
             },
             {
         		className: "indexcol",
-                // orderable: false,
                 targets:   [ 1 ]
             },
             {
@@ -56,7 +55,12 @@ jQ8(document).ready(function() {
         		"targets": [ 6 ] 
         	},
 			{
+        		className: "glance",
+        		"targets": [ 7 ] 
+        	},
+			{
         		className: "detailscolumn",
+                orderable: false,
         		"targets": [ 8 ] 
         	}
 			// {

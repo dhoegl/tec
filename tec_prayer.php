@@ -181,7 +181,8 @@ if(!$_SESSION['logged in']) {
 var $clickbuttonid = "NA";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
-	jQ9("#activeprayertable tbody").on("click", 'tr', function () {
+	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
+    jQ9("#activeprayertable tbody").on("click", '.detailscolumn', function () {
 		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
 		$clickbuttonid = prayerID;
         console.log("********** Details button clicked ************");
