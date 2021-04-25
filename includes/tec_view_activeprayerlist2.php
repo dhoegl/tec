@@ -27,6 +27,10 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
 			"columnDefs": [ 
             {
+                orderable: false,
+                targets:   [ 0 ]
+            },
+            {
         		className: "indexcol",
                 orderable: false,
                 targets:   [ 1 ]
