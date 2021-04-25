@@ -184,6 +184,7 @@ jQ9(document).ready(function () {
 	jQ9("#activeprayertable tbody").on("click", 'tr', function () {
 		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
 		$clickbuttonid = prayerID;
+        console.log("********** Details button clicked ************");
 		console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
 		var prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
 		var prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
