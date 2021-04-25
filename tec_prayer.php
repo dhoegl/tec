@@ -388,6 +388,7 @@ require_once('includes/tec_footer.php');
                                             <th>Title</th>
                                             <th>Quick Glance</th>
                                             <th>Details</th>
+                                            <th>Text</th>
                                         </tr>
                                     </thead>
                                     <tfoot class="table-dark">
@@ -401,6 +402,7 @@ require_once('includes/tec_footer.php');
                                             <th>Title</th>
                                             <th>Quick Glance</th>
                                             <th>Details</th>
+                                            <th>Text</th>
                                         </tr>
                                     </tfoot>
                                 </table>
