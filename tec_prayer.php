@@ -182,12 +182,12 @@ var $clickbuttonid = "NA";
 var testforChild = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
-    testforChild = jQ09(this).closest('tr');
+	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
+    jQ9("#activeprayertable tbody").on("click", '.detailscolumn', function () {
+        testforChild = jQ09(this).closest('tr');
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
         }
-	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
-    jQ9("#activeprayertable tbody").on("click", '.detailscolumn', function () {
 		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
 		$clickbuttonid = prayerID;
         console.log("********** Details button clicked ************");
