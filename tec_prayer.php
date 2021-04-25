@@ -67,7 +67,7 @@ if(!$_SESSION['logged in']) {
    include('includes/tec_view_activeprayerlist2.php');
    
 // Get Active Prayer jQuery
-   include('includes/tec_get_activeprayer_jquery.php');
+//    include('includes/tec_get_activeprayer_jquery.php');
    
 ?>
 
