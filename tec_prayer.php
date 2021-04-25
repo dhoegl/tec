@@ -190,7 +190,7 @@ jQ9(document).ready(function () {
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
             var prayerID = jQ9(this).closest(".parent").find(".indexcol").text();
-            var testelement = jQ9(this)."parentNode";
+            var testelement = testforChild."parentNode";
             // $clickbuttonid = prayerID;
             $clickbuttonid = testelement;
             console.log("********** Details button clicked ************");
