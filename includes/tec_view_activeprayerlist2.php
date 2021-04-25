@@ -38,7 +38,27 @@ jQ8(document).ready(function() {
             {
         		className: "prayer_update",
                 targets:   [ 2 ]
-            }
+            },
+			{
+        		className: "prayer_who",
+        		"targets": [ 3 ] 
+        	},
+			{
+        		className: "type",
+        		"targets": [ 4 ] 
+        	},
+			{
+        		className: "prayer_answer",
+        		"targets": [ 5 ] 
+        	},
+			{
+        		className: "prayer_title",
+        		"targets": [ 6 ] 
+        	},
+			{
+        		className: "detailscolumn",
+        		"targets": [ 8 ] 
+        	}
 			// {
         	// 	className: "full_text", "visible": false,
         	// 	targets: [ -0 ] 
