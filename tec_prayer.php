@@ -181,6 +181,7 @@ if(!$_SESSION['logged in']) {
 var $clickbuttonid = "NA";
 var testforChild = "0";
 var prayerID = "0";
+var testelement = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
 	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
@@ -189,9 +190,12 @@ jQ9(document).ready(function () {
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
             var prayerID = jQ9(this).closest(".parent").find(".indexcol").text();
-            $clickbuttonid = prayerID;
+            var testelement = jQ9(this).closest("parentNode");
+            // $clickbuttonid = prayerID;
+            $clickbuttonid = testelement;
             console.log("********** Details button clicked ************");
-            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
+            console.log("parentMode (this jQ9 entry) = " + $clickbuttonid);
+            // console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
         }
         else {
             console.log("******** NOT CHILD ******")
