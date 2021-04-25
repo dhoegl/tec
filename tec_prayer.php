@@ -649,6 +649,14 @@ require_once('includes/tec_footer.php');
                     <table id="viewpraytable" border='0' cellpadding='0' cellspacing='1' >
                         <div class="modaleditform text-center border border-light p-2">
                             <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="mylastname">Prayer ID:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input placeholder="Enter last name" type="text" id="mylastname" name='mylastname' class="form-control" />
+                                </div>
+                            </div>
 								<tbody>
 									<tr>
 										<td>Type:</td>
