@@ -187,11 +187,18 @@ jQ9(document).ready(function () {
         testforChild = jQ9(this).closest('tr');
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
+            var prayerID = jQ9(this).prev('tr').find(".indexcol").text();
+            $clickbuttonid = prayerID;
+            console.log("********** Details button clicked ************");
+            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
         }
-		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
-		$clickbuttonid = prayerID;
-        console.log("********** Details button clicked ************");
-		console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
+        else {
+            console.log("******** NOT CHILD ******")
+            var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
+            $clickbuttonid = prayerID;
+            console.log("********** Details button clicked ************");
+            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
+        }
 		var prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
 		var prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
 		var prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
