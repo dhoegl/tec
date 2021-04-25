@@ -29,7 +29,7 @@ jQ8(document).ready(function() {
             {
                 orderable: false,
                 targets:   [ 0 ]
-            },
+            }
             // {
         	// 	className: "indexcol",
             //     orderable: false,
@@ -39,10 +39,10 @@ jQ8(document).ready(function() {
         	// 	className: "prayer_update",
             //     targets:   [ 2 ]
             // },
-			{
-        		className: "full_text", "visible": false,
-        		targets: [ -0 ] 
-        	}
+			// {
+        	// 	className: "full_text", "visible": false,
+        	// 	targets: [ -0 ] 
+        	// }
         ]
 
     });
