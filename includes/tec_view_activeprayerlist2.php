@@ -62,11 +62,12 @@ jQ8(document).ready(function() {
         		className: "detailscolumn",
                 orderable: false,
         		"targets": [ 8 ] 
+        	},
+			{
+        		className: "full_text",
+                "visible": false,
+        		targets: [ 9 ] 
         	}
-			// {
-        	// 	className: "full_text", "visible": false,
-        	// 	targets: [ -0 ] 
-        	// }
         ]
 
     });
