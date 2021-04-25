@@ -180,6 +180,7 @@ if(!$_SESSION['logged in']) {
  <script type="text/javascript">
 var $clickbuttonid = "NA";
 var testforChild = "0";
+var prayerID = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
 	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
