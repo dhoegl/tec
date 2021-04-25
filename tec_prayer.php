@@ -189,13 +189,10 @@ jQ9(document).ready(function () {
         testforChild = jQ9(this).closest('tr');
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
-            var prayerID = jQ9(this).closest(".parent").find(".indexcol").text();
-            var testelement = testforChild."parentNode";
-            // $clickbuttonid = prayerID;
-            $clickbuttonid = testelement;
+            var prayerID = jQ9(this).closest("tr.parent").find(".indexcol").text();
+            $clickbuttonid = prayerID;
             console.log("********** Details button clicked ************");
-            console.log("parentMode (this jQ9 entry) = " + $clickbuttonid);
-            // console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
+            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
         }
         else {
             console.log("******** NOT CHILD ******")
