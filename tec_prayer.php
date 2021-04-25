@@ -171,10 +171,6 @@ if(!$_SESSION['logged in']) {
 });
 
 </script>
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-
 
 <!-- Get Which Prayer Item's 'Details' button was clicked -->
  <script type="text/javascript">
@@ -197,14 +193,14 @@ jQ9(document).ready(function () {
             var prayerWho = testforChild.prev("tr").find(".prayer_who").text();
             var prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
             var prayerType = testforChild.prev("tr").find(".type").text();
-            var prayerText = testforChild.prev("tr").find(".full_text").text();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
-        }
+    // Display the Approve popup
+    jQ9("#ModalPrayerView").modal('show');
+         }
         else {
             console.log("******** NOT CHILD ******")
             var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
@@ -216,14 +212,17 @@ jQ9(document).ready(function () {
             var prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
             var prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
             var prayerType = jQ9(this).closest('tr').find(".type").text();
-            var prayerText = jQ9(this).closest('tr').find(".full_text").text();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
+    // Display the Approve popup
+    jQ9("#ModalPrayerView").modal('show');
         }
+// ******** LEFT OFF HERE
+// ******** LEFT OFF HERE
+// ******** LEFT OFF HERE
 // Check if prayer has been answered - disable follow/unfollow buttons if true
 		jQ9("#follow_button").hide();
 		jQ9("#unfollow_button").hide();
@@ -258,8 +257,13 @@ jQ9(document).ready(function () {
 
 </script>
 
-<!-- Detect 'Details' button click -->
-<!-- <script type="text/javascript">
+<!-- Detect 'Details' button click to display prayer details popup -->
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+<!-- ******** LEFT OFF HERE -->
+
+
+<script type="text/javascript">
  var jQ4 = jQuery.noConflict();
 	jQ4(document).ready(function() {
 		jQ4("#activeprayertable").on("click", "button", function () {
@@ -276,7 +280,7 @@ jQ9(document).ready(function () {
 		});
 
  }); 
-</script> -->
+</script>
 
 
 </head>
