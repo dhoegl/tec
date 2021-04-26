@@ -191,7 +191,7 @@ jQ9(document).ready(function () {
             // var prayerID = jQ9(this).closest("tbody").find("tr.parent").find(".indexcol").text();
             var prayerID = testforChild.prev("tr").find(".indexcol").text();
             $clickbuttonid = prayerID;
-            jQ9("#prayerID").html("<div class='col-7'>" + prayerID + "</div>");
+            jQ9("#prayerID").html(prayerID);
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
@@ -201,7 +201,7 @@ jQ9(document).ready(function () {
             prayerWho = testforChild.prev("tr").find(".prayer_who").text();
             jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
             prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
-            jQ9("#prayerTitle").html("<div class='col-7'>" + prayerTitle + "</div>");
+            jQ9("#prayerTitle").html(prayerTitle);
             prayerType = testforChild.prev("tr").find(".type").text();
             jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
@@ -216,7 +216,7 @@ jQ9(document).ready(function () {
             console.log("******** NOT CHILD ******")
             var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
             $clickbuttonid = prayerID;
-            jQ9("#prayerID").html("<div class='col-7'>" + prayerID + "</div>");
+            jQ9("#prayerID").html(prayerID);
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
@@ -226,7 +226,7 @@ jQ9(document).ready(function () {
             prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
             jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
             prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-            jQ9("#prayerTitle").html("<div class='col-7'>" + prayerTitle + "</div>");
+            jQ9("#prayerTitle").html(prayerTitle);
             prayerType = jQ9(this).closest('tr').find(".type").text();
             jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
@@ -576,75 +576,6 @@ require_once('includes/tec_footer.php');
     </div>
 </div>
 
-    <!--***************************** Approve Registrant MODAL ***********************************-->
-    <!--***************************** Approve Registrant MODAL ***********************************-->
-    <!--***************************** Approve Registrant MODAL ***********************************-->
-
-    <div class="modal fade" id="ModalApproveRegistrant" tabindex="-1" role="dialog" aria-labelledby="ModalApproveReg" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content bg-light">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalApproveReg">
-                        Approve Registrant
-                        <br />
-                        Click
-                        <strong>Approve Yes or Cancel</strong> when done.
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div><!-- modal-header -->
-                <div class="modal-body">
-                    <h6>
-                        <span id="loginApprove"></span>
-                        <span id="churchcodeApprove"></span>
-                        <span id="usernameApprove"></span>
-                        <!--<span id="firstnameApprove"></span>
-                        <span id="lastnameApprove"></span>-->
-                        <span id="fullnameApprove"></span>
-                        <span id="genderApprove"></span>
-                    </h6>
-                    <hr />
-                    <h4>
-                        Connect Registrant to Family
-                    </h4>
-                    <h6>
-                        If this registrant is part of an existing family, select from list below to correlate
-                    </h6>
-                    <table id="approvedmemberslist" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
-                        <!--	<table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">-->
-                        <thead>
-                            <tr>
-                                <th>Select</th>
-                                <th>ID</th>
-                                <th>Code</th>
-                                <th>Last Name</th>
-                                <th>His Name</th>
-                                <th>Her Name</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Select</th>
-                                <th>ID</th>
-                                <th>Code</th>
-                                <th>Last Name</th>
-                                <th>His Name</th>
-                                <th>Her Name</th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <form name='approvereg' method='post' action="javascript:void(0);">
-                        <div class="modal-footer">
-                            <input type="submit" name="approveregsubmit" id="modal_approve_submit" class="btn btn-primary" value="Approve Yes" />
-                            <button type="button" id="modal_cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        </div><!-- modal-footer -->
-                    </form>
-                </div><!-- modal-body -->
-            </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-    </div><!-- modal-fade -->
-
 
 
 
@@ -669,7 +600,8 @@ require_once('includes/tec_footer.php');
                             <div class="table-responsive">
                             <div class="row">
                                 <div class="col-5">Type:</div>
-                                <span id="prayerType"></span>
+                                <div class="col-7"><span id="prayerType"></span></div>
+                                
                             </div>
                             <div class="row">
                                 <div class="col-5">Prayer Date:</div>
@@ -681,7 +613,7 @@ require_once('includes/tec_footer.php');
                             </div>
                             <div class="row">
                                 <div class="col-5">Title:</div>
-                                <span id="prayerTitle"></span>
+                                <div class="col-7"><span id="prayerTitle"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-5">Answered:</div>
