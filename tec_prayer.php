@@ -176,6 +176,11 @@ if(!$_SESSION['logged in']) {
  <script type="text/javascript">
 var $clickbuttonid = "NA";
 var testforChild = "0";
+var prayerDate = "0";
+var prayerAnswer = "0";
+var prayerWho = "0";
+var prayerTitle = "0";
+var prayerType = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
 	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
@@ -188,11 +193,12 @@ jQ9(document).ready(function () {
             $clickbuttonid = prayerID;
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
-            var prayerDate = testforChild.prev("tr").find(".prayer_update").text();
-            var prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            var prayerWho = testforChild.prev("tr").find(".prayer_who").text();
-            var prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
-            var prayerType = testforChild.prev("tr").find(".type").text();
+            prayerDate = testforChild.prev("tr").find(".prayer_update").text();
+            jQ9("#prayerDate").html("<div class='col-9'>" + prayerDate + "</div>");
+            prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
+            prayerWho = testforChild.prev("tr").find(".prayer_who").text();
+            prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
+            prayerType = testforChild.prev("tr").find(".type").text();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -207,11 +213,12 @@ jQ9(document).ready(function () {
             $clickbuttonid = prayerID;
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
-            var prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-            var prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-            var prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-            var prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-            var prayerType = jQ9(this).closest('tr').find(".type").text();
+            prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
+            jQ9("#prayerDate").html("<div class='col-9'>" + prayerDate + "</div>");
+            prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
+            prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
+            prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
+            prayerType = jQ9(this).closest('tr').find(".type").text();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -653,9 +660,7 @@ require_once('includes/tec_footer.php');
                                 <div class="col-3">
                                     <label for="mylastname">Prayer ID:</label>
                                 </div>
-                                <div class="col-9">
-                                    <input placeholder="Enter last name" type="text" id="mylastname" name='mylastname' class="form-control" />
-                                </div>
+                                <span id="prayerDate"></span>
                             </div>
 								<tbody>
 									<tr>
