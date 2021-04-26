@@ -191,19 +191,19 @@ jQ9(document).ready(function () {
             // var prayerID = jQ9(this).closest("tbody").find("tr.parent").find(".indexcol").text();
             var prayerID = testforChild.prev("tr").find(".indexcol").text();
             $clickbuttonid = prayerID;
-            jQ9("#prayerID").html("<div class='col-9'>" + prayerID + "</div>");
+            jQ9("#prayerID").html("<div class='col-7'>" + prayerID + "</div>");
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
-            jQ9("#prayerDate").html("<div class='col-9'>" + prayerDate + "</div>");
+            jQ9("#prayerDate").html("<div class='col-7'>" + prayerDate + "</div>");
             prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            jQ9("#prayerAnswer").html("<div class='col-9'>" + prayerAnswer + "</div>");
+            jQ9("#prayerAnswer").html("<div class='col-7'>" + prayerAnswer + "</div>");
             prayerWho = testforChild.prev("tr").find(".prayer_who").text();
-            jQ9("#prayerWho").html("<div class='col-9'>" + prayerWho + "</div>");
+            jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
             prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
-            jQ9("#prayerTitle").html("<div class='col-9'>" + prayerTitle + "</div>");
+            jQ9("#prayerTitle").html("<div class='col-7'>" + prayerTitle + "</div>");
             prayerType = testforChild.prev("tr").find(".type").text();
-            jQ9("#prayerType").html("<div class='col-9'>" + prayerType + "</div>");
+            jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -216,19 +216,19 @@ jQ9(document).ready(function () {
             console.log("******** NOT CHILD ******")
             var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
             $clickbuttonid = prayerID;
-            jQ9("#prayerID").html("<div class='col-9'>" + prayerID + "</div>");
+            jQ9("#prayerID").html("<div class='col-7'>" + prayerID + "</div>");
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-            jQ9("#prayerDate").html("<div class='col-9'>" + prayerDate + "</div>");
+            jQ9("#prayerDate").html("<div class='col-7'>" + prayerDate + "</div>");
             prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-            jQ9("#prayerAnswer").html("<div class='col-9'>" + prayerAnswer + "</div>");
+            jQ9("#prayerAnswer").html("<div class='col-7'>" + prayerAnswer + "</div>");
             prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-            jQ9("#prayerWho").html("<div class='col-9'>" + prayerWho + "</div>");
+            jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
             prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-            jQ9("#prayerTitle").html("<div class='col-9'>" + prayerTitle + "</div>");
+            jQ9("#prayerTitle").html("<div class='col-7'>" + prayerTitle + "</div>");
             prayerType = jQ9(this).closest('tr').find(".type").text();
-            jQ9("#prayerType").html("<div class='col-9'>" + prayerType + "</div>");
+            jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -668,33 +668,23 @@ require_once('includes/tec_footer.php');
                         <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Type:</label>
-                                </div>
+                                <div class="col-5">Type:</div>
                                 <span id="prayerType"></span>
                             </div>
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Prayer Date:</label>
-                                </div>
+                                <div class="col-5">Prayer Date:</div>
                                 <span id="prayerDate"></span>
                             </div>
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">From:</label>
-                                </div>
+                                <div class="col-5">From:</div>
                                 <span id="prayerWho"></span>
                             </div>
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Title:</label>
-                                </div>
+                                <div class="col-5">Title:</div>
                                 <span id="prayerTitle"></span>
                             </div>
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Answered:</label>
-                                </div>
+                                <div class="col-5">Answered:</div>
                                 <span id="prayerAnswer"></span>
                             </div>
 								<tbody>
