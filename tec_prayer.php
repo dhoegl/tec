@@ -662,15 +662,16 @@ require_once('includes/tec_footer.php');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light p-2" name='newprayer' method='post' action=''> 		
+                <form class="text-center border border-light p-2" name='viewprayer' method='post' action=''> 		
                     <table id="viewpraytable" border='0' cellpadding='0' cellspacing='1' >
-                        <div class="modaleditform text-center border border-light p-2">
+                        <!-- <div class="modaleditform text-center border border-light p-2"> -->
+                        <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="mylastname">Prayer ID:</label>
+                                    <label for="mylastname">Type:</label>
                                 </div>
-                                <span id="prayerID"></span>
+                                <span id="prayerType"></span>
                             </div>
                             <div class="row">
                                 <div class="col-3">
@@ -680,27 +681,21 @@ require_once('includes/tec_footer.php');
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="mylastname">Who's Request:</label>
+                                    <label for="mylastname">From:</label>
                                 </div>
                                 <span id="prayerWho"></span>
-                            </div>
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Answered:</label>
-                                </div>
-                                <span id="prayerAnswer"></span>
-                            </div>
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="mylastname">Type:</label>
-                                </div>
-                                <span id="prayerType"></span>
                             </div>
                             <div class="row">
                                 <div class="col-3">
                                     <label for="mylastname">Title:</label>
                                 </div>
                                 <span id="prayerTitle"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="mylastname">Answered:</label>
+                                </div>
+                                <span id="prayerAnswer"></span>
                             </div>
 								<tbody>
 									<tr>
