@@ -195,15 +195,15 @@ jQ9(document).ready(function () {
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
-            jQ9("#prayerDate").html("<div class='col-7'>" + prayerDate + "</div>");
+            jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            jQ9("#prayerAnswer").html("<div class='col-7'>" + prayerAnswer + "</div>");
+            jQ9("#prayerAnswer").html(prayerAnswer);
             prayerWho = testforChild.prev("tr").find(".prayer_who").text();
-            jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
+            jQ9("#prayerWho").html(prayerWho);
             prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
             jQ9("#prayerTitle").html(prayerTitle);
             prayerType = testforChild.prev("tr").find(".type").text();
-            jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
+            jQ9("#prayerType").html(prayerType);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -220,15 +220,15 @@ jQ9(document).ready(function () {
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
             prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-            jQ9("#prayerDate").html("<div class='col-7'>" + prayerDate + "</div>");
+            jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-            jQ9("#prayerAnswer").html("<div class='col-7'>" + prayerAnswer + "</div>");
+            jQ9("#prayerAnswer").html(prayerAnswer);
             prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-            jQ9("#prayerWho").html("<div class='col-7'>" + prayerWho + "</div>");
+            jQ9("#prayerWho").html(prayerWho);
             prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
             jQ9("#prayerTitle").html(prayerTitle);
             prayerType = jQ9(this).closest('tr').find(".type").text();
-            jQ9("#prayerType").html("<div class='col-7'>" + prayerType + "</div>");
+            jQ9("#prayerType").html(prayerType);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -601,15 +601,14 @@ require_once('includes/tec_footer.php');
                             <div class="row">
                                 <div class="col-5">Type:</div>
                                 <div class="col-7"><span id="prayerType"></span></div>
-                                
                             </div>
                             <div class="row">
                                 <div class="col-5">Prayer Date:</div>
-                                <span id="prayerDate"></span>
+                                <div class="col-7"><span id="prayerDate"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-5">From:</div>
-                                <span id="prayerWho"></span>
+                                <div class="col-7"><span id="prayerWho"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-5">Title:</div>
@@ -617,7 +616,7 @@ require_once('includes/tec_footer.php');
                             </div>
                             <div class="row">
                                 <div class="col-5">Answered:</div>
-                                <span id="prayerAnswer"></span>
+                                <div class="col-7"><span id="prayerAnswer"></span></div>
                             </div>
 								<tbody>
 									<tr>
