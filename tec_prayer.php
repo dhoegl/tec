@@ -197,7 +197,12 @@ jQ9(document).ready(function () {
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
             jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            jQ9("#prayerAnswer").html(prayerAnswer);
+            if(prayAnswer==""){
+                jQ9("#prayerAnswer").html("NO");
+            }
+            else{
+                jQ9("#prayerAnswer").html("YES");
+            }
             prayerWho = testforChild.prev("tr").find(".prayer_who").text();
             jQ9("#prayerWho").html(prayerWho);
             prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
@@ -615,8 +620,8 @@ require_once('includes/tec_footer.php');
                                 <div class="col-9 text-left"><span id="prayerTitle"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Answered:</div>
-                                <div class="col-9 text-left"><span id="prayerAnswer"></span></div>
+                                <div class="col-9 text-right font-weight-bold">Answered:</div>
+                                <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                             </div>
 								<tbody>
 									<tr>
