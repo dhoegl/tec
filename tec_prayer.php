@@ -222,6 +222,7 @@ jQ9(document).ready(function () {
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
+            console.log("prayerText (this jQ9 entry) = " + prayerText);
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
          }
@@ -259,6 +260,7 @@ jQ9(document).ready(function () {
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
+            console.log("prayerText (this jQ9 entry) = " + prayerText);
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
         }
