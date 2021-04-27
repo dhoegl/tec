@@ -604,19 +604,17 @@ require_once('includes/tec_footer.php');
                                     <div class="col-3 text-right font-weight-bold">Answered:</div>
                                     <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                                 </div>
+                                <div  class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Panel title</h5>
+                                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                                    </div>
+                                </div>
+
                                 <table id="viewpraytable" style="width:100%; border: 1px solid black" cellpadding='0' cellspacing='1' >
                                     <tbody>
                                         <tr>
-                                            <td>Type:</td>
-                                            <td>Placeholder</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date:</td>
-                                            <td>Placeholder</td>
-                                        </tr>
-                                        <tr>
-                                            <td>From:</td>
-                                            <td>Placeholder</td>
+                                            <td>Request:</td>
                                         </tr>
                                         <tr>
                                             <td>Title:</td>
