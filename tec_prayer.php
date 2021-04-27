@@ -588,7 +588,7 @@ require_once('includes/tec_footer.php');
                                 <div class="col-9 text-left"><span id="prayerType"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Prayer Date:</div>
+                                <div class="col-3 text-right font-weight-bold">Date:</div>
                                 <div class="col-9 text-left"><span id="prayerDate"></span></div>
                             </div>
                             <div class="row">
@@ -600,7 +600,9 @@ require_once('includes/tec_footer.php');
                                 <div class="col-9 text-left"><span id="prayerTitle"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-9 text-right font-weight-bold">Answered:</div>
+                                <div class="col-3 text-right font-weight-bold">Updated:</div>
+                                <div class="col-3 text-left"><span id="prayerUpdate"></span></div>
+                                <div class="col-3 text-right font-weight-bold">Answered:</div>
                                 <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                             </div>
 								<tbody>
