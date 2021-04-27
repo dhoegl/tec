@@ -197,7 +197,7 @@ jQ9(document).ready(function () {
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
             jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            if(prayAnswer==""){
+            if(!prayAnswer){
                 jQ9("#prayerAnswer").html("NO");
             }
             else{
