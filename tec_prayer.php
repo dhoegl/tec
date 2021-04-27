@@ -279,31 +279,6 @@ jQ9(document).ready(function () {
 
 </script>
 
-<!-- Detect 'Details' button click to display prayer details popup -->
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-
-
-<script type="text/javascript">
- var jQ4 = jQuery.noConflict();
-	jQ4(document).ready(function() {
-		jQ4("#activeprayertable").on("click", "button", function () {
-	var prayerDate = jQ4(this).closest('tr').find(".prayer_update").html();
-	var prayerWho = jQ4(this).closest('tr').find(".prayer_who").html();
-	});
-// Launch Active Prayer Popup
-// http://dev.vast.com/jquery-popup-overlay/
-	jQ4("#my_popup").popup({
-		background: true, focusdelay: 400, transition: 'all 0.3s', vertical: 'top', outline: true, keepfocus: true, blur: false, color: "#D1E0B2",
-		onopen: function () {
-			var prayerDate = jQ4(this).closest('tr').find(".prayer_update").html();
-		}
-		});
-
- }); 
-</script>
-
 
 </head>
 <body>
