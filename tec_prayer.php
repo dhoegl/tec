@@ -599,7 +599,7 @@ require_once('includes/tec_footer.php');
                                 <div class="col-8 text-left"><span id="prayerTitle"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-4 text-right font-weight-bold border-bottom">Updated:</div>
+                                <div class="col-4 text-right font-weight-bold"><span class="border-bottom">Updated:</span></div>
                                 <div class="col-2 text-left border-bottom"><span id="prayerUpdate"></span></div>
                                 <div class="col-3 text-right font-weight-bold border-bottom">Answered:</div>
                                 <div class="col-3 text-left border-bottom"><span id="prayerAnswer"></span></div>
