@@ -584,24 +584,24 @@ require_once('includes/tec_footer.php');
                         <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Type:</div>
-                                <div class="col-9 text-left"><span id="prayerType"></span></div>
+                                <div class="col-4 text-right font-weight-bold">Type:</div>
+                                <div class="col-8 text-left"><span id="prayerType"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Date:</div>
-                                <div class="col-9 text-left"><span id="prayerDate"></span></div>
+                                <div class="col-4 text-right font-weight-bold">Date:</div>
+                                <div class="col-8 text-left"><span id="prayerDate"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">From:</div>
-                                <div class="col-9 text-left"><span id="prayerWho"></span></div>
+                                <div class="col-4 text-right font-weight-bold">From:</div>
+                                <div class="col-8 text-left"><span id="prayerWho"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Title:</div>
-                                <div class="col-9 text-left"><span id="prayerTitle"></span></div>
+                                <div class="col-4 text-right font-weight-bold">Title:</div>
+                                <div class="col-8 text-left"><span id="prayerTitle"></span></div>
                             </div>
                             <div class="row">
-                                <div class="col-3 text-right font-weight-bold">Updated:</div>
-                                <div class="col-3 text-left"><span id="prayerUpdate"></span></div>
+                                <div class="col-4 text-right font-weight-bold">Updated:</div>
+                                <div class="col-2 text-left"><span id="prayerUpdate"></span></div>
                                 <div class="col-3 text-right font-weight-bold">Answered:</div>
                                 <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                             </div>
