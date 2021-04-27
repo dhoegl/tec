@@ -197,11 +197,11 @@ jQ9(document).ready(function () {
             prayerDate = testforChild.prev("tr").find(".prayer_update").text();
             jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            if(!prayerAnswer){
-                jQ9("#prayerAnswer").html("NO");
+            if(prayerAnswer == "Answered"){
+                jQ9("#prayerAnswer").html("YES");
             }
             else{
-                jQ9("#prayerAnswer").html("YES");
+                jQ9("#prayerAnswer").html("NO");
             }
             prayerWho = testforChild.prev("tr").find(".prayer_who").text();
             jQ9("#prayerWho").html(prayerWho);
