@@ -572,14 +572,13 @@ require_once('includes/tec_footer.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">View Prayer Request Details<br>Click <strong>Submit</strong> when done.</h5>
+                <h5 class="modal-title" id="exampleModalLabel">View Prayer Request Details<br>Click <strong>Close</strong> when done.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form class="border border-light p-2" name='viewprayer' method='post' action=''> 		
-                    <table id="viewpraytable" border='0' cellpadding='0' cellspacing='1' >
                         <!-- <div class="modaleditform text-center border border-light p-2"> -->
                         <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
@@ -605,6 +604,7 @@ require_once('includes/tec_footer.php');
                                 <div class="col-3 text-right font-weight-bold">Answered:</div>
                                 <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                             </div>
+                            <table id="viewpraytable" border='0' cellpadding='0' cellspacing='1' >
 								<tbody>
 									<tr>
 										<td>Type:</td>
@@ -628,7 +628,7 @@ require_once('includes/tec_footer.php');
                             <td></td>
                             <td></td>
                             <td colspan="3" align='right'>
-                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Close</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             </td>
                         </tr>
