@@ -607,11 +607,11 @@ require_once('includes/tec_footer.php');
                                 <div  class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Panel title</h5>
-                                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                                        <p class="card-text" id="viewpraytable">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
                                     </div>
                                 </div>
 
-                                <table id="viewpraytable" style="width:100%; border: 1px solid black" cellpadding='0' cellspacing='1' >
+                                <!-- <table id="viewpraytable" style="width:100%; border: 1px solid black" cellpadding='0' cellspacing='1' >
                                     <tbody>
                                         <tr>
                                             <td>Request:</td>
@@ -621,7 +621,7 @@ require_once('includes/tec_footer.php');
                                             <td>Placeholder</td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table> -->
                         <tr>
                             <td></td>
                             <td></td>
