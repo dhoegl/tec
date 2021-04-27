@@ -582,10 +582,10 @@ require_once('includes/tec_footer.php');
                         <!-- <div class="modaleditform text-center border border-light p-2"> -->
                         <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Type:</div>
                                     <div class="col-8 text-left"><span id="prayerType"></span></div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Date:</div>
                                     <div class="col-8 text-left"><span id="prayerDate"></span></div>
@@ -606,7 +606,7 @@ require_once('includes/tec_footer.php');
                                 </div>
                                 <div  class="card">
                                     <div class="card-body" id="viewpraytable">
-                                        <h5 class="card-title">Panel title</h5>
+                                        <h5 class="card-title" id="prayerType"></h5>
                                         <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
                                     </div>
                                 </div>
