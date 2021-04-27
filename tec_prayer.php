@@ -208,7 +208,12 @@ jQ9(document).ready(function () {
             prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
             jQ9("#prayerTitle").html(prayerTitle);
             prayerType = testforChild.prev("tr").find(".type").text();
-            jQ9("#prayerType").html(prayerType);
+            if(prayerType == "Prayer"){
+                jQ9("#prayerType").html("Prayer Request");
+            }
+            else{
+                jQ9("#prayerType").html("Praise");
+            }
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -238,7 +243,12 @@ jQ9(document).ready(function () {
             prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
             jQ9("#prayerTitle").html(prayerTitle);
             prayerType = jQ9(this).closest('tr').find(".type").text();
-            jQ9("#prayerType").html(prayerType);
+            if(prayerType == "Prayer"){
+                jQ9("#prayerType").html("Prayer Request");
+            }
+            else{
+                jQ9("#prayerType").html("Praise");
+            }
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
