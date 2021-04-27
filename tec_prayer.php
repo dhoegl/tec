@@ -605,9 +605,9 @@ require_once('includes/tec_footer.php');
                                     <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                                 </div>
                                 <div  class="card">
-                                    <div class="card-body">
+                                    <div class="card-body" id="viewpraytable">
                                         <h5 class="card-title">Panel title</h5>
-                                        <p class="card-text" id="viewpraytable">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
                                     </div>
                                 </div>
 
