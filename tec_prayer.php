@@ -181,6 +181,7 @@ var prayerAnswer = "0";
 var prayerWho = "0";
 var prayerTitle = "0";
 var prayerType = "0";
+var prayerText = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
 	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
@@ -214,6 +215,8 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
+            prayerText = testforChild.prev("tr").find(".full_text").text();
+            jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -249,6 +252,8 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
+            prayerText = jQ9(this).closest('tr').find(".full_text").text();
+            jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -589,13 +594,8 @@ require_once('includes/tec_footer.php');
             </div>
             <div class="modal-body">
                 <form class="border border-light p-2" name='viewprayer' method='post' action=''> 		
-                        <!-- <div class="modaleditform text-center border border-light p-2"> -->
                         <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
-                                <!-- <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Type:</div>
-                                    <div class="col-8 text-left"><span id="prayerType"></span></div>
-                                </div> -->
                                 <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Date:</div>
                                     <div class="col-8 text-left"><span id="prayerDate"></span></div>
@@ -617,7 +617,7 @@ require_once('includes/tec_footer.php');
                                 <div  class="card">
                                     <div class="card-body" id="viewpraytable">
                                         <h5 class="card-title" id="prayerType"></h5>
-                                        <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                                        <p class="card-text"  id="prayerText"></p>
                                     </div>
                                 </div>
 
