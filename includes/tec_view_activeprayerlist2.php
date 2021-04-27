@@ -65,7 +65,7 @@ jQ8(document).ready(function() {
         	},
 			{
         		className: "full_text",
-                "visible": false,
+                // "visible": false,
         		targets: [ 9 ] 
         	}
         ]
