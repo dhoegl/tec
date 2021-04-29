@@ -225,7 +225,7 @@ jQ9(document).ready(function () {
             if(parentTable.hasClass("dtr-inline")) {
                 console.log("**** I found the dtr-inline parent ****");
             }
-            siblingTable = jQ9(parentTable).next().find(".full_name2").text();
+            siblingTable = jQ9(parentTable).find("#prayertexttable.full_text2").text();
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
             // prayerText2 = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").text();
             // jQ9("#prayerText").html(prayerText);
