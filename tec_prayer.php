@@ -432,6 +432,39 @@ require_once('includes/tec_footer.php');
                                         </tr>
                                     </tfoot>
                                 </table>
+<!-- Make table hidden so that only Text column is accessible -->
+                                <div id="prayertexttablehide">
+                                    <table id="prayertexttable">
+                                    <thead class="table-dark">>
+                                        <tr>
+                                            <th class="dtr-prayercolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Family Member</th>
+                                            <th>Type</th>
+                                            <th>Answered</th>
+                                            <th>Title</th>
+                                            <th>Quick Glance</th>
+                                            <th>Details</th>
+                                            <th>Text</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot class="table-dark">
+                                        <tr>
+                                            <th class="dtr-prayercolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Family Member</th>
+                                            <th>Type</th>
+                                            <th>Answered</th>
+                                            <th>Title</th>
+                                            <th>Quick Glance</th>
+                                            <th>Details</th>
+                                            <th>Text</th>
+                                        </tr>
+                                    </tfoot>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -71,6 +71,83 @@ jQ8(document).ready(function() {
         ]
 
     });
+    jQ8('#prayertexttablehide').hide();
+    jQ8('#prayertexttable').DataTable({
+//			"processing": true,
+//			"serverSide": true,
+        "ajax": {
+            url: 'tec_getactiveprayer2.php',
+            type: 'GET',
+            },
+//			"bJQueryUI": true,
+//			"sScrollY": "600px",
+//			"bPaginate": true,
+//			"aaSorting": [[ 1, "asc" ]],
+//			"ordering": true,
+			"order": [[ 2, 'desc' ]],
+//			"iDisplayLength": 100,
+//			"bLengthChange": false,
+//			"bFilter": true,
+//			"bSort": true,
+//			"bInfo": false,
+            "bAutoWidth": true,
+            "responsive": true,
+//			"sWrapper": "25px",
+//			"orderClasses": false,
+			"columnDefs": [ 
+            {
+                orderable: false,
+                "visible": false,
+                targets:   [ 0 ]
+            },
+            {
+        		className: "indexcol",
+                "visible": false,
+                targets:   [ 1 ]
+            },
+            {
+        		className: "prayer_update",
+                "visible": false,
+                targets:   [ 2 ]
+            },
+			{
+        		className: "prayer_who",
+                "visible": false,
+        		"targets": [ 3 ] 
+        	},
+			{
+        		className: "type",
+                "visible": false,
+        		"targets": [ 4 ] 
+        	},
+			{
+        		className: "prayer_answer",
+                "visible": false,
+        		"targets": [ 5 ] 
+        	},
+			{
+        		className: "prayer_title",
+                "visible": false,
+        		"targets": [ 6 ] 
+        	},
+			{
+        		className: "glance",
+                "visible": false,
+        		"targets": [ 7 ] 
+        	},
+			{
+        		className: "detailscolumn",
+                orderable: false,
+                "visible": false,
+        		"targets": [ 8 ] 
+        	},
+			{
+        		className: "full_text",
+        		targets: [ 9 ] 
+        	}
+        ]
+
+    });
 });
 </script>
 
