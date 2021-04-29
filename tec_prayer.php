@@ -182,6 +182,7 @@ var prayerWho = "0";
 var prayerTitle = "0";
 var prayerType = "0";
 var prayerText = "0";
+var gethiddencol = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
 	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
@@ -216,13 +217,15 @@ jQ9(document).ready(function () {
                 jQ9("#prayerType").html("Praise");
             }
             prayerText = testforChild.prev("tr").find(".full_text").text();
-            jQ9("#prayerText").html(prayerText);
+            // jQ9("#prayerText").html(prayerText);
+// Testing exposure of hidden prayerText column trait_exists
+            gethiddencol = jQ9('#activeprayertable').DataTable().row(testforChild).data();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
+            console.log("prayerText (this jQ9 entry) = " + gethiddencol);
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
          }
