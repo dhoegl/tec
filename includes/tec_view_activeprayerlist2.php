@@ -71,7 +71,7 @@ jQ8(document).ready(function() {
         ]
 
     });
-    // jQ8('#prayertexttablehide').hide();
+    jQ8('#prayertexttablehide').hide();
     jQ8('#prayertexttable').DataTable({
 //			"processing": true,
 //			"serverSide": true,

@@ -441,7 +441,7 @@ require_once('includes/tec_footer.php');
                                 </tfoot>
                             </table>
 <!-- Make table hidden so that only Text column is accessible -->
-                            <!-- <div id="prayertexttablehide"> -->
+                            <div id="prayertexttablehide">
                                 <table id="prayertexttable">
                                     <thead class="table-dark">>
                                         <tr>
