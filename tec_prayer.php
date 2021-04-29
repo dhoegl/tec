@@ -184,6 +184,7 @@ var prayerTitle = "0";
 var prayerType = "0";
 var prayerText;
 var prayerText2;
+var siblingTable;
 var gethiddencol = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
@@ -224,6 +225,7 @@ jQ9(document).ready(function () {
             if(parentTable.hasClass("dtr-inline")) {
                 console.log("**** I found the dtr-inline parent ****");
             }
+            siblingTable = jQ9(parentTable).next().find(".full_name2").text();
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
             // prayerText2 = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").text();
             // jQ9("#prayerText").html(prayerText);
@@ -235,6 +237,7 @@ jQ9(document).ready(function () {
             console.log("prayerText (this jQ9 entry) = " + prayerText);
             console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
             console.log("prayerText2 (this jQ9 entry) = " + prayerText2);
+            console.log("siblingTable (this jQ9 entry) = " + siblingTable);
 
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
