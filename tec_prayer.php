@@ -221,7 +221,7 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
             // prayerText = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").eq(prayerIndex).text();
             parentTable = jQ9(this).closest('table');
-            if(parentTable.hasclass("dtr-inline") {
+            if(parentTable.hasclass("dtr-inline")) {
                 console.log("**** I found the dtr-inline parent ****");
             }
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
