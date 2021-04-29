@@ -225,7 +225,8 @@ jQ9(document).ready(function () {
             if(parentTable.hasClass("dtr-inline")) {
                 console.log("**** I found the dtr-inline parent ****");
             }
-            siblingTable = jQ9(parentTable).find("#prayertexttable.full_text2").text();
+            // siblingTable = jQ9(parentTable).find("#prayertexttable.full_text2").text();
+            siblingTable = jQ9(parentTable).siblings("table").find(".full_text2").text();
             // siblingTable = jQ9(parentTable).find("#prayertexttable").find(".full_text2").eq(prayerIndex).css({"color": "red"});
             jQ9(parentTable).find("#prayertexttable").css({"color": "red"});
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
