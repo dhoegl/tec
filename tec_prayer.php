@@ -176,6 +176,7 @@ if(!$_SESSION['logged in']) {
  <script type="text/javascript">
 var $clickbuttonid = "NA";
 var testforChild = "0";
+var parentTable;
 var prayerDate = "0";
 var prayerAnswer = "0";
 var prayerWho = "0";
@@ -219,9 +220,12 @@ jQ9(document).ready(function () {
             }
             var prayerIndex = prayerID-1;
             // prayerText = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").eq(prayerIndex).text();
-            prayerText = testforChild.parentElement.parentElement.nodeName;
+            parentTable = jQ9(this).closest('table');
+            if(parentTable.hasclass("dtr-inline") {
+                console.log("**** I found the dtr-inline parent ****");
+            }
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
-            prayerText2 = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").text();
+            // prayerText2 = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").text();
             // jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
