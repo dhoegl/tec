@@ -102,7 +102,6 @@ jQ8(document).ready(function() {
             },
             {
         		className: "indexcol2",
-                "visible": false,
                 targets:   [ 1 ]
             },
             {
