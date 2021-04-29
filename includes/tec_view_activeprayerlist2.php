@@ -71,7 +71,7 @@ jQ8(document).ready(function() {
         ]
 
     });
-    jQ8('#prayertexttablehide').hide();
+    // jQ8('#prayertexttablehide').hide();
     jQ8('#prayertexttable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
@@ -101,48 +101,48 @@ jQ8(document).ready(function() {
                 targets:   [ 0 ]
             },
             {
-        		className: "indexcol",
+        		className: "indexcol2",
                 "visible": false,
                 targets:   [ 1 ]
             },
             {
-        		className: "prayer_update",
+        		className: "prayer_update2",
                 "visible": false,
                 targets:   [ 2 ]
             },
 			{
-        		className: "prayer_who",
+        		className: "prayer_who2",
                 "visible": false,
         		"targets": [ 3 ] 
         	},
 			{
-        		className: "type",
+        		className: "type2",
                 "visible": false,
         		"targets": [ 4 ] 
         	},
 			{
-        		className: "prayer_answer",
+        		className: "prayer_answer2",
                 "visible": false,
         		"targets": [ 5 ] 
         	},
 			{
-        		className: "prayer_title",
+        		className: "prayer_title2",
                 "visible": false,
         		"targets": [ 6 ] 
         	},
 			{
-        		className: "glance",
+        		className: "glance2",
                 "visible": false,
         		"targets": [ 7 ] 
         	},
 			{
-        		className: "detailscolumn",
+        		className: "detailscolumn2",
                 orderable: false,
                 "visible": false,
         		"targets": [ 8 ] 
         	},
 			{
-        		className: "full_text",
+        		className: "full_text2",
         		targets: [ 9 ] 
         	}
         ]
