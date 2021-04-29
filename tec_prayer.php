@@ -219,7 +219,7 @@ jQ9(document).ready(function () {
             }
             var prayerIndex = prayerID-1;
             prayerText = testforChild.prev("tr").find(".full_text2").eq(prayerIndex).text();
-            prayerText2 = testforChild.prev("tr").find(".full_text2")text();
+            prayerText2 = testforChild.prev("tr").find(".full_text2").text();
             // jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
