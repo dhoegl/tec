@@ -181,7 +181,8 @@ var prayerAnswer = "0";
 var prayerWho = "0";
 var prayerTitle = "0";
 var prayerType = "0";
-var prayerText = "0";
+var prayerText;
+var prayerText2;
 var gethiddencol = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
@@ -218,6 +219,7 @@ jQ9(document).ready(function () {
             }
             var prayerIndex = prayerID-1;
             prayerText = testforChild.prev("tr").find(".full_text2").eq(prayerIndex).text();
+            prayerText2 = testforChild.prev("tr").find(".full_text2")text();
             // jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
@@ -225,6 +227,9 @@ jQ9(document).ready(function () {
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
             console.log("prayerText (this jQ9 entry) = " + prayerText);
+            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
+            console.log("prayerText2 (this jQ9 entry) = " + prayerText2);
+
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
          }
