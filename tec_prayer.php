@@ -220,11 +220,6 @@ jQ9(document).ready(function () {
                 jQ9("#prayerType").html("Praise");
             }
             var prayerIndex = prayerID-1;
-            // prayerText = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").eq(prayerIndex).text();
-            parentTable = jQ9(this).closest('table');
-            if(parentTable.hasClass("dtr-inline")) {
-                console.log("**** I found the dtr-inline parent ****");
-            }
             siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
             jQ9("#prayerText").html(siblingTable);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
@@ -267,14 +262,16 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
-            prayerText = jQ9(this).closest('tr').find(".full_text").text();
-            jQ9("#prayerText").html(prayerText);
+            var prayerIndex = prayerID-1;
+            siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
+            jQ9("#prayerText").html(siblingTable);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
             console.log("prayerText (this jQ9 entry) = " + prayerText);
+            console.log("siblingTable (this jQ9 entry) = " + siblingTable);
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
         }
