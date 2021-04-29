@@ -226,7 +226,7 @@ jQ9(document).ready(function () {
                 console.log("**** I found the dtr-inline parent ****");
             }
             // siblingTable = jQ9(parentTable).find("#prayertexttable.full_text2").text();
-            siblingTable = jQ9(parentTable).siblings().css({"color": "red"});
+            siblingTable = jQ9(parentTable).find("#prayertexttable").find(".full_text2").text();
             // prayerText2 = testforChild.prev("table").find("#prayertexttable.full_text2").text();
             // prayerText2 = testforChild.parentElement.parentElement.find("#prayertexttable.full_text2").text();
             // jQ9("#prayerText").html(prayerText);
@@ -430,8 +430,8 @@ require_once('includes/tec_footer.php');
                                             <th>Details</th>
                                             <th>Text</th>
                                         </tr>
-                                    </thead>
-                                    <tfoot class="table-dark">
+                                </thead>
+                                <tfoot class="table-dark">
                                         <tr>
                                             <th class="dtr-prayercolumn"></th>
                                             <th>id</th>
@@ -444,11 +444,11 @@ require_once('includes/tec_footer.php');
                                             <th>Details</th>
                                             <th>Text</th>
                                         </tr>
-                                    </tfoot>
-                                </table>
+                                </tfoot>
+                            </table>
 <!-- Make table hidden so that only Text column is accessible -->
-                                <div id="prayertexttablehide">
-                                    <table id="prayertexttable">
+                            <div id="prayertexttablehide">
+                                <table id="prayertexttable">
                                     <thead class="table-dark">>
                                         <tr>
                                             <th class="dtr-prayercolumn"></th>
@@ -477,13 +477,13 @@ require_once('includes/tec_footer.php');
                                             <th>Text</th>
                                         </tr>
                                     </tfoot>
-                                    </table>
-                                </div>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> <!-- Row -->
+            </div>
+        </div> <!-- Row -->
     </div> <!-- Container -->
 
 <!-- ******** LEFT OFF HERE -->
