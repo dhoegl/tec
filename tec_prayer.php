@@ -219,7 +219,7 @@ jQ9(document).ready(function () {
             prayerText = testforChild.prev("tr").find(".full_text").text();
             // jQ9("#prayerText").html(prayerText);
 // Testing exposure of hidden prayerText column trait_exists
-            gethiddencol = jQ9('#activeprayertable').DataTable().row(testforChild).data();
+            gethiddencol = jQ9('#activeprayertable').DataTable().row(testforChild).text();
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
