@@ -666,23 +666,11 @@ require_once('includes/tec_footer.php');
                                         <p class="card-text"  id="prayerText"></p>
                                     </div>
                                 </div>
-
-                                <!-- <table id="viewpraytable" style="width:100%; border: 1px solid black" cellpadding='0' cellspacing='1' >
-                                    <tbody>
-                                        <tr>
-                                            <td>Request:</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Title:</td>
-                                            <td>Placeholder</td>
-                                        </tr>
-                                    </tbody>
-                                </table> -->
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary">Close</button>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 align-items-end">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Follow</button>
                                     </div>
                                 </div>
