@@ -667,10 +667,10 @@ require_once('includes/tec_footer.php');
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-6 d-flex justify-content-center">
+                                    <div class="col-sm-6 d-flex justify-content-sm-center">
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
                                     </div>
-                                    <div class="col-sm-6 d-flex justify-content-center">
+                                    <div class="col-sm-6 d-flex justify-content-sm-center">
                                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Follow</button>
                                     </div>
                                 </div>
