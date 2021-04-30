@@ -678,15 +678,16 @@ require_once('includes/tec_footer.php');
                                         </tr>
                                     </tbody>
                                 </table> -->
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td colspan="3" align='right'>
-                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Close</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            </td>
-                        </tr>
-                    </table>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="submit" name="submitnewprayer" class="btn btn-primary">Close</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
                 </form>
             </div>
         </div>
