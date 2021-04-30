@@ -666,7 +666,7 @@ require_once('includes/tec_footer.php');
                                         <p class="card-text"  id="prayerText"></p>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mx-3">
                                     <div class="col-3">
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
                                     </div>
