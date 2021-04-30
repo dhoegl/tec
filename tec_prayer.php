@@ -79,68 +79,68 @@ if(!$_SESSION['logged in']) {
 // Follow button
 	jQ20("#follow_button").click(function () {
 		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
-		var $followselect = 'follow';
-		var request = jQ20.ajax({
-		url: 'services/tec_update_follow_table.php',
-		type: 'POST',
-		dataType: 'json',
-		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
-		});
+		// var $followselect = 'follow';
+		// var request = jQ20.ajax({
+		// url: 'services/tec_update_follow_table.php',
+		// type: 'POST',
+		// dataType: 'json',
+		// data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
+		// });
 
 // Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		var checkfollow = 'services/tec_check_follow_table.php';
-			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-			jQ20.each(data.followmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES is the response");
-					jQ20("#follow_button").hide();
-					jQ20("#unfollow_button").show();
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO is the response");
-					jQ20("#follow_button").show();
-					jQ20("#unfollow_button").hide();
-				}
-			});
-		});
+		// var checkfollow = 'services/tec_check_follow_table.php';
+		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
+		// 	}, function (data) {
+		// 		console.log(data);
+		// 		console.log("Data Message = " + data.followmessage);
+		// 	jQ20.each(data.followmessage, function (i, rep) {
+		// 		if ('yes' === rep.Message.toLowerCase()) {
+		// 			console.log("YES is the response");
+		// 			jQ20("#follow_button").hide();
+		// 			jQ20("#unfollow_button").show();
+		// 		};
+		// 		if ('no' === rep.Message.toLowerCase()) {
+		// 			console.log("NO is the response");
+		// 			jQ20("#follow_button").show();
+		// 			jQ20("#unfollow_button").hide();
+		// 		}
+		// 	});
+		// });
 
 	});
 
 // Unfollow button
-	jQ20("#unfollow_button").click(function () {
-		console.log("prayer unFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
-		var $followselect = 'unfollow';
-		var request = jQ20.ajax({
-		url: 'services/tec_update_follow_table.php',
-		type: 'POST',
-		dataType: 'json',
-		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
-		});
+	// jQ20("#unfollow_button").click(function () {
+	// 	console.log("prayer unFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
+	// 	var $followselect = 'unfollow';
+	// 	var request = jQ20.ajax({
+	// 	url: 'services/tec_update_follow_table.php',
+	// 	type: 'POST',
+	// 	dataType: 'json',
+	// 	data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
+	// 	});
 
 // Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		var checkfollow = 'services/tec_check_follow_table.php';
-			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-			jQ20.each(data.followmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES is the response");
-					jQ20("#follow_button").hide();
-					jQ20("#unfollow_button").show();
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO is the response");
-					jQ20("#follow_button").show();
-					jQ20("#unfollow_button").hide();
-				}
-			});
-		});
+		// var checkfollow = 'services/tec_check_follow_table.php';
+		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
+		// 	}, function (data) {
+		// 		console.log(data);
+		// 		console.log("Data Message = " + data.followmessage);
+		// 	jQ20.each(data.followmessage, function (i, rep) {
+		// 		if ('yes' === rep.Message.toLowerCase()) {
+		// 			console.log("YES is the response");
+		// 			jQ20("#follow_button").hide();
+		// 			jQ20("#unfollow_button").show();
+		// 		};
+		// 		if ('no' === rep.Message.toLowerCase()) {
+		// 			console.log("NO is the response");
+		// 			jQ20("#follow_button").show();
+		// 			jQ20("#unfollow_button").hide();
+		// 		}
+		// 	});
+		// });
 	});
-});
+// });
 </script>
 
 <!-- ******** LEFT OFF HERE -->
@@ -671,7 +671,8 @@ require_once('includes/tec_footer.php');
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
                                     </div>
                                     <div class="col-4">
-                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Follow</button>
+                                        <!-- <button type="button" class="btn btn-secondary btn-sm" id="follow_button" data-dismiss="modal">Follow</button> -->
+                                        <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
                                     </div>
                                     <div class="col-4">
                                         <button type="button" class="btn btn-success btn-sm">Email</button>
