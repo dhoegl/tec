@@ -20,7 +20,7 @@ if(!$_SESSION['logged in']) {
 		$follow_prayerWho = $_POST['followprayerWho'];
 		$follow_prayerDir = $_POST['followprayerDir'];
 		$follow_prayerLoginID = $_POST['followprayerLoginID'];
-		if($followselect == 'follow') {
+		if($followselect == 'yes') {
 		$accessquery = "INSERT INTO " . $_SESSION['prayerfollow'] . "(prayer_id, login_id, username, idDirectory) VALUES ('" . $follow_prayerID . "', '" . $_SESSION['user_id'] . "', '" . $follow_prayerWho . "', '" . $follow_prayerDir . "')";		
 		$logresult = $mysql->query($accessquery) or die(" SQL query prayer follow table insert error. Error #: " . $mysql->errno . " : " . $mysql->error);
     	eventLogUpdate('prayer', 'Prayer Following' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);

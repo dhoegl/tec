@@ -79,14 +79,6 @@ if(!$_SESSION['logged in']) {
 // Follow button
 	jQ20("#follow_button").click(function () {
 		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with Login ID = " + $loggedinLoginID);
-// Update prayer follow table - initialize to Follow as default state
-        var $followselect = 'follow';
-		var request = jQ20.ajax({
-		url: 'services/tec_update_follow_table.php',
-		type: 'POST',
-		dataType: 'json',
-		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
-		});
 
 // Check if prayer is being followed by user - Toggle the follow_button text
 		var checkfollow = 'services/tec_check_follow_table.php';
@@ -97,11 +89,27 @@ if(!$_SESSION['logged in']) {
 			jQ20.each(data.followmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
 					console.log("YES prayer is being followed");
+                // Update prayer follow table - initialize to Follow as default state
+                var $followselect = 'yes';
+                        var request = jQ20.ajax({
+                        url: 'services/tec_update_follow_table.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
+                        });
                     jQ20("#prayerFollow").html("YES");
 					jQ20("#follow_button").html("Click to Unfollow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
+                // Update prayer follow table - initialize to Follow as default state
+                var $followselect = 'no';
+                        var request = jQ20.ajax({
+                        url: 'services/tec_update_follow_table.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
+                        });
                     jQ20("#prayerFollow").html("NO");
 					jQ20("#follow_button").html("Click to Follow");
 				}
@@ -109,6 +117,18 @@ if(!$_SESSION['logged in']) {
 		});
 
 	});
+
+// Update prayer follow table - initialize to Follow as default state
+        var $followselect = 'yes';
+		var request = jQ20.ajax({
+		url: 'services/tec_update_follow_table.php',
+		type: 'POST',
+		dataType: 'json',
+		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
+		});
+
+
+
 
 // Unfollow button
 	// jQ20("#unfollow_button").click(function () {
@@ -692,16 +712,9 @@ require_once('includes/tec_footer.php');
                                 </div>
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                    <!-- <div class="col-4"> -->
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
-                                    <!-- </div>
-                                    <div class="col-4"> -->
-                                        <!-- <button type="button" class="btn btn-secondary btn-sm" id="follow_button" data-dismiss="modal">Follow</button> -->
                                         <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
-                                    <!-- </div>
-                                    <div class="col-4"> -->
-                                        <button type="button" class="btn btn-success btn-sm">Email</button>
-                                    <!-- </div> -->
+                                        <button type="button" name="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
                                     </div>
                                 </div>
                             </div>
