@@ -78,34 +78,33 @@ if(!$_SESSION['logged in']) {
 	jQ20(document).ready(function() {
 // Follow button
 	jQ20("#follow_button").click(function () {
-		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedinLoginID);
-		// var $followselect = 'follow';
-		// var request = jQ20.ajax({
-		// url: 'services/tec_update_follow_table.php',
-		// type: 'POST',
-		// dataType: 'json',
-		// data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
-		// });
+		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with Login ID = " + $loggedinLoginID);
+// Update prayer follow table - initialize to Follow as default state
+        var $followselect = 'follow';
+		var request = jQ20.ajax({
+		url: 'services/tec_update_follow_table.php',
+		type: 'POST',
+		dataType: 'json',
+		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
+		});
 
-// Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		// var checkfollow = 'services/tec_check_follow_table.php';
-		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
-		// 	}, function (data) {
-		// 		console.log(data);
-		// 		console.log("Data Message = " + data.followmessage);
-		// 	jQ20.each(data.followmessage, function (i, rep) {
-		// 		if ('yes' === rep.Message.toLowerCase()) {
-		// 			console.log("YES is the response");
-		// 			jQ20("#follow_button").hide();
-		// 			jQ20("#unfollow_button").show();
-		// 		};
-		// 		if ('no' === rep.Message.toLowerCase()) {
-		// 			console.log("NO is the response");
-		// 			jQ20("#follow_button").show();
-		// 			jQ20("#unfollow_button").hide();
-		// 		}
-		// 	});
-		// });
+// Check if prayer is being followed by user - Toggle the follow_button text
+		var checkfollow = 'services/tec_check_follow_table.php';
+			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
+			}, function (data) {
+				console.log(data);
+				console.log("Data Message = " + data.followmessage);
+			jQ20.each(data.followmessage, function (i, rep) {
+				if ('yes' === rep.Message.toLowerCase()) {
+					console.log("YES prayer is being followed");
+					jQ20("#follow_button").html("Unfollow");
+				};
+				if ('no' === rep.Message.toLowerCase()) {
+					console.log("NO prayer is NOT being followed");
+					jQ20("#follow_button").html("Follow");
+				}
+			});
+		});
 
 	});
 
@@ -232,6 +231,23 @@ jQ9(document).ready(function () {
             console.log("prayerText2 (this jQ9 entry) = " + prayerText2);
             console.log("siblingTable (this jQ9 entry) = " + siblingTable);
 
+// Check if prayer is being followed by user - Toggle the follow_button text
+        var checkfollow = 'services/tec_check_follow_table.php';
+        jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
+			}, function (data) {
+				console.log(data);
+				console.log("Data Message = " + data.followmessage);
+                jQ9.each(data.followmessage, function (i, rep) {
+				if ('yes' === rep.Message.toLowerCase()) {
+					console.log("YES prayer is being followed");
+					jQ9("#follow_button").html("Unfollow");
+				};
+				if ('no' === rep.Message.toLowerCase()) {
+					console.log("NO prayer is NOT being followed");
+					jQ9("#follow_button").html("Follow");
+				}
+			});
+		});
     // Display the Approve popup
     jQ9("#ModalPrayerView").modal('show');
          }

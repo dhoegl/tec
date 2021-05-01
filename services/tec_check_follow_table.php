@@ -1,6 +1,7 @@
 <?php
 session_start();
 // Updated 20210406 - clean up for new TEC prayer module
+// Updated 20210430 - Convert idDirectory to LoginID
 // Initiated from tec_prayer.php
 if(!$_SESSION['logged in']) {
 	session_destroy();
@@ -11,15 +12,15 @@ if(!$_SESSION['logged in']) {
     require_once('../tec_dbconnect.php');
 
 // Check Follow/Unfollow status - called from tecprayer.php    
-	if ( !isset($_GET['followprayerID']) || !isset($_GET['followprayerWho']) || !isset($_GET['followprayerDir'] )) {
+	if ( !isset($_GET['followprayerID']) || !isset($_GET['followprayerWho']) || !isset($_GET['followprayerLoginID'] )) {
 		 echo 'Required data is missing';
 		 return;
 	}
 	else {
 		$follow_prayerID = $_GET['followprayerID'];
 		$follow_prayerWho = $_GET['followprayerWho'];
-		$follow_prayerDir = $_GET['followprayerDir'];
-		$followprayerquery = "SELECT * FROM " . $_SESSION['prayerfollow'] . " WHERE prayer_id = '" . $follow_prayerID . "' and idDirectory = '" . $follow_prayerDir . "' and username = '" . $follow_prayerWho . "'";
+		$follow_prayerLoginID = $_GET['followprayerLoginID'];
+		$followprayerquery = "SELECT * FROM " . $_SESSION['prayerfollow'] . " WHERE prayer_id = '" . $follow_prayerID . "' and login_id = '" . $follow_prayerLoginID . "' and username = '" . $follow_prayerWho . "'";
 		$followresult = $mysql->query($followprayerquery) or die(" SQL query prayer follow table check error. Error #: " . $mysql->errno . " : " . $mysql->error);
 		$followcount = $followresult->num_rows;
 
