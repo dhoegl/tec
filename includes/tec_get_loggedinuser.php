@@ -6,6 +6,7 @@ var $loggedaccesslevel = 'NA';
 	jQ21(document).ready(function () {
 		$loggedusername = <?php echo '"' . $_SESSION['username'] . '"'; ?>;
 		$loggedidDirectory = <?php echo '"' . $_SESSION['idDirectory'] . '"'; ?>;
+		$loggedinLoginID = <?php echo '"' . $_SESSION['user_id'] . '"'; ?>;
 		$loggedaccesslevel = <?php echo '"' . $_SESSION['accesslevel'] . '"'; ?>;
 		console.log("Logged in User: " + $loggedusername);
 		console.log("Logged in Directory ID: " + $loggedidDirectory);

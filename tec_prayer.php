@@ -78,7 +78,7 @@ if(!$_SESSION['logged in']) {
 	jQ20(document).ready(function() {
 // Follow button
 	jQ20("#follow_button").click(function () {
-		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
+		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedinLoginID);
 		// var $followselect = 'follow';
 		// var request = jQ20.ajax({
 		// url: 'services/tec_update_follow_table.php',
