@@ -1,5 +1,6 @@
 <?php
 // Updated 20210406 - cleaned up for new TEC prayer module
+// Updated 20210430 - Add LoginID, verify eventLogUpdate functions correctly
 // Initiated from tec_prayer.php
 session_start();
 if(!$_SESSION['logged in']) {

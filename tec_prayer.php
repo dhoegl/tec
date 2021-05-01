@@ -97,11 +97,13 @@ if(!$_SESSION['logged in']) {
 			jQ20.each(data.followmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
 					console.log("YES prayer is being followed");
-					jQ20("#follow_button").html("Unfollow");
+                    jQ20("#prayerFollow").html("YES");
+					jQ20("#follow_button").html("Click to Unfollow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
-					jQ20("#follow_button").html("Follow");
+                    jQ20("#prayerFollow").html("NO");
+					jQ20("#follow_button").html("Click to Follow");
 				}
 			});
 		});
@@ -240,11 +242,13 @@ jQ9(document).ready(function () {
                 jQ9.each(data.followmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
 					console.log("YES prayer is being followed");
-					jQ9("#follow_button").html("Unfollow");
+                    jQ9("#prayerFollow").html("YES");
+                    jQ9("#follow_button").html("Click to Unfollow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
-					jQ9("#follow_button").html("Follow");
+                    jQ9("#prayerFollow").html("NO");
+					jQ9("#follow_button").html("Click to Follow");
 				}
 			});
 		});
@@ -675,6 +679,10 @@ require_once('includes/tec_footer.php');
                                     <div class="col-2 text-left"><span id="prayerUpdate"></span></div>
                                     <div class="col-3 text-right font-weight-bold">Answered:</div>
                                     <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">Am I following:</div>
+                                    <div class="col-8 text-left"><span id="prayerFollow"></span></div>
                                 </div>
                                 <div  class="card">
                                     <div class="card-body" id="viewpraytable">
