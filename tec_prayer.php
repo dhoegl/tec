@@ -681,8 +681,8 @@ require_once('includes/tec_footer.php');
                                     <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Am I following:</div>
-                                    <div class="col-8 text-left"><span id="prayerFollow"></span></div>
+                                    <div class="col-6 text-right font-weight-bold text-danger">Am I following:</div>
+                                    <div class="col-6 text-left text-danger"><span id="prayerFollow"></span></div>
                                 </div>
                                 <div  class="card">
                                     <div class="card-body" id="viewpraytable">
