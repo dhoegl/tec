@@ -248,8 +248,8 @@ jQ9(document).ready(function () {
 				}
 			});
 		});
-    // Display the Approve popup
-    // jQ9("#ModalPrayerView").modal('show');
+    // Display the Prayer Request Details popup
+    jQ9("#ModalPrayerView").modal('show');
     //      }
     //     else {
     //         console.log("******** NOT CHILD ******")
