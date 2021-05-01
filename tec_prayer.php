@@ -690,7 +690,7 @@ require_once('includes/tec_footer.php');
                                         <p class="card-text"  id="prayerText"></p>
                                     </div>
                                 </div>
-                                <div class="row px-2">
+                                <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                     <!-- <div class="col-4"> -->
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
