@@ -72,8 +72,10 @@ if(!$_SESSION['logged in']) {
 ?>
 
 
-<!-- Process the Prayer 'Follow' and 'Unfollow' buttons click action -->
- <script type="text/javascript">
+<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
+<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
+<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
+<script type="text/javascript">
 	var jQ20 = jQuery.noConflict();
 	jQ20(document).ready(function() {
 // Follow button
@@ -193,8 +195,10 @@ if(!$_SESSION['logged in']) {
 
 </script>
 
-<!-- Get Which Prayer Item's 'Details' button was clicked -->
- <script type="text/javascript">
+<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
+<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
+<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
+<script type="text/javascript">
 var $clickbuttonid = "NA";
 var testforChild = "0";
 var parentTable;
