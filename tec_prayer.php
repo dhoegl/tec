@@ -119,13 +119,13 @@ if(!$_SESSION['logged in']) {
 	});
 
 // Update prayer follow table - initialize to Follow as default state
-        var $followselect = 'yes';
-		var request = jQ20.ajax({
-		url: 'services/tec_update_follow_table.php',
-		type: 'POST',
-		dataType: 'json',
-		data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
-		});
+        // var $followselect = 'yes';
+		// var request = jQ20.ajax({
+		// url: 'services/tec_update_follow_table.php',
+		// type: 'POST',
+		// dataType: 'json',
+		// data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
+		// });
 
 
 
