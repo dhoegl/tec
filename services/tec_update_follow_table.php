@@ -22,11 +22,18 @@ if(!$_SESSION['logged in']) {
 		$follow_prayerDir = $_POST['followprayerDir'];
 		$follow_prayerLoginID = $_POST['followprayerLoginID'];
 		if($followselect == 'yes') {
+			echo "<script language='javascript'>";
+			echo "console.log('YES I am following this prayer request');";
+			echo "</script>";
+		
 			// $accessquery = "INSERT INTO " . $_SESSION['prayerfollow'] . "(prayer_id, login_id, username, idDirectory) VALUES ('" . $follow_prayerID . "', '" . $_SESSION['user_id'] . "', '" . $follow_prayerWho . "', '" . $follow_prayerDir . "')";		
 			// $logresult = $mysql->query($accessquery) or die(" SQL query prayer follow table insert error. Error #: " . $mysql->errno . " : " . $mysql->error);
 			eventLogUpdate('prayer', 'Prayer Following' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
 		}
 		else { // unfollow - delete follow entry
+			echo "<script language='javascript'>";
+			echo "console.log('NO I am NOT following this prayer request');";
+			echo "</script>";
  			// $deletefollow = "DELETE from " . $_SESSION['prayerfollow'] . " WHERE prayer_id = '$follow_prayerID' and username = '$follow_prayerWho' and idDirectory = '$follow_prayerDir'";			
 			// $deletefollowexe = $mysql->query($deletefollow)or die("A database error has occurred when deleting prayer_follow entry. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
 			eventLogUpdate('prayer', 'Prayer UnFollow' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
