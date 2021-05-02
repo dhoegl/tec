@@ -29,7 +29,7 @@ if(!$_SESSION['logged in']) {
 		else { // unfollow - delete follow entry
  			// $deletefollow = "DELETE from " . $_SESSION['prayerfollow'] . " WHERE prayer_id = '$follow_prayerID' and username = '$follow_prayerWho' and idDirectory = '$follow_prayerDir'";			
 			// $deletefollowexe = $mysql->query($deletefollow)or die("A database error has occurred when deleting prayer_follow entry. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
-			// eventLogUpdate('prayer', 'Prayer UnFollow' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
+			eventLogUpdate('prayer', 'Prayer UnFollow' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
 		}
 
 	}
