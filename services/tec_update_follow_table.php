@@ -9,6 +9,7 @@ if(!$_SESSION['logged in']) {
 }
 
     require_once('../tec_dbconnect.php');
+    include('../includes/event_logs_update.php');
 
 	if ( !isset($_POST['followselect']) || !isset($_POST['followprayerID']) || !isset($_POST['followprayerWho']) || !isset($_POST['followprayerDir'] )) {
 		 echo 'Required data is missing';
@@ -23,7 +24,7 @@ if(!$_SESSION['logged in']) {
 		if($followselect == 'yes') {
 			// $accessquery = "INSERT INTO " . $_SESSION['prayerfollow'] . "(prayer_id, login_id, username, idDirectory) VALUES ('" . $follow_prayerID . "', '" . $_SESSION['user_id'] . "', '" . $follow_prayerWho . "', '" . $follow_prayerDir . "')";		
 			// $logresult = $mysql->query($accessquery) or die(" SQL query prayer follow table insert error. Error #: " . $mysql->errno . " : " . $mysql->error);
-			// eventLogUpdate('prayer', 'Prayer Following' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
+			eventLogUpdate('prayer', 'Prayer Following' , 'PrayerID: ' . $follow_prayerID, 'UserID: ' . $_SESSION['user_id']);
 		}
 		else { // unfollow - delete follow entry
  			// $deletefollow = "DELETE from " . $_SESSION['prayerfollow'] . " WHERE prayer_id = '$follow_prayerID' and username = '$follow_prayerWho' and idDirectory = '$follow_prayerDir'";			
