@@ -278,47 +278,50 @@ jQ9(document).ready(function () {
 		});
     // Display the Prayer Request Details popup
     jQ9("#ModalPrayerView").modal('show');
-    //      }
-    //     else {
-    //         console.log("******** NOT CHILD ******")
-    //         var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
-    //         $clickbuttonid = prayerID;
-    //         jQ9("#prayerID").html(prayerID);
-    //         console.log("********** Details button clicked ************");
-    //         console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
-    //         prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-    //         jQ9("#prayerDate").html(prayerDate);
-    //         prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-    //         if(prayerAnswer == " Answered "){
-    //             jQ9("#prayerAnswer").html("YES");
-    //         }
-    //         else{
-    //             jQ9("#prayerAnswer").html("NO");
-    //         }
-    //         prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-    //         jQ9("#prayerWho").html(prayerWho);
-    //         prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-    //         jQ9("#prayerTitle").html(prayerTitle);
-    //         prayerType = jQ9(this).closest('tr').find(".type").text();
-    //         if(prayerType == "Prayer"){
-    //             jQ9("#prayerType").html("Prayer Request");
-    //         }
-    //         else{
-    //             jQ9("#prayerType").html("Praise");
-    //         }
-    //         var prayerIndex = prayerID-1;
-    //         siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-    //         jQ9("#prayerText").html(siblingTable);
-    //         console.log("prayerDate (this jQ9 entry) = " + prayerDate);
-    //         console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
-    //         console.log("prayerWho (this jQ9 entry) = " + prayerWho);
-    //         console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
-    //         console.log("prayerType (this jQ9 entry) = " + prayerType);
-    //         console.log("prayerText (this jQ9 entry) = " + prayerText);
-    //         console.log("siblingTable (this jQ9 entry) = " + siblingTable);
-    // Display the Approve popup
-    // jQ9("#ModalPrayerView").modal('show');
-    //     }
+         }
+        else {
+            console.log("******** NOT CHILD ******")
+            var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
+            $clickbuttonid = prayerID;
+            jQ9("#prayerID").html(prayerID);
+            console.log("********** Details button clicked ************");
+            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
+            prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
+            jQ9("#prayerDate").html(prayerDate);
+            prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
+            if(prayerAnswer == " Answered "){
+                jQ9("#prayerAnswer").html("YES");
+            }
+            else{
+                jQ9("#prayerAnswer").html("NO");
+            }
+            prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
+            jQ9("#prayerWho").html(prayerWho);
+            prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
+            jQ9("#prayerTitle").html(prayerTitle);
+            prayerType = jQ9(this).closest('tr').find(".type").text();
+            if(prayerType == "Prayer"){
+                jQ9("#prayerType").html("Prayer Request");
+            }
+            else{
+                jQ9("#prayerType").html("Praise");
+            }
+            var prayerIndex = prayerID-1;
+            siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
+            jQ9("#prayerText").html(siblingTable);
+            console.log("prayerDate (this jQ9 entry) = " + prayerDate);
+            console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
+            console.log("prayerWho (this jQ9 entry) = " + prayerWho);
+            console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
+            console.log("prayerType (this jQ9 entry) = " + prayerType);
+            console.log("prayerText (this jQ9 entry) = " + prayerText);
+            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
+            console.log("prayerText2 (this jQ9 entry) = " + prayerText2);
+            console.log("siblingTable (this jQ9 entry) = " + siblingTable);
+
+    // Display the Prayer Request Details popup
+    jQ9("#ModalPrayerView").modal('show');
+        }
 // ******** LEFT OFF HERE
 // ******** LEFT OFF HERE
 // ******** LEFT OFF HERE
@@ -350,7 +353,7 @@ jQ9(document).ready(function () {
 			// 		};
 			// 	});
 			// });
-		};
+		// };
 	});
 });
 
