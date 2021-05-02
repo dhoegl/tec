@@ -94,7 +94,7 @@ if(!$_SESSION['logged in']) {
                         var request = jQ20.ajax({
                         url: 'services/tec_update_follow_table.php',
                         type: 'POST',
-                        dataType: 'json',
+                        // dataType: 'json',
                         data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
                         });
                     jQ20("#prayerFollow").html("YES");
@@ -107,7 +107,7 @@ if(!$_SESSION['logged in']) {
                         var request = jQ20.ajax({
                         url: 'services/tec_update_follow_table.php',
                         type: 'POST',
-                        dataType: 'json',
+                        // dataType: 'json',
                         data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
                         });
                     jQ20("#prayerFollow").html("NO");
