@@ -183,7 +183,7 @@ if(!$_SESSION['logged in']) {
 		console.log("Send Email button clicked");
         var sendaddress = jQ30.ajax({
                 url: 'services/tec_get_prayer_email_address.php',
-                type: 'POST',
+                type: 'GET',
                 dataType: 'json',
                 data: { prayerID: $clickbuttonid }
             })

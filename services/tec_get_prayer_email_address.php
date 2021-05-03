@@ -9,12 +9,12 @@ if(!$_SESSION['logged in']) {
 /* Get email address of selected prayer owner - called from tec_prayer.php */
     require_once('../tec_dbconnect.php');
     
-	if ( !isset($_POST['prayerID'])) {
+	if ( !isset($_GET['prayerID'])) {
 		echo 'Required data is missing';
 		return;
 	}
 	else {
-		$prayerID = $_POST['prayerID'];
+		$prayerID = $_GET['prayerID'];
 		// $prayerquery = "SELECT p.prayer_id, l.email_addr FROM " . $_SESSION['logintablename'] . " l INNER JOIN " . $_SESSION['prayertable'] . " p on p.name = CONCAT(l.firstname, ' ' , l.lastname) WHERE p.prayer_id = '" . $prayerID . "'";
 		$prayerquery = "SELECT p.prayer_id, l.email_addr FROM " . $_SESSION['logintablename'] . " l INNER JOIN " . $_SESSION['prayertable'] . " p on p.owner_id = l.login_ID WHERE p.prayer_id = '" . $prayerID . "'";
 		$prayerresult = $mysql->query($prayerquery) or die(" SQL query prayer follow table check error. Error #: " . $mysql->errno . " : " . $mysql->error);
