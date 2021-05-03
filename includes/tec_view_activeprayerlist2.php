@@ -22,12 +22,12 @@ jQ8(document).ready(function() {
 //			"bSort": true,
 //			"bInfo": false,
             "bAutoWidth": true,
-            // "responsive": true,
-            responsive: {
-                details: {
-                    type: 'column'
-                }
-            },
+            "responsive": true,
+            // responsive: {
+            //     details: {
+            //         type: 'column'
+            //     }
+            // },
 //			"sWrapper": "25px",
 //			"orderClasses": false,
 			"columnDefs": [ 
