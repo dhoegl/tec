@@ -10,13 +10,8 @@ if(!$_SESSION['logged in']) {
     require_once('../tec_dbconnect.php');
     
 	if ( !isset($_GET['prayerID'])) {
-		 echo 'Required data is missing';
-		 ?>    
-		 <script language='javascript'>
-			 alert('Required email address data is missing')
-		 </script>
-	 <?php
-	  return;
+		echo 'Required data is missing';
+		return;
 	}
 	else {
 		$prayerID = $_GET['prayerID'];
