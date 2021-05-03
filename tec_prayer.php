@@ -204,7 +204,7 @@ if(!$_SESSION['logged in']) {
                     // console.log("ajax response data = " + teststat);
                     // console.log("ajax response text = " + teststat2);
                     // reportError(teststat);
-                    alert("No email address found to send an email");
+                    alert("No email address found to send an email - ajax response text = " + teststat2);
                     // location.reload();
                     // return result;
                 });
