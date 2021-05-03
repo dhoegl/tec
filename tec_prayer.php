@@ -189,9 +189,7 @@ if(!$_SESSION['logged in']) {
                 .done(function (r) {
                     //  Get the result
                     var result = "success";
-                    var teststat = textStatus;
                     teststat2 = r.responseText;
-                    console.log("ajax response data = " + teststat);
                     console.log("ajax response text = " + teststat2);
                     alert("Email address received: " + teststat2);
                 })
