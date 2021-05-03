@@ -176,7 +176,7 @@ if(!$_SESSION['logged in']) {
 <!-- Send Email using client email application -->
 <!-- NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button -->
 <script type="text/javascript">
-    var response;
+    var response = array();
 	var jQ30 = jQuery.noConflict();
 	jQ30(document).ready(function() {
         jQ30("#prayer_outbound_email").click(function () {
@@ -191,7 +191,7 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
                     // teststat2 = response.responseText;
-                    var email = response.prayeremail;
+                    var email = response[0].prayeremail;
                     // for(var i=0; i<len; i++){
                     // var id = response[i].prayerid;
                     // var email = response[i].prayeremail;
