@@ -11,7 +11,12 @@ if(!$_SESSION['logged in']) {
     
 	if ( !isset($_GET['prayerID'])) {
 		 echo 'Required data is missing';
-		 return;
+		 ?>    
+		 <script language='javascript'>
+			 alert('Required email address data is missing')
+		 </script>
+	 <?php
+	  return;
 	}
 	else {
 		$prayerID = $_GET['prayerID'];
