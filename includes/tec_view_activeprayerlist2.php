@@ -15,7 +15,7 @@ jQ8(document).ready(function() {
 //			"bPaginate": true,
 //			"aaSorting": [[ 1, "asc" ]],
 //			"ordering": true,
-			"order": [[ 2, 'desc' ]],
+			"order": [[ 2, 'asc' ]],
 //			"iDisplayLength": 100,
 //			"bLengthChange": false,
 //			"bFilter": true,
