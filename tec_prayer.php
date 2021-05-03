@@ -186,14 +186,14 @@ if(!$_SESSION['logged in']) {
                 dataType: 'json',
                 data: { prayerID: $clickbuttonid }
             })
-                .done(function (jqXHR, textStatus) {
+                .done(function (r) {
                     //  Get the result
                     var result = "success";
                     var teststat = textStatus;
-                    teststat2 = jqXHR.responseText;
+                    teststat2 = r.responseText;
                     console.log("ajax response data = " + teststat);
                     console.log("ajax response text = " + teststat2);
-                    alert("Email address received.");
+                    alert("Email address received: " + teststat2);
                 })
                 .fail(function (jqXHR, textStatus) {
                     //  Get the result
