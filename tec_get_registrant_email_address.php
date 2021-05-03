@@ -13,6 +13,11 @@ if(!$_SESSION['logged in']) {
 	}
 	else {
 		$registrantID = $_GET['registrantID'];
+	?>    
+		<script language='javascript'>
+			console.log('registrantID : ' + '<?php echo $registrantID; ?>')
+		</script>
+	<?php
 		$registrantquery = "SELECT login_ID, email_addr FROM " . $_SESSION['logintablename'] . " login_ID = '" . $registrantID . "'";
 		$registrantresult = $mysql->query($registrantquery) or die(" SQL query Get Email Address error. Error:" . $mysql->errno . " " . $mysql->error);
 		$registrantcount = $registrantresult->num_rows;

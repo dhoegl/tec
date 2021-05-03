@@ -475,7 +475,7 @@ var jQ12 = jQuery.noConflict();
         var Email = "0";
         var testforChild = jQ30(this).closest('tr');
         if (testforChild.hasClass("child")) {
-            // console.log("Child IS closest TR class");
+            console.log("Child IS closest TR class");
             LoginID = testforChild.prev("tr").find(".loginid").text();
             // console.log("LoginID = " + LoginID);
             // jQ30("#loginidReject").html("<h6> LoginID: " + LoginID + "</h6>");
@@ -487,7 +487,7 @@ var jQ12 = jQuery.noConflict();
             window.location.href = "mailto:" + Email + "?subject=About your registration request to TEC...";
         }
         else {
-            // console.log("Child IS NOT closest TR class");
+            console.log("Child IS NOT closest TR class");
             LoginID = jQ30(this).closest('tr').find(".loginid").text();
             // console.log("LoginID = " + LoginID);
             jQ30("#loginidReject").html("<h6> LoginID: " + LoginID + "</h6>");
@@ -498,7 +498,7 @@ var jQ12 = jQuery.noConflict();
         }
 
 
-    		// console.log("Send Email button clicked");
+    		console.log("Send Email button clicked");
     		var sendaddress = 'tec_get_registrant_email_address.php';
     		jQ30.getJSON(sendaddress, {registrantID: $clickbuttonid
     		}, function (data) {
