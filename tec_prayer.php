@@ -199,8 +199,8 @@ if(!$_SESSION['logged in']) {
                     // console.log("ajax response text = " + id + " " + email);
                     // alert("Email address received: " + email);
                     console.log("ajax response email = " + email);
-                    alert("ajax response email = " + email);
-                    // window.location.href = "mailto:" + email + "?subject=Praying for you!";
+                    // alert("ajax response email = " + email);
+                    window.location.href = "mailto:" + email + "?subject=Praying for you!";
                     // };
                 })
                 .fail(function (jqXHR, textStatus) {
