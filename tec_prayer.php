@@ -170,15 +170,16 @@ if(!$_SESSION['logged in']) {
 <!-- ******** LEFT OFF HERE -->
 <!-- ******** LEFT OFF HERE -->
 
-<!-- Process the Send Email buttons click action -->
-<!-- Process the Send Email buttons click action -->
- <script type="text/javascript">
+<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
+<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
+<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
+<script type="text/javascript">
 	var jQ30 = jQuery.noConflict();
 	jQ30(document).ready(function() {
 
 // Send Email using client email application
 // NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button
-	jQ30("#sendMail").click(function () {
+	jQ30("#prayer_outbound_email").click(function () {
 		console.log("Send Email button clicked");
 		var sendaddress = 'services/tec_get_prayer_email_address.php';
 		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
@@ -376,9 +377,6 @@ jQ9(document).ready(function () {
 		// };
 	});
 });
-
-</script>
-
 
 </head>
 <body>
