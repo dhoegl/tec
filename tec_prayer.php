@@ -424,11 +424,11 @@ require_once('includes/tec_footer.php');
                         <ul class="card-text">
                             <li>The table below lists all recent prayer requests (and praises) from your church family</li>
                             <li>Click on a header arrow to sort columns ascending or descending</li>
-                            <li>Use the Search box to locate a specific prayer request or to find a family member's specific request</li>
+                            <li>Use the Search box to locate a specific prayer request</li>
                             <li>Navigate pages using the Page Selector at the bottom of the page</li>
                             <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
-                            <li>Click the <span class="btn btn-success">Details</span> button on a row below to see more information about a specific prayer request</li>
-                            <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
+                            <li>Click the <span class="btn btn-success btn-sm">Details</span> button on a row below to see more information about a specific prayer request</li>
+                            <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
                         </ul>
                     </div><!-- card -->
                 </div><!-- col-sm-6 -->
@@ -438,17 +438,17 @@ require_once('includes/tec_footer.php');
                         <ul class="card-text">
                             <li>Create your own prayer requests allowing your church family to pray with you</li>
                             <ul>
-                                <li>Click the <span class="btn btn-success">New Prayer Requests</span> button to create a new prayer request</li>
-                                <li>Enter your request details and click the <span class="btn btn-primary">Submit</span> button send it out</li>
-                                <li>PLEASE NOTE that all prayer requests are reviewed by our church elders before they are posted to the site</li>
+                                <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'New Prayer Request'</u> to create a new prayer request</li>
+                                <li>Enter your request details and click the <span class="btn btn-primary btn-sm">Submit</span> button send it out</li>
+                                <li><u>PLEASE NOTE</u> that all prayer requests are reviewed by our church elders before they are posted to the site</li>
                             </ul>
                             <li>Manage your existing prayer requests</li>
                             <ul>
-                                <li>Click the <span class="btn btn-success">My Prayer Requests</span> button to update an existing prayer request</li>
+                                <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'My Existing Requests'</u> to update an existing prayer request</li>
                                 <li>On the Edit Prayer Request list popup:</li>
                                 <ul>
-                                    <li>Click the <span class="btn btn-primary">Update</span> button on the selected prayer request to update with any new information</li>
-                                    <li>Click the <span class="btn btn-primary">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
+                                    <li>Click the <span class="btn btn-secondary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
+                                    <li>Click the <span class="btn btn-success btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
                                 </ul>
                             </ul>
                         </ul>
