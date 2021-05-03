@@ -24,13 +24,7 @@ if(!$_SESSION['logged in']) {
 		while($prayerrow = $prayerresult->fetch_assoc()) {
 			$prayerIDfromSelect = $prayerrow['prayer_id'];
 			$prayeremail = $prayerrow['email_addr'];
-		?>    
-			<script language='javascript'>
-				console.log('prayer ID : ' + '<?php echo $prayerIDfromSelect; ?>')
-				console.log('prayer email : ' + '<?php echo $prayeremail; ?>')
-			</script>
-		<?php
-					$buildjson = array('prayerid' => $prayerIDfromSelect, 'prayeremail' => $prayeremail);
+			$buildjson = array('prayerid' => $prayerIDfromSelect, 'prayeremail' => $prayeremail);
 			array_push($prayerarray, $buildjson);
 			}
 			$prayerarray = array('prayerdata' => $prayerarray);
