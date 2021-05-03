@@ -484,7 +484,7 @@ var jQ12 = jQuery.noConflict();
             // jQ30("#emailReject").html("<h6> Email: " + Email + "</h6>");
             // Display the Reject popup
             // jQ30("#ModalRejectRegistrant").modal('show');
-            window.location.href = "mailto:" + Email + "?subject=About your registration request1 to TEC...";
+            window.location.href = "mailto:" + Email + "?subject=About your registration request to TEC...";
         }
         else {
             console.log("Child IS NOT closest TR class");
@@ -494,21 +494,21 @@ var jQ12 = jQuery.noConflict();
             Email = jQ30(this).closest('tr').find(".email").text();
             // console.log("Email = " + Email);
             jQ30("#emailReject").html("<h6> Email: " + Email + "</h6>");
-            window.location.href = "mailto:" + Email + "?subject=About your registration request2 to TEC...";
+            window.location.href = "mailto:" + Email + "?subject=About your registration request to TEC...";
         }
 
 
-    		console.log("Send Email button clicked");
-    		var sendaddress = 'tec_get_registrant_email_address.php';
-    		jQ30.getJSON(sendaddress, {registrantID: $clickbuttonid
-    		}, function (data) {
+    		// console.log("Send Email button clicked");
+    		// var sendaddress = 'tec_get_registrant_email_address.php';
+    		// jQ30.getJSON(sendaddress, {registrantID: $clickbuttonid
+    		// }, function (data) {
     			// console.log(data);
-    			jQ30.each(data.registrantdata, function (i, rep) {
+    			// jQ30.each(data.registrantdata, function (i, rep) {
     			// console.log("Prayer ID: " + rep.prayerid);
     			// console.log("Prayer owner email: " + rep.prayeremail);
-    			window.location.href = "mailto:" + rep.registrantemail + "?subject=About your registration request3 to TEC...";
-    			});
-    		});
+    		// 	window.location.href = "mailto:" + rep.registrantemail + "?subject=About your registration request3 to TEC...";
+    		// 	});
+    		// });
         });
     });
 </script>
