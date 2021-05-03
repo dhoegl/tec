@@ -189,7 +189,7 @@ if(!$_SESSION['logged in']) {
                 .done(function (response, request) {
                     //  Get the result
                     var obj = JSON.parse(response.responseText);
-                    teststat2 = obj.prayerdata.prayeremail;
+                    teststat2 = obj.prayerdata.prayerid;
                     console.log("ajax response text = " + teststat2);
                     alert("Email address received: " + teststat2);
                 })
