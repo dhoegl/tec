@@ -169,7 +169,7 @@ subJQ(document).ready(function()
             return 'Username must contain at least 5 characters'; 
         }
         else {
-    //length is ok, lets continue. 
+    //length is ok, lets continue.  
     //if username already exists, alert user and disallow from continuing
     //check for existing username
             var username_check = subJQ.ajax({

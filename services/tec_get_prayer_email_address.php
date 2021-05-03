@@ -27,7 +27,7 @@ if(!$_SESSION['logged in']) {
 			$buildjson = array('prayerid' => $prayerIDfromSelect, 'prayeremail' => $prayeremail);
 			array_push($prayerarray, $buildjson);
 			}
-			$prayerarray = array('prayerdata' => $prayerarray);
+			// $prayerarray = array('prayerdata' => $prayerarray);
 			header('Content-type: application/json');
 			echo json_encode($prayerarray); 
 		}

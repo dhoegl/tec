@@ -191,7 +191,7 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
                     // teststat2 = response.responseText;
-                    var email = response[0].prayeremail;
+                    var email = response.prayeremail;
                     // for(var i=0; i<len; i++){
                     // var id = response[i].prayerid;
                     // var email = response[i].prayeremail;
