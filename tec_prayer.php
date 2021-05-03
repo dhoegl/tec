@@ -377,7 +377,7 @@ jQ9(document).ready(function () {
 		// };
 	});
 });
-
+</script>
 </head>
 <body>
 
