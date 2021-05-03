@@ -99,8 +99,8 @@ if(!$_SESSION['logged in']) {
                         // dataType: 'json',
                         data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
                         });
-                    jQ20("#prayerFollow").html("YES");
-					jQ20("#follow_button").html("Click to Unfollow");
+                    jQ20("#prayerFollow").html("NO");
+					jQ20("#follow_button").html("Click to Follow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
@@ -112,8 +112,8 @@ if(!$_SESSION['logged in']) {
                         // dataType: 'json',
                         data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
                         });
-                    jQ20("#prayerFollow").html("NO");
-					jQ20("#follow_button").html("Click to Follow");
+                    jQ20("#prayerFollow").html("YES");
+					jQ20("#follow_button").html("Click to Unfollow");
 				}
 			});
 		});
