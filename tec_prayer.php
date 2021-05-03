@@ -190,9 +190,14 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
                     // teststat2 = response.responseText;
-                    var teststat2 = response.prayeremail;
-                    console.log("ajax response text = " + teststat2);
-                    alert("Email address received: " + teststat2);
+                    var len = response.length;
+                    for(var i=0; i<len; i++){
+                    var id = response[i].prayerid;
+                    var email = response[i].prayeremail;
+                    // var teststat2 = response.prayeremail;
+                    console.log("ajax response text = " + id + " " + email);
+                    alert("Email address received: " + email);
+                    };
                 })
                 .fail(function (jqXHR, textStatus) {
                     //  Get the result
