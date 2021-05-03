@@ -390,6 +390,10 @@
     font-weight: bold;
     text-decoration: underline;
 }
+/********************** Prayer Page View Formatting ***********************/
+.datatable_details {
+    font-weight: bold;
+}
 td.dtr-control {
 	/* background: url(../images/details_open.png) no-repeat center center; */
     /* cursor: pointer; */

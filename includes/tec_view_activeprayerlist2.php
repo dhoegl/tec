@@ -26,7 +26,9 @@ jQ8(document).ready(function() {
             responsive: {
                 details: {
                     // type: 'column'
-                    renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                    renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                tableClass: 'datatable_details'
+            } )
                 }
             },
 //			"sWrapper": "25px",
