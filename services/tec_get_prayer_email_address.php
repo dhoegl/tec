@@ -9,7 +9,7 @@ if(!$_SESSION['logged in']) {
 /* Get email address of selected prayer owner - called from tec_prayer.php */
     require_once('../tec_dbconnect.php');
     
-	if ( !isset($_GET['prayerID'])) {
+	if ( !isset($_POST['prayerID'])) {
 		echo 'Required data is missing';
 		return;
 	}
