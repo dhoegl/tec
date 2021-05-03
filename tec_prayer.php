@@ -189,7 +189,8 @@ if(!$_SESSION['logged in']) {
                 .done(function (response, request) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
-                    teststat2 = response.responseText;
+                    // teststat2 = response.responseText;
+                    teststat2 = jQ30.parseJSON(response);
                     console.log("ajax response text = " + teststat2);
                     alert("Email address received: " + teststat2);
                 })
