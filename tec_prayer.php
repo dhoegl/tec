@@ -179,19 +179,49 @@ if(!$_SESSION['logged in']) {
 
 // Send Email using client email application
 // NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button
-	jQ30("#prayer_outbound_email").click(function () {
-		console.log("Send Email button clicked");
-		var sendaddress = 'services/tec_get_prayer_email_address.php';
-		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
-		}, function (data) {
-			console.log(data);
-			jQ30.each(data.prayerdata, function (i, rep) {
-			console.log("Prayer ID: " + rep.prayerid);
-			console.log("Prayer owner email: " + rep.prayeremail);
-			window.location.href = "mailto:" + rep.prayeremail + "?subject=Praying for you!";
-			});
-		});
-    });
+        jQ30.ajax({
+                url: 'services/tec_get_prayer_email_address.php',
+                type: 'POST',
+                dataType: 'json',
+                data: { prayerID: $clickbuttonid }
+            })
+                .done(function (jqXHR, textStatus) {
+                    //  Get the result
+                    var result = "success";
+                    var teststat = textStatus;
+                    teststat2 = jqXHR.responseText;
+                    console.log("ajax response data = " + teststat);
+                    console.log("ajax response text = " + teststat2);
+                    alert("Email address received.");
+                })
+                .fail(function (jqXHR, textStatus) {
+                    //  Get the result
+                    //result = (rtnData === undefined) ? null : rtnData.d;
+                    var result = "fail";
+                    var teststat = textStatus;
+                    var teststat2 = jqXHR.responseText;
+                    // console.log("ajax response data = " + teststat);
+                    // console.log("ajax response text = " + teststat2);
+                    reportError(teststat);
+                    alert("No email address found to send an email");
+                    // location.reload();
+                    // return result;
+                });
+
+
+// jQ30("#prayer_outbound_email").click(function () {
+// 		console.log("Send Email button clicked");
+// 		var sendaddress = 'services/tec_get_prayer_email_address.php';
+// 		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
+// 		}, function (data) {
+// 			console.log(data);
+// 			jQ30.each(data.prayerdata, function (i, rep) {
+// 			console.log("Prayer ID: " + rep.prayerid);
+// 			console.log("Prayer owner email: " + rep.prayeremail);
+// 			window.location.href = "mailto:" + rep.prayeremail + "?subject=Praying for you!";
+// 			});
+// 		});
+//     });
 });
 
 </script>
