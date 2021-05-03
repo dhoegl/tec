@@ -197,6 +197,7 @@ if(!$_SESSION['logged in']) {
                     // var teststat2 = response.prayeremail;
                     console.log("ajax response text = " + id + " " + email);
                     alert("Email address received: " + email);
+                    window.location.href = "mailto:" + email + "?subject=Praying for you!";
                     };
                 })
                 .fail(function (jqXHR, textStatus) {
@@ -223,7 +224,6 @@ if(!$_SESSION['logged in']) {
 // 			jQ30.each(data.prayerdata, function (i, rep) {
 // 			console.log("Prayer ID: " + rep.prayerid);
 // 			console.log("Prayer owner email: " + rep.prayeremail);
-			window.location.href = "mailto:" + email + "?subject=Praying for you!";
 // 			});
 // 		});
 //     });
