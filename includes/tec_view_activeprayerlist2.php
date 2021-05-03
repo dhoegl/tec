@@ -25,7 +25,8 @@ jQ8(document).ready(function() {
             // "responsive": true,
             responsive: {
                 details: {
-                    type: 'column'
+                    // type: 'column'
+                    renderer: $.fn.dataTable.Responsive.renderer.tableAll()
                 }
             },
 //			"sWrapper": "25px",
