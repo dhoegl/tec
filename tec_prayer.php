@@ -186,10 +186,10 @@ if(!$_SESSION['logged in']) {
                 dataType: 'json',
                 data: { prayerID: $clickbuttonid }
             })
-                .done(function (r) {
+                .done(function (response, request) {
                     //  Get the result
-                    var result = "success";
-                    teststat2 = r.responseText;
+                    var obj = JSON.parse(response.responseText);
+                    teststat2 = obj.prayerdata.prayeremail;
                     console.log("ajax response text = " + teststat2);
                     alert("Email address received: " + teststat2);
                 })
