@@ -223,7 +223,7 @@ if(!$_SESSION['logged in']) {
 // 			jQ30.each(data.prayerdata, function (i, rep) {
 // 			console.log("Prayer ID: " + rep.prayerid);
 // 			console.log("Prayer owner email: " + rep.prayeremail);
-			window.location.href = "mailto:" + rep.prayeremail + "?subject=Praying for you!";
+			window.location.href = "mailto:" + email + "?subject=Praying for you!";
 // 			});
 // 		});
 //     });
