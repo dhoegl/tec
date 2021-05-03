@@ -14,7 +14,7 @@ if(!$_SESSION['logged in']) {
 		return;
 	}
 	else {
-		$prayerID = $_GET['prayerID'];
+		$prayerID = $_POST['prayerID'];
 		// $prayerquery = "SELECT p.prayer_id, l.email_addr FROM " . $_SESSION['logintablename'] . " l INNER JOIN " . $_SESSION['prayertable'] . " p on p.name = CONCAT(l.firstname, ' ' , l.lastname) WHERE p.prayer_id = '" . $prayerID . "'";
 		$prayerquery = "SELECT p.prayer_id, l.email_addr FROM " . $_SESSION['logintablename'] . " l INNER JOIN " . $_SESSION['prayertable'] . " p on p.owner_id = l.login_ID WHERE p.prayer_id = '" . $prayerID . "'";
 		$prayerresult = $mysql->query($prayerquery) or die(" SQL query prayer follow table check error. Error #: " . $mysql->errno . " : " . $mysql->error);
