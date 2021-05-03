@@ -191,15 +191,15 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
                     // teststat2 = response.responseText;
-                    var len = response.length;
+                    var email = response.prayeremail;
                     // for(var i=0; i<len; i++){
                     // var id = response[i].prayerid;
                     // var email = response[i].prayeremail;
                     // var teststat2 = response.prayeremail;
                     // console.log("ajax response text = " + id + " " + email);
                     // alert("Email address received: " + email);
-                    console.log("ajax response length = " + len);
-                    alert("ajax response length = " + len);
+                    console.log("ajax response email = " + email);
+                    alert("ajax response email = " + email);
                     // window.location.href = "mailto:" + email + "?subject=Praying for you!";
                     // };
                 })
