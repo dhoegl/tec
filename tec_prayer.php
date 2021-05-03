@@ -740,7 +740,7 @@ require_once('includes/tec_footer.php');
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                         <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
                                         <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
-                                        <button type="button" name="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
+                                        <button type="button" name="prayer_outbound_email" id="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
                                     </div>
                                 </div>
                             </div>
