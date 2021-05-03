@@ -173,13 +173,14 @@ if(!$_SESSION['logged in']) {
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
+<!-- Send Email using client email application -->
+<!-- NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button -->
 <script type="text/javascript">
 	var jQ30 = jQuery.noConflict();
 	jQ30(document).ready(function() {
-
-// Send Email using client email application
-// NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button
-        jQ30.ajax({
+        jQ30("#prayer_outbound_email").click(function () {
+		console.log("Send Email button clicked");
+        var sendaddress = jQ30.ajax({
                 url: 'services/tec_get_prayer_email_address.php',
                 type: 'POST',
                 dataType: 'json',
@@ -218,10 +219,11 @@ if(!$_SESSION['logged in']) {
 // 			jQ30.each(data.prayerdata, function (i, rep) {
 // 			console.log("Prayer ID: " + rep.prayerid);
 // 			console.log("Prayer owner email: " + rep.prayeremail);
-// 			window.location.href = "mailto:" + rep.prayeremail + "?subject=Praying for you!";
+			window.location.href = "mailto:" + rep.prayeremail + "?subject=Praying for you!";
 // 			});
 // 		});
 //     });
+    });
 });
 
 </script>
