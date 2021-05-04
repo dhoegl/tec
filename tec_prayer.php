@@ -720,7 +720,7 @@ require_once('includes/tec_footer.php');
                             <td></td>
                             <td></td>
                             <td colspan="3" align='right'>
-                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
+                                <button type="button" name="submitnewprayer" class="btn btn-primary">Submit</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             </td>
                         </tr>
