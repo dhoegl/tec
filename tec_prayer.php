@@ -683,14 +683,14 @@ require_once('includes/tec_footer.php');
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 
 <div class="modal fade in" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
-<div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div><!-- modal-header -->
             <div class="modal-body">
 				<h6>
 					<span id="loginApprove"></span>
@@ -709,36 +709,38 @@ require_once('includes/tec_footer.php');
                     Select from list of prayer requests below to update
                 </h6>
                 <form class="text-center border border-light p-2" name='existprayer' method='post' action=''> 		
-                    <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' >
-                        <div class="modaleditform text-center border border-light p-2">
-                            <div class="table-responsive">
-								<div class="row">
-			    	        	    <div class="col-3">
-                    					<label for="visibility">Select from list:</label>
-                					</div>
-                					<div class="col-9">
-                    					<select class="custom-select" name="visibility" id="visibility">
-                        					<option value="Elders">Elders Only</option>
-                        					<option value="AllChurch" selected>Your Church Family (approval required)</option>
-                    					</select>
-                					</div>
-            					</div><!-- row -->
-                        	</div> <!--Table Responsive-->
-                        </div> <!-- text-center -->
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td colspan="3" align='right'>
-                                <button type="button" name="submitnewprayer" class="btn btn-primary">Submit</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <!-- <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' > -->
+                    <div class="modaleditform text-center border border-light p-2">
+                        <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label for="visibility">Select from list:</label>
+                                </div>
+                                <div class="col-9">
+                                    <select class="custom-select" name="visibility" id="visibility">
+                                        <option value="Elders">Elders Only</option>
+                                        <option value="AllChurch" selected>Your Church Family (approval required)</option>
+                                    </select>
+                                </div>
+                            </div><!-- row -->
+                            <div class="row px-2 d-flex justify-content-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
+                                        <div class="col-sm-4">
+                                            <button type="button" name="submitexistingprayer" class="btn btn-primary btn-sm">Submit</button>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                        </div>
+                            </div><!-- row -->
+                        </div> <!--Table Responsive-->
+                    </div> <!-- modaleditform -->
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
+            </div> <!-- modal-body -->
+        </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+</div> <!-- modal fade -->
 
 
 
