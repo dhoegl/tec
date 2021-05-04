@@ -604,59 +604,55 @@ require_once('includes/tec_footer.php');
                 </button>
             </div>
             <div class="modal-body">
-                <form class="text-center border border-light p-2" name='newprayer' method='post' action=''> 		
-                    <table id="newpraytable" border='0' cellpadding='0' cellspacing='1' >
-                        <div class="modaleditform text-center border border-light p-2">
-                            <div class="table-responsive">
-								<div class="row">
-			    	            <div class="col-3">
-                    				<label for="visibility">Select Visibility:</label>
-                				</div>
-                				<div class="col-9">
-                    				<select class="custom-select" name="visibility" id="visibility">
-                        				<option value="Elders">Elders Only</option>
-                        				<option value="AllChurch" selected>Your Church Family (approval required)</option>
-                    				</select>
-                				</div>
-            				</div><!-- row -->
-							<div class="row">
-			    	            <div class="col-3">
-                    				<label for="visibility">Select Pray/Praise:</label>
-                				</div>
-                				<div class="col-9">
-                    				<select class="custom-select" name="praypraise" id="praypraise">
-                        				<option value="Prayer" selected>Prayer Request</option>
-                        				<option value="Praise">Praise</option>
-                    				</select>
-                				</div>
-            				</div><!-- row -->
-							<div class="row">
-                                <div class="col-3">
-                                    <label for="praytitle">Title:</label>
-                                </div>
-                                <div class="col-9">
-                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
-                                </div>
-                            </div><!-- row -->
+                <form class="border border-light p-2" name='newprayer' method='post' action=''> 		
+                    <!-- <table id="newpraytable" border='0' cellpadding='0' cellspacing='1' > -->
+                    <div class="modaleditform text-center border border-light p-2">
+                        <div class="table-responsive">
                             <div class="row">
-                                <div class="col-3">
-                                    <label for="praydetails">Details:</label>
-                                </div>
-                                <div class="col-9">
-                                    <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
-                                </div>
-                            </div><!-- row -->
-                            </div> <!--Table Responsive-->
-                        </div> <!-- text-center -->
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td colspan="3" align='right'>
-                                <button type="submit" name="submitnewprayer" class="btn btn-primary">Submit</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            </td>
-                        </tr>
-                    </table>
+                            <div class="col-3">
+                                <label for="visibility">Select Visibility:</label>
+                            </div>
+                            <div class="col-9">
+                                <select class="custom-select" name="visibility" id="visibility">
+                                    <option value="Elders">Elders Only</option>
+                                    <option value="AllChurch" selected>Your Church Family (approval required)</option>
+                                </select>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="visibility">Select Pray/Praise:</label>
+                            </div>
+                            <div class="col-9">
+                                <select class="custom-select" name="praypraise" id="praypraise">
+                                    <option value="Prayer" selected>Prayer Request</option>
+                                    <option value="Praise">Praise</option>
+                                </select>
+                            </div>
+                        </div><!-- row -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="praytitle">Title:</label>
+                            </div>
+                            <div class="col-9">
+                                <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
+                            </div>
+                        </div><!-- row -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="praydetails">Details:</label>
+                            </div>
+                            <div class="col-9">
+                                <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
+                            </div>
+                        </div><!-- row -->
+                            <div class="row px-2 d-flex justify-content-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
+                                        <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Submit</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div> <!--Table Responsive-->
+                    </div> <!-- modaleditform -->
                 </form>
             </div>
         </div>
@@ -779,7 +775,7 @@ require_once('includes/tec_footer.php');
                                 </div>
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Close</button>
+                                        <button type="submit" name="closeprayermodal" class="btn btn-primary btn-sm">Close</button>
                                         <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
                                         <button type="button" name="prayer_outbound_email" id="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
                                     </div>
