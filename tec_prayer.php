@@ -594,12 +594,11 @@ require_once('includes/tec_footer.php');
 <!--***************************** New Prayer Request MODAL ***********************************-->
 <!--***************************** New Prayer Request MODAL ***********************************-->
 
-<!-- <div class="modal fade" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static"> -->
-<div id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="NewPrayerModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Prayer Request<br>Click <strong>Submit</strong> when done.</h5>
+                <h5 class="modal-title" id="NewPrayerModalLabel">New Prayer Request<br>Click <strong>Submit</strong> when done.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -672,11 +671,11 @@ require_once('includes/tec_footer.php');
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 
-<div class="modal fade in" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade in" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
 <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
+                <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -737,11 +736,11 @@ require_once('includes/tec_footer.php');
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 
-<div class="modal fade in" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade in" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">View Prayer Request Details<br>Click <strong>Close</strong> when done.</h5>
+                <h5 class="modal-title" id="ViewPrayerDetailsModalLabel">View Prayer Request Details<br>Click <strong>Close</strong> when done.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
