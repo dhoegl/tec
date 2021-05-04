@@ -650,7 +650,7 @@ require_once('includes/tec_footer.php');
                             <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                         <div class="col-sm-4">
-                                            <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Submit</button>
+                                            <button type="button" name="submitnewprayer" class="btn btn-primary btn-sm">Submit</button>
                                         </div>
                                         <div class="col-sm-4">
                                         </div>
