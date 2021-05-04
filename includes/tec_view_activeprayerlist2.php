@@ -60,6 +60,7 @@ jQ8(document).ready(function() {
         	},
 			{
         		className: "prayer_answer",
+                "visible": false,
         		"targets": [ 5 ] 
         	},
 			{
