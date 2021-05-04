@@ -783,7 +783,7 @@ require_once('includes/tec_footer.php');
                                 </div><!-- card -->
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <button type="submit" name="closeprayermodal" class="btn btn-primary btn-sm">Close</button>
+                                        <button type="button" name="closeprayermodal" class="btn btn-primary btn-sm">Close</button>
                                         <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
                                         <button type="button" name="prayer_outbound_email" id="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
                                     </div><!-- btn-group -->
