@@ -803,15 +803,15 @@ require_once('includes/tec_footer.php');
 <!-- ************************************* -->
 <!-- View Prayer Details OVERLAY dialog            -->
 <!-- ************************************* -->
- <div id="my_popup">
-	<h2>View Prayer Request Details</h2>
+ <!-- <div id="my_popup"> -->
+	<!-- <h2>View Prayer Request Details</h2>
         <br />
         <br />
         <h3>View the details of this prayer request.</h3>
         <br />
-        <hr>
-			<form name='form1' method='post' action=''> 		
-				<table id="praytable" style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
+        <hr> -->
+			<!-- <form name='form1' method='post' action=''> 		 -->
+				<!-- <table id="praytable" style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
 					<tr class="praytable_even">
 						<td colspan="1"><strong>Type: </strong></td>
 						<td colspan="2" class="praypraise"> </td>
@@ -835,8 +835,8 @@ require_once('includes/tec_footer.php');
 						<hr />
 						</td>
 					</tr>
-				</table>
-				<table style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
+				</table> -->
+				<!-- <table style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
 					<tr class="praytable_text">
 						<td colspan="4">
 							<div class="praytext" style="height: 200px; overflow: auto; white-space: pre-wrap;"></div>
@@ -846,8 +846,8 @@ require_once('includes/tec_footer.php');
 						<td>
  						</td>
  					</tr>
-				</table>
-				<table width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
+				</table> -->
+				<!-- <table width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
 					<tr class="praytable_buttons" style="border: 1px;">
    		 			<td align="left"><input type="button" class="button_flat_blue_small" id="sendMail" name="sendMail" value="Send Email" /></td>
    		 			<td align="left"><input type="button" class="button_flat_blue_small" id="unfollow_button" name="unfollow" value="Unfollow" /></td>
@@ -858,11 +858,10 @@ require_once('includes/tec_footer.php');
  		 		 	</tr>
 	 		 		 	<p>
  			 		 	<p>
-				</table>
- 			</form>
-			
-			<br />
-    </div>
+				</table> -->
+ 			<!-- </form> -->
+			<!-- <br /> -->
+    <!-- </div> -->
 
     <!-- SCRIPTS -->
     <!-- Bootstrap tooltips -->
