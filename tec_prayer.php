@@ -329,7 +329,7 @@ jQ9(document).ready(function () {
             prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
             jQ9("#prayerDate").html(prayerDate);
             prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-            if(prayerAnswer == " Answered "){
+            if(prayerAnswer == " YES "){
                 jQ9("#prayerAnswer").html("YES");
             }
             else{

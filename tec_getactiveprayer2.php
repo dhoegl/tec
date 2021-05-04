@@ -34,10 +34,10 @@ if(!$_SESSION['logged in']) {
 				$praypraise = "<td>" . $activerow['praypraise'] . "</td>";
 				$prayanswer = $activerow['answered'];
 				if($activerow['prayanswer'] == '1') {
-					$prayanswer = "<td> Answered </td>";
+					$prayanswer = "<td> YES </td>";
 				}
 				else {
-					$prayanswer = "<td> </td>";
+					$prayanswer = "<td> NO </td>";
 				}
 				$prayer_title = "<td>" . $activerow['prayertitle'] . "</td>";
 				$glance = "<td>" . substr($activerow['prayertext'],0,75) . "...</td>";
