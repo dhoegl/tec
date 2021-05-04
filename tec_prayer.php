@@ -738,7 +738,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 
-<div class="modal show" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
