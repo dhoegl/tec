@@ -648,8 +648,14 @@ require_once('includes/tec_footer.php');
                         </div><!-- row -->
                             <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Submit</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <div class="col-sm-4">
+                                            <button type="submit" name="submitnewprayer" class="btn btn-primary btn-sm">Submit</button>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                        </div>
                             </div>
                         </div> <!--Table Responsive-->
                     </div> <!-- modaleditform -->
