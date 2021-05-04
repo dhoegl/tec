@@ -682,7 +682,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 
-<div class="modal fade in" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -749,7 +749,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 
-<div class="modal fade in" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
