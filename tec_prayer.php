@@ -427,30 +427,30 @@ require_once('tec_nav.php');
 require_once('includes/tec_footer.php');
 ?>
 <!-- Intro Section -->
-    <div class="container-fluid profile_bg bottom-buffer">
-        <div class="row pt-2">
-            <div class="col-xs-6">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    How to...
-                </button>
-            </div><!-- col xs-6 -->
-			<!-- <div class="col-xs-6">
-					<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRequests" aria-expanded="false" aria-controls="collapseRequests">
-						My Requests
-					</button>
-			</div> -->
-			<div class="col-xs-6">
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						My Requests
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
-						<button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
-					</div>
-				</div><!-- dropdown -->
-        	</div><!-- col xs-6 -->
-		</div><!-- row -->
+<div class="container-fluid profile_bg bottom-buffer">
+            <div class="row pt-2">
+                <div class="col-xs-6">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        How to...
+                    </button>
+                </div><!-- col xs-6 -->
+                <!-- <div class="col-xs-6">
+                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseRequests" aria-expanded="false" aria-controls="collapseRequests">
+                            My Requests
+                        </button>
+                </div> -->
+                <div class="col-xs-6">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Requests
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
+                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
+                        </div>
+                    </div><!-- dropdown -->
+                </div><!-- col xs-6 -->
+            </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
                 <div class="col-sm-6">
@@ -515,75 +515,86 @@ require_once('includes/tec_footer.php');
                         <div class="card-body">
                             <div class="table-responsive-xs">
                                 <!-- <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%"> -->
-                            <table id="activeprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
-                                <thead class="table-dark">>
-                                        <tr>
-                                            <th class="dtr-prayercolumn"></th>
-                                            <th>id</th>
-                                            <th>Opened</th>
-                                            <th>Family Member</th>
-                                            <th>Type</th>
-                                            <th>Answered</th>
-                                            <th>Title</th>
-                                            <th>Quick Glance</th>
-                                            <th>Details</th>
-                                            <th>Text</th>
-                                        </tr>
-                                </thead>
-                                <tfoot class="table-dark">
-                                        <tr>
-                                            <th class="dtr-prayercolumn"></th>
-                                            <th>id</th>
-                                            <th>Opened</th>
-                                            <th>Family Member</th>
-                                            <th>Type</th>
-                                            <th>Answered</th>
-                                            <th>Title</th>
-                                            <th>Quick Glance</th>
-                                            <th>Details</th>
-                                            <th>Text</th>
-                                        </tr>
-                                </tfoot>
-                            </table>
-<!-- Make table hidden so that only Text column is accessible -->
-                            <div id="prayertexttablehide">
-                                <table id="prayertexttable">
+                                <table id="activeprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
                                     <thead class="table-dark">>
-                                        <tr>
-                                            <th class="dtr-prayercolumn"></th>
-                                            <th>id</th>
-                                            <th>Opened</th>
-                                            <th>Family Member</th>
-                                            <th>Type</th>
-                                            <th>Answered</th>
-                                            <th>Title</th>
-                                            <th>Quick Glance</th>
-                                            <th>Details</th>
-                                            <th>Text</th>
-                                        </tr>
+                                            <tr>
+                                                <th class="dtr-prayercolumn"></th>
+                                                <th>id</th>
+                                                <th>Opened</th>
+                                                <th>Family Member</th>
+                                                <th>Type</th>
+                                                <th>Answered</th>
+                                                <th>Title</th>
+                                                <th>Quick Glance</th>
+                                                <th>Details</th>
+                                                <th>Text</th>
+                                            </tr>
                                     </thead>
                                     <tfoot class="table-dark">
-                                        <tr>
-                                            <th class="dtr-prayercolumn"></th>
-                                            <th>id</th>
-                                            <th>Opened</th>
-                                            <th>Family Member</th>
-                                            <th>Type</th>
-                                            <th>Answered</th>
-                                            <th>Title</th>
-                                            <th>Quick Glance</th>
-                                            <th>Details</th>
-                                            <th>Text</th>
-                                        </tr>
+                                            <tr>
+                                                <th class="dtr-prayercolumn"></th>
+                                                <th>id</th>
+                                                <th>Opened</th>
+                                                <th>Family Member</th>
+                                                <th>Type</th>
+                                                <th>Answered</th>
+                                                <th>Title</th>
+                                                <th>Quick Glance</th>
+                                                <th>Details</th>
+                                                <th>Text</th>
+                                            </tr>
                                     </tfoot>
                                 </table>
-                            <!-- </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- Row -->
-    </div> <!-- Container -->
+                            </div><!-- table-responsive -->
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div><!-- col-sm-12 -->
+            </div><!-- row -->
+
+<!-- Make table hidden so that only Text column is accessible -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card bg-light border-primary px-2 my-2 w-100">
+                        <div class="card-body">
+                            <div class="table-responsive-xs">
+                                <div id="prayertexttablehide">
+                                    <table id="prayertexttable">
+                                        <thead class="table-dark">>
+                                            <tr>
+                                                <th class="dtr-prayercolumn"></th>
+                                                <th>id</th>
+                                                <th>Opened</th>
+                                                <th>Family Member</th>
+                                                <th>Type</th>
+                                                <th>Answered</th>
+                                                <th>Title</th>
+                                                <th>Quick Glance</th>
+                                                <th>Details</th>
+                                                <th>Text</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot class="table-dark">
+                                            <tr>
+                                                <th class="dtr-prayercolumn"></th>
+                                                <th>id</th>
+                                                <th>Opened</th>
+                                                <th>Family Member</th>
+                                                <th>Type</th>
+                                                <th>Answered</th>
+                                                <th>Title</th>
+                                                <th>Quick Glance</th>
+                                                <th>Details</th>
+                                                <th>Text</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div><!-- prayertexttablehide -->
+                            </div><!-- table-responsive -->
+                        </div><!-- card-body -->
+                    </div><!-- card -->
+                </div><!-- col-sm-12 -->
+            </div> <!-- Row -->
+</div> <!-- Container -->
 
 <!-- ******** LEFT OFF HERE -->
 <!-- ******** LEFT OFF HERE -->
@@ -594,7 +605,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** New Prayer Request MODAL ***********************************-->
 <!--***************************** New Prayer Request MODAL ***********************************-->
 
-<div class="modal fade" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="NewPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade in" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="NewPrayerModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
