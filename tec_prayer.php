@@ -516,7 +516,7 @@ require_once('includes/tec_footer.php');
                             <div class="table-responsive-xs">
                                 <!-- <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%"> -->
                                 <table id="activeprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
-                                    <thead class="table-dark">>
+                                    <thead class="table-dark">
                                             <tr>
                                                 <th class="dtr-prayercolumn"></th>
                                                 <th>id</th>
@@ -707,7 +707,7 @@ require_once('includes/tec_footer.php');
                 </h6>
                 <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
                     <table id="myprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
-      	                <thead>
+      	                <thead class="table-dark">
          	                <tr>
                                 <th>id</th>
                                 <th>Opened</th>
