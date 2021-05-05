@@ -716,6 +716,7 @@ require_once('includes/tec_footer.php');
                                 <th>Opened</th>
                                 <th>Title</th>
                                 <th>Update</th>
+                                <th>Answer</th>
                         	</tr>
         	        	</thead>
         		        <tfoot class="table-dark">
@@ -724,6 +725,7 @@ require_once('includes/tec_footer.php');
                                 <th>Opened</th>
                                 <th>Title</th>
                                 <th>Update</th>
+                                <th>Answer</th>
                         	</tr>
         	        	</tfoot>
     	            </table>
