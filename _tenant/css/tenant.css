@@ -89,6 +89,14 @@
     padding: 10px 0 10px 145px;
     font-size: 20px;
 }
+#ModalTest .modal-header h5 {
+    background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
+    background-size: 20% auto;
+    color: black;
+    margin: 0px;
+    padding: 10px 0 10px 145px;
+    font-size: 20px;
+}
 #ModalApproveRegistrant .modal-header h5 {
     background: url('/_tenant/images/TEC App Icon 08.png') 0 50% no-repeat;
     background-size: 20% auto;
