@@ -2,7 +2,7 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
-	header("location:tecwelcome.php");
+	header("location:tec_welcome.php");
 	exit();
 }
    require_once('tec_dbconnect.php');

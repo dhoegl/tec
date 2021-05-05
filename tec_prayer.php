@@ -61,11 +61,14 @@ if(!$_SESSION['logged in']) {
 
 <?php
 // Get User Login details
-   include('includes/tec_get_loggedinuser.php');
+    include('includes/tec_get_loggedinuser.php');
 
 // Get Active Prayer List
-   include('includes/tec_view_activeprayerlist2.php');
+    include('includes/tec_view_activeprayerlist2.php');
    
+// Get My Prayer List
+    include('includes/tec_view_myprayerlist.php');
+
 // Get Active Prayer jQuery
 //    include('includes/tec_get_activeprayer_jquery.php');
    
@@ -715,7 +718,7 @@ require_once('includes/tec_footer.php');
                                 <th>Update</th>
                         	</tr>
         	        	</thead>
-        		        <tfoot>
+        		        <tfoot class="table-dark">
             	            <tr>
                                 <th>id</th>
                                 <th>Opened</th>
