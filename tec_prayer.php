@@ -602,7 +602,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** New Prayer Request MODAL ***********************************-->
 <!--***************************** New Prayer Request MODAL ***********************************-->
 
-<div class="modal" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="NewPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalPrayerNew" tabindex="-1" role="dialog" aria-labelledby="NewPrayerModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -679,7 +679,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 
-<div class="modal" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -722,10 +722,11 @@ require_once('includes/tec_footer.php');
                             </div><!-- row -->
                             <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <div class="col-sm-4">
-                                            <button type="button" name="submitexistingprayer" class="btn btn-primary btn-sm">Submit</button>
+                                    <div class="col-sm-4">
+                                            <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
                                         </div>
                                         <div class="col-sm-4">
+                                            <button type="button" name="answerexistingprayer" class="btn btn-success btn-sm">Answered</button>
                                         </div>
                                         <div class="col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
@@ -747,7 +748,7 @@ require_once('includes/tec_footer.php');
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
 
-<div class="modal" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
