@@ -709,7 +709,7 @@ require_once('includes/tec_footer.php');
                     Select from list of prayer requests below to update
                 </h6>
                 <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
-                    <table id="myprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
       	                <thead class="table-dark">
          	                <tr>
                                 <th>id</th>

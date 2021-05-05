@@ -1,7 +1,7 @@
 <script type="text/javascript">
 var jQ8 = jQuery.noConflict();
 jQ8(document).ready(function() {
-    jQ8('#myprayertable').DataTable({
+    jQ8('#myexistprayertable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
 			"ajax": "tec_getmyprayer.php",
