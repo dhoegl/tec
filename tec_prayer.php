@@ -683,7 +683,7 @@ require_once('includes/tec_footer.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
+                <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -705,7 +705,26 @@ require_once('includes/tec_footer.php');
                 <h6>
                     Select from list of prayer requests below to update
                 </h6>
-                <form class="text-center border border-light p-2" name='existprayer' method='post' action=''> 		
+                <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
+                    <table id="myprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%">
+      	                <thead>
+         	                <tr>
+                                <th>id</th>
+                                <th>Opened</th>
+                                <th>Title</th>
+                                <th>Update</th>
+                        	</tr>
+        	        	</thead>
+        		        <tfoot>
+            	            <tr>
+                                <th>id</th>
+                                <th>Opened</th>
+                                <th>Title</th>
+                                <th>Update</th>
+                        	</tr>
+        	        	</tfoot>
+    	            </table>
+
                     <!-- <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' > -->
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="table-responsive">
