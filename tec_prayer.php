@@ -484,7 +484,7 @@ require_once('includes/tec_footer.php');
                                 <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'My Existing Requests'</u> to update an existing prayer request</li>
                                 <li>On the Edit Prayer Request list popup:</li>
                                 <ul>
-                                    <li>Click the <span class="btn btn-secondary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
+                                    <li>Click the <span class="btn btn-primary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
                                     <li>Click the <span class="btn btn-success btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
                                     <li><u>PLEASE NOTE</u> Answered prayers are considered closed and cannot be further updated</li>
                                 </ul>
