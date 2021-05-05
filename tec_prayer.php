@@ -447,7 +447,6 @@ require_once('includes/tec_footer.php');
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
-                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalTest" type="button">Test Modal</button>
                         </div>
                     </div><!-- dropdown -->
                 </div><!-- col xs-6 -->
@@ -598,39 +597,6 @@ require_once('includes/tec_footer.php');
 </div> <!-- Container -->
 
 
-<!--***************************** Test MODAL ***********************************-->
-<!--***************************** Test MODAL ***********************************-->
-<!--***************************** Test MODAL ***********************************-->
-<div class="modal" id="ModalTest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="TestModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong>.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal-header -->
-            <div class="modal-body">
-				<h6>
-					<span id="loginApprove"></span>
-					<span id="churchcodeApprove"></span>
-					<span id="usernameApprove"></span>
-					<!--<span id="firstnameApprove"></span>
-					<span id="lastnameApprove"></span>-->
-					<span id="fullnameApprove"></span>
-					<span id="genderApprove"></span>
-				</h6>
-                <hr />
-                <h4>
-                    My Existing Active Prayer Requests
-                </h4>
-                <h6>
-                    Select from list of prayer requests below to update
-                </h6>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--***************************** New Prayer Request MODAL ***********************************-->
 <!--***************************** New Prayer Request MODAL ***********************************-->
