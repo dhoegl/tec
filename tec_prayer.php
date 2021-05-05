@@ -597,10 +597,6 @@ require_once('includes/tec_footer.php');
             </div> <!-- Row -->
 </div> <!-- Container -->
 
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-
 
 <!--***************************** Test MODAL ***********************************-->
 <!--***************************** Test MODAL ***********************************-->
@@ -702,6 +698,7 @@ require_once('includes/tec_footer.php');
                                         <div class="col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
                                         </div>
+                                    </div><!-- btn-group -->
                             </div><!-- row -->
                         </div> <!--Table Responsive-->
                     </div> <!-- modaleditform -->
