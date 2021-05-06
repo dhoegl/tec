@@ -22,38 +22,40 @@ jQ8(document).ready(function() {
 //			"sWrapper": "25px",
 //			"orderClasses": false,
          "columnDefs": [ 
-			{
-            "targets": -2,
-            "data": null,
-            "defaultContent": "<button class='my_popup2_open button_flat_green_small'>Update</button>"
-			},
+            {
+                className: 'dtr-control',
+                orderable: false,
+                targets:   [ 0 ]
+            },
 			{
         		className: "indexcol",
-        		"targets": [ 0 ] 
+        		"targets": [ 1 ] 
         	},
 			{
-       		className: "myprayer_update",
-       		"targets": [ 1 ] 
-       	},
-//			{
-//        		className: "prayer_who",
-//        		"targets": [ 2 ] 
-//        	},
+    	   		className: "myprayer_update",
+       			"targets": [ 2 ] 
+	       	},
 			{
         		className: "myprayer_title",
-        		"targets": [ 2 ] 
-        	},
-//			{
-//        		className: "type",
-//        		"targets": [ 4 ] 
-//        	},
-			{
-        		className: "detailscolumn",
         		"targets": [ 3 ] 
         	},
 			{
-        		className: "prayer_answer", "visible": false,
+        		className: "updatecolumn",
+                "visible": false,
+				orderable: false,
         		"targets": [ 4 ] 
+        	},
+			{
+        		className: "myprayer_answer",
+                "visible": false,
+				orderable: false,
+        		"targets": [ 5 ] 
+        	},
+			{
+        		className: "myprayer_text",
+                "visible": false,
+				orderable: false,
+        		"targets": [ 6 ] 
         	}
         ]
 

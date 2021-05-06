@@ -20,7 +20,7 @@ if(!$_SESSION['logged in']) {
 		{
 //			echo "no prayer data";
 			$noprayer = " ";
-			$buildjson = array($noprayer, $noprayer, $noprayer, $noprayer, $noprayer);
+			$buildjson = array($noprayer, $noprayer, $noprayer, $noprayer, $noprayer, $noprayer, $noprayer);
 			array_push($mylistarray, $buildjson); 
 // Prepend array with parent element
 			$mylistarray = array('data' => $mylistarray);
@@ -30,23 +30,24 @@ if(!$_SESSION['logged in']) {
 		}
 		else {
 		while($myrow = $myprayerresult->fetch_assoc()) {
-				$prayerupdate = date("M-d-Y", strtotime($myrow['prayerupdatedate']));
+				$myprayercontrol = "<tr><td></td>";
+				$prayerupdate = "<td>" . date("M-d-Y", strtotime($myrow['prayerupdatedate'])) . "</td>";
 				$prayerid = $myrow['prayerid'];
-				$prayer_title = $myrow['prayertitle'];
-				$prayer_text = $myrow['prayertext'];
-				$fullname = $myrow['fullname'];				
-				$glance = "<strong>" . $prayer_title . " </strong><br />" . substr($myrow['prayertext'],0,50) . "...";
-				$praypraise = $myrow['praypraise'];
+				$prayer_title = "<td>" . $myrow['prayertitle'] . "</td>";
+				$prayer_text = "<td>" . $myrow['prayertext'] . "</td>";
+				$fullname = "<td>" . $myrow['fullname'] . "</td>";				
+				$praypraise = "<td>" . $myrow['praypraise'] . "</td>";
 				if($myrow['prayanswer'] == '1') {
-					$prayanswer = "YES";
+					$prayanswer = "<td>YES</td>";
 				}
 				else {
-					$prayanswer = "NO";
+					$prayanswer = "<td>NO</td>";
 				}
-				$detail_button = "Details";
+				$update_button = "<td><a class='btn btn-success btn-sm' href='#'>Update</a></td>";
+				$prayer_text = "<td>" . $myrow['prayertext'] . "</td></tr>";
 
 				// Stores each database record to an array 
-					$buildjson = array($prayerid, $prayerupdate, $prayer_title, $detail_button, $prayanswer); 
+					$buildjson = array($myprayercontrol, $prayerid, $prayerupdate, $prayer_title, $update_button, $prayanswer, $prayer_text); 
  					// Adds each array into the container array 
  					array_push($mylistarray, $buildjson); 
 			}
