@@ -46,7 +46,7 @@ if(!$_SESSION['logged in']) {
 				$detail_button = "Details";
 
 				// Stores each database record to an array 
-					$buildjson = array($prayerid, $prayerupdate, $prayer_title, $prayanswer, $detail_button); 
+					$buildjson = array($prayerid, $prayerupdate, $prayer_title, $detail_button, $prayanswer); 
  					// Adds each array into the container array 
  					array_push($mylistarray, $buildjson); 
 			}
