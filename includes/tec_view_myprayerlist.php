@@ -41,7 +41,6 @@ jQ8(document).ready(function() {
         	},
 			{
         		className: "updatecolumn",
-                "visible": false,
 				orderable: false,
         		"targets": [ 4 ] 
         	},
