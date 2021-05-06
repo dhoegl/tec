@@ -23,7 +23,7 @@ jQ8(document).ready(function() {
 //			"bInfo": false,
             "bAutoWidth": true,
             // "responsive": true,
-            responsive: {
+            "responsive": {
             details: {
                 type: 'column',
                 target: 'tr'
