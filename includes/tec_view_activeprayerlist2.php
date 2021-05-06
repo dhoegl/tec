@@ -23,12 +23,13 @@ jQ8(document).ready(function() {
 //			"bInfo": false,
             "bAutoWidth": true,
             // "responsive": true,
-            "responsive": {
-            details: {
-                type: 'column',
-                target: 'tr'
-                }
-            },
+            "responsive": true,
+            // "responsive": {
+            // details: {
+            //     type: 'column',
+            //     target: 'tr'
+            //     }
+            // },
             // responsive: {
             //     details: {
             //         type: 'column'
