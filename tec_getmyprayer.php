@@ -32,9 +32,9 @@ if(!$_SESSION['logged in']) {
 		while($myrow = $myprayerresult->fetch_assoc()) {
 				$myprayercontrol = "<tr><td></td>";
 				$prayerupdate = "<td>" . date("M-d-Y", strtotime($myrow['prayerupdatedate'])) . "</td>";
-				$prayerid = $myrow['prayerid'];
+				$prayerid = "<td>" . $myrow['prayerid'] . "</td>";
 				$prayer_title = "<td>" . $myrow['prayertitle'] . "</td>";
-				$prayer_text = "<td>" . $myrow['prayertext'] . "</td>";
+				// $prayer_text = "<td>" . $myrow['prayertext'] . "</td>";
 				$fullname = "<td>" . $myrow['fullname'] . "</td>";				
 				$praypraise = "<td>" . $myrow['praypraise'] . "</td>";
 				if($myrow['prayanswer'] == '1') {
