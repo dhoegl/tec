@@ -692,7 +692,6 @@ require_once('includes/tec_footer.php');
                 </button>
             </div><!-- modal-header -->
             <div class="modal-body">
-                <hr />
                 <h4>
                     My Existing Active Prayer Requests
                 </h4>
