@@ -750,7 +750,14 @@ require_once('includes/tec_footer.php');
                                     </select>
                                 </div>
                             </div><!-- row -->
+
                             <div class="row px-2 d-flex justify-content-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
+                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                    </div><!-- btn-group -->
+                                </div><!-- row -->
+
+                            <!-- <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                     <div class="col-sm-4">
                                             <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
@@ -760,9 +767,9 @@ require_once('includes/tec_footer.php');
                                         </div>
                                         <div class="col-sm-4">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div><!-- btn-group -->
-                            </div><!-- row -->
+                                        </div> -->
+                                    <!-- </div>
+                            </div> -->
                         </div> <!--Table Responsive-->
                     </div> <!-- modaleditform -->
                 </form>
