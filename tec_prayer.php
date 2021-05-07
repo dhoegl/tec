@@ -751,7 +751,7 @@ require_once('includes/tec_footer.php');
                                 </div>
                             </div> -->
 
-                            <div class="row px-4 d-flex justify-content-center">
+                            <div class="row px-4 d-flex justify-content-right">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
                                     </div><!-- btn-group -->
