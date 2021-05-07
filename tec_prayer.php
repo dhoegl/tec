@@ -734,9 +734,9 @@ require_once('includes/tec_footer.php');
                             <div class="col-12 px-3">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <h6>WHO:</h6>
-                                        <h6>WHEN:</h6>
-                                        <h6>WHERE:</h6>
+                                        <p>WHO:</p>
+                                        <p>WHEN:</p>
+                                        <p>WHERE:</p>
                                     </div>
                                     <div class="col-xs-9">
                                         <p>Sed viverra ipsum nunc aliquet.</p>
