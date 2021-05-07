@@ -16,12 +16,13 @@ jQ8(document).ready(function() {
 //			"iDisplayLength": 100,
 //			"bLengthChange": false,
 //			"bFilter": true,
-			responsive: {
-            	details: {
-                	type: 'column',
-                	target: 'tr'
-                }
-            },
+			"responsive": true,
+			// responsive: {
+            // 	details: {
+            //     	type: 'column',
+            //     	target: 'tr'
+            //     }
+            // },
 //			"bSort": true,
 //			"bInfo": false,
 //			"bAutoWidth": true,

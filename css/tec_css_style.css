@@ -409,6 +409,11 @@
 .dtr-title {
     font-weight: bold;
 }
+/******  My Existing Prayer Table list (tec_prayer.php) **********/
+#myexistprayertable tbody tr.selected {
+    background-color: #B0BED9
+}
+
 td.dtr-control {
 	/* background: url(../images/details_open.png) no-repeat center center; */
     /* cursor: pointer; */
@@ -876,7 +881,7 @@ tr.parent td.dtr-control {
 	padding: 0px 10px 10px 10px;
 	display:inline;
 }
-/******  Data Table Rows (ofc_regadmin for family selection) **********/
+/******  Data Table Rows (tec_regadmin for family selection) **********/
 #approvedmemberslist tbody tr.selected {
     background-color: #B0BED9
 }

@@ -702,7 +702,8 @@ require_once('includes/tec_footer.php');
                     <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
                     <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
                     
-      	                <thead class="table-dark">
+      	                <!-- <thead class="table-dark"> -->
+      	                <thead>
          	                <tr>
                                 <th class="dtr-myprayercolumn"></th>
                                 <th>id</th>
@@ -713,7 +714,8 @@ require_once('includes/tec_footer.php');
                                 <th>Text</th>
                         	</tr>
         	        	</thead>
-        		        <tfoot class="table-dark">
+        		        <!-- <tfoot class="table-dark"> -->
+        		        <tfoot>
             	            <tr>
                             <th class="dtr-myprayercolumn"></th>
                                 <th>id</th>
