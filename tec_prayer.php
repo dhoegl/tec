@@ -692,15 +692,6 @@ require_once('includes/tec_footer.php');
                 </button>
             </div><!-- modal-header -->
             <div class="modal-body">
-				<h6>
-					<span id="loginApprove"></span>
-					<span id="churchcodeApprove"></span>
-					<span id="usernameApprove"></span>
-					<!--<span id="firstnameApprove"></span>
-					<span id="lastnameApprove"></span>-->
-					<span id="fullnameApprove"></span>
-					<span id="genderApprove"></span>
-				</h6>
                 <hr />
                 <h4>
                     My Existing Active Prayer Requests
