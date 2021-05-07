@@ -714,7 +714,7 @@ require_once('includes/tec_footer.php');
                     
       	                <thead class="table-dark">
          	                <tr>
-                                 <th></th>
+                                <th class="dtr-myprayercolumn"></th>
                                 <th>id</th>
                                 <th>Opened</th>
                                 <th>Title</th>
@@ -725,7 +725,7 @@ require_once('includes/tec_footer.php');
         	        	</thead>
         		        <tfoot class="table-dark">
             	            <tr>
-                                <th></th>
+                            <th class="dtr-myprayercolumn"></th>
                                 <th>id</th>
                                 <th>Opened</th>
                                 <th>Title</th>
