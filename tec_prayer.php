@@ -731,14 +731,14 @@ require_once('includes/tec_footer.php');
                     <!-- <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' > -->
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="row">
-                            <div class="col-12 px-3">
-                                <div class="row mx-sm-5">
-                                    <div class="col-xs-3 px-sm-5">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-3">
                                         <p>WHO:</p>
                                         <p>WHEN:</p>
                                         <p>WHERE:</p>
                                     </div>
-                                    <div class="col-xs-9 px-sm-5">
+                                    <div class="col-9">
                                         <p>Sed viverra ipsum nunc aliquet.</p>
                                         <p>Sed viverra ipsum nunc aliquet. </p>
                                         <p>Sed viverra ipsum nunc aliquet. </p>
