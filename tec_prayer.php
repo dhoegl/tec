@@ -734,14 +734,14 @@ require_once('includes/tec_footer.php');
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-3">
-                                        <p>WHO:</p>
-                                        <p>WHEN:</p>
-                                        <p>WHERE:</p>
+                                        <p class="mb-n1">WHO:</p>
+                                        <p class="mb-n1">WHEN:</p>
+                                        <p class="mb-n1">WHERE:</p>
                                     </div>
                                     <div class="col-9">
-                                        <p>Sed viverra ipsum nunc aliquet.</p>
-                                        <p>Sed viverra ipsum nunc aliquet. </p>
-                                        <p>Sed viverra ipsum nunc aliquet. </p>
+                                        <p class="mb-n1">Sed viverra ipsum nunc aliquet.</p>
+                                        <p class="mb-n1">Sed viverra ipsum nunc aliquet. </p>
+                                        <p class="mb-n1">Sed viverra ipsum nunc aliquet. </p>
                                     </div>
                                 </div>
                             </div>
