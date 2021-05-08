@@ -719,7 +719,7 @@ require_once('includes/tec_footer.php');
                             <!-- <tfoot class="table-dark"> -->
                             <tfoot>
                                 <tr>
-                                <th class="dtr-myprayercolumn"></th>
+                                    <th class="dtr-myprayercolumn"></th>
                                     <th>id</th>
                                     <th>Opened</th>
                                     <th>Title</th>
@@ -735,9 +735,8 @@ require_once('includes/tec_footer.php');
                             <div class="col-sm-4">
                             </div><!-- col-sm-4 -->
                             <div class="col-sm-4">
-                                <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons"> -->
-                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                </div><!-- col-sm-4 -->
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                            </div><!-- col-sm-4 -->
                         </div><!-- row -->
                     </div> <!-- modaleditform -->
                 </form>
@@ -811,10 +810,10 @@ require_once('includes/tec_footer.php');
                                     <div class="col-xs-4">
                                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
                                     </div>
-                                </div>
+                                </div><!-- row -->
                                 <div class="row">
                                     <textarea placeholder="Details..." id="prayer_text" name='prayer_text' class="form-control" rows="5"></textarea>
-                                </div>
+                                </div><!-- row -->
                             </div><!-- col-12 -->
                         </div><!-- row -->
                     </div> <!-- modaleditform -->
