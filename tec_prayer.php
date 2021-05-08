@@ -777,10 +777,22 @@ require_once('includes/tec_footer.php');
                                         <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet.</p>
                                         <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet. </p>
                                         <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet. </p>
+                                        <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet.</p>
                                     </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="card card-body">
+                                        <h4 class="card-title">Prayer Request</h4>
+                                        <p class="card-text">
+                                            Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Quam nulla porttitor massa id neque aliquam. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Morbi tincidunt ornare massa eget egestas purus. Enim diam vulputate ut pharetra sit. Ut aliquam purus sit amet luctus venenatis lectus magna. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. 
+                                        </p>
+                                    </div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <textarea placeholder="Details..." id="prayer_text" name='prayer_text' class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- row -->
                             <!-- <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                     <div class="col-sm-4">
