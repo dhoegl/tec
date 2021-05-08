@@ -450,6 +450,7 @@ require_once('includes/tec_footer.php');
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
+                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalEditExistingRequest" type="button">Edit My Existing Request</button>
                         </div>
                     </div><!-- dropdown -->
                 </div><!-- col xs-6 -->
@@ -727,8 +728,39 @@ require_once('includes/tec_footer.php');
                         	</tr>
         	        	</tfoot>
     	            </table>
+                    <div class="row px-4 d-flex">
+                        <div class="col-sm-4">
+                        </div><!-- col-sm-4 -->
+                        <div class="col-sm-4">
+                        </div><!-- col-sm-4 -->
+                        <div class="col-sm-4">
+                            <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons"> -->
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                            </div><!-- col-sm-4 -->
+                    </div><!-- row -->
 
-                    <!-- <table id="editpraytable" border='0' cellpadding='0' cellspacing='1' > -->
+            </div> <!-- modal-body -->
+        </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+</div> <!-- modal fade -->
+
+
+<!--***************************** EDIT Existing Prayer Request MODAL ***********************************-->
+<!--***************************** EDIT Existing Prayer Request MODAL ***********************************-->
+<!--***************************** EDIT Existing Prayer Request MODAL ***********************************-->
+
+<div class="modal fade" id="ModalEditExistingRequest" tabindex="-1" role="dialog" aria-labelledby="EditExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="EditExistPrayerModalLabel">Update My Prayer Request<br>Fill in stuff and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div><!-- modal-header -->
+            <div class="modal-body">
+                <form class="text-center border border-light p-2" name='editexistprayer' method='post' action=''>
+                    <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="row">
                             <div class="col-12">
@@ -747,31 +779,6 @@ require_once('includes/tec_footer.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive">
-                            <!-- <div class="row">
-                                <div class="col-3">
-                                    <label for="visibility">Select from list:</label>
-                                </div>
-                                <div class="col-9">
-                                    <select class="custom-select" name="visibility" id="visibility">
-                                        <option value="Elders">Elders Only</option>
-                                        <option value="AllChurch" selected>Your Church Family (approval required)</option>
-                                    </select>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="row px-4 d-flex justify-content-right"> -->
-                            <div class="row px-4 d-flex">
-                                <div class="col-sm-4">
-                                </div><!-- col-sm-4 -->
-                                <div class="col-sm-4">
-                                </div><!-- col-sm-4 -->
-                                <div class="col-sm-4">
-                                    <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons"> -->
-                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                    </div><!-- col-sm-4 -->
-                            </div><!-- row -->
-
                             <!-- <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                     <div class="col-sm-4">
@@ -785,15 +792,12 @@ require_once('includes/tec_footer.php');
                                         </div> -->
                                     <!-- </div>
                             </div> -->
-                        </div> <!--Table Responsive-->
                     </div> <!-- modaleditform -->
                 </form>
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
     </div> <!-- modal-dialog -->
 </div> <!-- modal fade -->
-
-
 
 
 <!--***************************** View Prayer Request Details MODAL ***********************************-->
