@@ -701,44 +701,46 @@ require_once('includes/tec_footer.php');
                 </h6>
                 <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
                     <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
-                    <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
-                    
-      	                <!-- <thead class="table-dark"> -->
-      	                <thead>
-         	                <tr>
+                    <div class="modaleditform text-center border border-light p-2">
+                        <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
+                        
+                            <!-- <thead class="table-dark"> -->
+                            <thead>
+                                <tr>
+                                    <th class="dtr-myprayercolumn"></th>
+                                    <th>id</th>
+                                    <th>Opened</th>
+                                    <th>Title</th>
+                                    <th>Update</th>
+                                    <th>Answer</th>
+                                    <th>Text</th>
+                                </tr>
+                            </thead>
+                            <!-- <tfoot class="table-dark"> -->
+                            <tfoot>
+                                <tr>
                                 <th class="dtr-myprayercolumn"></th>
-                                <th>id</th>
-                                <th>Opened</th>
-                                <th>Title</th>
-                                <th>Update</th>
-                                <th>Answer</th>
-                                <th>Text</th>
-                        	</tr>
-        	        	</thead>
-        		        <!-- <tfoot class="table-dark"> -->
-        		        <tfoot>
-            	            <tr>
-                            <th class="dtr-myprayercolumn"></th>
-                                <th>id</th>
-                                <th>Opened</th>
-                                <th>Title</th>
-                                <th>Update</th>
-                                <th>Answer</th>
-                                <th>Text</th>
-                        	</tr>
-        	        	</tfoot>
-    	            </table>
-                    <div class="row px-4 d-flex">
-                        <div class="col-sm-4">
-                        </div><!-- col-sm-4 -->
-                        <div class="col-sm-4">
-                        </div><!-- col-sm-4 -->
-                        <div class="col-sm-4">
-                            <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons"> -->
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                    <th>id</th>
+                                    <th>Opened</th>
+                                    <th>Title</th>
+                                    <th>Update</th>
+                                    <th>Answer</th>
+                                    <th>Text</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="row px-4 d-flex">
+                            <div class="col-sm-4">
                             </div><!-- col-sm-4 -->
-                    </div><!-- row -->
-
+                            <div class="col-sm-4">
+                            </div><!-- col-sm-4 -->
+                            <div class="col-sm-4">
+                                <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons"> -->
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                </div><!-- col-sm-4 -->
+                        </div><!-- row -->
+                    </div> <!-- modaleditform -->
+                </form>
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
     </div> <!-- modal-dialog -->
