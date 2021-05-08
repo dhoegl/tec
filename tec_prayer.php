@@ -770,13 +770,13 @@ require_once('includes/tec_footer.php');
                                     <div class="col-2">
                                         <p class="mb-n1 text-right font-weight-bold">Type:</p>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-5">
                                         <p class="mb-n1 text-left">Prayer</p>
                                     </div>
                                     <div class="col-2">
                                         <p class="mb-n1 text-right font-weight-bold">Answered:</p>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <p class="mb-n1 text-left">NO</p>
                                     </div>
                                 </div><!-- row -->
