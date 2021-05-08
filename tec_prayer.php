@@ -773,10 +773,10 @@ require_once('includes/tec_footer.php');
                                     <div class="col-5">
                                         <p class="mb-n1 text-left">Prayer</p>
                                     </div>
-                                    <div class="col-2">
+                                    <div class="col-3">
                                         <p class="mb-n1 text-right font-weight-bold">Answered:</p>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <p class="mb-n1 text-left">NO</p>
                                     </div>
                                 </div><!-- row -->
@@ -802,13 +802,13 @@ require_once('includes/tec_footer.php');
                                 </div><!-- row -->
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                    <div class="col-sm-4">
+                                    <div class="col-xs-4">
                                         <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-xs-4">
                                         <button type="button" name="answerexistingprayer" class="btn btn-success btn-sm">Answered</button>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-xs-4">
                                         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
                                     </div>
                                 </div>
