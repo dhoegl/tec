@@ -768,10 +768,10 @@ require_once('includes/tec_footer.php');
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-2">
-                                        <p class="mb-n1 text-left font-weight-bold">Type:</p>
-                                        <p class="mb-n1 text-left font-weight-bold">Date:</p>
-                                        <p class="mb-n1 text-left font-weight-bold">From:</p>
-                                        <p class="mb-n1 text-left font-weight-bold">Title:</p>
+                                        <p class="mb-n1 text-right font-weight-bold">Type:</p>
+                                        <p class="mb-n1 text-right font-weight-bold">Date:</p>
+                                        <p class="mb-n1 text-right font-weight-bold">From:</p>
+                                        <p class="mb-n1 text-right font-weight-bold">Title:</p>
                                     </div>
                                     <div class="col-10">
                                         <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet.</p>
