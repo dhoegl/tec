@@ -800,24 +800,23 @@ require_once('includes/tec_footer.php');
                                         </p>
                                     </div>
                                 </div><!-- row -->
+                                <div class="row px-2 d-flex justify-content-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
+                                    <div class="col-sm-4">
+                                        <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <button type="button" name="answerexistingprayer" class="btn btn-success btn-sm">Answered</button>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <textarea placeholder="Details..." id="prayer_text" name='prayer_text' class="form-control" rows="5"></textarea>
                                 </div>
-                            </div>
+                            </div><!-- col-12 -->
                         </div><!-- row -->
-                            <!-- <div class="row px-2 d-flex justify-content-center">
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                    <div class="col-sm-4">
-                                            <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <button type="button" name="answerexistingprayer" class="btn btn-success btn-sm">Answered</button>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                        </div> -->
-                                    <!-- </div>
-                            </div> -->
                     </div> <!-- modaleditform -->
                 </form>
             </div> <!-- modal-body -->
