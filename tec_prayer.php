@@ -780,7 +780,7 @@ require_once('includes/tec_footer.php');
                                         <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet.</p>
                                     </div>
                                 </div><!-- row -->
-                                <div class="row">
+                                <div class="row p-2">
                                     <div class="card card-body">
                                         <h4 class="card-title">Prayer Request</h4>
                                         <p class="card-text">
