@@ -816,6 +816,48 @@ require_once('includes/tec_footer.php');
                         </div><!-- row -->
                     </div> <!-- modaleditform -->
                 </form>
+
+<!-- Make table hidden so that only Text column is accessible -->
+                <div id="myprayerfulltablehide">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card bg-light border-primary px-2 my-2 w-100">
+                                <div class="card-body">
+                                    <div class="table-responsive-xs">
+                                        <table id="myprayerfulltable">
+                                            <thead class="table-dark">>
+                                                <tr>
+                                                    <th class="dtr-myprayercolumn"></th>
+                                                    <th>id</th>
+                                                    <th>Opened</th>
+                                                    <th>Title</th>
+                                                    <th>Update</th>
+                                                    <th>Answer</th>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Text</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot class="table-dark">
+                                                <tr>
+                                                    <th class="dtr-myprayercolumn"></th>
+                                                    <th>id</th>
+                                                    <th>Opened</th>
+                                                    <th>Title</th>
+                                                    <th>Update</th>
+                                                    <th>Answer</th>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Text</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table><!-- myprayerfulltable -->
+                                    </div><!-- table-responsive -->
+                                </div><!-- card-body -->
+                            </div><!-- card -->
+                        </div><!-- col-sm-12 -->
+                    </div> <!-- Row -->
+                </div><!-- myprayerfulltablehide -->
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
     </div> <!-- modal-dialog -->
