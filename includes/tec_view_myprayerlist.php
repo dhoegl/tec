@@ -109,44 +109,46 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
          "columnDefs": [ 
             {
-                className: 'dtr-control',
                 orderable: false,
                 targets:   [ 0 ]
             },
 			{
-        		className: "indexcol",
+        		className: "indexcol3",
         		"targets": [ 1 ] 
         	},
 			{
-    	   		className: "myprayer_update",
+    	   		className: "myprayer_update3",
+				   "visible": false,
        			"targets": [ 2 ] 
 	       	},
 			{
-        		className: "myprayer_title",
+        		className: "myprayer_title3",
+                "visible": false,
         		"targets": [ 3 ] 
         	},
 			{
-        		className: "updatecolumn",
+        		className: "updatecolumn3",
+                "visible": false,
 				orderable: false,
         		"targets": [ 4 ] 
         	},
 			{
-        		className: "myprayer_answer",
+        		className: "myprayer_answer3",
 				orderable: false,
         		"targets": [ 5 ] 
         	},
 			{
-        		className: "myprayer_who",
+        		className: "myprayer_who3",
 				orderable: false,
         		"targets": [ 6 ] 
         	},
 			{
-        		className: "mypraypraise",
+        		className: "mypraypraise3",
 				orderable: false,
         		"targets": [ 7 ] 
         	},
 			{
-        		className: "myprayer_text",
+        		className: "myprayer_text3",
 				orderable: false,
         		"targets": [ 8 ] 
         	}
