@@ -474,6 +474,7 @@ jQ10(document).ready(function () {
             var myprayerIndex = myprayerID-1;
             mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
             jQ10("#prayerText").html(mysiblingTable);
+            console.log("myprayerID (this jQ10 entry) = " + myprayerID);
             console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
             console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
             console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
