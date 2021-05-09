@@ -443,13 +443,13 @@ var gethiddencol = "0";
 var jQ10 = jQuery.noConflict();
 jQ10(document).ready(function () {
     jQ10("#myexistprayertable tbody").on("click", '.updatecolumn', function () {
+        console.log("********** Update button clicked ************");
         testforChild = jQ10(this).closest('tr');
         if (testforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
             myprayerID = testforChild.prev("tr").find(".indexcol").text();
             $clickbuttonid = myprayerID;
             jQ10("#myprayerID").html(myprayerID);
-            console.log("********** Update button clicked ************");
             console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
             myprayerDate = testforChild.prev("tr").find(".myprayer_update").text();
             jQ10("#myprayerDate").html(myprayerDate);
