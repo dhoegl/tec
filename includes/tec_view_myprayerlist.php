@@ -86,7 +86,7 @@ jQ8(document).ready(function() {
 //			"bJQueryUI": true,
 //			"sScrollY": "200px",
 //			"bPaginate": true,
-			"order": [[ 0, 'desc' ]],
+			"order": [[ 1, 'asc' ]],
 			"scrollY":        "200px",
 			"scrollCollapse": true,
 			"paging":         false,
