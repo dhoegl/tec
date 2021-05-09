@@ -98,7 +98,7 @@ jQ8(document).ready(function() {
 //			"bPaginate": true,
 //			"aaSorting": [[ 1, "asc" ]],
 //			"ordering": true,
-			"order": [[ 2, 'desc' ]],
+			"order": [[ 1, 'asc' ]],
 //			"iDisplayLength": 100,
 //			"bLengthChange": false,
 //			"bFilter": true,
