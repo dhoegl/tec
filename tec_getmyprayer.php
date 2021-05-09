@@ -21,7 +21,7 @@ if(!$_SESSION['logged in']) {
 //			echo "no prayer data";
 			$noprayer = " ";
 			$noprayerecho = "no data";
-			$buildjson = array($noprayer, $noprayer, $noprayerecho, $noprayer, $noprayer, $noprayer, $noprayer);
+			$buildjson = array($noprayer, $noprayer, $noprayerecho, $noprayer, $noprayer, $noprayer, $noprayer, $noprayer, $noprayer);
 			array_push($mylistarray, $buildjson); 
 // Prepend array with parent element
 			$mylistarray = array('data' => $mylistarray);
