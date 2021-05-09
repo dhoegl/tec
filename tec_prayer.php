@@ -472,7 +472,7 @@ jQ10(document).ready(function () {
                 jQ10("#myprayerType").html("Praise");
             }
             var myprayerIndex = myprayerID-1;
-            mysiblingTable = jQ10("td.full_text2").eq(myprayerIndex).text();
+            mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
             jQ10("#prayerText").html(mysiblingTable);
             console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
             console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
