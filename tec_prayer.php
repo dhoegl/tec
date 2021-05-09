@@ -486,7 +486,7 @@ jQ10(document).ready(function () {
 
         }
         else {
-            
+
         }
     });
 });
@@ -785,6 +785,7 @@ require_once('includes/tec_footer.php');
                                     <th>Title</th>
                                     <th>Update</th>
                                     <th>Answer</th>
+                                    <th>Name</th>
                                     <th>Type</th>
                                     <th>Text</th>
                                 </tr>
@@ -798,6 +799,7 @@ require_once('includes/tec_footer.php');
                                     <th>Title</th>
                                     <th>Update</th>
                                     <th>Answer</th>
+                                    <th>Name</th>
                                     <th>Type</th>
                                     <th>Text</th>
                                 </tr>
