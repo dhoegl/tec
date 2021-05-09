@@ -59,10 +59,22 @@ jQ8(document).ready(function() {
         		"targets": [ 5 ] 
         	},
 			{
-        		className: "myprayer_text",
+        		className: "myprayer_who",
                 "visible": false,
 				orderable: false,
         		"targets": [ 6 ] 
+        	},
+			{
+        		className: "mypraypraise",
+                "visible": false,
+				orderable: false,
+        		"targets": [ 7 ] 
+        	},
+			{
+        		className: "myprayer_text",
+                "visible": false,
+				orderable: false,
+        		"targets": [ 8 ] 
         	}
         ]
 

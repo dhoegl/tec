@@ -419,7 +419,79 @@ jQ9(document).ready(function () {
 		// };
 	});
 });
+
+
 </script>
+
+<!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
+<!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
+<!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
+<script type="text/javascript">
+var $clickbuttonid = "NA";
+var testforChild = "0";
+var parentTable;
+var myprayerID = "0";
+var myprayerDate = "0";
+var myprayerAnswer = "0";
+var myprayerWho = "0";
+var myprayerTitle = "0";
+var myprayerType = "0";
+var prayerText;
+var prayerText2;
+var mysiblingTable;
+var gethiddencol = "0";
+var jQ10 = jQuery.noConflict();
+jQ10(document).ready(function () {
+    jQ10("#myexistprayertable tbody").on("click", '.updatecolumn', function () {
+        testforChild = jQ10(this).closest('tr');
+        if (testforChild.hasClass("child")) {
+            console.log("******** HAS CHILD ******")
+            myprayerID = testforChild.prev("tr").find(".indexcol").text();
+            $clickbuttonid = myprayerID;
+            jQ10("#myprayerID").html(myprayerID);
+            console.log("********** Update button clicked ************");
+            console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
+            myprayerDate = testforChild.prev("tr").find(".myprayer_update").text();
+            jQ10("#myprayerDate").html(myprayerDate);
+            myprayerAnswer = testforChild.prev("tr").find(".myprayer_answer").text();
+            if(myprayerAnswer == " Answered "){
+                jQ10("#myprayerAnswer").html("YES");
+            }
+            else{
+                jQ10("#myprayerAnswer").html("NO");
+            }
+            myprayerWho = testforChild.prev("tr").find(".myprayer_who").text();
+            jQ10("#prayerWho").html(myprayerWho);
+            myprayerTitle = testforChild.prev("tr").find(".myprayer_title").text();
+            jQ10("#prayerTitle").html(myprayerTitle);
+            myprayerType = testforChild.prev("tr").find(".mypraypraise").text();
+            if(myprayerType == "Prayer"){
+                jQ10("#myprayerType").html("Prayer Request");
+            }
+            else{
+                jQ10("#myprayerType").html("Praise");
+            }
+            var myprayerIndex = myprayerID-1;
+            mysiblingTable = jQ10("td.full_text2").eq(myprayerIndex).text();
+            jQ10("#prayerText").html(mysiblingTable);
+            console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
+            console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
+            console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
+            console.log("myprayerTitle (this jQ10 entry) = " + myprayerTitle);
+            console.log("myprayerType (this jQ10 entry) = " + myprayerType);
+            console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
+            console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
+
+
+
+        }
+        else {
+            
+        }
+    });
+});
+</script>
+
 </head>
 <body>
 
@@ -713,6 +785,7 @@ require_once('includes/tec_footer.php');
                                     <th>Title</th>
                                     <th>Update</th>
                                     <th>Answer</th>
+                                    <th>Type</th>
                                     <th>Text</th>
                                 </tr>
                             </thead>
@@ -725,6 +798,7 @@ require_once('includes/tec_footer.php');
                                     <th>Title</th>
                                     <th>Update</th>
                                     <th>Answer</th>
+                                    <th>Type</th>
                                     <th>Text</th>
                                 </tr>
                             </tfoot>
