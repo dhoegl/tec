@@ -48,7 +48,7 @@ if(!$_SESSION['logged in']) {
 				$myprayer_text = "<td>" . $myrow['prayertext'] . "</td></tr>";
 
 				// Stores each database record to an array 
-					$buildjson = array($myprayercontrol, $myprayerid, $myprayerupdate, $myprayer_title, $myupdate_button, $myprayanswer, $mypraypraise, $myprayer_text); 
+					$buildjson = array($myprayercontrol, $myprayerid, $myprayerupdate, $myprayer_title, $myupdate_button, $myprayanswer, $fullname, $mypraypraise, $myprayer_text); 
  					// Adds each array into the container array 
  					array_push($mylistarray, $buildjson); 
 			}
