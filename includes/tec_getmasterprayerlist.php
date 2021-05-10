@@ -10,15 +10,15 @@ if(!$_SESSION['logged in']) {
 
 // 	if (isset($_GET['action']) ) 
 //	{
-/*Query active prayer listing: visible = 3 (all) and status = 1 */
-		$activeprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, m.Name_1 AS firsthim, m.Name_2 AS firsther, m.Surname AS last, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['dirtablename'] . " m on m.idDirectory = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' ORDER BY p.create_date DESC";
-		$activeprayerresult = $mysql->query($activeprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
-		$activeprayercount = $activeprayerresult->num_rows;
+/*Query master prayer listing: visible = 3 (all) and status = 1 */
+		$masterprayerquery = "SELECT p.create_date AS createdate, p.name AS fullname, m.Name_1 AS firsthim, m.Name_2 AS firsther, m.Surname AS last, p.prayer_id AS prayerid, p.title AS pratertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updated, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' ORDER BY p.create_date DESC";
+		$masterprayerresult = $mysql->query($masterprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
+		$masterprayercount = $masterprayerresult->num_rows;
 
 		$listarray = array();
 		$empty_list = array();
 
-		if ($activeprayercount == 0)
+		if ($masterprayercount == 0)
 		{
             $buildjson = array(" ", " ", " ", "no prayer data", " ", "no prayer data", " ", " ", " ", );
             array_push($listarray, $buildjson);
@@ -26,27 +26,27 @@ if(!$_SESSION['logged in']) {
             echo json_encode($listarray);
             exit;
 		}
-		while($activerow = $activeprayerresult->fetch_assoc()) {
-				$activeprayercontrol = "<tr><td></td>";
-				$prayerid = "<td>" . $activerow['prayerid'] . "</td>";
-				$prayerupdate = "<td>" . date("M-d-Y", strtotime($activerow['prayerupdatedate'])) . "</td>";
-				$fullname = "<td>" . $activerow['fullname'] . "</td>";				
-				$praypraise = "<td>" . $activerow['praypraise'] . "</td>";
-				$prayanswer = $activerow['answered'];
-				if($activerow['prayanswer'] == '1') {
-					$prayanswer = "<td> YES </td>";
+		while($masterrow = $masterprayerresult->fetch_assoc()) {
+				$masterprayerid = $masterrow['prayerid'];
+				$masterprayercreatedate = date("M-d-Y", strtotime($masterrow['createdate']));
+				$masterfullname = $masterrow['fullname'];
+				$masterfirsthim = $masterrow['firsthim'];
+				$masterfirsther = $masterrow['firsther'];
+				$masterlastname = $masterrow['last'];
+				$masterprayertitle = $masterrow['prayertitle'];
+				$masterpraypraise = $masterrow['praypraise'];
+				$masterprayanswer = $masterrow['prayanswer'];
+				if($masterrow['prayanswer'] == '1') {
+					$masterprayanswer = "YES";
 				}
 				else {
-					$prayanswer = "<td> NO </td>";
+					$masterprayanswer = "NO";
 				}
-				$prayer_title = "<td>" . $activerow['prayertitle'] . "</td>";
-				$glance = "<td>" . substr($activerow['prayertext'],0,75) . "...</td>";
-				$detail_button = "<td><a class='btn btn-success' href='#'>Details</a></td>";
-				$prayer_text = "<td>" . $activerow['prayertext'] . "</td></tr>";
+				$masterprayerupdate = $masterrow['updated'];
+				$masterprayertext = $masterrow['prayertext'];
 
 				// Stores each database record to an array 
-//					$buildjson = array('prayerdate' => $prayerupdate, 'id' => $prayerid, 'title' => $prayer_title, 'prayertext' => $prayer_text, 'fullname' => $fullname, 'glance' => $glance); 
-					$buildjson = array($activeprayercontrol, $prayerid, $prayerupdate, $fullname, $praypraise, $prayanswer, $prayer_title, $glance, $detail_button, $prayer_text); 
+					$buildjson = array($masterprayerid, $masterprayercreatedate, $masterfullname, $masterfirsthim, $masterfirsther, $masterlastname, $masterprayertitle, $masterpraypraise, $masterprayanswer, $$masterprayerupdate, $masterprayertext); 
  					// Adds each array into the container array 
  					array_push($listarray, $buildjson); 
 			}
