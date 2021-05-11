@@ -46,7 +46,7 @@ if(!$_SESSION['logged in']) {
 				$masterprayertext = $masterrow['prayertext'];
 
 				// Stores each database record to an array 
-					$buildjson = array($masterprayerid, $masterprayercreatedate, $masterfullname, $masterfirstname, $masterlastname, $masterprayertitle, $masterpraypraise, $masterprayanswer, $$masterprayerupdate, $masterprayertext); 
+					$buildjson = array('prayer_id'->$masterprayerid, 'create_date'->$masterprayercreatedate, 'fullname'->$masterfullname, 'firstname'->$masterfirstname, 'lastname'->$masterlastname, 'title'->$masterprayertitle, 'pray_praise'->$masterpraypraise, 'answer'->$masterprayanswer, 'updated'->$masterprayerupdate, 'prayer_text'->$masterprayertext); 
  					// Adds each array into the container array 
  					array_push($listarray, $buildjson); 
 			}
