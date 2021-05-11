@@ -11,7 +11,7 @@ if(!$_SESSION['logged in']) {
 // 	if (isset($_GET['action']) ) 
 //	{
 /*Query master prayer listing: visible = 3 (all) and status = 1 */
-		$masterprayerquery = "SELECT p.create_date AS createdate, p.fullname AS fullname, m.firstname AS firstname, m.lastname AS lastname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updated, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' ORDER BY p.create_date DESC";
+		$masterprayerquery = "SELECT p.create_date AS createdate, m.fullname AS fullname, m.firstname AS firstname, m.lastname AS lastname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updated, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' ORDER BY p.create_date DESC";
 		$masterprayerresult = $mysql->query($masterprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
 		$masterprayercount = $masterprayerresult->num_rows;
 
