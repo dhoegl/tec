@@ -90,8 +90,7 @@ if(!$_SESSION['logged in']) {
 		})
         masterprayer.done(function (masterresponse) {
                     //  Get the result
-                    var prayer_ID = 'prayer_id';
-                    var obj = masterprayer[0].prayer_ID;
+                    var obj = masterresponse[0].'prayer_id';
                     // teststat2 = response.responseText;
                     // var email = masterresponse[0].'0';
                     console.log('first entry = ' + obj);
