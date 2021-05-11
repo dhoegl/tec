@@ -85,7 +85,7 @@ if(!$_SESSION['logged in']) {
         url: 'services/tec_getmasterprayerlist.php',
 		type: 'POST',
 		dataType: 'json',
-		data: {login_ID: $clickbuttonid}
+		data: {login_ID: loginID}
 		});
 
     });
