@@ -92,7 +92,7 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     // var obj = JSON.parse(response.responseText);
                     // teststat2 = response.responseText;
-                    var email = masterresponse[0]->'0';
+                    var email = masterresponse[0].'0';
                     console.log('first entry = ' + email);
 //                     var $obj = json_decode(masterprayer);
 //                     console.log('masterprayerid = ' + obj->)
