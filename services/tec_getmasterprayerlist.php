@@ -52,7 +52,7 @@ if(!$_SESSION['logged in']) {
 			}
 			// Prepend array with parent element
 //			$listarray = array('ActivePrayerList' => $listarray);
-			$listarray = array('data' => $listarray);
+			// $listarray = array('data' => $listarray);
 
 //	}
 
