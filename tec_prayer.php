@@ -80,13 +80,36 @@ if(!$_SESSION['logged in']) {
 <script type="text/javascript">
 	var jQ19 = jQuery.noConflict();
     var loginID = <?php echo $_SESSION['user_id']; ?>;
+    var masterresponse;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
         url: 'services/tec_getmasterprayerlist.php',
 		type: 'POST',
 		dataType: 'json',
 		data: {login_ID: loginID}
-		});
+		})
+        masterprayer.done(function (masterresponse) {
+                    //  Get the result
+                    // var obj = JSON.parse(response.responseText);
+                    // teststat2 = response.responseText;
+                    var email = masterresponse[0]->'0';
+                    console.log('first entry = ' + email);
+//                     var $obj = json_decode(masterprayer);
+//                     console.log('masterprayerid = ' + obj->)
+// echo $obj->Peter;
+// echo $obj->Ben;
+// echo $obj->Joe;
+                    // for(var i=0; i<len; i++){
+                    // var id = response[i].prayerid;
+                    // var email = response[i].prayeremail;
+                    // var teststat2 = response.prayeremail;
+                    // console.log("ajax response text = " + id + " " + email);
+                    // alert("Email address received: " + email);
+                    // console.log("ajax response email = " + email);
+                    // alert("ajax response email = " + email);
+                    // window.location.href = "mailto:" + email + "?subject=Praying for you!";
+                    // };
+                })
 
     });
 
