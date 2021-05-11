@@ -63,9 +63,6 @@ if(!$_SESSION['logged in']) {
 // Get User Login details
     include('includes/tec_get_loggedinuser.php');
 
-// Get Master Prayer List
-include('includes/tec_view_getmasterprayerlist.php');
-
 // Get Active Prayer List
     include('includes/tec_view_activeprayerlist2.php');
    
@@ -77,6 +74,24 @@ include('includes/tec_view_getmasterprayerlist.php');
    
 ?>
 
+<!--***************************** Get Master Prayer List  ***********************************-->
+<!--***************************** Get Master Prayer List  ***********************************-->
+<!--***************************** Get Master Prayer List  ***********************************-->
+<script type="text/javascript">
+	var jQ19 = jQuery.noConflict();
+    var loginID = <?php $_SESSION['user_id']; ?>;
+	jQ19(document).ready(function() {
+		var masterprayer = jQ19.ajax({
+        url: 'services/tec_getmasterprayerlist.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {login_ID: $clickbuttonid}
+		});
+
+    });
+
+
+</script>
 
 <!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
 <!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
