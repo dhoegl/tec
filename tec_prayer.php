@@ -90,10 +90,10 @@ if(!$_SESSION['logged in']) {
 		})
         masterprayer.done(function (masterresponse) {
                     //  Get the result
-                    // var obj = JSON.parse(response.responseText);
+                    var obj = JSON.parse(masterresponse.responseText);
                     // teststat2 = response.responseText;
-                    var email = masterresponse[0].'0';
-                    console.log('first entry = ' + email);
+                    // var email = masterresponse[0].'0';
+                    console.log('first entry = ' + obj);
 //                     var $obj = json_decode(masterprayer);
 //                     console.log('masterprayerid = ' + obj->)
 // echo $obj->Peter;
