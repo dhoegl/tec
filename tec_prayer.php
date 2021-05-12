@@ -93,11 +93,11 @@ if(!$_SESSION['logged in']) {
         masterprayer.done(function (masterresponse) {
                     //  Get the details for all active prayer requests
                     activeprayercount = masterresponse.length;
+                    console.log('number of active prayer requests = ' + activeprayercount);
                     var i;
                     for (i = 0; i < activeprayercount; i++) {
                         obj[i] = masterresponse[i].prayer_text;
                         // console.log('entry ' + i + ' = ' + obj);
-                        console.log('number of active prayer requests = ' + activeprayercount);
                     } 
                 })
 
