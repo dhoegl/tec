@@ -82,6 +82,7 @@ if(!$_SESSION['logged in']) {
     var loginID = <?php echo $_SESSION['user_id']; ?>;
     var masterresponse;
     var obj = [];
+    var activeprayercount;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
         url: 'services/tec_getmasterprayerlist.php',
@@ -90,11 +91,13 @@ if(!$_SESSION['logged in']) {
 		data: {login_ID: loginID}
 		})
         masterprayer.done(function (masterresponse) {
-                    //  Get the result
+                    //  Get the details for all active prayer requests
+                    activeprayercount = masterresponse.length;
                     var i;
                     for (i = 0; i < 15; i++) {
                         obj[i] = masterresponse[i].prayer_text;
                         // console.log('entry ' + i + ' = ' + obj);
+                        console.log('number of active prayer requests = ' + activeprayercount);
                     } 
                 })
 
