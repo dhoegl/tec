@@ -242,8 +242,9 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
             // ************* THIS DOESN'T WORK!! *****************
             console.log("prayerID (this jQ9 entry) = " + prayerID);
-            console.log("obj[prayerID] (this jQ9 entry) = " + obj[prayerID]);
-            prayerText = obj[prayerID];
+            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
+            console.log("obj[prayerID] (this jQ9 entry) = " + obj[prayerIndex]);
+            prayerText = obj[prayerIndex];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
@@ -251,7 +252,6 @@ jQ9(document).ready(function () {
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
             console.log("prayerText (this jQ9 entry) = " + prayerText);
-            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
 
 // Check if prayer is being followed by user - Toggle the follow_button text
         var checkfollow = 'services/tec_check_follow_table.php';
