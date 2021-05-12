@@ -90,25 +90,11 @@ if(!$_SESSION['logged in']) {
 		})
         masterprayer.done(function (masterresponse) {
                     //  Get the result
-                    var obj = masterresponse[0].prayer_id;
-                    // teststat2 = response.responseText;
-                    // var email = masterresponse[0].'0';
-                    console.log('first entry = ' + obj);
-//                     var $obj = json_decode(masterprayer);
-//                     console.log('masterprayerid = ' + obj->)
-// echo $obj->Peter;
-// echo $obj->Ben;
-// echo $obj->Joe;
-                    // for(var i=0; i<len; i++){
-                    // var id = response[i].prayerid;
-                    // var email = response[i].prayeremail;
-                    // var teststat2 = response.prayeremail;
-                    // console.log("ajax response text = " + id + " " + email);
-                    // alert("Email address received: " + email);
-                    // console.log("ajax response email = " + email);
-                    // alert("ajax response email = " + email);
-                    // window.location.href = "mailto:" + email + "?subject=Praying for you!";
-                    // };
+                    var i;
+                    for (i = 0; i < 15; i++) {
+                        var obj = masterresponse[i].prayer_text;
+                        console.log('entry 0 = ' + obj);
+                    } 
                 })
 
     });
@@ -164,55 +150,9 @@ if(!$_SESSION['logged in']) {
 
 	});
 
-// Update prayer follow table - initialize to Follow as default state
-        // var $followselect = 'yes';
-		// var request = jQ20.ajax({
-		// url: 'services/tec_update_follow_table.php',
-		// type: 'POST',
-		// dataType: 'json',
-		// data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
-		// });
-
-
-
-
-// Unfollow button
-	// jQ20("#unfollow_button").click(function () {
-	// 	console.log("prayer unFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with ID = " + $loggedidDirectory);
-	// 	var $followselect = 'unfollow';
-	// 	var request = jQ20.ajax({
-	// 	url: 'services/tec_update_follow_table.php',
-	// 	type: 'POST',
-	// 	dataType: 'json',
-	// 	data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory}
-	// 	});
-
-// Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-		// var checkfollow = 'services/tec_check_follow_table.php';
-		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
-		// 	}, function (data) {
-		// 		console.log(data);
-		// 		console.log("Data Message = " + data.followmessage);
-		// 	jQ20.each(data.followmessage, function (i, rep) {
-		// 		if ('yes' === rep.Message.toLowerCase()) {
-		// 			console.log("YES is the response");
-		// 			jQ20("#follow_button").hide();
-		// 			jQ20("#unfollow_button").show();
-		// 		};
-		// 		if ('no' === rep.Message.toLowerCase()) {
-		// 			console.log("NO is the response");
-		// 			jQ20("#follow_button").show();
-		// 			jQ20("#unfollow_button").hide();
-		// 		}
-		// 	});
-		// });
 	});
-// });
 </script>
 
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
-<!-- ******** LEFT OFF HERE -->
 
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
@@ -233,47 +173,17 @@ if(!$_SESSION['logged in']) {
             })
                 .done(function (response) {
                     //  Get the result
-                    // var obj = JSON.parse(response.responseText);
-                    // teststat2 = response.responseText;
                     var email = response[0].prayeremail;
-                    // for(var i=0; i<len; i++){
-                    // var id = response[i].prayerid;
-                    // var email = response[i].prayeremail;
-                    // var teststat2 = response.prayeremail;
-                    // console.log("ajax response text = " + id + " " + email);
-                    // alert("Email address received: " + email);
                     console.log("ajax response email = " + email);
-                    // alert("ajax response email = " + email);
                     window.location.href = "mailto:" + email + "?subject=Praying for you!";
-                    // };
                 })
                 .fail(function (jqXHR, textStatus) {
                     //  Get the result
-                    //result = (rtnData === undefined) ? null : rtnData.d;
                     var result = "fail";
                     var teststat = textStatus;
                     var teststat2 = jqXHR.responseText;
-                    // console.log("ajax response data = " + teststat);
-                    // console.log("ajax response text = " + teststat2);
-                    // reportError(teststat);
                     alert("No email address found to send an email - ajax response text = " + teststat2);
-                    // location.reload();
-                    // return result;
                 });
-
-
-// jQ30("#prayer_outbound_email").click(function () {
-// 		console.log("Send Email button clicked");
-// 		var sendaddress = 'services/tec_get_prayer_email_address.php';
-// 		jQ30.getJSON(sendaddress, {prayerID: $clickbuttonid
-// 		}, function (data) {
-// 			console.log(data);
-// 			jQ30.each(data.prayerdata, function (i, rep) {
-// 			console.log("Prayer ID: " + rep.prayerid);
-// 			console.log("Prayer owner email: " + rep.prayeremail);
-// 			});
-// 		});
-//     });
     });
 });
 
@@ -329,6 +239,7 @@ jQ9(document).ready(function () {
                 jQ9("#prayerType").html("Praise");
             }
             var prayerIndex = prayerID-1;
+            // ************* THIS DOESN'T WORK!! *****************
             siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
             jQ9("#prayerText").html(siblingTable);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
@@ -669,50 +580,6 @@ require_once('includes/tec_footer.php');
                     </div><!-- card -->
                 </div><!-- col-sm-12 -->
             </div><!-- row -->
-
-<!-- Make table hidden so that only Text column is accessible -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card bg-light border-primary px-2 my-2 w-100">
-                        <div class="card-body">
-                            <div class="table-responsive-xs">
-                                <div id="prayertexttablehide">
-                                    <table id="prayertexttable">
-                                        <thead class="table-dark">>
-                                            <tr>
-                                                <th class="dtr-prayercolumn"></th>
-                                                <th>id</th>
-                                                <th>Opened</th>
-                                                <th>Family Member</th>
-                                                <th>Type</th>
-                                                <th>Answered</th>
-                                                <th>Title</th>
-                                                <th>Quick Glance</th>
-                                                <th>Details</th>
-                                                <th>Text</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot class="table-dark">
-                                            <tr>
-                                                <th class="dtr-prayercolumn"></th>
-                                                <th>id</th>
-                                                <th>Opened</th>
-                                                <th>Family Member</th>
-                                                <th>Type</th>
-                                                <th>Answered</th>
-                                                <th>Title</th>
-                                                <th>Quick Glance</th>
-                                                <th>Details</th>
-                                                <th>Text</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div><!-- prayertexttablehide -->
-                            </div><!-- table-responsive -->
-                        </div><!-- card-body -->
-                    </div><!-- card -->
-                </div><!-- col-sm-12 -->
-            </div> <!-- Row -->
 </div> <!-- Container -->
 
 
@@ -859,48 +726,6 @@ require_once('includes/tec_footer.php');
                         </div><!-- row -->
                     </div> <!-- modaleditform -->
                 </form>
-
-<!-- Make table hidden so that only Text column is accessible -->
-                <div id="myprayerfulltablehide">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card bg-light border-primary px-2 my-2 w-100">
-                                <div class="card-body">
-                                    <div class="table-responsive-xs">
-                                        <table id="myprayerfulltable">
-                                            <thead class="table-dark">>
-                                                <tr>
-                                                    <th class="dtr-myprayercolumn"></th>
-                                                    <th>id</th>
-                                                    <th>Opened</th>
-                                                    <th>Title</th>
-                                                    <th>Update</th>
-                                                    <th>Answer</th>
-                                                    <th>Name</th>
-                                                    <th>Type</th>
-                                                    <th>Text</th>
-                                                </tr>
-                                            </thead>
-                                            <tfoot class="table-dark">
-                                                <tr>
-                                                    <th class="dtr-myprayercolumn"></th>
-                                                    <th>id</th>
-                                                    <th>Opened</th>
-                                                    <th>Title</th>
-                                                    <th>Update</th>
-                                                    <th>Answer</th>
-                                                    <th>Name</th>
-                                                    <th>Type</th>
-                                                    <th>Text</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table><!-- myprayerfulltable -->
-                                    </div><!-- table-responsive -->
-                                </div><!-- card-body -->
-                            </div><!-- card -->
-                        </div><!-- col-sm-12 -->
-                    </div> <!-- Row -->
-                </div><!-- myprayerfulltablehide -->
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
     </div> <!-- modal-dialog -->
@@ -1049,74 +874,9 @@ require_once('includes/tec_footer.php');
     </div><!-- modal-dialog -->
 </div><!-- modal-fade -->
 
-
-
-
-
-<!-- ************************************* -->
-<!-- View Prayer Details OVERLAY dialog            -->
-<!-- ************************************* -->
- <!-- <div id="my_popup"> -->
-	<!-- <h2>View Prayer Request Details</h2>
-        <br />
-        <br />
-        <h3>View the details of this prayer request.</h3>
-        <br />
-        <hr> -->
-			<!-- <form name='form1' method='post' action=''> 		 -->
-				<!-- <table id="praytable" style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
-					<tr class="praytable_even">
-						<td colspan="1"><strong>Type: </strong></td>
-						<td colspan="2" class="praypraise"> </td>
-						<td align="right" colspan="1"><strong>Answered: </strong></td>
-						<td align="center" colspan="1" class="prayanswer"> </td>
-					</tr>
-					<tr class="praytable_odd">
-						<td colspan="1"><strong>Date: </strong></td>
-						<td colspan="4" class="praydate"> </td>
-					</tr>
-					<tr class="praytable_even">
-						<td colspan="1"><strong>From: </strong></td>
-						<td colspan="4" class="praywho"> </td>
-					</tr>
-					<tr class="praytable_odd">
-						<td colspan="1"><strong>Title: </strong></td>
-						<td colspan="4" class="praytitle"> </td>
-					</tr>
-					<tr>
-						<td colspan="5">
-						<hr />
-						</td>
-					</tr>
-				</table> -->
-				<!-- <table style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
-					<tr class="praytable_text">
-						<td colspan="4">
-							<div class="praytext" style="height: 200px; overflow: auto; white-space: pre-wrap;"></div>
-						</td>
-					</tr>
-					<tr>
-						<td>
- 						</td>
- 					</tr>
-				</table> -->
-				<!-- <table width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
-					<tr class="praytable_buttons" style="border: 1px;">
-   		 			<td align="left"><input type="button" class="button_flat_blue_small" id="sendMail" name="sendMail" value="Send Email" /></td>
-   		 			<td align="left"><input type="button" class="button_flat_blue_small" id="unfollow_button" name="unfollow" value="Unfollow" /></td>
-   		 			<td align="left"><input type="button" class="button_flat_blue_small" id="follow_button" name="follow" value="Follow" /></td>
-   		 			<td align="right"><input type="button" class="my_popup_close button_flat_blue_small" name="cancel" value="Close" /></td>
-  		 		 	</tr>
- 		 		 	<tr>
- 		 		 	</tr>
-	 		 		 	<p>
- 			 		 	<p>
-				</table> -->
- 			<!-- </form> -->
-			<!-- <br /> -->
-    <!-- </div> -->
-
-    <!-- SCRIPTS -->
+<!--***************************** SCRIPTS ***********************************-->
+<!--***************************** SCRIPTS ***********************************-->
+<!--***************************** SCRIPTS ***********************************-->
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/MDBootstrap4191/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
@@ -1125,11 +885,6 @@ require_once('includes/tec_footer.php');
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
     <!-- Tenant Configuration JavaScript Call in tec_nav -->
     <!-- Datatables JavaScript plugins - Bootstrap-specific -->
-    <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script>
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
