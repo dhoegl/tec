@@ -242,8 +242,8 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
             // ************* THIS DOESN'T WORK!! *****************
             // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-            console.log("obj(prayerID) (this jQ9 entry) = " + obj[prayerID]);
-            // prayerText = masterresponse[prayerID].prayer_text;
+            console.log("obj[prayerID] (this jQ9 entry) = " + obj[prayerID]);
+            prayerText = obj[prayerID];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
