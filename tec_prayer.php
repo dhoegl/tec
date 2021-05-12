@@ -94,7 +94,7 @@ if(!$_SESSION['logged in']) {
                     //  Get the details for all active prayer requests
                     activeprayercount = masterresponse.length;
                     var i;
-                    for (i = 0; i < 15; i++) {
+                    for (i = 0; i < activeprayercount; i++) {
                         obj[i] = masterresponse[i].prayer_text;
                         // console.log('entry ' + i + ' = ' + obj);
                         console.log('number of active prayer requests = ' + activeprayercount);
