@@ -94,9 +94,14 @@ if(!$_SESSION['logged in']) {
                     //  Get the details for all active prayer requests
                     activeprayercount = masterresponse.length;
                     console.log('number of active prayer requests = ' + activeprayercount);
-                    var i;
-                    for (i = 0; i < activeprayercount; i++) {
-                        obj[i] = masterresponse[i].prayer_text;
+                    var i = 0;
+                    while (masterresponse[i]) {
+                        obj[i] += masterresponse[i].prayer_id;
+                        console.log('obj[i] = ' + obj[i]);
+                        i++
+                    }
+                    // for (id = 0; i < activeprayercount; id++) {
+                    //     obj[id] = masterresponse[id].prayer_id;
                         // console.log('entry ' + i + ' = ' + obj);
                     } 
                 })
@@ -243,6 +248,7 @@ jQ9(document).ready(function () {
                 jQ9("#prayerType").html("Praise");
             }
             var prayerIndex = prayerID-1;
+// ************************ Obj extracted from jQ19 above ****************************
             prayerText = obj[prayerIndex];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerID (this jQ9 entry) = " + prayerID);
