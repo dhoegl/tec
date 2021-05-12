@@ -96,7 +96,7 @@ if(!$_SESSION['logged in']) {
                     console.log('number of active prayer requests = ' + activeprayercount);
                     var i = 0;
                     while (masterresponse[i]) {
-                        obj[i] += masterresponse[i].prayer_id;
+                        obj[i] = masterresponse[i].prayer_id;
                         console.log('obj[i] = ' + obj[i]);
                         i++
                     }
