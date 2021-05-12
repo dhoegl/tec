@@ -247,7 +247,7 @@ jQ9(document).ready(function () {
             jQ9("#prayerText").html(prayerText);
             console.log("prayerID (this jQ9 entry) = " + prayerID);
             console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
-            console.log("obj[prayerID] (this jQ9 entry) = " + obj[prayerIndex]);
+            console.log("obj[prayerIndex] (this jQ9 entry) = " + obj[prayerIndex]);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
