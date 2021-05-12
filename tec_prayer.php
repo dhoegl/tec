@@ -103,7 +103,7 @@ if(!$_SESSION['logged in']) {
                     // for (id = 0; i < activeprayercount; id++) {
                     //     obj[id] = masterresponse[id].prayer_id;
                         // console.log('entry ' + i + ' = ' + obj);
-                    } 
+                    // } 
                 })
 
     });
