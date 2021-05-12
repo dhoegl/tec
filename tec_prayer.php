@@ -82,7 +82,7 @@ if(!$_SESSION['logged in']) {
     var loginID = <?php echo $_SESSION['user_id']; ?>;
     var masterresponse;
     var obj = [];
-    var id;
+    var id = 0;
     var p_text = [];
     var activeprayercount;
 	jQ19(document).ready(function() {
@@ -101,7 +101,7 @@ if(!$_SESSION['logged in']) {
                         obj[i] = masterresponse[i].prayer_id;
                         console.log('obj[i] = ' + obj[i]);
                         id = obj[i];
-                        p_text[id] = masterresponse[id].prayer_text;
+                        p_text[id] = masterresponse[i].prayer_text;
                         i++
                         console.log('prayer_text = ' + p_text[id]);
                     }
