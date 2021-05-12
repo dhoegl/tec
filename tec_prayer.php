@@ -93,7 +93,7 @@ if(!$_SESSION['logged in']) {
                     var i;
                     for (i = 0; i < 15; i++) {
                         var obj = masterresponse[i].prayer_text;
-                        console.log('entry 0 = ' + obj);
+                        console.log('entry ' + i + ' = ' + obj);
                     } 
                 })
 
