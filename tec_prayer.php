@@ -255,7 +255,7 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
 // ************************ Obj extracted from jQ19 above ****************************
             // prayerText = obj[prayerIndex];
-            prayerText = p_text[prayerIndex];
+            prayerText = p_text[prayerID];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerID (this jQ9 entry) = " + prayerID);
             console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
