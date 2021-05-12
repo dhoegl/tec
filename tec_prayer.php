@@ -82,6 +82,7 @@ if(!$_SESSION['logged in']) {
     var loginID = <?php echo $_SESSION['user_id']; ?>;
     var masterresponse;
     var obj = [];
+    var id;
     var p_text = [];
     var activeprayercount;
 	jQ19(document).ready(function() {
@@ -99,9 +100,10 @@ if(!$_SESSION['logged in']) {
                     while (masterresponse[i]) {
                         obj[i] = masterresponse[i].prayer_id;
                         console.log('obj[i] = ' + obj[i]);
-                        p_text[obj[i]] = masterresponse[obj[i]].prayer_text;
+                        id = obj[i];
+                        p_text[id] = masterresponse[id].prayer_text;
                         i++
-                        console.log('prayer_text = ' + p_text[obj[i]]);
+                        console.log('prayer_text = ' + p_text[id]);
                     }
                     // for (id = 0; i < activeprayercount; id++) {
                     //     obj[id] = masterresponse[id].prayer_id;
