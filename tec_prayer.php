@@ -81,6 +81,7 @@ if(!$_SESSION['logged in']) {
 	var jQ19 = jQuery.noConflict();
     var loginID = <?php echo $_SESSION['user_id']; ?>;
     var masterresponse;
+    var obj;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
         url: 'services/tec_getmasterprayerlist.php',
@@ -92,7 +93,7 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     var i;
                     for (i = 0; i < 15; i++) {
-                        var obj = masterresponse[i].prayer_text;
+                        obj = masterresponse[i].prayer_text;
                         console.log('entry ' + i + ' = ' + obj);
                     } 
                 })
@@ -240,8 +241,9 @@ jQ9(document).ready(function () {
             }
             var prayerIndex = prayerID-1;
             // ************* THIS DOESN'T WORK!! *****************
-            siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-            jQ9("#prayerText").html(siblingTable);
+            // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
+            prayerText = masterresponse[prayerID].prayer_text;
+            jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
