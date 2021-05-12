@@ -81,7 +81,7 @@ if(!$_SESSION['logged in']) {
 	var jQ19 = jQuery.noConflict();
     var loginID = <?php echo $_SESSION['user_id']; ?>;
     var masterresponse;
-    var obj;
+    var obj = array();
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
         url: 'services/tec_getmasterprayerlist.php',
