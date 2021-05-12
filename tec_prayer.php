@@ -93,8 +93,8 @@ if(!$_SESSION['logged in']) {
                     //  Get the result
                     var i;
                     for (i = 0; i < 15; i++) {
-                        obj = masterresponse[i].prayer_text;
-                        console.log('entry ' + i + ' = ' + obj);
+                        obj[i] = masterresponse[i].prayer_text;
+                        // console.log('entry ' + i + ' = ' + obj);
                     } 
                 })
 
@@ -242,7 +242,7 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
             // ************* THIS DOESN'T WORK!! *****************
             // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-            console.log("obl (this jQ9 entry) = " + obj);
+            console.log("obj[prayerID] (this jQ9 entry) = " + obj[prayerID]);
             // prayerText = masterresponse[prayerID].prayer_text;
             jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
