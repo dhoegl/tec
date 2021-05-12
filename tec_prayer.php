@@ -242,6 +242,7 @@ jQ9(document).ready(function () {
             var prayerIndex = prayerID-1;
             // ************* THIS DOESN'T WORK!! *****************
             // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
+            console.log("masterresponse (this jQ9 entry) = " + masterresponse);
             prayerText = masterresponse[prayerID].prayer_text;
             jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
