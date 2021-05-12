@@ -101,6 +101,7 @@ if(!$_SESSION['logged in']) {
                         console.log('obj[i] = ' + obj[i]);
                         p_text[obj[i]] = masterresponse[obj[i]].prayer_text;
                         i++
+                        console.log('prayer_text = ' + p_text[obj[i]]);
                     }
                     // for (id = 0; i < activeprayercount; id++) {
                     //     obj[id] = masterresponse[id].prayer_id;
