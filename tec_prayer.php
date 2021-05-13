@@ -216,8 +216,6 @@ var prayerWho = "0";
 var prayerTitle = "0";
 var prayerType = "0";
 var prayerText;
-var prayerText2;
-var siblingTable;
 var gethiddencol = "0";
 var jQ9 = jQuery.noConflict();
 jQ9(document).ready(function () {
@@ -256,8 +254,6 @@ jQ9(document).ready(function () {
             prayerText = p_text[prayerID];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerID (this jQ9 entry) = " + prayerID);
-            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
-            console.log("obj[prayerIndex] (this jQ9 entry) = " + obj[prayerIndex]);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
@@ -327,9 +323,6 @@ jQ9(document).ready(function () {
             console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
             console.log("prayerType (this jQ9 entry) = " + prayerType);
             console.log("prayerText (this jQ9 entry) = " + prayerText);
-            console.log("prayerIndex (this jQ9 entry) = " + prayerIndex);
-            console.log("prayerText2 (this jQ9 entry) = " + prayerText2);
-            console.log("siblingTable (this jQ9 entry) = " + siblingTable);
 
     // Check if prayer is being followed by user - Toggle the follow_button text
         var checkfollow = 'services/tec_check_follow_table.php';
