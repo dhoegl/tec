@@ -310,10 +310,6 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
-            // var prayerIndex = prayerID-1;
-            // // ************* THIS DOESN'T WORK!! *****************
-            // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-            // jQ9("#prayerText").html(siblingTable);
 // ************************ p_text extracted from jQ19 above ****************************
             prayerText = p_text[prayerID];
             jQ9("#prayerText").html(prayerText);
