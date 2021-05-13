@@ -99,11 +99,11 @@ if(!$_SESSION['logged in']) {
                     var i = 0;
                     while (masterresponse[i]) {
                         obj[i] = masterresponse[i].prayer_id;
-                        console.log('obj[i] = ' + obj[i]);
+                        // console.log('obj[i] = ' + obj[i]);
                         id = obj[i];
                         p_text[id] = masterresponse[i].prayer_text;
                         i++
-                        console.log('prayer_text = ' + p_text[id]);
+                        // console.log('prayer_text = ' + p_text[id]);
                     }
                     // for (id = 0; i < activeprayercount; id++) {
                     //     obj[id] = masterresponse[id].prayer_id;
@@ -252,9 +252,7 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
-            var prayerIndex = prayerID-1;
-// ************************ Obj extracted from jQ19 above ****************************
-            // prayerText = obj[prayerIndex];
+// ************************ p_text extracted from jQ19 above ****************************
             prayerText = p_text[prayerID];
             jQ9("#prayerText").html(prayerText);
             console.log("prayerID (this jQ9 entry) = " + prayerID);
@@ -316,10 +314,13 @@ jQ9(document).ready(function () {
             else{
                 jQ9("#prayerType").html("Praise");
             }
-            var prayerIndex = prayerID-1;
-            // ************* THIS DOESN'T WORK!! *****************
-            siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
-            jQ9("#prayerText").html(siblingTable);
+            // var prayerIndex = prayerID-1;
+            // // ************* THIS DOESN'T WORK!! *****************
+            // siblingTable = jQ9("td.full_text2").eq(prayerIndex).text();
+            // jQ9("#prayerText").html(siblingTable);
+// ************************ p_text extracted from jQ19 above ****************************
+            prayerText = p_text[prayerID];
+            jQ9("#prayerText").html(prayerText);
             console.log("prayerDate (this jQ9 entry) = " + prayerDate);
             console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
             console.log("prayerWho (this jQ9 entry) = " + prayerWho);
