@@ -36,43 +36,51 @@ jQ8(document).ready(function() {
             },
 			{
     	   		className: "myprayer_update",
+				responsivePriority: 1,
 				"targets": [ 1 ] 
 	       	},
 			{
         		className: "myprayer_title",
+				responsivePriority: 1,
         		"targets": [ 2 ] 
         	},
 			{
         		className: "updatecolumn",
+				responsivePriority: 1,
 				orderable: false,
         		"targets": [ 3 ] 
         	},
 			{
         		className: "myprayer_answer",
+				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 4 ] 
         	},
 			{
         		className: "myprayer_who",
+				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 5 ] 
         	},
 			{
         		className: "mypraypraise",
+				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 6 ] 
         	},
 			{
         		className: "myprayer_text",
+				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 7 ] 
         	},
 			{
         		className: "indexcol",
+				responsivePriority: 100,
         		"targets": [ 8 ] 
         	}
 
