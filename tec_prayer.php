@@ -890,7 +890,8 @@ require_once('includes/tec_footer.php');
     <script type="text/javascript" src="js/MDBootstrap4191/mdb.min.js"></script>
     <!-- Tenant Configuration JavaScript Call in tec_nav -->
     <!-- Datatables JavaScript plugins - Bootstrap-specific -->
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.23/r-2.2.6/datatables.min.js"></script>
     <!-- Jan20 Attempt -->
     <!-- Copied from http://live.datatables.net/geyumizu/1/edit -->
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
