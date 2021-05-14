@@ -33,7 +33,6 @@ if(!$_SESSION['logged in']) {
 		while($myrow = $myprayerresult->fetch_assoc()) {
 				$myprayercontrol = "<tr><td></td>";
 				$myprayerupdate = "<td>" . date("M-d-Y", strtotime($myrow['prayerupdatedate'])) . "</td>";
-				$myprayerid = "<td>" . $myrow['prayerid'] . "</td>";
 				$myprayer_title = "<td>" . $myrow['prayertitle'] . "</td>";
 				// $prayer_text = "<td>" . $myrow['prayertext'] . "</td>";
 				$fullname = "<td>" . $myrow['fullname'] . "</td>";				
@@ -45,10 +44,11 @@ if(!$_SESSION['logged in']) {
 					$myprayanswer = "<td>NO</td>";
 				}
 				$myupdate_button = "<td><a class='btn btn-success btn-sm' href='#'>Update</a></td>";
-				$myprayer_text = "<td>" . $myrow['prayertext'] . "</td></tr>";
+				$myprayer_text = "<td>" . $myrow['prayertext'] . "</td>";
+				$myprayerid = "<td>" . $myrow['prayerid'] . "</td></tr>";
 
 				// Stores each database record to an array 
-					$buildjson = array($myprayercontrol, $myprayerid, $myprayerupdate, $myprayer_title, $myupdate_button, $myprayanswer, $fullname, $mypraypraise, $myprayer_text); 
+					$buildjson = array($myprayercontrol, $myprayerupdate, $myprayer_title, $myupdate_button, $myprayanswer, $fullname, $mypraypraise, $myprayer_text, $myprayerid); 
  					// Adds each array into the container array 
  					array_push($mylistarray, $buildjson); 
 			}
