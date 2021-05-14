@@ -65,10 +65,10 @@
 }
 /* Hide the + and - icons when screen width is wide enough to display all columns */
 /* tec My Prayer table */
-@media screen and (min-width: 561px) {
-	/* table#myexistprayertable .dtr-control {
+@media screen and (min-width: 512px) {
+	table#myexistprayertable .dtr-control {
 		visibility: hidden;
-	} */
+	}
 	.dtr-myprayercolumn {
 		visibility: hidden;
 	}
