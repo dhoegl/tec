@@ -39,7 +39,7 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
 			"columnDefs": [ 
             {
-                className: 'dtr-control',
+                // className: 'dtr-control',
                 orderable: false,
                 targets:   [ 0 ]
             },
