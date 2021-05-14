@@ -30,46 +30,39 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
          "columnDefs": [ 
             {
-                className: 'dtr-control',
-				responsivePriority: 1,
+                // className: 'dtr-control',
                 orderable: false,
                 targets:   [ 0 ]
             },
 			{
     	   		className: "myprayer_update",
-				responsivePriority: 1,
 				"targets": [ 1 ] 
 	       	},
 			{
         		className: "myprayer_title",
-				responsivePriority: 1,
         		"targets": [ 2 ] 
         	},
 			{
         		className: "updatecolumn",
 				orderable: false,
-				responsivePriority: 1,
         		"targets": [ 3 ] 
         	},
 			{
         		className: "myprayer_answer",
                 "visible": false,
 				orderable: false,
-				responsivePriority: 1,
         		"targets": [ 4 ] 
         	},
 			{
         		className: "myprayer_who",
                 "visible": false,
 				orderable: false,
-				responsivePriority: 1,
         		"targets": [ 5 ] 
         	},
 			{
         		className: "mypraypraise",
                 "visible": false,
 				orderable: false,
-				responsivePriority: 1,
         		"targets": [ 6 ] 
         	},
 			{
@@ -80,7 +73,6 @@ jQ8(document).ready(function() {
         	},
 			{
         		className: "indexcol",
-				responsivePriority: 100,
         		"targets": [ 8 ] 
         	}
 
