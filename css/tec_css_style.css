@@ -70,11 +70,11 @@
 		visibility: hidden;
 	}
 }
-	@media screen and (max-width: 512px) {
+	/* @media screen and (max-width: 512px) {
 		.dtr-myprayercolumn {
 		visibility: hidden;
 	}
-}
+} */
     /* .small-screen-alert {
         display: none;
     } */
