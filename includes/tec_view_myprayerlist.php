@@ -36,6 +36,7 @@ jQ8(document).ready(function() {
             },
 			{
         		className: "indexcol",
+                "visible": false,
         		"targets": [ 1 ] 
         	},
 			{
