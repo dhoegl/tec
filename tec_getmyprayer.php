@@ -33,7 +33,7 @@ if(!$_SESSION['logged in']) {
 		else {
 		while($myrow = $myprayerresult->fetch_assoc()) {
 				$myprayercontrol = "<tr><td></td>";
-				$myprayerupdate = "<td>" . date("m-d-Y", strtotime($myrow['prayerupdatedate'])) . "</td>";
+				$myprayerupdate = "<td>" . date("Y-m-d", strtotime($myrow['prayerupdatedate'])) . "</td>";
 				$myprayer_title = "<td>" . $myrow['prayertitle'] . "</td>";
 				// $prayer_text = "<td>" . $myrow['prayertext'] . "</td>";
 				$fullname = "<td>" . $myrow['fullname'] . "</td>";				
