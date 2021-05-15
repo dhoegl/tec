@@ -670,71 +670,73 @@ require_once('includes/tec_footer.php');
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 <!--***************************** Existing Prayer Request MODAL ***********************************-->
 
-<div class="modal fade" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal-header -->
-            <div class="modal-body">
-                <h4>
-                    My Existing Active Prayer Requests
-                </h4>
-                <h6>
-                    Select from list of prayer requests below to update
-                </h6>
-                <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
-                    <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
-                    <div class="modaleditform text-center border border-light p-2">
-                        <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
-                        
-                            <!-- <thead class="table-dark"> -->
-                            <thead>
-                                <tr>
-                                    <th class="dtr-myprayercolumn"></th>
-                                    <th>Opened</th>
-                                    <th>Title</th>
-                                    <th>Update</th>
-                                    <th>Answer</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Text</th>
-                                    <th>id</th>
-                                </tr>
-                            </thead>
-                            <!-- <tfoot class="table-dark"> -->
-                            <tfoot>
-                                <tr>
-                                    <th class="dtr-myprayercolumn"></th>
-                                    <th>Opened</th>
-                                    <th>Title</th>
-                                    <th>Update</th>
-                                    <th>Answer</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Text</th>
-                                    <th>id</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <div class="row px-4 d-flex">
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                            </div><!-- col-sm-4 -->
-                        </div><!-- row -->
-                    </div> <!-- modaleditform -->
-                </form>
-            </div> <!-- modal-body -->
-        </div> <!-- modal-content -->
-    </div> <!-- modal-dialog -->
-</div> <!-- modal fade -->
+<div class="container-fluid" style= "background-color: pink;">
+    <div class="modal fade" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal-header -->
+                <div class="modal-body">
+                    <h4>
+                        My Existing Active Prayer Requests
+                    </h4>
+                    <h6>
+                        Select from list of prayer requests below to update
+                    </h6>
+                    <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
+                        <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
+                        <div class="modaleditform text-center border border-light p-2">
+                            <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            
+                                <!-- <thead class="table-dark"> -->
+                                <thead>
+                                    <tr>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                        <th>id</th>
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot class="table-dark"> -->
+                                <tfoot>
+                                    <tr>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                        <th>id</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div class="row px-4 d-flex">
+                                <div class="col-sm-4">
+                                </div><!-- col-sm-4 -->
+                                <div class="col-sm-4">
+                                </div><!-- col-sm-4 -->
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                </div><!-- col-sm-4 -->
+                            </div><!-- row -->
+                        </div> <!-- modaleditform -->
+                    </form>
+                </div> <!-- modal-body -->
+            </div> <!-- modal-content -->
+        </div> <!-- modal-dialog -->
+    </div> <!-- modal fade -->
+</div> <!-- container-fluid -->
 
 
 <!--***************************** EDIT Existing Prayer Request MODAL ***********************************-->
