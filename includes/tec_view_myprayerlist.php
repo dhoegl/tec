@@ -36,12 +36,12 @@ jQ8(document).ready(function() {
             },
 			{
         		className: "indexcol",
-				responsivePriority: 1,
+				responsivePriority: 3,
         		"targets": [ 1 ] 
         	},
 			{
     	   		className: "myprayer_update",
-				responsivePriority: 1,
+				responsivePriority: 2,
 				"targets": [ 2 ] 
 	       	},
 			{
