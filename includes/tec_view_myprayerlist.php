@@ -8,7 +8,7 @@ jQ8(document).ready(function() {
 //			"bJQueryUI": true,
 //			"sScrollY": "200px",
 //			"bPaginate": true,
-//			"order": [[ 1, 'desc' ]],
+			"order": [[ 1, 'desc' ]],
 			"scrollY":        "200px",
 			"scrollCollapse": true,
 			"paging":         false,
@@ -35,55 +35,54 @@ jQ8(document).ready(function() {
                 targets:   [ 0 ]
             },
 			{
+        		className: "indexcol",
+				responsivePriority: 1,
+        		"targets": [ 1 ] 
+        	},
+			{
     	   		className: "myprayer_update",
 				responsivePriority: 1,
-				"targets": [ 1 ] 
+				"targets": [ 2 ] 
 	       	},
 			{
         		className: "myprayer_title",
 				responsivePriority: 1,
-        		"targets": [ 2 ] 
+        		"targets": [ 3 ] 
         	},
 			{
         		className: "updatecolumn",
 				responsivePriority: 1,
 				orderable: false,
-        		"targets": [ 3 ] 
+        		"targets": [ 4 ] 
         	},
 			{
         		className: "myprayer_answer",
 				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
-        		"targets": [ 4 ] 
+        		"targets": [ 5 ] 
         	},
 			{
         		className: "myprayer_who",
 				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
-        		"targets": [ 5 ] 
+        		"targets": [ 6 ] 
         	},
 			{
         		className: "mypraypraise",
 				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
-        		"targets": [ 6 ] 
+        		"targets": [ 7 ] 
         	},
 			{
         		className: "myprayer_text",
 				responsivePriority: 1,
                 "visible": false,
 				orderable: false,
-        		"targets": [ 7 ] 
-        	},
-			{
-        		className: "indexcol",
-				responsivePriority: 100,
         		"targets": [ 8 ] 
         	}
-
         ]
 
     });
