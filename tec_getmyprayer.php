@@ -10,7 +10,8 @@ if(!$_SESSION['logged in']) {
 // Query my prayer listing: visible = 3 (all), status = 1, approved = 1, and name = logged in user ($_SESSION['fullname'])
 // Query used to populate My Prayer DataTable listing in Popup
 			
-		$myprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' and p.owner_id = '" . $_SESSION['user_id'] . "' ORDER BY p.create_date DESC";
+		// $myprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' and p.owner_id = '" . $_SESSION['user_id'] . "' ORDER BY p.create_date DESC";
+		$myprayerquery = "SELECT p.create_date AS prayerupdatedate, p.name AS fullname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq, p.answer AS prayanswer FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='1' and p.owner_id = '" . $_SESSION['user_id'] . "'";
 		$myprayerresult = $mysql->query($myprayerquery) or die(" SQL query error at select active prayers. Error #: " . $mysql->errno . " : " . $mysql->error);
 		$myprayercount = $myprayerresult->num_rows;
 
