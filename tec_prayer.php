@@ -442,7 +442,7 @@ jQ10(document).ready(function () {
             console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
 
             // Display My Existing Prayer Request Details popup
-            jQ10("#ModalExistingRequest").modal('hide');
+            // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
 
         }
@@ -469,7 +469,7 @@ jQ10(document).ready(function () {
                 jQ10("#ModalEditprayerType").html("Praise");
             }
             // Display My Existing Prayer Request Details popup
-            jQ10("#ModalExistingRequest").modal('hide');
+            // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
 
         }
