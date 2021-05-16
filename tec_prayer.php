@@ -447,6 +447,30 @@ jQ10(document).ready(function () {
 
         }
         else {
+            console.log("******** NOT CHILD ******")
+            var prayerID = jQ10(this).closest('tr').find(".indexcol").text();
+            $clickbuttonid = prayerID;
+            jQ10("#prayerID").html(prayerID);
+            console.log("********** Details button clicked ************");
+            console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
+            prayerDate = jQ10(this).closest('tr').find(".prayer_update").text();
+            jQ10("#ModalEditprayerDate").html(prayerDate);
+            prayerAnswer = jQ10(this).closest('tr').find(".prayer_answer").text();
+            jQ10("#ModalEditprayerAnswer").html(prayerAnswer);
+            prayerWho = jQ10(this).closest('tr').find(".prayer_who").text();
+            jQ10("#ModalEditprayerWho").html(prayerWho);
+            prayerTitle = jQ10(this).closest('tr').find(".prayer_title").text();
+            jQ10("#ModalEditprayerTitle").html(prayerTitle);
+            prayerType = testforChild.prev("tr").find(".type").text();
+            if(prayerType == "Prayer"){
+                jQ10("#ModalEditprayerType").html("Prayer Request");
+            }
+            else{
+                jQ10("#ModalEditprayerType").html("Praise");
+            }
+            // Display My Existing Prayer Request Details popup
+            jQ10("#ModalExistingRequest").modal('hide');
+            jQ10("#ModalEditExistingRequest").modal('show');
 
         }
     });
@@ -811,6 +835,47 @@ require_once('includes/tec_footer.php');
                             </div><!-- col-12 -->
                         </div><!-- row -->
                     </div> <!-- modaleditform -->
+                    <div class="modaleditform border border-light p-2">
+                            <div class="table-responsive">
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">Date:</div>
+                                    <div class="col-8 text-left"><span id="ModalEditprayerDate"></span></div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">From:</div>
+                                    <div class="col-8 text-left"><span id="ModalEditprayerWho"></span></div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">Title:</div>
+                                    <div class="col-8 text-left"><span id="ModalEditprayerTitle"></span></div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">Updated:</div>
+                                    <div class="col-2 text-left"><span id="ModalEditprayerUpdate"></span></div>
+                                    <div class="col-3 text-right font-weight-bold">Answered:</div>
+                                    <div class="col-3 text-left"><span id="ModalEditprayerAnswer"></span></div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold"></div>
+                                    <div class="col-2 text-left"></div>
+                                    <div class="col-3 text-right font-weight-bold">Following:</div>
+                                    <div class="col-3 text-left"><span id="ModalEditprayerFollow"></span></div>
+                                </div><!-- row -->
+                                <div  class="card">
+                                    <div class="card-body" id="ModalEditviewpraytable">
+                                        <h5 class="card-title" id="ModalEditprayerType"></h5>
+                                        <p class="card-text"  id="ModalEditprayerText"></p>
+                                    </div><!-- card-body -->
+                                </div><!-- card -->
+                                <div class="row px-2 d-flex justify-content-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
+                                        <button type="button" class="btn btn-primary btn-sm" id="ModalEditUpdate_button">Update</button>
+                                        <button type="button" name="ModalEditanswerexistingprayer" class="btn btn-success btn-sm">Answered</button>
+                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                    </div><!-- btn-group -->
+                                </div><!-- row -->
+                            </div><!-- table-respomsive -->
+                    </div><!-- modaleditform -->
                 </form>
             </div> <!-- modal-body -->
         </div> <!-- modal-content -->
