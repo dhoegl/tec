@@ -432,7 +432,7 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#myprayerType").html("Praise");
             }
-// ************************ p_text extracted from jQ19 above ****************************
+// ************************ p_text and p_type extracted from jQ19 above ****************************
             myprayerText = p_text[prayerID];
             jQ10("#ModalEditprayerText").html(myprayerText);
 
@@ -472,18 +472,16 @@ jQ10(document).ready(function () {
             }
             prayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
             jQ10("#ModalEditprayerTitle").html(prayerTitle);
-            prayerType = jQ10(this).closest('tr').find(".mypraypraise").text();
-            if(prayerType == "Prayer"){
+// ************************ p_text and p_type extracted from jQ19 above ****************************
+            myprayerText = p_text[prayerID];
+            jQ10("#ModalEditprayerText").html(myprayerText);
+            myprayerType = p_type[prayerID];
+            if(myprayerType == "Prayer"){
                 jQ10("#ModalEditprayerType").html("Prayer Request");
             }
             else{
                 jQ10("#ModalEditprayerType").html("Praise");
             }
-// ************************ p_text extracted from jQ19 above ****************************
-            myprayerText = p_text[prayerID];
-            jQ10("#ModalEditprayerText").html(myprayerText);
-            myprayerType = p_type[prayerID];
-            jQ10("#ModalEditprayerType").html(myprayerType);
             // Display My Existing Prayer Request Details popup
             // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
