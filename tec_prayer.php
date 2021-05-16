@@ -388,7 +388,7 @@ jQ9(document).ready(function () {
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
 <script type="text/javascript">
 var $clickbuttonid = "NA";
-var testforChild = "0";
+var mytestforChild = "0";
 var parentTable;
 var myprayerID = "0";
 var myprayerDate = "0";
@@ -398,55 +398,53 @@ var myprayerTitle = "0";
 var myprayerType = "0";
 var myprayerText = "0";
 var prayerText;
-var prayerText2;
-var mysiblingTable;
 var gethiddencol = "0";
 var jQ10 = jQuery.noConflict();
 jQ10(document).ready(function () {
     jQ10("#myexistprayertable tbody").on("click", '.updatecolumn', function () {
         console.log("********** Update button clicked ************");
-        testforChild = jQ10(this).closest('tr');
-        if (testforChild.hasClass("child")) {
+        mytestforChild = jQ10(this).closest('tr');
+        if (mytestforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
-            myprayerID = testforChild.prev("tr").find(".indexcol").text();
+            myprayerID = mytestforChild.prev("tr").find(".indexcol").text();
             $clickbuttonid = myprayerID;
             jQ10("#myprayerID").html(myprayerID);
             console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
-            myprayerDate = testforChild.prev("tr").find(".myprayer_update").text();
-            jQ10("#myprayerDate").html(myprayerDate);
-            myprayerAnswer = testforChild.prev("tr").find(".myprayer_answer").text();
+            myprayerDate = mytestforChild.prev("tr").find(".myprayer_update").text();
+            jQ10("#ModalEditprayerDate").html(myprayerDate);
+            myprayerAnswer = mytestforChild.prev("tr").find(".myprayer_answer").text();
             if(myprayerAnswer == " Answered "){
                 jQ10("#myprayerAnswer").html("YES");
             }
             else{
                 jQ10("#myprayerAnswer").html("NO");
             }
-            myprayerWho = testforChild.prev("tr").find(".myprayer_who").text();
+            myprayerWho = mytestforChild.prev("tr").find(".myprayer_who").text();
             jQ10("#prayerWho").html(myprayerWho);
-            myprayerTitle = testforChild.prev("tr").find(".myprayer_title").text();
+            myprayerTitle = mytestforChild.prev("tr").find(".myprayer_title").text();
             jQ10("#prayerTitle").html(myprayerTitle);
-            myprayerType = testforChild.prev("tr").find(".mypraypraise").text();
+            myprayerType = mytestforChild.prev("tr").find(".mypraypraise").text();
+// ************************ p_text and p_type extracted from jQ19 above ****************************
+            myprayerText = p_text[myprayerID];
+            jQ10("#ModalEditprayerText").html(myprayerText);
             if(myprayerType == "Prayer"){
-                jQ10("#myprayerType").html("Prayer Request");
+                jQ10("#ModalEditprayerType").html("Prayer Request");
             }
             else{
-                jQ10("#myprayerType").html("Praise");
+                jQ10("#ModalEditprayerType").html("Praise");
             }
-// ************************ p_text and p_type extracted from jQ19 above ****************************
-            myprayerText = p_text[prayerID];
-            jQ10("#ModalEditprayerText").html(myprayerText);
 
             // var myprayerIndex = myprayerID-1;
             // mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
             // jQ10("#prayerText").html(mysiblingTable);
-            console.log("myprayerID (this jQ10 entry) = " + myprayerID);
-            console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
-            console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
-            console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
-            console.log("myprayerTitle (this jQ10 entry) = " + myprayerTitle);
-            console.log("myprayerType (this jQ10 entry) = " + myprayerType);
-            console.log("myprayerText (this jQ10 entry) = " + myprayerText);
-            console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
+            // console.log("myprayerID (this jQ10 entry) = " + myprayerID);
+            // console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
+            // console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
+            // console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
+            // console.log("myprayerTitle (this jQ10 entry) = " + myprayerTitle);
+            // console.log("myprayerType (this jQ10 entry) = " + myprayerType);
+            // console.log("myprayerText (this jQ10 entry) = " + myprayerText);
+            // console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
             // console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
 
             // Display My Existing Prayer Request Details popup
@@ -456,26 +454,26 @@ jQ10(document).ready(function () {
         }
         else {
             console.log("******** NOT CHILD ******")
-            var prayerID = jQ10(this).closest('tr').find(".indexcol").text();
-            $clickbuttonid = prayerID;
-            jQ10("#prayerID").html(prayerID);
+            myprayerID = jQ10(this).closest('tr').find(".indexcol").text();
+            $clickbuttonid = myprayerID;
+            jQ10("#prayerID").html(myprayerID);
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
-            prayerDate = jQ10(this).closest('tr').find(".myprayer_update").text();
-            jQ10("#ModalEditprayerDate").html(prayerDate);
-            prayerAnswer = jQ10(this).closest('tr').find(".myprayer_answer").text();
+            myprayerDate = jQ10(this).closest('tr').find(".myprayer_update").text();
+            jQ10("#ModalEditprayerDate").html(myprayerDate);
+            myprayerAnswer = jQ10(this).closest('tr').find(".myprayer_answer").text();
             if(myprayerAnswer == " Answered "){
                 jQ10("#ModalEditprayerAnswer").html("YES");
             }
             else{
                 jQ10("#ModalEditprayerAnswer").html("NO");
             }
-            prayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
-            jQ10("#ModalEditprayerTitle").html(prayerTitle);
+            myprayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
+            jQ10("#ModalEditprayerTitle").html(myprayerTitle);
 // ************************ p_text and p_type extracted from jQ19 above ****************************
-            myprayerText = p_text[prayerID];
+            myprayerText = p_text[myprayerID];
             jQ10("#ModalEditprayerText").html(myprayerText);
-            myprayerType = p_type[prayerID];
+            myprayerType = p_type[myprayerID];
             if(myprayerType == "Prayer"){
                 jQ10("#ModalEditprayerType").html("Prayer Request");
             }
@@ -796,32 +794,6 @@ require_once('includes/tec_footer.php');
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="row">
                             <div class="col-12">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <p class="mb-n1 text-right font-weight-bold">Type:</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p class="mb-n1 text-left">Prayer</p>
-                                    </div>
-                                    <div class="col-3">
-                                        <p class="mb-n1 text-right font-weight-bold">Answered:</p>
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="mb-n1 text-left">NO</p>
-                                    </div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-2">
-                                        <p class="mb-n1 text-right font-weight-bold">Date:</p>
-                                        <p class="mb-n1 text-right font-weight-bold">From:</p>
-                                        <p class="mb-n1 text-right font-weight-bold">Title:</p>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet. </p>
-                                        <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet. </p>
-                                        <p class="mb-n1 text-left">Sed viverra ipsum nunc aliquet.</p>
-                                    </div>
-                                </div><!-- row -->
                                 <div class="row p-2">
                                     <div class="card card-body">
                                         <h4 class="card-title">Prayer Request</h4>
@@ -854,6 +826,10 @@ require_once('includes/tec_footer.php');
                                 <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Date:</div>
                                     <div class="col-8 text-left"><span id="ModalEditprayerDate"></span></div>
+                                </div><!-- row -->
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">From:</div>
+                                    <div class="col-8 text-left"><span id="ModalEditprayerWho"></span></div>
                                 </div><!-- row -->
                                 <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Title:</div>
