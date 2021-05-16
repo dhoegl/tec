@@ -441,7 +441,9 @@ jQ10(document).ready(function () {
             console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
             console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
 
-
+            // Display My Existing Prayer Request Details popup
+            jQ10("#ModalPrayerView").modal('hide');
+            jQ10("#ModalEditExistingRequest").modal('show');
 
         }
         else {
