@@ -453,15 +453,18 @@ jQ10(document).ready(function () {
             jQ10("#prayerID").html(prayerID);
             console.log("********** Details button clicked ************");
             console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
-            prayerDate = jQ10(this).closest('tr').find(".prayer_update").text();
+            prayerDate = jQ10(this).closest('tr').find(".myprayer_update").text();
             jQ10("#ModalEditprayerDate").html(prayerDate);
-            prayerAnswer = jQ10(this).closest('tr').find(".prayer_answer").text();
-            jQ10("#ModalEditprayerAnswer").html(prayerAnswer);
-            prayerWho = jQ10(this).closest('tr').find(".prayer_who").text();
-            jQ10("#ModalEditprayerWho").html(prayerWho);
-            prayerTitle = jQ10(this).closest('tr').find(".prayer_title").text();
+            prayerAnswer = jQ10(this).closest('tr').find(".myprayer_answer").text();
+            if(myprayerAnswer == " Answered "){
+                jQ10("#ModalEditprayerAnswer").html("YES");
+            }
+            else{
+                jQ10("#ModalEditprayerAnswer").html("NO");
+            }
+            prayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
             jQ10("#ModalEditprayerTitle").html(prayerTitle);
-            prayerType = testforChild.prev("tr").find(".type").text();
+            prayerType = jQ10(this).closest('tr').find(".mypraypraise").text();
             if(prayerType == "Prayer"){
                 jQ10("#ModalEditprayerType").html("Prayer Request");
             }
@@ -842,10 +845,6 @@ require_once('includes/tec_footer.php');
                                     <div class="col-8 text-left"><span id="ModalEditprayerDate"></span></div>
                                 </div><!-- row -->
                                 <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">From:</div>
-                                    <div class="col-8 text-left"><span id="ModalEditprayerWho"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Title:</div>
                                     <div class="col-8 text-left"><span id="ModalEditprayerTitle"></span></div>
                                 </div><!-- row -->
@@ -854,12 +853,6 @@ require_once('includes/tec_footer.php');
                                     <div class="col-2 text-left"><span id="ModalEditprayerUpdate"></span></div>
                                     <div class="col-3 text-right font-weight-bold">Answered:</div>
                                     <div class="col-3 text-left"><span id="ModalEditprayerAnswer"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold"></div>
-                                    <div class="col-2 text-left"></div>
-                                    <div class="col-3 text-right font-weight-bold">Following:</div>
-                                    <div class="col-3 text-left"><span id="ModalEditprayerFollow"></span></div>
                                 </div><!-- row -->
                                 <div  class="card">
                                     <div class="card-body" id="ModalEditviewpraytable">
