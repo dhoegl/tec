@@ -84,6 +84,7 @@ if(!$_SESSION['logged in']) {
     var obj = [];
     var id = 0;
     var p_text = [];
+    var p_type = [];
     var activeprayercount;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
@@ -102,6 +103,7 @@ if(!$_SESSION['logged in']) {
                         // console.log('obj[i] = ' + obj[i]);
                         id = obj[i];
                         p_text[id] = masterresponse[i].prayer_text;
+                        p_type[id] = masterresponse[i].pray_praise;
                         i++
                         // console.log('prayer_text = ' + p_text[id]);
                     }
@@ -394,6 +396,7 @@ var myprayerAnswer = "0";
 var myprayerWho = "0";
 var myprayerTitle = "0";
 var myprayerType = "0";
+var myprayerText = "0";
 var prayerText;
 var prayerText2;
 var mysiblingTable;
@@ -429,17 +432,22 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#myprayerType").html("Praise");
             }
-            var myprayerIndex = myprayerID-1;
-            mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
-            jQ10("#prayerText").html(mysiblingTable);
+// ************************ p_text extracted from jQ19 above ****************************
+            myprayerText = p_text[prayerID];
+            jQ10("#ModalEditprayerText").html(myprayerText);
+
+            // var myprayerIndex = myprayerID-1;
+            // mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
+            // jQ10("#prayerText").html(mysiblingTable);
             console.log("myprayerID (this jQ10 entry) = " + myprayerID);
             console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
             console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
             console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
             console.log("myprayerTitle (this jQ10 entry) = " + myprayerTitle);
             console.log("myprayerType (this jQ10 entry) = " + myprayerType);
+            console.log("myprayerText (this jQ10 entry) = " + myprayerText);
             console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
-            console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
+            // console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
 
             // Display My Existing Prayer Request Details popup
             // jQ10("#ModalExistingRequest").modal('hide');
@@ -471,6 +479,11 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#ModalEditprayerType").html("Praise");
             }
+// ************************ p_text extracted from jQ19 above ****************************
+            myprayerText = p_text[prayerID];
+            jQ10("#ModalEditprayerText").html(myprayerText);
+            myprayerType = p_type[prayerID];
+            jQ10("#ModalEditprayerType").html(myprayerType);
             // Display My Existing Prayer Request Details popup
             // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
