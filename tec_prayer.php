@@ -932,7 +932,7 @@ require_once('includes/tec_footer.php');
                                     </div><!-- btn-group -->
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                         <div class="col-xs-4">
-                                            <button type="button" name="closeprayermodal" class="btn btn-primary btn-sm">Close</button>
+                                            <button type="button" name="closeprayermodal" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
                                         </div>
                                         <div class="col-xs-4">
                                             <button type="button" class="btn btn-secondary btn-sm" id="follow_button">Follow</button>
