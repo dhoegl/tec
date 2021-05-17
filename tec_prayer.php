@@ -85,6 +85,7 @@ if(!$_SESSION['logged in']) {
     var id = 0;
     var p_text = [];
     var p_type = [];
+    var p_fullname = [];
     var activeprayercount;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
@@ -104,6 +105,7 @@ if(!$_SESSION['logged in']) {
                         id = obj[i];
                         p_text[id] = masterresponse[i].prayer_text;
                         p_type[id] = masterresponse[i].pray_praise;
+                        p_fullname[id] = masterresponse[i].fullname;
                         i++
                         // console.log('prayer_text = ' + p_text[id]);
                     }
@@ -419,14 +421,14 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#ModalEditprayerAnswer").html("NO");
             }
-            myprayerWho = mytestforChild.prev("tr").find(".myprayer_who").text();
-            jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerTitle = mytestforChild.prev("tr").find(".myprayer_title").text();
             jQ10("#ModalEditprayerTitle").html(myprayerTitle);
-            myprayerType = mytestforChild.prev("tr").find(".mypraypraise").text();
-// ************************ p_text and p_type extracted from jQ19 above ****************************
+// ************************ p_fullname, p_text, p_type extracted from jQ19 above ****************************
+            myprayerWho = p_fullname[myprayerID];
+            jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerText = p_text[myprayerID];
             jQ10("#ModalEditprayerText").html(myprayerText);
+            myprayerType = p_type[myprayerID];
             if(myprayerType == "Prayer"){
                 jQ10("#ModalEditprayerType").html("Prayer Request");
             }
@@ -472,7 +474,9 @@ jQ10(document).ready(function () {
             jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
             jQ10("#ModalEditprayerTitle").html(myprayerTitle);
-// ************************ p_text and p_type extracted from jQ19 above ****************************
+// ************************ p_fullname, p_text, p_type extracted from jQ19 above ****************************
+            myprayerWho = p_fullname[myprayerID];
+            jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerText = p_text[myprayerID];
             jQ10("#ModalEditprayerText").html(myprayerText);
             myprayerType = p_type[myprayerID];
