@@ -387,7 +387,7 @@ jQ9(document).ready(function () {
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
 <script type="text/javascript">
-var $clickbuttonid = "NA";
+var myclickbuttonid = "NA";
 var mytestforChild = "0";
 var parentTable;
 var myprayerID = "0";
@@ -407,22 +407,22 @@ jQ10(document).ready(function () {
         if (mytestforChild.hasClass("child")) {
             console.log("******** HAS CHILD ******")
             myprayerID = mytestforChild.prev("tr").find(".indexcol").text();
-            $clickbuttonid = myprayerID;
-            jQ10("#myprayerID").html(myprayerID);
-            console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
+            myclickbuttonid = myprayerID;
+            jQ10("#ModalEditprayerID").html(myprayerID);
+            console.log("myclickbuttonid (this jQ10 entry) = " + myclickbuttonid);
             myprayerDate = mytestforChild.prev("tr").find(".myprayer_update").text();
             jQ10("#ModalEditprayerDate").html(myprayerDate);
             myprayerAnswer = mytestforChild.prev("tr").find(".myprayer_answer").text();
             if(myprayerAnswer == " Answered "){
-                jQ10("#myprayerAnswer").html("YES");
+                jQ10("#ModalEditprayerAnswer").html("YES");
             }
             else{
-                jQ10("#myprayerAnswer").html("NO");
+                jQ10("#ModalEditprayerAnswer").html("NO");
             }
             myprayerWho = mytestforChild.prev("tr").find(".myprayer_who").text();
-            jQ10("#prayerWho").html(myprayerWho);
+            jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerTitle = mytestforChild.prev("tr").find(".myprayer_title").text();
-            jQ10("#prayerTitle").html(myprayerTitle);
+            jQ10("#ModalEditprayerTitle").html(myprayerTitle);
             myprayerType = mytestforChild.prev("tr").find(".mypraypraise").text();
 // ************************ p_text and p_type extracted from jQ19 above ****************************
             myprayerText = p_text[myprayerID];
@@ -455,10 +455,10 @@ jQ10(document).ready(function () {
         else {
             console.log("******** NOT CHILD ******")
             myprayerID = jQ10(this).closest('tr').find(".indexcol").text();
-            $clickbuttonid = myprayerID;
-            jQ10("#prayerID").html(myprayerID);
+            myclickbuttonid = myprayerID;
+            jQ10("#ModalEditprayerID").html(myprayerID);
             console.log("********** Details button clicked ************");
-            console.log("$clickbuttonid (this jQ10 entry) = " + $clickbuttonid);
+            console.log("myclickbuttonid (this jQ10 entry) = " + myclickbuttonid);
             myprayerDate = jQ10(this).closest('tr').find(".myprayer_update").text();
             jQ10("#ModalEditprayerDate").html(myprayerDate);
             myprayerAnswer = jQ10(this).closest('tr').find(".myprayer_answer").text();
@@ -468,6 +468,8 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#ModalEditprayerAnswer").html("NO");
             }
+            myprayerWho = mytestforChild.closest("tr").find(".myprayer_who").text();
+            jQ10("#ModalEditprayerWho").html(myprayerWho);
             myprayerTitle = jQ10(this).closest('tr').find(".myprayer_title").text();
             jQ10("#ModalEditprayerTitle").html(myprayerTitle);
 // ************************ p_text and p_type extracted from jQ19 above ****************************
@@ -823,6 +825,10 @@ require_once('includes/tec_footer.php');
                     </div> -->
                     <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
+                                <div class="row">
+                                    <div class="col-4 text-right font-weight-bold">Prayer ID:</div>
+                                    <div class="col-8 text-left"><span id="ModalEditprayerID"></span></div>
+                                </div><!-- row -->
                                 <div class="row">
                                     <div class="col-4 text-right font-weight-bold">Date:</div>
                                     <div class="col-8 text-left"><span id="ModalEditprayerDate"></span></div>
