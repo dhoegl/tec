@@ -31,7 +31,7 @@ if(!$_SESSION['logged in']) {
 		while($activerow = $activeprayerresult->fetch_assoc()) {
 				$activeprayercontrol = "<tr><td></td>";
 				$prayerid = "<td>" . $activerow['prayerid'] . "</td>";
-				$prayerupdate = "<td>" . date("M-d-Y", strtotime($activerow['createdate'])) . "</td>";
+				$prayerupdate = "<td>" . date("M d, Y", strtotime($activerow['createdate'])) . "</td>";
 				$fullname = "<td>" . $activerow['full'] . "</td>";				
 				$firstname = "<td>" . $activerow['first'] . "</td>";
 				$lastname = "<td>" . $activerow['last'] . "</td>";
