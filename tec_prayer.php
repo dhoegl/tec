@@ -849,9 +849,15 @@ require_once('includes/tec_footer.php');
                                 </div><!-- card -->
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <button type="button" class="btn btn-primary btn-sm" id="ModalEditUpdate_button">Update</button>
-                                        <button type="button" name="ModalEditanswerexistingprayer" class="btn btn-success btn-sm">Answered</button>
-                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                        <div class="col-xs-4">
+                                            <button type="button" name="ModalEditupdateexistingprayer" id="ModalEditupdateexistingprayer" class="btn btn-primary btn-sm">Update</button>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <button type="button" name="ModalEditanswerexistingprayer" id="ModalEditanswerexistingprayer" class="btn btn-success btn-sm">Answered</button>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                        </div>
                                     </div><!-- btn-group -->
                                 </div><!-- row -->
                             </div><!-- table-respomsive -->
