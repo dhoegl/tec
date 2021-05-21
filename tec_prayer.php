@@ -764,16 +764,16 @@ require_once('includes/tec_footer.php');
                                     </tr>
                                 </tfoot>
                             </table>
-                            <div class="row px-4 d-flex">
-                                <div class="col-sm-4">
-                                </div><!-- col-sm-4 -->
-                                <div class="col-sm-4">
-                                </div><!-- col-sm-4 -->
-                                <div class="col-sm-4">
-                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                </div><!-- col-sm-4 -->
-                            </div><!-- row -->
                         </div><!-- table-responsive -->
+                        <div class="row px-4 d-flex">
+                            <div class="col-sm-4">
+                            </div><!-- col-sm-4 -->
+                            <div class="col-sm-4">
+                            </div><!-- col-sm-4 -->
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                            </div><!-- col-sm-4 -->
+                        </div><!-- row -->
                     </div> <!-- modaleditform -->
                 </form>
             </div> <!-- modal-body -->
