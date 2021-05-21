@@ -65,11 +65,23 @@
         {
           if($activeparam == '5')
           {
-              echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
+              // echo '<li class="nav-item active" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
+              echo '<li class="nav-item dropdown active" id="prayer_service">';
+              echo '<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prayer</a>';
+              echo '<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
+              echo '<a class="dropdown-item" href="tec_prayer.php">All church prayer requests</a>';
+              echo '<a class="dropdown-item" href="tec_myprayer.php">My active prayer requests</a>';
+              echo '</div></li>';
           }
           else
           {
-              echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
+              // echo '<li class="nav-item" id="prayer_service"><a class="nav-link" href="tec_prayer.php">Prayer</a></li>';
+              echo '<li class="nav-item dropdown" id="prayer_service">';
+              echo '<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prayer</a>';
+              echo '<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">';
+              echo '<a class="dropdown-item" href="tec_prayer.php">All church prayer requests</a>';
+              echo '<a class="dropdown-item" href="tec_myprayer.php">My active prayer requests</a>';
+              echo '</div></li>';
           }
         }
         if($activeparam == '6')
