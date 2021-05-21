@@ -86,7 +86,7 @@ if(!$_SESSION['logged in']) {
     var activeprayercount;
 	jQ19(document).ready(function() {
 		var masterprayer = jQ19.ajax({
-        url: 'services/tec_getmasterprayerlist.php',
+        url: 'services/tec_getmasterprayerlistforuser.php',
 		type: 'POST',
 		dataType: 'json',
 		data: {login_ID: loginID}
