@@ -576,7 +576,7 @@ require_once('includes/tec_footer.php');
                         <!-- Content -->
                         <div class="text-white text-center d-flex align-items-center rgba-black-strong">
                             <div class="w-100">
-                                <h3 class="card-title pt-2"><strong>CHURCH FAMILY PRAYER REQUESTS</strong></h3>
+                                <h3 class="card-title pt-2"><strong>MY PRAYER REQUESTS</strong></h3>
                                 <p>View, follow, and manage prayer requests.</p>
                             </div>
                         </div>
@@ -591,33 +591,32 @@ require_once('includes/tec_footer.php');
                             <div class="table-responsive-xs">
                                 <!-- <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%"> -->
                                 <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th class="dtr-myprayercolumn"></th>
-                                        <th>id</th>
-                                        <th>Opened</th>
-                                        <th>Title</th>
-                                        <th>Update</th>
-                                        <th>Answer</th>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Text</th>
-                                    </tr>
-                                </thead>
-                                <tfoot class="table-dark">
-                                    <tr>
-                                        <th></th>
-                                        <th class="dtr-myprayercolumn"></th>
-                                        <th>id</th>
-                                        <th>Opened</th>
-                                        <th>Title</th>
-                                        <th>Update</th>
-                                        <th>Answer</th>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Text</th>
-                                    </tr>
-                                </tfoot>
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th class="dtr-myprayercolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Title</th>
+                                            <th>Update</th>
+                                            <th>Answer</th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Text</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot class="table-dark">
+                                        <tr>
+                                            <th class="dtr-myprayercolumn"></th>
+                                            <th>id</th>
+                                            <th>Opened</th>
+                                            <th>Title</th>
+                                            <th>Update</th>
+                                            <th>Answer</th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Text</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div><!-- table-responsive -->
                         </div><!-- card-body -->
