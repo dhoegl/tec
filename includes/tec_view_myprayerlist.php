@@ -36,7 +36,7 @@ jQ8(document).ready(function() {
             },
 			{
         		className: "indexcol",
-				responsivePriority: 3,
+				responsivePriority: 1,
         		"targets": [ 1 ] 
         	},
 			{
@@ -46,12 +46,12 @@ jQ8(document).ready(function() {
 	       	},
 			{
         		className: "myprayer_title",
-				responsivePriority: 1,
+				responsivePriority: 3,
         		"targets": [ 3 ] 
         	},
 			{
         		className: "updatecolumn",
-				responsivePriority: 1,
+				responsivePriority: 4,
 				orderable: false,
         		"targets": [ 4 ] 
         	},
