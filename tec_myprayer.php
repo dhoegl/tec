@@ -576,8 +576,8 @@ require_once('includes/tec_footer.php');
                         <!-- Content -->
                         <div class="text-white text-center d-flex align-items-center rgba-black-strong">
                             <div class="w-100">
-                                <h3 class="card-title pt-2"><strong>MY PRAYER REQUESTS</strong></h3>
-                                <p>View, follow, and manage prayer requests.</p>
+                                <h3 class="card-title pt-2"><strong>MY ACTIVE PRAYER REQUESTS</strong></h3>
+                                <p>Update and manage your active prayer requests.</p>
                             </div>
                         </div>
                     </div><!-- Card -->
