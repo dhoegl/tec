@@ -4,7 +4,10 @@ jQ8(document).ready(function() {
     jQ8('#myexistprayertable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
-			"ajax": "tec_getmyprayer.php",
+			"ajax": {
+				url: 'tec_getmyprayer.php',
+				type: 'GET',
+			},
 //			"bJQueryUI": true,
 //			"sScrollY": "200px",
 //			"bPaginate": true,
@@ -36,49 +39,49 @@ jQ8(document).ready(function() {
             },
 			{
         		className: "indexcol",
-				responsivePriority: 4,
+				// responsivePriority: 4,
         		"targets": [ 1 ] 
         	},
 			{
     	   		className: "myprayer_update",
-				responsivePriority: 3,
+				// responsivePriority: 3,
 				"targets": [ 2 ] 
 	       	},
 			{
         		className: "myprayer_title",
-				responsivePriority: 2,
+				// responsivePriority: 2,
         		"targets": [ 3 ] 
         	},
 			{
         		className: "updatecolumn",
-				responsivePriority: 1,
+				// responsivePriority: 1,
 				orderable: false,
         		"targets": [ 4 ] 
         	},
 			{
         		className: "myprayer_answer",
-				responsivePriority: 1,
+				// responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 5 ] 
         	},
 			{
         		className: "myprayer_who",
-				responsivePriority: 1,
+				// responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 6 ] 
         	},
 			{
         		className: "mypraypraise",
-				responsivePriority: 1,
+				// responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 7 ] 
         	},
 			{
         		className: "myprayer_text",
-				responsivePriority: 1,
+				// responsivePriority: 1,
                 "visible": false,
 				orderable: false,
         		"targets": [ 8 ] 
