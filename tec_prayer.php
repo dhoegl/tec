@@ -729,49 +729,51 @@ require_once('includes/tec_footer.php');
                 <h6>
                     Select from list of prayer requests below to update
                 </h6>
-                <form class="text-center border border-light p-2" name='existprayer' method='post' action=''>
+                <form class="border border-light p-2" name='existprayer' method='post' action=''>
                     <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
                     <div class="modaleditform text-center border border-light p-2">
-                        <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
-                        
-                            <!-- <thead class="table-dark"> -->
-                            <thead>
-                                <tr>
-                                    <th class="dtr-myprayercolumn"></th>
-                                    <th>id</th>
-                                    <th>Opened</th>
-                                    <th>Title</th>
-                                    <th>Update</th>
-                                    <th>Answer</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Text</th>
-                                </tr>
-                            </thead>
-                            <!-- <tfoot class="table-dark"> -->
-                            <tfoot>
-                                <tr>
-                                    <th class="dtr-myprayercolumn"></th>
-                                    <th>id</th>
-                                    <th>Opened</th>
-                                    <th>Title</th>
-                                    <th>Update</th>
-                                    <th>Answer</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Text</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <div class="row px-4 d-flex">
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                            </div><!-- col-sm-4 -->
-                        </div><!-- row -->
+                        <div class="table-responsive-xs">
+                            <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            
+                                <!-- <thead class="table-dark"> -->
+                                <thead>
+                                    <tr>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>id</th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot class="table-dark"> -->
+                                <tfoot>
+                                    <tr>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>id</th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div class="row px-4 d-flex">
+                                <div class="col-sm-4">
+                                </div><!-- col-sm-4 -->
+                                <div class="col-sm-4">
+                                </div><!-- col-sm-4 -->
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                </div><!-- col-sm-4 -->
+                            </div><!-- row -->
+                        </div><!-- table-responsive -->
                     </div> <!-- modaleditform -->
                 </form>
             </div> <!-- modal-body -->
@@ -795,37 +797,6 @@ require_once('includes/tec_footer.php');
             </div><!-- modal-header -->
             <div class="modal-body">
                 <form class="text-center border border-light p-2" name='editexistprayer' method='post' action=''>
-                    <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
-                    <!-- <div class="modaleditform text-center border border-light p-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row p-2">
-                                    <div class="card card-body">
-                                        <h4 class="card-title">Prayer Request</h4>
-                                        <p class="card-text">
-                                            Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Quam nulla porttitor massa id neque aliquam. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Morbi tincidunt ornare massa eget egestas purus. Enim diam vulputate ut pharetra sit. Ut aliquam purus sit amet luctus venenatis lectus magna. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. 
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row px-2 d-flex justify-content-center">
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <div class="col-xs-4">
-                                            <button type="button" name="updateexistingprayer" class="btn btn-primary btn-sm">Update</button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <button type="button" name="answerexistingprayer" class="btn btn-success btn-sm">Answered</button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <textarea placeholder="Details..." id="prayer_text" name='prayer_text' class="form-control" rows="5"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="modaleditform border border-light p-2">
                             <div class="table-responsive">
                                 <div class="row">
