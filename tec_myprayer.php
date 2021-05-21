@@ -583,42 +583,41 @@ require_once('includes/tec_footer.php');
                     </div><!-- Card -->
                 </div><!-- Col-md-12 -->
             </div><!-- Row -->
-<!-- ******************************* Active Prayer List Card ************************************** -->
+<!-- ******************************* My Prayer List Card ************************************** -->
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card bg-light border-primary px-2 my-2 w-100">
                         <div class="card-body">
                             <div class="table-responsive-xs">
                                 <!-- <table id="activeprayertable" class="table table-sm table-striped dt-responsive" cellspacing="0" border="0" width="100%"> -->
-                                <table id="activeprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
-                                    <thead class="table-dark">
-                                            <tr>
-                                                <th class="dtr-prayercolumn"></th>
-                                                <th>id</th>
-                                                <th>Opened</th>
-                                                <th>Family Member</th>
-                                                <th>Type</th>
-                                                <th>Answered</th>
-                                                <th>Title</th>
-                                                <th>Quick Glance</th>
-                                                <th>Details</th>
-                                                <th>Text</th>
-                                            </tr>
-                                    </thead>
-                                    <tfoot class="table-dark">
-                                            <tr>
-                                                <th class="dtr-prayercolumn"></th>
-                                                <th>id</th>
-                                                <th>Opened</th>
-                                                <th>Family Member</th>
-                                                <th>Type</th>
-                                                <th>Answered</th>
-                                                <th>Title</th>
-                                                <th>Quick Glance</th>
-                                                <th>Details</th>
-                                                <th>Text</th>
-                                            </tr>
-                                    </tfoot>
+                                <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>id</th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                    </tr>
+                                </thead>
+                                <tfoot class="table-dark">
+                                    <tr>
+                                        <th></th>
+                                        <th class="dtr-myprayercolumn"></th>
+                                        <th>id</th>
+                                        <th>Opened</th>
+                                        <th>Title</th>
+                                        <th>Update</th>
+                                        <th>Answer</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Text</th>
+                                    </tr>
+                                </tfoot>
                                 </table>
                             </div><!-- table-responsive -->
                         </div><!-- card-body -->
@@ -730,10 +729,10 @@ require_once('includes/tec_footer.php');
                     <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="table-responsive-xs">
-                            <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <!-- <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
                             
                                 <!-- <thead class="table-dark"> -->
-                                <thead>
+                                <!-- <thead>
                                     <tr>
                                         <th class="dtr-myprayercolumn"></th>
                                         <th>id</th>
@@ -745,13 +744,13 @@ require_once('includes/tec_footer.php');
                                         <th>Type</th>
                                         <th>Text</th>
                                     </tr>
-                                </thead>
+                                </thead> -->
                                 <!-- <tfoot class="table-dark"> -->
-                                <tfoot>
+                                <!-- <tfoot>
                                     <tr>
-                                        <th></th>
+                                        <th></th> -->
                                         <!-- <th class="dtr-myprayercolumn"></th> -->
-                                        <th>id</th>
+                                        <!-- <th>id</th>
                                         <th>Opened</th>
                                         <th>Title</th>
                                         <th>Update</th>
@@ -761,7 +760,7 @@ require_once('includes/tec_footer.php');
                                         <th>Text</th>
                                     </tr>
                                 </tfoot>
-                            </table>
+                            </table> -->
                         </div><!-- table-responsive -->
                         <div class="row px-4 d-flex">
                             <div class="col-sm-4">
