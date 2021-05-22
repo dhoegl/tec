@@ -1,6 +1,6 @@
 <?php 
 session_start();
-// Updated 20210520 - My Prayer Requests split out from All church Prayer Requests (at tec_prayer.php)
+// Updated 20210522 - My Prayer Requests split out from All church Prayer Requests (at tec_prayer.php)
 if(!$_SESSION['logged in']) {
 	session_destroy();
 	header("location:tec_welcome.php");
@@ -117,56 +117,6 @@ if(!$_SESSION['logged in']) {
 
 </script>
 
-<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
-<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
-<!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
-<script type="text/javascript">
-	var jQ20 = jQuery.noConflict();
-	jQ20(document).ready(function() {
-// Follow button
-	jQ20("#follow_button").click(function () {
-		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with Login ID = " + $loggedinLoginID);
-
-// Check if prayer is being followed by user - Toggle the follow_button text
-		var checkfollow = 'services/tec_check_follow_table.php';
-			jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-			jQ20.each(data.followmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
-                // Update prayer follow table - initialize to Follow as default state
-                var $followselect = 'yes';
-                        var request = jQ20.ajax({
-                        url: 'services/tec_update_follow_table.php',
-                        type: 'POST',
-                        // dataType: 'json',
-                        data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
-                        });
-                    jQ20("#prayerFollow").html("NO");
-					jQ20("#follow_button").html("Click to Follow");
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO prayer is NOT being followed");
-                // Update prayer follow table - initialize to Follow as default state
-                var $followselect = 'no';
-                        var request = jQ20.ajax({
-                        url: 'services/tec_update_follow_table.php',
-                        type: 'POST',
-                        // dataType: 'json',
-                        data: { followselect: $followselect, followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory, followprayerLoginID : $loggedinLoginID}
-                        });
-                    jQ20("#prayerFollow").html("YES");
-					jQ20("#follow_button").html("Click to Unfollow");
-				}
-			});
-		});
-
-	});
-
-	});
-</script>
 
 
 <!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
@@ -204,183 +154,6 @@ if(!$_SESSION['logged in']) {
 
 </script>
 
-<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
-<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
-<!--***************************** Get Which Prayer Item's 'Details' button was clicked ***********************************-->
-<script type="text/javascript">
-var $clickbuttonid = "NA";
-var testforChild = "0";
-var parentTable;
-var prayerDate = "0";
-var prayerAnswer = "0";
-var prayerWho = "0";
-var prayerTitle = "0";
-var prayerType = "0";
-var prayerText;
-var gethiddencol = "0";
-var jQ9 = jQuery.noConflict();
-jQ9(document).ready(function () {
-	// jQ9("#activeprayertable tbody").on("click", 'tr', function () {
-    jQ9("#activeprayertable tbody").on("click", '.detailscolumn', function () {
-        testforChild = jQ9(this).closest('tr');
-        if (testforChild.hasClass("child")) {
-            console.log("******** HAS CHILD ******")
-            // var prayerID = jQ9(this).closest("tbody").find("tr.parent").find(".indexcol").text();
-            var prayerID = testforChild.prev("tr").find(".indexcol").text();
-            $clickbuttonid = prayerID;
-            jQ9("#prayerID").html(prayerID);
-            console.log("********** Details button clicked ************");
-            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
-            prayerDate = testforChild.prev("tr").find(".prayer_update").text();
-            jQ9("#prayerDate").html(prayerDate);
-            prayerAnswer = testforChild.prev("tr").find(".prayer_answer").text();
-            if(prayerAnswer == " Answered "){
-                jQ9("#prayerAnswer").html("YES");
-            }
-            else{
-                jQ9("#prayerAnswer").html("NO");
-            }
-            prayerWho = testforChild.prev("tr").find(".prayer_who").text();
-            jQ9("#prayerWho").html(prayerWho);
-            prayerTitle = testforChild.prev("tr").find(".prayer_title").text();
-            jQ9("#prayerTitle").html(prayerTitle);
-            prayerType = testforChild.prev("tr").find(".type").text();
-            if(prayerType == "Prayer"){
-                jQ9("#prayerType").html("Prayer Request");
-            }
-            else{
-                jQ9("#prayerType").html("Praise");
-            }
-// ************************ p_text extracted from jQ19 above ****************************
-            prayerText = p_text[prayerID];
-            jQ9("#prayerText").html(prayerText);
-            console.log("prayerID (this jQ9 entry) = " + prayerID);
-            console.log("prayerDate (this jQ9 entry) = " + prayerDate);
-            console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
-            console.log("prayerWho (this jQ9 entry) = " + prayerWho);
-            console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
-            console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
-
-// Check if prayer is being followed by user - Toggle the follow_button text
-        var checkfollow = 'services/tec_check_follow_table.php';
-        jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-                jQ9.each(data.followmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
-                    jQ9("#prayerFollow").html("YES");
-                    jQ9("#follow_button").html("Click to Unfollow");
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO prayer is NOT being followed");
-                    jQ9("#prayerFollow").html("NO");
-					jQ9("#follow_button").html("Click to Follow");
-				}
-			});
-		});
-    // Display the Prayer Request Details popup
-    jQ9("#ModalPrayerView").modal('show');
-         }
-        else {
-            console.log("******** NOT CHILD ******")
-            var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
-            $clickbuttonid = prayerID;
-            jQ9("#prayerID").html(prayerID);
-            console.log("********** Details button clicked ************");
-            console.log("$clickbuttonid (this jQ9 entry) = " + $clickbuttonid);
-            prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-            jQ9("#prayerDate").html(prayerDate);
-            prayerAnswer = jQ9(this).closest('tr').find(".prayer_answer").text();
-            if(prayerAnswer == " YES "){
-                jQ9("#prayerAnswer").html("YES");
-            }
-            else{
-                jQ9("#prayerAnswer").html("NO");
-            }
-            prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-            jQ9("#prayerWho").html(prayerWho);
-            prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-            jQ9("#prayerTitle").html(prayerTitle);
-            prayerType = jQ9(this).closest('tr').find(".type").text();
-            if(prayerType == "Prayer"){
-                jQ9("#prayerType").html("Prayer Request");
-            }
-            else{
-                jQ9("#prayerType").html("Praise");
-            }
-// ************************ p_text extracted from jQ19 above ****************************
-            prayerText = p_text[prayerID];
-            jQ9("#prayerText").html(prayerText);
-            console.log("prayerDate (this jQ9 entry) = " + prayerDate);
-            console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
-            console.log("prayerWho (this jQ9 entry) = " + prayerWho);
-            console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
-            console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
-
-    // Check if prayer is being followed by user - Toggle the follow_button text
-        var checkfollow = 'services/tec_check_follow_table.php';
-        jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-                jQ9.each(data.followmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
-                    jQ9("#prayerFollow").html("YES");
-                    jQ9("#follow_button").html("Click to Unfollow");
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO prayer is NOT being followed");
-                    jQ9("#prayerFollow").html("NO");
-					jQ9("#follow_button").html("Click to Follow");
-				}
-			});
-		});
-
-    // Display the Prayer Request Details popup
-    jQ9("#ModalPrayerView").modal('show');
-        }
-// ******** LEFT OFF HERE
-// ******** LEFT OFF HERE
-// ******** LEFT OFF HERE
-// Check if prayer has been answered - disable follow/unfollow buttons if true
-		// jQ9("#follow_button").hide();
-		// jQ9("#unfollow_button").hide();
-		// console.log("loggedidDirectory = " + $loggedidDirectory);
-		// if (prayerAnswer != 'Answered' && $loggedidDirectory < 20000) {
-// Check if prayer is being followed by user - Show/Hide the Follow/Unfollow buttons
-			// console.log("Inside prayerAnswer check routing");
-			// console.log("followprayerID = " + $clickbuttonid);
-			// console.log("followprayerWho = " + $loggedusername);
-			// console.log("followprayerDir = " + $loggedidDirectory);
-			// var checkfollow = 'services/tec_check_follow_table.php';
-			// 	jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerDir : $loggedidDirectory
-			// 	}, function (data) {
-			// 		console.log(data);
-			// 		console.log("Data Message = " + data.followmessage);
-			// 	jQ9.each(data.followmessage, function (i, rep) {
-			// 		if ('yes' === rep.Message.toLowerCase()) {
-			// 			console.log("YES is the response");
-			// 			jQ9("#follow_button").hide();
-			// 			jQ9("#unfollow_button").show();
-			// 		};
-			// 		if ('no' === rep.Message.toLowerCase()) {
-			// 			console.log("NO is the response");
-			// 			jQ9("#follow_button").show();
-			// 			jQ9("#unfollow_button").hide();
-			// 		};
-			// 	});
-			// });
-		// };
-	});
-});
-
-
-</script>
 
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
@@ -495,7 +268,9 @@ jQ10(document).ready(function () {
 </head>
 <body>
 
-<!--Navbar-->
+<!-- ****************************** Navbar ********************************** -->
+<!-- ****************************** Navbar ********************************** -->
+<!-- ****************************** Navbar ********************************** -->
 <?php
 $activeparam = '5'; // sets nav element highlight
 require_once('tec_nav.php');
@@ -704,78 +479,6 @@ require_once('includes/tec_footer.php');
 </div> <!-- modal fade -->
 
 
-<!--***************************** Existing Prayer Request MODAL ***********************************-->
-<!--***************************** Existing Prayer Request MODAL ***********************************-->
-<!--***************************** Existing Prayer Request MODAL ***********************************-->
-
-<div class="modal fade" id="ModalExistingRequest" tabindex="-1" role="dialog" aria-labelledby="ExistPrayerModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ExistPrayerModalLabel">My Prayer Requests<br>Select an existing Request and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal-header -->
-            <div class="modal-body">
-                <h4>
-                    My Existing Active Prayer Requests
-                </h4>
-                <h6>
-                    Select from list of prayer requests below to update
-                </h6>
-                <form class="border border-light p-2" name='existprayer' method='post' action=''>
-                    <!-- <table id="myexistprayertable" class="table table-sm table-striped dt-responsive" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
-                    <div class="modaleditform text-center border border-light p-2">
-                        <div class="table-responsive-xs">
-                            <!-- <table id="myexistprayertable" class="table table-sm table-striped 'display responsive nowrap'" cellpadding="0" cellspacing="0" border="0" width="100%"> -->
-                            
-                                <!-- <thead class="table-dark"> -->
-                                <!-- <thead>
-                                    <tr>
-                                        <th class="dtr-myprayercolumn"></th>
-                                        <th>id</th>
-                                        <th>Opened</th>
-                                        <th>Title</th>
-                                        <th>Update</th>
-                                        <th>Answer</th>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Text</th>
-                                    </tr>
-                                </thead> -->
-                                <!-- <tfoot class="table-dark"> -->
-                                <!-- <tfoot>
-                                    <tr>
-                                        <th></th> -->
-                                        <!-- <th class="dtr-myprayercolumn"></th> -->
-                                        <!-- <th>id</th>
-                                        <th>Opened</th>
-                                        <th>Title</th>
-                                        <th>Update</th>
-                                        <th>Answer</th>
-                                        <th>Name</th>
-                                        <th>Type</th>
-                                        <th>Text</th>
-                                    </tr>
-                                </tfoot>
-                            </table> -->
-                        </div><!-- table-responsive -->
-                        <div class="row px-4 d-flex">
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                            </div><!-- col-sm-4 -->
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                            </div><!-- col-sm-4 -->
-                        </div><!-- row -->
-                    </div> <!-- modaleditform -->
-                </form>
-            </div> <!-- modal-body -->
-        </div> <!-- modal-content -->
-    </div> <!-- modal-dialog -->
-</div> <!-- modal fade -->
 
 
 <!--***************************** EDIT Existing Prayer Request MODAL ***********************************-->
@@ -846,75 +549,6 @@ require_once('includes/tec_footer.php');
 
 
 
-<!--***************************** View Prayer Request Details MODAL ***********************************-->
-<!--***************************** View Prayer Request Details MODAL ***********************************-->
-<!--***************************** View Prayer Request Details MODAL ***********************************-->
-
-<div class="modal fade" id="ModalPrayerView" tabindex="-1" role="dialog" aria-labelledby="ViewPrayerDetailsModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ViewPrayerDetailsModalLabel">View Prayer Request Details<br>Click <strong>Close</strong> when done.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div><!-- modal-header -->
-            <div class="modal-body">
-                <form class="border border-light p-2" name='viewprayer' method='post' action=''> 		
-                        <div class="modaleditform border border-light p-2">
-                            <div class="table-responsive">
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Date:</div>
-                                    <div class="col-8 text-left"><span id="prayerDate"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">From:</div>
-                                    <div class="col-8 text-left"><span id="prayerWho"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Title:</div>
-                                    <div class="col-8 text-left"><span id="prayerTitle"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Updated:</div>
-                                    <div class="col-2 text-left"><span id="prayerUpdate"></span></div>
-                                    <div class="col-3 text-right font-weight-bold">Answered:</div>
-                                    <div class="col-3 text-left"><span id="prayerAnswer"></span></div>
-                                </div><!-- row -->
-                                <div class="row">
-                                    <div class="col-4 text-right font-weight-bold"></div>
-                                    <div class="col-2 text-left"></div>
-                                    <div class="col-3 text-right font-weight-bold">Following:</div>
-                                    <div class="col-3 text-left"><span id="prayerFollow"></span></div>
-                                </div><!-- row -->
-                                <div  class="card">
-                                    <div class="card-body" id="viewpraytable">
-                                        <h5 class="card-title" id="prayerType"></h5>
-                                        <p class="card-text"  id="prayerText"></p>
-                                    </div><!-- card-body -->
-                                </div><!-- card -->
-                                <div class="row px-2 d-flex justify-content-center">
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                    </div><!-- btn-group -->
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
-                                        <div class="col-xs-4">
-                                            <button type="button" name="prayer_outbound_email" id="prayer_outbound_email" class="btn btn-success btn-sm">Email</button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <button type="button" class="btn btn-primary btn-sm" id="follow_button">Follow</button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <button type="button" name="closeprayermodal" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div><!-- btn-group -->
-                                </div><!-- row -->
-                            </div><!-- table-respomsive -->
-                    </div><!-- modaleditform -->
-                </form>
-            </div><!-- modal-body -->
-        </div><!-- modal-content -->
-    </div><!-- modal-dialog -->
-</div><!-- modal-fade -->
 
 <!--***************************** SCRIPTS ***********************************-->
 <!--***************************** SCRIPTS ***********************************-->
