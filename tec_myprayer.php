@@ -264,7 +264,7 @@ require_once('includes/tec_footer.php');
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card card-body">
-                        <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
+                        <h4 class="card-title"><u>Creating and Managing Your Prayer Requests</u></h4>
                         <ul class="card-text">
                             <li>Create your own prayer requests allowing your church family to pray with you</li>
                             <ul>
@@ -272,13 +272,13 @@ require_once('includes/tec_footer.php');
                                 <li>Enter your request details and click the <span class="btn btn-primary btn-sm">Submit</span> button send it out</li>
                                 <li><u>PLEASE NOTE</u> that all prayer requests are reviewed by our church elders before they are posted to the site</li>
                             </ul>
-                            <li>Manage your existing prayer requests</li>
+                            <li><u>Manage your existing prayer requests</u></li>
                             <ul>
-                                <li>Select an active prayer request from the list below and click the <span class="btn btn-secondary btn-sm">Update</span> button to modify an existing prayer request</li>
+                                <li>Select an active prayer request from the list below and click the <span class="btn btn-success btn-sm">Update</span> button to modify an existing prayer request</li>
                                 <li>On the prayer request details popup:</li>
                                 <ul>
-                                    <li>Click the <span class="btn btn-primary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
-                                    <li>Click the <span class="btn btn-success btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
+                                    <li>Click the <span class="btn btn-success btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
+                                    <li>Click the <span class="btn btn-secondary btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
                                     <li><u>PLEASE NOTE</u> Answered prayers are considered closed and cannot be further updated</li>
                                 </ul>
                             </ul>
