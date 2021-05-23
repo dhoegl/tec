@@ -1,10 +1,13 @@
 <script type="text/javascript">
+// Detect 'Update' button on myprayer list in tec_myprayer.php
+// Generate Prayer text that includes subsequent updates from prayer_update table
+// Updated 20210523
 var $answered = "NA";
 var jQ10 = jQuery.noConflict();
  jQ10(document).ready(function () {
 //	console.log("$clickbuttonID again = " + $clickbuttonid);
 	var myprayerjson = 'tec_get_json_myprayer.php'
-	jQ10("#myprayertable tbody").on("click", function () { //Tecfamview 'Update button clicked on #myprayertable
+	jQ10("#myprayertable tbody").on("click", function () { //Tec_myprayer 'Update' button clicked on #myprayertable
 		jQ10("tr.praytable_even").show();
 		jQ10("tr.praytable_odd").show();
 		jQ10("tr.praytable_text").show();

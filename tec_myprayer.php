@@ -66,14 +66,18 @@ if(!$_SESSION['logged in']) {
 // Get My Prayer List
     include('includes/tec_view_myprayerlist.php');
 
+// Get My Prayer jQuery
+// include('includes/tec_get_myprayer_jquery.php');
+
 // Get Active Prayer jQuery
 //    include('includes/tec_get_activeprayer_jquery.php');
    
 ?>
 
-<!--***************************** Get Master Prayer List for User ***********************************-->
-<!--***************************** Get Master Prayer List for User ***********************************-->
-<!--***************************** Get Master Prayer List for User ***********************************-->
+<!--***************************** Get Master Prayer List for Logged In User ***********************************-->
+<!--***************************** Get Master Prayer List for Logged In User ***********************************-->
+<!--***************************** Get Master Prayer List for Logged In User ***********************************-->
+<!--******************* NECESSARY FOR EXTRACTION OF HIDDEN FIELDS pulled from tec_getmyprayer script ***********************-->
 <script type="text/javascript">
 	var jQ19 = jQuery.noConflict();
     var loginID = <?php echo $_SESSION['user_id']; ?>;
@@ -106,14 +110,8 @@ if(!$_SESSION['logged in']) {
                         i++
                     }
                 })
-
     });
-
-
 </script>
-
-
-
 
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
@@ -165,24 +163,8 @@ jQ10(document).ready(function () {
             else{
                 jQ10("#ModalEditprayerType").html("Praise");
             }
-
-            // var myprayerIndex = myprayerID-1;
-            // mysiblingTable = jQ10("td.myprayer_text3").eq(myprayerIndex).text();
-            // jQ10("#prayerText").html(mysiblingTable);
-            // console.log("myprayerID (this jQ10 entry) = " + myprayerID);
-            // console.log("myprayerDate (this jQ10 entry) = " + myprayerDate);
-            // console.log("myprayerAnswer (this jQ10 entry) = " + myprayerAnswer);
-            // console.log("myprayerWho (this jQ10 entry) = " + myprayerWho);
-            // console.log("myprayerTitle (this jQ10 entry) = " + myprayerTitle);
-            // console.log("myprayerType (this jQ10 entry) = " + myprayerType);
-            // console.log("myprayerText (this jQ10 entry) = " + myprayerText);
-            // console.log("myprayerIndex (this jQ10 entry) = " + myprayerIndex);
-            // console.log("mysiblingTable (this jQ10 entry) = " + mysiblingTable);
-
             // Display My Existing Prayer Request Details popup
-            // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
-
         }
         else {
             console.log("******** NOT CHILD ******")
@@ -219,7 +201,6 @@ jQ10(document).ready(function () {
             // Display My Existing Prayer Request Details popup
             // jQ10("#ModalExistingRequest").modal('hide');
             jQ10("#ModalEditExistingRequest").modal('show');
-
         }
     });
 });

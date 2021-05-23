@@ -1,4 +1,7 @@
 <?php
+// Call prayer and prayer_update tables
+// Generate json text of prayers and corresponding prayer_update data
+// Updated 20210523
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
