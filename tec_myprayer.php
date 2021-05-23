@@ -278,7 +278,7 @@ require_once('includes/tec_footer.php');
                                 <li>On the prayer request details popup:</li>
                                 <ul>
                                     <li>Click the <span class="btn btn-success btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
-                                    <li>Click the <span class="btn btn-secondary btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
+                                    <li>Click the <span class="btn btn-primary btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
                                     <li><u>PLEASE NOTE</u> Answered prayers are considered closed and cannot be further updated</li>
                                 </ul>
                             </ul>
@@ -472,10 +472,10 @@ require_once('includes/tec_footer.php');
                                 <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
                                         <div class="col-xs-4">
-                                            <button type="button" name="ModalEditupdateexistingprayer" id="ModalEditupdateexistingprayer" class="btn btn-primary btn-sm">Update</button>
+                                            <button type="button" name="ModalEditupdateexistingprayer" id="ModalEditupdateexistingprayer" class="btn btn-success btn-sm">Update</button>
                                         </div>
                                         <div class="col-xs-4">
-                                            <button type="button" name="ModalEditanswerexistingprayer" id="ModalEditanswerexistingprayer" class="btn btn-success btn-sm">Answered</button>
+                                            <button type="button" name="ModalEditanswerexistingprayer" id="ModalEditanswerexistingprayer" class="btn btn-primary btn-sm">Answered</button>
                                         </div>
                                         <div class="col-xs-4">
                                             <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
