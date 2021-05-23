@@ -264,9 +264,9 @@ require_once('includes/tec_footer.php');
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card card-body">
-                        <h4 class="card-title"><u>Creating and Managing Your Prayer Requests</u></h4>
+                        <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
                         <ul class="card-text">
-                            <li>Create your own prayer requests allowing your church family to pray with you</li>
+                            <li><u>Create new prayer requests</u> allowing your church family to pray with you</li>
                             <ul>
                                 <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'New Prayer Request'</u> to create a new prayer request</li>
                                 <li>Enter your request details and click the <span class="btn btn-primary btn-sm">Submit</span> button send it out</li>
