@@ -262,7 +262,7 @@ require_once('includes/tec_footer.php');
             </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="card card-body">
                         <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
                         <ul class="card-text">
@@ -284,7 +284,7 @@ require_once('includes/tec_footer.php');
                             </ul>
                         </ul>
                     </div><!-- card -->
-                </div><!-- col-sm-6 -->
+                </div><!-- col-sm-12 -->
             </div><!-- row -->
         </div><!-- collapse -->
             <div class="row">

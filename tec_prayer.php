@@ -521,7 +521,7 @@ require_once('includes/tec_footer.php');
                 </div> -->
         <div class="collapse" id="collapseExample">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="card card-body">
                         <h4 class="card-title">
                             Viewing Prayer Requests 
@@ -536,7 +536,7 @@ require_once('includes/tec_footer.php');
                             <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
                         </ul>
                     </div><!-- card -->
-                </div><!-- col-sm-6 -->
+                </div><!-- col-sm-12 -->
             </div><!-- row -->
         </div><!-- collapse -->
             <div class="row">
