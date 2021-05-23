@@ -104,12 +104,7 @@ if(!$_SESSION['logged in']) {
                         p_type[id] = masterresponse[i].pray_praise;
                         p_fullname[id] = masterresponse[i].fullname;
                         i++
-                        // console.log('prayer_text = ' + p_text[id]);
                     }
-                    // for (id = 0; i < activeprayercount; id++) {
-                    //     obj[id] = masterresponse[id].prayer_id;
-                        // console.log('entry ' + i + ' = ' + obj);
-                    // } 
                 })
 
     });
@@ -118,41 +113,6 @@ if(!$_SESSION['logged in']) {
 </script>
 
 
-
-<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
-<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
-<!-- **************************** Process the Send Email buttons for selected prayer request ******************** -->
-<!-- Send Email using client email application -->
-<!-- NOTE: If nothing is returned from tec_get_prayer_email_address, script will fail - temporarily 'by design' until conditions are established to disable or hide Send Mail button -->
-<script type="text/javascript">
-    var response;
-	var jQ30 = jQuery.noConflict();
-	jQ30(document).ready(function() {
-        jQ30("#prayer_outbound_email").click(function () {
-		console.log("Send Email button clicked");
-        var sendaddress = jQ30.ajax({
-                url: 'services/tec_get_prayer_email_address.php',
-                type: 'GET',
-                dataType: 'json',
-                data: { prayerID: $clickbuttonid }
-            })
-                .done(function (response) {
-                    //  Get the result
-                    var email = response[0].prayeremail;
-                    console.log("ajax response email = " + email);
-                    window.location.href = "mailto:" + email + "?subject=Praying for you!";
-                })
-                .fail(function (jqXHR, textStatus) {
-                    //  Get the result
-                    var result = "fail";
-                    var teststat = textStatus;
-                    var teststat2 = jqXHR.responseText;
-                    alert("No email address found to send an email - ajax response text = " + teststat2);
-                });
-    });
-});
-
-</script>
 
 
 <!--***************************** Get Which MyPrayer Item's 'Update' button was clicked ***********************************-->
@@ -296,29 +256,12 @@ require_once('includes/tec_footer.php');
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
-                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
                         </div>
                     </div><!-- dropdown -->
                 </div><!-- col xs-6 -->
             </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="card card-body">
-                        <h4 class="card-title">
-                            Viewing Prayer Requests 
-                        </h4>
-                        <ul class="card-text">
-                            <li>The table below lists all recent prayer requests (and praises) from your church family</li>
-                            <li>Click on a header arrow to sort columns ascending or descending</li>
-                            <li>Use the Search box to locate a specific prayer request</li>
-                            <li>Navigate pages using the Page Selector at the bottom of the page</li>
-                            <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
-                            <li>Click the <span class="btn btn-success btn-sm">Details</span> button on a row below to see more information about a specific prayer request</li>
-                            <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
-                        </ul>
-                    </div><!-- card -->
-                </div><!-- col-sm-6 -->
                 <div class="col-sm-6">
                     <div class="card card-body">
                         <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
@@ -331,8 +274,8 @@ require_once('includes/tec_footer.php');
                             </ul>
                             <li>Manage your existing prayer requests</li>
                             <ul>
-                                <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'My Existing Requests'</u> to update an existing prayer request</li>
-                                <li>On the Edit Prayer Request list popup:</li>
+                                <li>Select an active prayer request from the list below and click the <span class="btn btn-secondary btn-sm">Update</span> button to modify an existing prayer request</li>
+                                <li>On the prayer request details popup:</li>
                                 <ul>
                                     <li>Click the <span class="btn btn-primary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
                                     <li>Click the <span class="btn btn-success btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>

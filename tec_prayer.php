@@ -519,18 +519,6 @@ require_once('includes/tec_footer.php');
                             My Requests
                         </button>
                 </div> -->
-                <div class="col-xs-6">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Requests
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
-                            <button class="dropdown-item" data-toggle="modal" data-target="#ModalExistingRequest" type="button">My Existing Requests</button>
-                        </div>
-                    </div><!-- dropdown -->
-                </div><!-- col xs-6 -->
-            </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
                 <div class="col-sm-6">
@@ -546,29 +534,6 @@ require_once('includes/tec_footer.php');
                             <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
                             <li>Click the <span class="btn btn-success btn-sm">Details</span> button on a row below to see more information about a specific prayer request</li>
                             <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
-                        </ul>
-                    </div><!-- card -->
-                </div><!-- col-sm-6 -->
-                <div class="col-sm-6">
-                    <div class="card card-body">
-                        <h4 class="card-title">Creating and Managing Your Prayer Requests</h4>
-                        <ul class="card-text">
-                            <li>Create your own prayer requests allowing your church family to pray with you</li>
-                            <ul>
-                                <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'New Prayer Request'</u> to create a new prayer request</li>
-                                <li>Enter your request details and click the <span class="btn btn-primary btn-sm">Submit</span> button send it out</li>
-                                <li><u>PLEASE NOTE</u> that all prayer requests are reviewed by our church elders before they are posted to the site</li>
-                            </ul>
-                            <li>Manage your existing prayer requests</li>
-                            <ul>
-                                <li>Click the <span class="btn btn-secondary btn-sm">My Requests</span> button and select <u>'My Existing Requests'</u> to update an existing prayer request</li>
-                                <li>On the Edit Prayer Request list popup:</li>
-                                <ul>
-                                    <li>Click the <span class="btn btn-primary btn-sm">Update</span> button on the selected prayer request to update with any new information</li>
-                                    <li>Click the <span class="btn btn-success btn-sm">Answered</span> button on the selected prayer request to acknowledge an answered prayer</li>
-                                    <li><u>PLEASE NOTE</u> Answered prayers are considered closed and cannot be further updated</li>
-                                </ul>
-                            </ul>
                         </ul>
                     </div><!-- card -->
                 </div><!-- col-sm-6 -->
