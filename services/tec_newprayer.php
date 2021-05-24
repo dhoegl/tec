@@ -7,50 +7,44 @@ if(!$_SESSION['logged in']) {
 	header("location:../tec_welcome.php");
 	exit();
 }
-
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
-
-// Process new Prayer Request: 
-   	$prayer_owner = $_POST['requestorID'];
-	$prayer_name = $_POST['fullname'];
-	$prayer_onbehalfof = $_POST['onbehalfof'];
-	$prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
-	$prayer_email_from = $_POST['email'];
-	$prayer_visible = $_POST['visible'];
-	$prayer_praise = $_POST['praypraise'];
-	$prayer_title = $_POST['praytitle'];
-	$prayer_text = $_POST['praytext'];
-	$prayer_title = mb_convert_encoding($prayer_title, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
-	$prayer_text = mb_convert_encoding($prayer_text, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
-
-	// If PrayerAdmin sends out a prayer request, use On Behalf Of as the name of the prayer requestor 
-	if($prayer_onbehalfof) {
-		$prayer_name = $prayer_onbehalfof;
-	}
-	$newprayerquery = "INSERT INTO " . $_SESSION['prayertable'] . "(owner_id, name, title, pray_praise, visible, prayer_text) VALUES (?,?,?,?,?,?')";
-	$newprayerupdate = $mysql->prepare($newprayerquery);
-	$newprayerupdate->bind_param("ssssss",$prayer_owner,$prayer_name,$prayer_title,$prayer_praise,$prayer_visible,$prayer_text);
-	$newprayerupdate->execute();
-	// Get Prayer ID from above Insert
-	$newprayerID = $mysql->insert_id;
-	echo "<script language='javascript'>";
-	echo "console.log('New Prayer Request ID = " . $newprayerID . "');";
-	echo "</script>";
-	if($newprayerupdate->error) {
-		echo " SQL query New Prayer submit error. Error:" . $newprayerupdate->errno . " " . $newprayerupdate->error;
-	}
-	else {
-        eventLogUpdate('prayer', "User ID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
-
-
-
-
-		if($prayer_visible == '3') //All Church
-		{
+	if(isset($_POST['submitnewprayer'])) {
+		// Process new Prayer Request: 
+		$prayer_owner = $_POST['requestorID'];
+		$prayer_name = $_POST['fullname'];
+		$prayer_onbehalfof = $_POST['onbehalfof'];
+		$prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
+		$prayer_email_from = $_POST['email'];
+		$prayer_visible = $_POST['visible'];
+		$prayer_praise = $_POST['praypraise'];
+		$prayer_title = $_POST['praytitle'];
+		$prayer_text = $_POST['praytext'];
+		$prayer_title = mb_convert_encoding($prayer_title, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
+		$prayer_text = mb_convert_encoding($prayer_text, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
+		// If PrayerAdmin sends out a prayer request, use On Behalf Of as the name of the prayer requestor 
+		if($prayer_onbehalfof) {
+			$prayer_name = $prayer_onbehalfof;
+		}
+		$newprayerquery = "INSERT INTO " . $_SESSION['prayertable'] . "(owner_id, name, title, pray_praise, visible, prayer_text) VALUES (?,?,?,?,?,?')";
+		$newprayerupdate = $mysql->prepare($newprayerquery);
+		$newprayerupdate->bind_param("ssssss",$prayer_owner,$prayer_name,$prayer_title,$prayer_praise,$prayer_visible,$prayer_text);
+		$newprayerupdate->execute();
+		// Get Prayer ID from above Insert
+		$newprayerID = $mysql->insert_id;
+		echo "<script language='javascript'>";
+		echo "console.log('New Prayer Request ID = " . $newprayerID . "');";
+		echo "</script>";
+		if($newprayerupdate->error) {
+			echo " SQL query New Prayer submit error. Error:" . $newprayerupdate->errno . " " . $newprayerupdate->error;
+		}
+		else {
+			eventLogUpdate('prayer', "User ID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
+			if($prayer_visible == '3') //All Church
+			{
 			/* send prayer request email to administrators for approval */
-	//			$praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
+			// $praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
 			// $praymailadmins = @mysql_query("SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'");
 			// $praymaillink = "https://trinityevangel.ourfamilyconnections.org";								
 			// while($praymailrow = @mysql_fetch_assoc($praymailadmins))
@@ -81,7 +75,6 @@ if(!$_SESSION['logged in']) {
 			// 	$praymailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 			// 	mail($praymailto,$praymailsubject,$praymailmessage,$praymailheaders);
 			// }
-	
 		}
 		else 
 		{
@@ -106,5 +99,5 @@ if(!$_SESSION['logged in']) {
 		}
 	}
 	$mysql -> close();
-
+}
 
