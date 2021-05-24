@@ -21,8 +21,9 @@ exit();
 		echo "</script>";
 		$prayer_owner = $_POST['requestorID'];
 		$prayer_name = $_POST['fullname'];
-		$prayer_onbehalfof = $_POST['onbehalfof'];
-		$prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
+		// $prayer_onbehalfof = $_POST['onbehalfof'];
+// convert to ensure copy/paste doesn't expose special characters
+		// $prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); 
 		$prayer_email_from = $_POST['email'];
 		$prayer_visible = $_POST['visible'];
 		$prayer_praise = $_POST['praypraise'];
