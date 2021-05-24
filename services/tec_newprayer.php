@@ -105,4 +105,6 @@ exit();
 	}
 	$mysql -> close();
 }
+header("location:tec_myprayer.php");
+?>
 
