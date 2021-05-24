@@ -30,7 +30,7 @@ if(!$_SESSION['logged in']) {
 		while($masterrow = $masterprayerresult->fetch_assoc()) {
 				$masterprayerid = $masterrow['prayerid'];
 				$masterownerid = $masterrow['ownerid'];
-				$masterprayercreatedate = date("M-d-Y", strtotime($masterrow['createdate']));
+				$masterprayercreatedate = date("M d, Y", strtotime($masterrow['createdate']));
 				$masterfullname = $masterrow['full'];
 				$masterfirstname = $masterrow['first'];
 				$masterlastname = $masterrow['last'];
@@ -51,7 +51,7 @@ if(!$_SESSION['logged in']) {
                 $updateprayercount = $updateprayerresult->num_rows;
                 if(!$updateprayercount == 0) {
                     while($updateprayerrow = $updateprayerresult->fetch_assoc()) {
-                        $updateprayerdate = date("M-d-Y", strtotime($updateprayerrow['update_date']));
+                        $updateprayerdate = date("M d, Y", strtotime($updateprayerrow['update_date']));
                         $updateprayertext = $updateprayerrow['update_text'];
                         $masterprayertext .= "\r\n\r\n";
                         $masterprayertext .= "<STRONG>" . $updateprayerdate . "</STRONG>";
