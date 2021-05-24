@@ -340,24 +340,24 @@ require_once('includes/tec_footer.php');
                 </button>
             </div> <!-- modal-header -->
             <div class="modal-body">
-                <form class="border border-light p-2" name='newprayer' method='post' action=''> 		
+                <form class="border border-light p-2" name='newprayer' method='post' action='services/tec_newprayer.php'> 		
                     <!-- <table id="newpraytable" border='0' cellpadding='0' cellspacing='1' > -->
                     <div class="modaleditform text-center border border-light p-2">
                         <div class="table-responsive">
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="visibility">Select Visibility:</label>
+                                    <label for="visible">Select Visibility:</label>
                                 </div>
                                 <div class="col-9">
-                                    <select class="custom-select" name="visibility" id="visibility">
-                                        <option value="Elders">Elders Only</option>
-                                        <option value="AllChurch" selected>Your Church Family (approval required)</option>
+                                    <select class="custom-select" name="visible" id="visible">
+                                        <option value="1">Elders Only</option>
+                                        <option value="3" selected>Your Church Family (approval required)</option>
                                     </select>
                                 </div>
                             </div><!-- row -->
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="visibility">Select Pray/Praise:</label>
+                                    <label for="praypraise">Select Pray/Praise:</label>
                                 </div>
                                 <div class="col-9">
                                     <select class="custom-select" name="praypraise" id="praypraise">
@@ -371,16 +371,26 @@ require_once('includes/tec_footer.php');
                                     <label for="praytitle">Title:</label>
                                 </div>
                                 <div class="col-9">
-                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" />
+                                    <input placeholder="Title..." type="text" id="praytitle" name='praytitle' class="form-control" size="40" />
                                 </div>
                             </div><!-- row -->
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="praydetails">Details:</label>
+                                    <label for="praytext">Details:</label>
                                 </div>
                                 <div class="col-9">
-                                    <textarea placeholder="Details..." id="details" name='details' class="form-control" rows="5"></textarea>
+                                    <textarea placeholder="Details..." id="praytext" name='praytext' class="form-control" rows="5"></textarea>
                                 </div>
+                            </div><!-- row -->
+                            <div class="row">
+                                <?php				
+                                    $fullname = $_SESSION['fullname']; 
+                                    echo "<input type='hidden' name='fullname' value= '" . $fullname . "' />";
+                                    $email = $_SESSION['email'];
+                                    echo "<input type='hidden' name='email' value= '" . $email . "' />";
+                                    $requestorID = $_SESSION['user_id'];
+                                    echo "<input type='hidden' name='requestorID' value= '" . $requestorID . "' />";
+                                ?>
                             </div><!-- row -->
                             <div class="row px-2 d-flex justify-content-center">
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Modal Buttons">
