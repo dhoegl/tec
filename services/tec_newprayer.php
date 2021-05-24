@@ -45,7 +45,7 @@ exit();
 			echo " SQL query New Prayer submit error. Error:" . $newprayerupdate->errno . " " . $newprayerupdate->error;
 		}
 		else {
-			eventLogUpdate('prayer', "User ID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
+			eventLogUpdate('prayer', "UserID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
 			if($prayer_visible == '3') //All Church
 			{
 			/* send prayer request email to administrators for approval */
