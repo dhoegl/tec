@@ -32,9 +32,9 @@ exit();
 		$prayer_title = mb_convert_encoding($prayer_title, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
 		$prayer_text = mb_convert_encoding($prayer_text, "UTF-8"); // convert to ensure copy/paste doesn't expose special characters
 		// If PrayerAdmin sends out a prayer request, use On Behalf Of as the name of the prayer requestor 
-		if($prayer_onbehalfof) {
-			$prayer_name = $prayer_onbehalfof;
-		}
+		// if($prayer_onbehalfof) {
+		// 	$prayer_name = $prayer_onbehalfof;
+		// }
 		$newprayerquery = "INSERT INTO " . $_SESSION['prayertable'] . "(owner_id, name, title, pray_praise, visible, prayer_text) VALUES (?,?,?,?,?,?')";
 		$newprayerupdate = $mysql->prepare($newprayerquery);
 		$newprayerupdate->bind_param("ssssss",$prayer_owner,$prayer_name,$prayer_title,$prayer_praise,$prayer_visible,$prayer_text);
