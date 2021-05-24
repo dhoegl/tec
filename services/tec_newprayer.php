@@ -5,7 +5,10 @@
 session_start();
 if(!$_SESSION['logged in']) {
 	header("location:../tec_welcome.php");
-	exit();
+	echo "<script language='javascript'>";
+	echo "console.log('Made it to tec_newprayer script');";
+	echo "</script>";
+exit();
 }
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
