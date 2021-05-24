@@ -21,6 +21,9 @@ exit();
 		echo "</script>";
 		$prayer_owner = $_POST['requestorID'];
 		$prayer_name = $_POST['fullname'];
+		echo "<script language='javascript'>";
+		echo "console.log('Got past requestorID and fullname');";
+		echo "</script>";
 		// $prayer_onbehalfof = $_POST['onbehalfof'];
 // convert to ensure copy/paste doesn't expose special characters
 		// $prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); 
