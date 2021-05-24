@@ -106,12 +106,12 @@ exit();
 	$mysql -> close();
 	echo "<script language='javascript'>";
 	echo "alert('Your Prayer Request has been submitted.\nOnce approved by your church elders, it will be posted for your church family to view and follow');";
-	echo "window.location.replace('../tec_myprayer.php');";
+	echo "window.location = '../tec_myprayer.php';";
 	echo "</script>";
 }
 echo "<script language='javascript'>";
 echo "alert('Bad request to new prayer request script\nAlert your Ourfamilyconnections admin with this error messag.');";
-echo "window.location.replace('../tec_myprayer.php');";
+echo "window.location = '../tec_myprayer.php';";
 echo "</script>";
 // header("location:../tec_myprayer.php");
 ?>
