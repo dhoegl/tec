@@ -447,7 +447,7 @@ require_once('includes/tec_footer.php');
                                 <div  class="card">
                                     <div class="card-body" id="ModalEditviewpraytable">
                                         <h5 class="card-title" id="ModalEditprayerType"></h5>
-                                        <p class="card-text text-sm-left"  id="ModalEditprayerText"></p>
+                                        <p class="card-text text-left"  id="ModalEditprayerText"></p>
                                     </div><!-- card-body -->
                                 </div><!-- card -->
                                 <div class="row px-2 d-flex justify-content-center">
