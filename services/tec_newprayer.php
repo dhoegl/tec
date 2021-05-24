@@ -21,9 +21,6 @@ exit();
 		echo "</script>";
 		$prayer_owner = $_POST['requestorID'];
 		$prayer_name = $_POST['fullname'];
-		echo "<script language='javascript'>";
-		echo "console.log('Got past requestorID and fullname');";
-		echo "</script>";
 		// $prayer_onbehalfof = $_POST['onbehalfof'];
 // convert to ensure copy/paste doesn't expose special characters
 		// $prayer_onbehalfof = mb_convert_encoding($prayer_onbehalfof, "UTF-8"); 
@@ -38,7 +35,10 @@ exit();
 		// if($prayer_onbehalfof) {
 		// 	$prayer_name = $prayer_onbehalfof;
 		// }
-		$newprayerquery = "INSERT INTO " . $_SESSION['prayertable'] . "(owner_id, name, title, pray_praise, visible, prayer_text) VALUES (?,?,?,?,?,?')";
+		echo "<script language='javascript'>";
+		echo "console.log('Got past all POST variable setters');";
+		echo "</script>";
+		$newprayerquery = "INSERT INTO " . $_SESSION['prayertable'] . "(owner_id, name, title, pray_praise, visible, prayer_text) VALUES (?,?,?,?,?,?)";
 		$newprayerupdate = $mysql->prepare($newprayerquery);
 		$newprayerupdate->bind_param("ssssss",$prayer_owner,$prayer_name,$prayer_title,$prayer_praise,$prayer_visible,$prayer_text);
 		$newprayerupdate->execute();
