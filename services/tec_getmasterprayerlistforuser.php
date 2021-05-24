@@ -53,13 +53,16 @@ if(!$_SESSION['logged in']) {
                     while($updateprayerrow = $updateprayerresult->fetch_assoc()) {
                         $updateprayerdate = date("M d, Y", strtotime($updateprayerrow['update_date']));
                         $updateprayertext = $updateprayerrow['update_text'];
-                        $masterprayertext .= "\r\n\r\n";
-                        $masterprayertext .= "<STRONG>" . $updateprayerdate . "</STRONG>";
-                        $masterprayertext .= "\r\n";
+                        // $masterprayertext .= "\r\n\r\n";
+                        $masterprayertext .= "<br /><br />";
+                        $masterprayertext .= "<b>" . $updateprayerdate . "</b>";
+                        // $masterprayertext .= "\r\n";
+                        $masterprayertext .= "<br />";
                         $masterprayertext .= $updateprayertext;
                     }
                 }
-                $masterprayertext .= "\r\n\r\n";
+                // $masterprayertext .= "\r\n\r\n";
+                $masterprayertext .= "<br /><br />";
 
 				// Stores each database record to an array 
 					$buildjson = array('prayer_id' => $masterprayerid, 'owner_id' => $masterownerid, 'create_date' => $masterprayercreatedate, 'fullname' => $masterfullname, 'firstname' => $masterfirstname, 'lastname' => $masterlastname, 'title' => $masterprayertitle, 'pray_praise' => $masterpraypraise, 'answer' => $masterprayanswer, 'updated' => $masterprayerupdate, 'prayer_text' => $masterprayertext); 
