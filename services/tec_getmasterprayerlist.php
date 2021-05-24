@@ -30,7 +30,7 @@ if(!$_SESSION['logged in']) {
 		while($masterrow = $masterprayerresult->fetch_assoc()) {
 				$masterprayerid = $masterrow['prayerid'];
 				$masterownerid = $masterrow['ownerid'];
-				$masterprayercreatedate = date("M-d-Y", strtotime($masterrow['createdate']));
+				$masterprayercreatedate = date("M d, Y", strtotime($masterrow['createdate']));
 				$masterfullname = $masterrow['full'];
 				$masterfirstname = $masterrow['first'];
 				$masterlastname = $masterrow['last'];
@@ -45,6 +45,24 @@ if(!$_SESSION['logged in']) {
 				}
 				$masterprayerupdate = $masterrow['updated'];
 				$masterprayertext = $masterrow['prayertext'];
+// Append Prayer Update text to initial active prayer text
+				$updateprayerquery = "SELECT * FROM " . $_SESSION['prayerupdate'] . " WHERE prayer_id = '" . $masterprayerid . "' order by update_id";
+				$updateprayerresult = $mysql->query($updateprayerquery) or die(" SQL query error at select from prayerupdate. Error #: " . $mysql->errno . " : " . $mysql->error);
+				$updateprayercount = $updateprayerresult->num_rows;
+				if(!$updateprayercount == 0) {
+					while($updateprayerrow = $updateprayerresult->fetch_assoc()) {
+						$updateprayerdate = date("M d, Y", strtotime($updateprayerrow['update_date']));
+						$updateprayertext = $updateprayerrow['update_text'];
+						// $masterprayertext .= "\r\n\r\n";
+						$masterprayertext .= "<br /><br />";
+						$masterprayertext .= "<b>" . $updateprayerdate . "</b>";
+						// $masterprayertext .= "\r\n";
+						$masterprayertext .= "<br />";
+						$masterprayertext .= $updateprayertext;
+					}
+				}
+				// $masterprayertext .= "\r\n\r\n";
+				$masterprayertext .= "<br /><br />";
 
 				// Stores each database record to an array 
 					$buildjson = array('prayer_id' => $masterprayerid, 'owner_id' => $masterownerid, 'create_date' => $masterprayercreatedate, 'fullname' => $masterfullname, 'firstname' => $masterfirstname, 'lastname' => $masterlastname, 'title' => $masterprayertitle, 'pray_praise' => $masterpraypraise, 'answer' => $masterprayanswer, 'updated' => $masterprayerupdate, 'prayer_text' => $masterprayertext); 

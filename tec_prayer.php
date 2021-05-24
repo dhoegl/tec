@@ -502,7 +502,7 @@ require_once('includes/tec_footer.php');
                                 <div  class="card">
                                     <div class="card-body" id="viewpraytable">
                                         <h5 class="card-title" id="prayerType"></h5>
-                                        <p class="card-text"  id="prayerText"></p>
+                                        <p class="card-text text-left"  id="prayerText"></p>
                                     </div><!-- card-body -->
                                 </div><!-- card -->
                                 <div class="row px-2 d-flex justify-content-center">
