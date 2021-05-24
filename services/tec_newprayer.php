@@ -104,6 +104,9 @@ exit();
 		}
 	}
 	$mysql -> close();
+	echo "<script language='javascript'>";
+	echo "alert('Your Prayer Request has been submitted.\nOnce approved by your church elders, it will be posted for your church family to view and follow');";
+	echo "</script>";
 }
 header("location:../tec_myprayer.php");
 ?>
