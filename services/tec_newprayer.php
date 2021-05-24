@@ -12,6 +12,9 @@ if(!$_SESSION['logged in']) {
     require_once('../includes/event_logs_update.php');
 	if(isset($_POST['submitnewprayer'])) {
 		// Process new Prayer Request: 
+		echo "<script language='javascript'>";
+		echo "console.log('Made it to submitnewprayer');";
+		echo "</script>";
 		$prayer_owner = $_POST['requestorID'];
 		$prayer_name = $_POST['fullname'];
 		$prayer_onbehalfof = $_POST['onbehalfof'];
