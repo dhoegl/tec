@@ -13,8 +13,8 @@ exit();
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
-	// if(isset($_POST['submitnewprayer'])) 
-	// {
+	if(isset($_POST['submitnewprayer'])) 
+	{
 		// Process new Prayer Request: 
 		echo "<script language='javascript'>";
 		echo "console.log('Made it to submitnewprayer');";
@@ -106,5 +106,5 @@ exit();
 		}
 	}
 	$mysql -> close();
-// }
+}
 
