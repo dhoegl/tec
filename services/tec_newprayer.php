@@ -105,6 +105,6 @@ exit();
 	}
 	$mysql -> close();
 }
-header("location:tec_myprayer.php");
+header("location:../tec_myprayer.php");
 ?>
 
