@@ -46,7 +46,7 @@ if(!$_SESSION['logged in']) {
 				$masterprayerupdate = $masterrow['updated'];
 				$masterprayertext = $masterrow['prayertext'];
 // Append Prayer Update text to initial active prayer text
-                $updateprayerquery = "SELECT * FROM " . $_SESSION['prayerupdate'] . " WHERE prayer_id = '" . $prayerid . "' order by update_id";
+                $updateprayerquery = "SELECT * FROM " . $_SESSION['prayerupdate'] . " WHERE prayer_id = '" . $masterprayerid . "' order by update_id";
                 $updateprayerresult = $mysql->query($updateprayerquery) or die(" SQL query error at select from prayerupdate. Error #: " . $mysql->errno . " : " . $mysql->error);
                 $updateprayercount = $updateprayerresult->num_rows;
                 if(!$updateprayercount == 0) {
