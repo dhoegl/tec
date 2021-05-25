@@ -30,21 +30,23 @@ if(!$_SESSION['logged in']) {
 //		$messageNO = "NO - Prayer is NOT being followed by user";
 		$messageYES = "YES";
 		$messageNO = "NO";
-        echo "<script language='javascript'>";
-        echo "console.log('Inside tec_check_unfollow_table.php. unfollowcount = " . $unfollowcount . "');";
-        echo "</script>";
+        // echo "<script language='javascript'>";
+        // echo "console.log('Inside tec_check_unfollow_table.php. unfollowcount = " . $unfollowcount . "');";
+        // echo "</script>";
     
 		if ($unfollowcount == 0)
-//      Denotes that the user has NOT selected to unfollow the selected prayer rqeuest (e.g., prayer_unfollow table does not contain entry corresponding to an unfollowed prayer request by user).
+//      Value of '0' denotes that the user has NOT selected to unfollow the selected prayer rqeuest
+//      (e.g., prayer_unfollow table does not contain entry corresponding to an unfollowed prayer request by user).
+//      All prayer requests default to FOLLOW unless this table has a corresponding entry for the selected user.
 		{
-			$message = array('Message' => $messageNO);
+			$message = array('Message' => $messageYES);
 			array_push($unfollowarray, $message);
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
 			echo json_encode($unfollowarray); 
 		}
 		else {
-			$message = array('Message' => $messageYES);
+			$message = array('Message' => $messageNO);
 			array_push($unfollowarray, $message); 
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
