@@ -13,7 +13,7 @@ if(!$_SESSION['logged in']) {
     require_once('../tec_dbconnect.php');
     include('../includes/event_logs_update.php');
 
-	if ( !isset($_POST['unfollowselect']) || !isset($_POST['unfollowprayerID']) || !isset($_POST['unfollowprayerWho']) || !isset($_POST['unfollowprayerDir'] )) {
+	if ( !isset($_POST['unfollowselect']) || !isset($_POST['unfollowprayerID']) || !isset($_POST['unfollowprayerWho']) || !isset($_POST['unfollowprayerDir']) || !isset($_POST['unfollowprayerLoginID'])) {
 		 echo 'Required data is missing';
 		 return;
 	}
