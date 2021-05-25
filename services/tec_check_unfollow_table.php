@@ -30,6 +30,10 @@ if(!$_SESSION['logged in']) {
 //		$messageNO = "NO - Prayer is NOT being followed by user";
 		$messageYES = "YES";
 		$messageNO = "NO";
+        echo "<script language='javascript'>";
+        echo "console.log('Inside tec_check_unfollow_table.php. unfollowcount = " . $unfollowcount . "');";
+        echo "</script>";
+    
 		if ($unfollowcount == 0)
 //      Denotes that the user has NOT selected to unfollow the selected prayer rqeuest (e.g., prayer_unfollow table does not contain entry corresponding to an unfollowed prayer request by user).
 		{
