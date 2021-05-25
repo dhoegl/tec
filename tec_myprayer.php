@@ -423,7 +423,7 @@ require_once('includes/tec_footer.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="EditExistPrayerModalLabel">Update My Prayer Request<br>Fill in stuff and click <strong>Update</strong> or <strong>Answered</strong>.</h5>
+                <h5 class="modal-title" id="EditExistPrayerModalLabel">Modify Your Prayer Request<br>Click <strong>Update</strong> or <strong>Answered</strong> to make changes.</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
