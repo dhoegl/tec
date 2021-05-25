@@ -274,21 +274,21 @@ jQ9(document).ready(function () {
             // console.log("prayerText (this jQ9 entry) = " + prayerText);
 
 // Check if prayer is being followed by user - Toggle the follow_button text
-        var checkfollow = 'services/tec_check_follow_table.php';
-        jQ9.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
+        var checkunfollow = 'services/tec_check_unfollow_table.php';
+        jQ9.getJSON(checkfollow, {unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerLoginID : $loggedinLoginID
 			}, function (data) {
 				console.log(data);
-				console.log("Data Message = " + data.followmessage);
-                jQ9.each(data.followmessage, function (i, rep) {
+				console.log("Data Message = " + data.unfollowmessage);
+                jQ9.each(data.unfollowmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
-                    jQ9("#prayerFollow").html("YES");
-                    jQ9("#follow_button").html("Click to Unfollow");
-				};
-				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
                     jQ9("#prayerFollow").html("NO");
-					jQ9("#follow_button").html("Click to Follow");
+                    jQ9("#follow_button").html("Click to Follow");
+				};
+				if ('no' === rep.Message.toLowerCase()) {
+					console.log("YES prayer is being followed");
+                    jQ9("#prayerFollow").html("YES");
+					jQ9("#follow_button").html("Click to Unfollow");
 				}
 			});
 		});
