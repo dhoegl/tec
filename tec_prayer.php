@@ -391,7 +391,11 @@ require_once('includes/tec_footer.php');
                             <li>Navigate pages using the Page Selector at the bottom of the page</li>
                             <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
                             <li>Click the <span class="btn btn-success btn-sm">Details</span> button on a row below to see more information about a specific prayer request</li>
-                            <li>On the Prayer Request Details popup, click the <span class="btn btn-primary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
+                            <li>On the Prayer Request Details popup</li>
+                            <ul>
+                                <li>Click the <span class="btn btn-primary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
+                                <li>Click the <span class="btn btn-success btn-sm">Email</span> button to send a caring note to the requestor</li>
+                            </ul>
                         </ul>
                     </div><!-- card -->
                 </div><!-- col-sm-12 -->
