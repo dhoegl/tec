@@ -24,9 +24,13 @@ if(!$_SESSION['logged in']) {
 		$unfollow_prayerDir = $_POST['unfollowprayerDir'];
 		$unfollow_prayerLoginID = $_POST['followprayerLoginID'];
 		if($unfollowselect == 'dofollow') {
-			// echo "<script language='javascript'>";
-			// echo "console.log('NO I am NOT following this prayer request');";
-			// echo "</script>";
+			echo "<script language='javascript'>";
+			echo "console.log('unfollowselect = " . $unfollowselect . "');";
+			echo "console.log('unfollow_prayerID = " . $unfollow_prayerID . "');";
+			echo "console.log('unfollow_prayerWho = " . $unfollow_prayerWho . "');";
+			echo "console.log('unfollow_prayerDir = " . $unfollow_prayerDir . "');";
+			echo "console.log('unfollow_prayerLoginID = " . $unfollow_prayerLoginID . "');";
+			echo "</script>";
 		// If not following, and Follow button clicked, this means that user wants to follow this prayer request
         // Remove entry from the prayer_unfollow table
  			$deletefollow = "DELETE from " . $_SESSION['prayerunfollow'] . " WHERE prayer_id = '$unfollow_prayerID' and login_id = '$unfollow_prayerLoginID'";			
