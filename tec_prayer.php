@@ -257,13 +257,13 @@ jQ9(document).ready(function () {
 // ************************ p_text extracted from jQ19 above ****************************
             prayerText = p_text[prayerID];
             jQ9("#prayerText").html(prayerText);
-            console.log("prayerID (this jQ9 entry) = " + prayerID);
-            console.log("prayerDate (this jQ9 entry) = " + prayerDate);
-            console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
-            console.log("prayerWho (this jQ9 entry) = " + prayerWho);
-            console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
-            console.log("prayerType (this jQ9 entry) = " + prayerType);
-            console.log("prayerText (this jQ9 entry) = " + prayerText);
+            // console.log("prayerID (this jQ9 entry) = " + prayerID);
+            // console.log("prayerDate (this jQ9 entry) = " + prayerDate);
+            // console.log("prayerAnswer (this jQ9 entry) = " + prayerAnswer);
+            // console.log("prayerWho (this jQ9 entry) = " + prayerWho);
+            // console.log("prayerTitle (this jQ9 entry) = " + prayerTitle);
+            // console.log("prayerType (this jQ9 entry) = " + prayerType);
+            // console.log("prayerText (this jQ9 entry) = " + prayerText);
 
 // Check if prayer is being followed by user - Toggle the follow_button text
         var checkfollow = 'services/tec_check_follow_table.php';
@@ -376,6 +376,7 @@ require_once('includes/tec_footer.php');
                             My Requests
                         </button>
                 </div> -->
+            </div><!-- row -->
         <div class="collapse" id="collapseExample">
             <div class="row">
                 <div class="col-sm-12">
@@ -390,7 +391,7 @@ require_once('includes/tec_footer.php');
                             <li>Navigate pages using the Page Selector at the bottom of the page</li>
                             <li>Click the <span><img src="https://datatables.net/examples/resources/details_open.png"></img></span> icon to display more details</li>
                             <li>Click the <span class="btn btn-success btn-sm">Details</span> button on a row below to see more information about a specific prayer request</li>
-                            <li>On the Prayer Request Details popup, click the <span class="btn btn-secondary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
+                            <li>On the Prayer Request Details popup, click the <span class="btn btn-primary btn-sm">Follow/Unfollow</span> button to follow or unfollow a prayer request (following will ensure you receive all updates to existing prayer requests)</li>
                         </ul>
                     </div><!-- card -->
                 </div><!-- col-sm-12 -->
