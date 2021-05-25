@@ -23,20 +23,20 @@ if(!$_SESSION['logged in']) {
 		$unfollow_prayerWho = $_POST['unfollowprayerWho'];
 		$unfollow_prayerDir = $_POST['unfollowprayerDir'];
 		$unfollow_prayerLoginID = $_POST['followprayerLoginID'];
-		if($unfollowselect == 'yes') {
-			echo "<script language='javascript'>";
-			echo "console.log('NO I am NOT following this prayer request');";
-			echo "</script>";
-		// If YES, and Unfollow button clicked, this means that user no longer wants to follow this prayer request
+		if($unfollowselect == 'no') {
+			// echo "<script language='javascript'>";
+			// echo "console.log('NO I am NOT following this prayer request');";
+			// echo "</script>";
+		// If NO, and Unfollow button clicked, this means that user no longer wants to follow this prayer request
  			$deletefollow = "DELETE from " . $_SESSION['prayerunfollow'] . " WHERE prayer_id = '$unfollow_prayerID' and login_id = '$unfollow_prayerLoginID'";			
 			$deletefollowexe = $mysql->query($deletefollow)or die("A database error has occurred when deleting prayer_follow entry. Please notify your administrator with the following. Error #: " . $mysql->errno . " : " . $mysql->error);
 			eventLogUpdate('prayer', 'UserID: ' . $_SESSION['user_id'], 'User requested to Unfollow Prayer Request' , 'PrayerID: ' . $unfollow_prayerID);
 		}
 		else { // unfollow - delete follow entry
-			echo "<script language='javascript'>";
-			echo "console.log('NO I am NOT following this prayer request');";
-			echo "</script>";
-		// If NO, and Follow button clicked, this means that user wants to follow this prayer request
+			// echo "<script language='javascript'>";
+			// echo "console.log('NO I am NOT following this prayer request');";
+			// echo "</script>";
+		// If YES, and Follow button clicked, this means that user wants to follow this prayer request
 			$accessquery = "INSERT INTO " . $_SESSION['prayerunfollow'] . "(prayer_id, login_id, username, idDirectory) VALUES ('" . $unfollow_prayerID . "', '" . $_SESSION['user_id'] . "', '" . $unfollow_prayerWho . "', '" . $unfollow_prayerDir . "')";		
 			$logresult = $mysql->query($accessquery) or die(" SQL query prayer follow table insert error. Error #: " . $mysql->errno . " : " . $mysql->error);
 			eventLogUpdate('prayer', 'UserID: ' . $_SESSION['user_id'], 'User requested to Follow Prayer Request' , 'PrayerID: ' . $unfollow_prayerID);

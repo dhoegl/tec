@@ -148,7 +148,7 @@ if(!$_SESSION['logged in']) {
 		// 		if ('yes' === rep.Message.toLowerCase()) {
 		// 			console.log("YES prayer is being followed");
                 // Update prayer follow table - initialize to Follow as default state
-                var $unfollowselect = 'yes';
+                var $unfollowselect = 'no';
                         var request = jQ20.ajax({
                         url: 'services/tec_update_unfollow_table.php',
                         type: 'POST',
@@ -161,7 +161,7 @@ if(!$_SESSION['logged in']) {
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
                 // Update prayer unfollow table - initialize to Follow as default state
-                var $unfollowselect = 'no';
+                var $unfollowselect = 'yes';
                         var request = jQ20.ajax({
                         url: 'services/tec_update_unfollow_table.php',
                         type: 'POST',

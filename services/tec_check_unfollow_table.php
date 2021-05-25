@@ -30,6 +30,8 @@ if(!$_SESSION['logged in']) {
 //		$messageNO = "NO - Prayer is NOT being followed by user";
 		$messageYES = "YES";
 		$messageNO = "NO";
+        $following = "FOLLOWING";
+        $notfollowing = "NOTFOLLOWING";
         // echo "<script language='javascript'>";
         // echo "console.log('Inside tec_check_unfollow_table.php. unfollowcount = " . $unfollowcount . "');";
         // echo "</script>";
@@ -40,7 +42,7 @@ if(!$_SESSION['logged in']) {
 //      All prayer requests default to FOLLOW unless this table has a corresponding entry for the selected user.
 		{
 //      MessageYES indicates that prayer request is being followed by user
-			$message = array('Message' => $messageYES);
+			$message = array('Message' => $messageYES, 'Status' => $following);
 			array_push($unfollowarray, $message);
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
@@ -48,7 +50,7 @@ if(!$_SESSION['logged in']) {
 		}
 		else {
 //      MessageNO indicates that prayer request is NOT being followed by user
-$message = array('Message' => $messageNO);
+            $message = array('Message' => $messageNO, 'Status' => $notfollowing);
 			array_push($unfollowarray, $message); 
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
