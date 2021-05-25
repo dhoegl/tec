@@ -33,14 +33,14 @@ if(!$_SESSION['logged in']) {
 		if ($unfollowcount == 0)
 //      Denotes that the user has NOT selected to unfollow the selected prayer rqeuest (e.g., prayer_unfollow table does not contain entry corresponding to an unfollowed prayer request by user).
 		{
-			$message = array('Message' => $messageYES);
+			$message = array('Message' => $messageNO);
 			array_push($unfollowarray, $message);
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
 			echo json_encode($unfollowarray); 
 		}
 		else {
-			$message = array('Message' => $messageNO);
+			$message = array('Message' => $messageYES);
 			array_push($unfollowarray, $message); 
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');
