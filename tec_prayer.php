@@ -125,65 +125,60 @@ if(!$_SESSION['logged in']) {
 <!--***************************** Process the Prayer 'Follow' button click action ***********************************-->
 <script type="text/javascript">
 	var jQ20 = jQuery.noConflict();
+    var unfollowresponse;
 	jQ20(document).ready(function() {
 // Follow button
-	jQ20("#follow_button").click(function () {
-		console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with Login ID = " + $loggedinLoginID);
+        jQ20("#follow_button").click(function () {
+            console.log("prayerFollow button was pressed for " + $clickbuttonid + ": I am this user " + $loggedusername + " with Login ID = " + $loggedinLoginID);
 
 // Check if prayer is being followed by user - Toggle the follow_button text
-        var checkunfollow = 'services/tec_check_unfollow_table.php';
-			jQ20.getJSON(checkunfollow, {unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerLoginID : $loggedinLoginID
-			}, function (data) {
-				console.log(data);
-				console.log("Data Message = " + data.unfollowmessage);
-			jQ20.each(data.unfollowmessage, function (i, rep) {
-				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
-                    if ('following' === rep.Status.toLowerCase()) {
-					console.log("Status = FOLLOWING");
+// Update prayer unfollow table - All prayer requests default to being followed unless entry is added to prayer_unfollow table
+            var checkunfollow = 'services/tec_check_unfollow_table.php';
+                jQ20.getJSON(checkunfollow, {unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerLoginID : $loggedinLoginID
+                }, function (data) {
+                    console.log(data);
+                    console.log("Data Message = " + data.unfollowmessage);
+                jQ20.each(data.unfollowmessage, function (i, rep) {
+                    if ('yes' === rep.Message.toLowerCase()) {
+// IF prayer is being followed (DEFAULT) and Follow button is clicked, this means that the user wishes to UNFOLLOW the prayer request
+                        console.log("YES prayer is being followed");
+                        if ('following' === rep.Status.toLowerCase()) {
+                        console.log("Status = FOLLOWING");
+                        };
+                    var $unfollowselect = 'donotfollow';
+                            var request = jQ20.ajax({
+                            url: 'services/tec_update_unfollow_table.php',
+                            type: 'POST',
+                            // dataType: 'json',
+                            data: { unfollowselect: $unfollowselect, unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerDir : $loggedidDirectory, unfollowprayerLoginID : $loggedinLoginID}
+                            });
+                            request.done(function (unfollowresponse) {
+                                jQ20("#prayerFollow").html("NO");
+                                jQ20("#follow_button").html("Click to Follow");
+                            })
                     };
-
-
-		// var checkfollow = 'services/tec_check_follow_table.php';
-		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
-		// 	}, function (data) {
-		// 		console.log(data);
-		// 		console.log("Data Message = " + data.followmessage);
-		// 	jQ20.each(data.followmessage, function (i, rep) {
-		// 		if ('yes' === rep.Message.toLowerCase()) {
-		// 			console.log("YES prayer is being followed");
-                // Update prayer follow table - initialize to Follow as default state
-                var $unfollowselect = 'donotfollow';
-                        var request = jQ20.ajax({
-                        url: 'services/tec_update_unfollow_table.php',
-                        type: 'POST',
-                        // dataType: 'json',
-                        data: { unfollowselect: $unfollowselect, unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerDir : $loggedidDirectory, unfollowprayerLoginID : $loggedinLoginID}
-                        });
-                    jQ20("#prayerFollow").html("NO");
-					jQ20("#follow_button").html("Click to Follow");
-				};
-				if ('no' === rep.Message.toLowerCase()) {
-					console.log("NO prayer is NOT being followed");
-                    if ('notfollowing' === rep.Status.toLowerCase()) {
-                        console.log("Status = NOTFOLLOWING");
+                    if ('no' === rep.Message.toLowerCase()) {
+// IF prayer is NOT being followed (Entry exists in prayer_unfollow table) and Follow button is clicked, this means that the user wishes to FOLLOW the prayer request
+                        console.log("NO prayer is NOT being followed");
+                        if ('notfollowing' === rep.Status.toLowerCase()) {
+                            console.log("Status = NOTFOLLOWING");
+                        };
+// Update prayer unfollow table - initialize to Follow as default state
+                    var $unfollowselect = 'dofollow';
+                            var request = jQ20.ajax({
+                            url: 'services/tec_update_unfollow_table.php',
+                            type: 'POST',
+                            // dataType: 'json',
+                            data: { unfollowselect: $unfollowselect, unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerDir : $loggedidDirectory, unfollowprayerLoginID : $loggedinLoginID}
+                            });
+                            request.done(function (unfollowresponse) {
+                                jQ20("#prayerFollow").html("YES");
+                                jQ20("#follow_button").html("Click to Unfollow");
+                            })
                     };
-                // Update prayer unfollow table - initialize to Follow as default state
-                var $unfollowselect = 'dofollow';
-                        var request = jQ20.ajax({
-                        url: 'services/tec_update_unfollow_table.php',
-                        type: 'POST',
-                        // dataType: 'json',
-                        data: { unfollowselect: $unfollowselect, unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerDir : $loggedidDirectory, unfollowprayerLoginID : $loggedinLoginID}
-                        });
-                    jQ20("#prayerFollow").html("YES");
-					jQ20("#follow_button").html("Click to Unfollow");
-				}
-			});
-		});
-
-	});
-
+                });
+            });
+        });
 	});
 </script>
 
