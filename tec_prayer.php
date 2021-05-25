@@ -275,7 +275,7 @@ jQ9(document).ready(function () {
 
 // Check if prayer is being followed by user - Toggle the follow_button text
         var checkunfollow = 'services/tec_check_unfollow_table.php';
-        jQ9.getJSON(checkfollow, {unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerLoginID : $loggedinLoginID
+        jQ9.getJSON(checkunfollow, {unfollowprayerID: $clickbuttonid, unfollowprayerWho : $loggedusername, unfollowprayerLoginID : $loggedinLoginID
 			}, function (data) {
 				console.log(data);
 				console.log("Data Message = " + data.unfollowmessage);
