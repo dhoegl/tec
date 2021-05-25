@@ -139,6 +139,11 @@ if(!$_SESSION['logged in']) {
 			jQ20.each(data.unfollowmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
 					console.log("YES prayer is being followed");
+                    if ('following' === rep.Status.toLowerCase()) {
+					console.log("Status = FOLLOWING");
+                    };
+
+
 		// var checkfollow = 'services/tec_check_follow_table.php';
 		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
 		// 	}, function (data) {
@@ -148,7 +153,7 @@ if(!$_SESSION['logged in']) {
 		// 		if ('yes' === rep.Message.toLowerCase()) {
 		// 			console.log("YES prayer is being followed");
                 // Update prayer follow table - initialize to Follow as default state
-                var $unfollowselect = 'no';
+                var $unfollowselect = 'donotfollow';
                         var request = jQ20.ajax({
                         url: 'services/tec_update_unfollow_table.php',
                         type: 'POST',
@@ -160,8 +165,11 @@ if(!$_SESSION['logged in']) {
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
+                    if ('notfollowing' === rep.Status.toLowerCase()) {
+                        console.log("Status = NOTFOLLOWING");
+                    };
                 // Update prayer unfollow table - initialize to Follow as default state
-                var $unfollowselect = 'yes';
+                var $unfollowselect = 'dofollow';
                         var request = jQ20.ajax({
                         url: 'services/tec_update_unfollow_table.php',
                         type: 'POST',
@@ -285,11 +293,17 @@ jQ9(document).ready(function () {
                     jQ9("#prayerFollow").html("YES");
                     jQ9("#follow_button").html("Click to Unfollow");
 				};
+				if ('following' === rep.Status.toLowerCase()) {
+					console.log("Status = FOLLOWING");
+                };
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
                     jQ9("#prayerFollow").html("NO");
 					jQ9("#follow_button").html("Click to Follow");
 				}
+				if ('notfollowing' === rep.Status.toLowerCase()) {
+					console.log("Status = NOTFOLLOWING");
+                };
 			});
 		});
     // Display the Prayer Request Details popup
