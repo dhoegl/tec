@@ -22,7 +22,7 @@ if(!$_SESSION['logged in']) {
 		$unfollow_prayerID = $_POST['unfollowprayerID'];
 		$unfollow_prayerWho = $_POST['unfollowprayerWho'];
 		$unfollow_prayerDir = $_POST['unfollowprayerDir'];
-		$unfollow_prayerLoginID = $_POST['followprayerLoginID'];
+		$unfollow_prayerLoginID = $_POST['unfollowprayerLoginID'];
 		if($unfollowselect == 'dofollow') {
 			echo "<script language='javascript'>";
 			echo "console.log('unfollowselect = " . $unfollowselect . "');";
