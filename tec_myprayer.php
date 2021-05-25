@@ -449,7 +449,7 @@ require_once('includes/tec_footer.php');
                                     <div class="col-8 text-left"><span id="ModalEditprayerTitle"></span></div>
                                 </div><!-- row -->
                                 <div class="row">
-                                    <div class="col-4 text-right font-weight-bold">Updated:</div>
+                                    <div class="col-4 text-right font-weight-bold">Last Updated:</div>
                                     <div class="col-2 text-left"><span id="ModalEditprayerUpdate"></span></div>
                                     <div class="col-3 text-right font-weight-bold">Answered:</div>
                                     <div class="col-3 text-left"><span id="ModalEditprayerAnswer"></span></div>
