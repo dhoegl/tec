@@ -282,13 +282,13 @@ jQ9(document).ready(function () {
                 jQ9.each(data.unfollowmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
 					console.log("YES prayer is being followed");
-                    jQ9("#prayerFollow").html("NO");
-                    jQ9("#follow_button").html("Click to Follow");
+                    jQ9("#prayerFollow").html("YES");
+                    jQ9("#follow_button").html("Click to Unfollow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
 					console.log("NO prayer is NOT being followed");
-                    jQ9("#prayerFollow").html("YES");
-					jQ9("#follow_button").html("Click to Unfollow");
+                    jQ9("#prayerFollow").html("NO");
+					jQ9("#follow_button").html("Click to Follow");
 				}
 			});
 		});
