@@ -39,6 +39,7 @@ if(!$_SESSION['logged in']) {
 //      (e.g., prayer_unfollow table does not contain entry corresponding to an unfollowed prayer request by user).
 //      All prayer requests default to FOLLOW unless this table has a corresponding entry for the selected user.
 		{
+//      MessageYES indicates that prayer request is being followed by user
 			$message = array('Message' => $messageYES);
 			array_push($unfollowarray, $message);
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
@@ -46,7 +47,8 @@ if(!$_SESSION['logged in']) {
 			echo json_encode($unfollowarray); 
 		}
 		else {
-			$message = array('Message' => $messageNO);
+//      MessageNO indicates that prayer request is NOT being followed by user
+$message = array('Message' => $messageNO);
 			array_push($unfollowarray, $message); 
 			$unfollowarray = array('unfollowmessage' => $unfollowarray); 
 			header('Content-type: application/json');

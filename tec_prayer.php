@@ -138,7 +138,7 @@ if(!$_SESSION['logged in']) {
 				console.log("Data Message = " + data.unfollowmessage);
 			jQ20.each(data.unfollowmessage, function (i, rep) {
 				if ('yes' === rep.Message.toLowerCase()) {
-					console.log("NO prayer is NOT being followed");
+					console.log("YES prayer is being followed");
 		// var checkfollow = 'services/tec_check_follow_table.php';
 		// 	jQ20.getJSON(checkfollow, {followprayerID: $clickbuttonid, followprayerWho : $loggedusername, followprayerLoginID : $loggedinLoginID
 		// 	}, function (data) {
@@ -159,7 +159,7 @@ if(!$_SESSION['logged in']) {
 					jQ20("#follow_button").html("Click to Follow");
 				};
 				if ('no' === rep.Message.toLowerCase()) {
-					console.log("YES prayer is being followed");
+					console.log("NO prayer is NOT being followed");
                 // Update prayer unfollow table - initialize to Follow as default state
                 var $unfollowselect = 'no';
                         var request = jQ20.ajax({
