@@ -46,6 +46,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
                 }
     
             break;
+            case 'prayer_request_user': // from prayer_request_to_sendmail.js
         default:
     }
 };

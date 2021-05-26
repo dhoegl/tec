@@ -48,7 +48,9 @@ exit();
 			eventLogUpdate('prayer', "UserID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
 			if($prayer_visible == '3') //All Church
 			{
-			/* send prayer request email to administrators for approval */
+			// send prayer request email to administrators for approval
+			prayerrequestnew($prayer_email_from, $prayer_owner, $prayer_name, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor)
+
 			// $praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
 			// $praymailadmins = @mysql_query("SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'");
 			// $praymaillink = "https://trinityevangel.ourfamilyconnections.org";								
