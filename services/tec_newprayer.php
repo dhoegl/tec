@@ -8,7 +8,7 @@ if(!$_SESSION['logged in']) {
 	echo "<script language='javascript'>";
 	echo "console.log('Made it to tec_newprayer script');";
 	echo "</script>";
-exit();
+	exit();
 }
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
@@ -49,7 +49,7 @@ exit();
 			if($prayer_visible == '3') //All Church
 			{
 			// send prayer request email to administrators for approval
-			prayerrequestnew($prayer_email_from, $prayer_owner, $prayer_name, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor)
+// prayerrequestnew($prayer_email_from, $prayer_owner, $prayer_name, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor);
 
 			// $praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
 			// $praymailadmins = @mysql_query("SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'");
@@ -82,9 +82,7 @@ exit();
 			// 	$praymailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 			// 	mail($praymailto,$praymailsubject,$praymailmessage,$praymailheaders);
 			// }
-		}
-		else 
-		{
+			}
 			if($prayer_visible == '1') //Elders Only
 			{
 				/* send prayer request to all Elders */
@@ -125,7 +123,6 @@ exit();
 		echo "window.location = '../tec_myprayer.php';";
 		echo "</script>";
 	}
-}
 // echo "<script language='javascript'>";
 // echo "alert('Bad request to new prayer request script. Alert your Ourfamilyconnections admin with this error message.');";
 // echo "window.location = '../tec_myprayer.php';";
