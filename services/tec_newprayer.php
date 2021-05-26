@@ -13,9 +13,27 @@ if(!$_SESSION['logged in']) {
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
+	// Enable sendmail script to notify Admins re: register request
+	echo "<script type='text/javascript' src='../js/prayer_request_to_sendmail.js'></script>";
+	// Extract email theme elements from config.xml
+	if (file_exists("../_tenant/Config.xml")) {
+		$xml = simplexml_load_file("../_tenant/Config.xml");
+		$themename = $xml->customer->name;
+		$themedomain = $xml->customer->domain;
+		$themetitle = $xml->customer->hometitle;
+		$themecolor = $xml->customer->banner_color;
+		$themeforecolor = $xml->customer->banner_forecolor;
+	} else {
+		echo "<script language='javascript'>";
+		echo "console.log('Failed to open ../_tenant/Config.xml');";
+		echo "</script>";
+		// exit("Failed to open ../_tenant/Config.xml.");
+	}    
+
 	if(isset($_POST['submitnewprayer'])) 
 	{
 		// Process new Prayer Request: 
+		$LoginID = $_SESSION['user_id'];
 		$prayer_owner = $_POST['requestorID'];
 		$prayer_name = $_POST['fullname'];
 		$prayer_onbehalfof = $_POST['onbehalfof'];
@@ -49,7 +67,13 @@ if(!$_SESSION['logged in']) {
 			if($prayer_visible == '3') //All Church
 			{
 			// send prayer request email to administrators for approval
-// prayerrequestnew($prayer_email_from, $prayer_owner, $prayer_name, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor);
+			echo "
+				<script type='text/javascript'>
+				prayerrequestnew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+				</script>
+		    ";
+
+			
 
 			// $praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
 			// $praymailadmins = @mysql_query("SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'");

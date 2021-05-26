@@ -3,7 +3,7 @@
 //Called from tec_newprayer.php
 // Last Updated 20210525
 
-function prayerrequestnew(email_addr, first_submit, last_submit, user_submit, login_ID, themename, themedomain, themetitle, themecolor, themeforecolor) {
+function prayerrequestnew(prayeremailfrom, prayerowner, prayername, LoginID, themename, themedomain, themetitle, themecolor, themeforecolor) {
     console.log("Made it to prayer_request_to_sendmail script ");
     // console.log("email address = " + email_addr);
     // console.log("first name = " + first_submit);
@@ -21,10 +21,10 @@ function prayerrequestnew(email_addr, first_submit, last_submit, user_submit, lo
     //Updated
     var jQpwr = jQuery.noConflict();
     var request = jQpwr.ajax({
-        url: '../services/tec_sendmail.php',
+        url: '../services/tec_sendmail_new.php',
         type: 'POST',
         // dataType: 'json',
-        data: { mailtype: 'prayer_request_user', email_address: email_addr, first_name: first_submit, last_name: last_submit, user_name: user_submit, login_id: login_ID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
+        data: { mailtype: 'prayer_request_user', prayer_email_address: prayeremailfrom, requestor_ID: prayerowner, full_name: prayername, login_id: LoginID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
     });
     request.done(function (data, textStatus, jqXHR) {
         //  Get the result
@@ -32,8 +32,8 @@ function prayerrequestnew(email_addr, first_submit, last_submit, user_submit, lo
         var testdata = data;
         var teststat = textStatus;
         teststat2 = jqXHR.responseText;
-        console.log("ajax response data for registration request = " + teststat);
-        console.log("ajax response text for registration request = " + teststat2);
+        console.log("ajax response data for prayer request = " + teststat);
+        console.log("ajax response text for prayer request = " + teststat2);
         alert("Your request has been successfully submitted.\nPlease allow 24-48 hours for our administrators to approve your request.");
         $welcomepage = window.location.hostname;
         window.locaation = $welcomepage;
@@ -47,9 +47,9 @@ function prayerrequestnew(email_addr, first_submit, last_submit, user_submit, lo
             var result = "fail";
             var teststat = textStatus;
             var teststat2 = jqXHR.responseText;
-            console.log("ajax fail response data for registration request = " + teststat);
-            console.log("ajax fail response text for registration request = " + teststat2);
-            alert("Registration Request Failure: " + teststat + " at " + teststat2);
+            console.log("ajax fail response data for prayer request = " + teststat);
+            console.log("ajax fail response text for prayer request = " + teststat2);
+            alert("Prayer Request Failure: " + teststat + " at " + teststat2);
             // reportError(teststat);
             //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
             // location.reload();
