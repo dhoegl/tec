@@ -71,7 +71,7 @@ if(!$_SESSION['logged in']) {
 				// send prayer request email to administrators for approval
 				echo "
 					<script type='text/javascript'>
-					prayerrequestnew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+					prayerrequestnew('$newprayerID', '$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
 					</script>
 				";
 			}
@@ -80,7 +80,7 @@ if(!$_SESSION['logged in']) {
 				// send prayer request email to church elders for them to contact the requestor directly
 				echo "
 					<script type='text/javascript'>
-					prayerrequesteldernew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor', '$prayer_title', '$prayer_text');
+					prayerrequesteldernew('$newprayerID', '$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor', '$prayer_title', '$prayer_text');
 					</script>
 				";
 				/* send prayer request to all Elders */
@@ -102,25 +102,25 @@ if(!$_SESSION['logged in']) {
 		}
 	}
 	$mysql -> close();
-	switch($prayer_visible) {
+	// switch($prayer_visible) {
 		// case "3": // Alert popup for all church prayer request - removed in favor of the prayer_request_to_sendmail.js alert is working
 		// 	echo "<script language='javascript'>";
 		// 	echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
 		// 	echo "window.location = '../tec_myprayer.php';";
 		// 	echo "</script>";
 		// 	break;
-		case "1":
-			echo "<script language='javascript'>";
-			echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
-			echo "window.location = '../tec_myprayer.php';";
-			echo "</script>";
-			break;
-		default:
-		echo "<script language='javascript'>";
-		echo "alert('Unknown prayer request visibility. Please re-submit your request');";
-		echo "window.location = '../tec_myprayer.php';";
-		echo "</script>";
-	}
+	// 	case "1":
+	// 		echo "<script language='javascript'>";
+	// 		echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
+	// 		echo "window.location = '../tec_myprayer.php';";
+	// 		echo "</script>";
+	// 		break;
+	// 	default:
+	// 	echo "<script language='javascript'>";
+	// 	echo "alert('Unknown prayer request visibility. Please re-submit your request');";
+	// 	echo "window.location = '../tec_myprayer.php';";
+	// 	echo "</script>";
+	// }
 // echo "<script language='javascript'>";
 // echo "alert('Bad request to new prayer request script. Alert your Ourfamilyconnections admin with this error message.');";
 // echo "window.location = '../tec_myprayer.php';";

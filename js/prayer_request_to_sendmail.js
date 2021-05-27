@@ -3,7 +3,7 @@
 //Called from tec_newprayer.php
 // Last Updated 20210525
 
-function prayerrequestnew(prayeremailfrom, prayerowner, prayername, LoginID, themename, themedomain, themetitle, themecolor, themeforecolor) {
+function prayerrequestnew(prayerID, prayeremailfrom, prayerowner, prayername, LoginID, themename, themedomain, themetitle, themecolor, themeforecolor) {
     console.log("Made it to prayer_request_to_sendmail script ");
     // console.log("email address = " + email_addr);
     // console.log("first name = " + first_submit);
@@ -24,7 +24,7 @@ function prayerrequestnew(prayeremailfrom, prayerowner, prayername, LoginID, the
         url: '../services/tec_sendmail_new.php',
         type: 'POST',
         // dataType: 'json',
-        data: { mailtype: 'prayer_request_church', prayer_email_address: prayeremailfrom, requestor_ID: prayerowner, full_name: prayername, login_id: LoginID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
+        data: { mailtype: 'prayer_request_church', prayer_ID: prayerID, prayer_email_address: prayeremailfrom, requestor_ID: prayerowner, full_name: prayername, login_id: LoginID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor}
     });
     request.done(function (data, textStatus, jqXHR) {
         //  Get the result
@@ -56,7 +56,7 @@ function prayerrequestnew(prayeremailfrom, prayerowner, prayername, LoginID, the
             return result;
         });
 };
-function prayerrequesteldernew(prayeremailfrom, prayerowner, prayername, LoginID, themename, themedomain, themetitle, themecolor, themeforecolor, prayertitle, prayertext) {
+function prayerrequesteldernew(prayerID, prayeremailfrom, prayerowner, prayername, LoginID, themename, themedomain, themetitle, themecolor, themeforecolor, prayertitle, prayertext) {
     console.log("Made it to prayer_request_to_sendmail script ");
     // console.log("email address = " + email_addr);
     // console.log("first name = " + first_submit);
@@ -77,7 +77,7 @@ function prayerrequesteldernew(prayeremailfrom, prayerowner, prayername, LoginID
         url: '../services/tec_sendmail_new.php',
         type: 'POST',
         // dataType: 'json',
-        data: { mailtype: 'prayer_request_elder', prayer_email_address: prayeremailfrom, requestor_ID: prayerowner, full_name: prayername, login_id: LoginID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor, prayer_title: prayertitle, prayer_text: prayertext}
+        data: { mailtype: 'prayer_request_elder', prayer_ID: prayerID, prayer_email_address: prayeremailfrom, requestor_ID: prayerowner, full_name: prayername, login_id: LoginID, theme_name: themename, theme_domain: themedomain, theme_title: themetitle, theme_color: themecolor, theme_forecolor: themeforecolor, prayer_title: prayertitle, prayer_text: prayertext}
     });
     request.done(function (data, textStatus, jqXHR) {
         //  Get the result
