@@ -151,15 +151,15 @@ echo "</script>";
                 $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
-                if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
-                    }
-                else {
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
-                }
+                // $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                // if($emailworks){
+                //     eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
+                //     }
+                // else {
+                //     eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
+                // }
 
-                $response = "Mailtype received" . " = " . $mailtype;
+                // $response = "Mailtype received" . " = " . $mailtype;
             break;
                 // case 'approved_member':
             //     $maillink = $domain;
