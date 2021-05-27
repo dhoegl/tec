@@ -52,11 +52,13 @@ else {
             <div class="row d-flex justify-content-center text-center">
                 <div class="col-md-10">
                     <!-- Heading -->
-                    <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">TEC Family Connections</h2>
+                    <!-- <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">TEC Family Connections</h2> -->
+                    <h2 class="display-4 font-weight-bold white-text pt-5 mb-2" id="hometitle_text"></h2>
                     <!-- Divider -->
                     <hr class="hr-light">
                     <!-- Description -->
-                    <h4 class="white-text my-4">Access to your church family starts here!</h4>
+                    <h4 class="white-text my-4" id="homesubtitle_text"></h4>
+                    <!-- <h4 class="white-text my-4">Access to your church family starts here!</h4> -->
                     <h6 class="white-text my-4">Click on the navigation bar above to go to your desired page.</h4>
                 </div>
             </div>

@@ -185,7 +185,7 @@ $mailtype = "";
     }
     else
     {
-        $response = "ERROR on Mailtype at sendmail.php";
+        $response = "ERROR on Mailtype at tec_sendmail_new.php";
     };
 // echo $response;
 ?>
