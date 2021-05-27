@@ -17,8 +17,8 @@
       <logo>url('/_tenant/images/TEC App Icon 08.png')</logo> <!--Customer’s logo image-->
       <nav_logo>/_tenant/images/TEC App Icon 08.png</nav_logo> <!--Navigation Bar image-->
       <tagline>Reformed and Still Reforming</tagline> <!--Specialized text phrase pointing users to organization’s theme, motto, or value-proposition-->
-      <hometitle>###########################</hometitle> <!-- Highlighted Title Text on home screen -->
-      <homesubtitle>###########################</homesubtitle> <!-- Sub Title Text on home screen -->
+      <hometitle>TEC Family Connections</hometitle> <!-- Highlighted Title Text on home screen -->
+      <homesubtitle>Access to your church family starts here!</homesubtitle> <!-- Sub Title Text on home screen -->
       <special1>url('/_tenant/images/x.jpg')</special1> <!--Home Page Mission Statement Image-->
       <visibility1>Elders Only</visibility1> <!--Prayer Request visibility - Elders Only (for Church); Board Only (for School) -->
       <visibility2>Your church family (elder approval required)</visibility2> <!--Prayer Request destination - Church Family; School Family -->
