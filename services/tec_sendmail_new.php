@@ -183,6 +183,8 @@ echo "</script>";
             //     mail($mailto,$mailsubject,$mailmessage,$mailheaders);
             //     $response = "Mailtype received" . " = " . $mailtype;
             //     break;
+            default:
+            echo "none of the above";
         };
     }
     // else
