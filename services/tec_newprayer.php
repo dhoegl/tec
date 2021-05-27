@@ -13,6 +13,8 @@ if(!$_SESSION['logged in']) {
 	require_once('../tec_dbconnect.php');
     // Event Log  trap
     require_once('../includes/event_logs_update.php');
+	// Embed jquery script to enable prayer_request_to_sendmail.js
+	echo "<script type='text/javascript' src='//code.jquery.com/jquery-latest.min.js'></script>";
 	// Enable sendmail script to notify Admins re: register request
 	echo "<script type='text/javascript' src='../js/prayer_request_to_sendmail.js'></script>";
 	// Extract email theme elements from config.xml
