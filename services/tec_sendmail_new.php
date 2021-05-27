@@ -2,7 +2,7 @@
 // Send Mail scripts
 // Updated 2021/05/26
 // This function will send email to users and admins
-// Working on CASE: prayer_request_user right now
+// Fixed CASE: prayer_request_user
 require_once('../tec_dbconnect.php');
 // Event Log  trap
 require_once('../includes/event_logs_update.php');
@@ -26,6 +26,8 @@ $mailtype = "";
     $prayer_email = $_POST['prayer_email_address'];
     $prayer_source = $_POST['requestor_ID'];
     $prayer_name = $_POST['full_name'];
+    $prayer_title = $_POST['prayer_title'];
+    $prayer_text = $_POST['prayer_text'];
 echo "<script language='javascript'>";
 echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
 echo "</script>";
@@ -125,7 +127,7 @@ echo "</script>";
             //     }
             //     $response = "Mailtype received" . " = " . $mailtype;
             // break;
-            case 'prayer_request_user':
+            case 'prayer_request_church':
                 // Send notification email to All prayer admins (admin_praynotify = 1) for them to ACCEPT/REJECT the prayer request
                 $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'";
                 $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select prayer admins in Login Table. See tec_newprayer.php. Error : " . $mysql->errno . " : " . $mysql->error);
@@ -157,6 +159,48 @@ echo "</script>";
                     }
                 else {
                     eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
+                }
+
+                $response = "Mailtype received" . " = " . $mailtype;
+            break;
+            case 'prayer_request_elder':
+                // Send notification email to All elders (elder = Y) for them to contact the prayer requestor
+                $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE elder = 'Y'";
+                $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select prayer admins in Login Table. See tec_newprayer.php. Error : " . $mysql->errno . " : " . $mysql->error);
+                while ($mailrow = $mailquery->fetch_assoc())
+                {
+                    $mailtest = $mailrow['email_addr'];
+                    $mailto = $mailtest . " , " . $mailto;
+                }
+                $maillink = $domain;
+                $mailsubject = "Prayer Request (Elder-direct) from " . $prayer_name . "\n..";
+                $mailmessage = "<html><body>";
+                $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+                $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+                $mailmessage .= $customer . "</p>";
+                $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Elders</p>";
+                $mailmessage .= "<p><strong>" . $prayer_name . "</strong> has requested to submit a prayer request to you directly.</p>";
+                $mailmessage .= "<p>The prayer request is as follows:<br /></p>";
+                $mailmessage .= "<p><strong>Title: </strong> " . $prayer_title . "<br /></p>";
+                $mailmessage .= "<p><strong>Text: </strong> " . $prayer_text . "<br /><br /></p>";
+                $mailmessage .= "<p>You have two options:</p>";
+                $mailmessage .= "<ul><li>Send a direct email to the requestor at <mailto:" . $email . "></li>";
+                $mailmessage .= "<li>Contact them via text or phone call using their contact information located in the Directory.</li></ul>";
+                $mailmessage .= "<p>Login to our site using your credentials, and select the requestor's profile from the Directory.</p>";
+                $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
+                $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+                $mailmessage .= "</body></html>";
+                $mailfrom = "newprayerrequesttoelders@ourfamilyconnections.org";
+                $mailheaders = "From:" . $mailfrom . "\r\n";
+                $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+                $mailheaders .= "MIME-Version: 1.0\r\n";
+                $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                if($emailworks){
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to elders", "SUCCESS");
+                    }
+                else {
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to elders", "FAILED");
                 }
 
                 $response = "Mailtype received" . " = " . $mailtype;

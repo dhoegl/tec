@@ -68,49 +68,21 @@ if(!$_SESSION['logged in']) {
 			eventLogUpdate('prayer', "UserID: " .  $prayer_owner, "New Prayer Request submitted", "PrayerID: " . $newprayerID);
 			if($prayer_visible == '3') //All Church
 			{
-			// send prayer request email to administrators for approval
-			echo "
-				<script type='text/javascript'>
-				prayerrequestnew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
-				</script>
-		    ";
-
-			
-
-			// $praymailadmins = @mysql_query("SELECT admin_email FROM " . $_SESSION['admintablename'] . " WHERE prayernotify = '1'");
-			// $praymailadmins = @mysql_query("SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'");
-			// $praymaillink = "https://trinityevangel.ourfamilyconnections.org";								
-			// while($praymailrow = @mysql_fetch_assoc($praymailadmins))
-			// 	{
-			// 		$praymailtest = $praymailrow['email_addr'];									
-			// 		$praymailto = $praymailtest . " , " . $praymailto;
-			// 	}									
-			// $praymailsubject = "Prayer Request submitted to Our Family Connections"."\n..";
-			// $praymailmessage = "Hello! " . "<br /><strong>" . $prayer_name . "</strong> has requested approval to post a prayer request.<br /><br />Login to our site using your admin credentials, select the " . "<strong>Prayer Admin</strong>" . " menu item, and accept or reject their prayer request. <br />Details are below...<br />" . $praymaillink . "<br /><br /><strong>TITLE: </strong> " . $prayer_title . "<br /><br /><strong>REQUEST: </strong>" . $prayer_text . "." . "<br /><br />To send an email directly, use the following address:<br /><br />" . $prayer_email_from;
-			// $praymailfrom = "prayerrequest@ourfamilyconnections.org";
-			// $praymailheaders = "From:" . $praymailfrom . "\r\n";
-			// $praymailheaders .= "MIME-Version: 1.0\r\n";
-			// $praymailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-			// mail($praymailto,$praymailsubject,$praymailmessage,$praymailheaders);
-
-			/* send prayer request email to requester */
-			// if($prayer_email_from) { // If new prayer request is created by Admin, do not send an email to requester
-			// 	$praymaillink = "https://trinityevangel.ourfamilyconnections.org";								
-			// 	$praymailto = $prayer_email_from;		
-			// 	$praymailsubject = "Your Request has been submitted for approval"."\n..";
-			// 	$praymailmessage = "(this message has been sent from an unmonitored mailbox)<br /><br />";
-			// 	$praymailmessage .= "Hello " . "<br /><strong>" . $prayer_name . "</strong>!";
-			// 	$praymailmessage .= "<br /><br />Your request has been submitted to our administrators for approval before it is available for viewing.<br />Please allow time for approval before it shows up on our site.";
-			// 	$praymailmessage .= "<br /><br />You will receive an email when your prayer request has been approved. Login to our site to view it.<br /><br /><strong>TITLE: </strong> " . $prayer_title . "<br /><br /><strong>REQUEST: </strong>" . $prayer_text . ".";
-			// 	$praymailfrom = "no-reply@ourfamilyconnections.org";
-			// 	$praymailheaders = "From:" . $praymailfrom . "\r\n";
-			// 	$praymailheaders .= "MIME-Version: 1.0\r\n";
-			// 	$praymailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-			// 	mail($praymailto,$praymailsubject,$praymailmessage,$praymailheaders);
-			// }
+				// send prayer request email to administrators for approval
+				echo "
+					<script type='text/javascript'>
+					prayerrequestnew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor');
+					</script>
+				";
 			}
 			if($prayer_visible == '1') //Elders Only
 			{
+				// send prayer request email to church elders for them to contact the requestor directly
+				echo "
+					<script type='text/javascript'>
+					prayerrequesteldernew('$prayer_email_from', '$prayer_owner', '$prayer_name', '$LoginID', '$themename', '$themedomain', '$themetitle', '$themecolor', '$themeforecolor', '$prayer_title', '$prayer_text');
+					</script>
+				";
 				/* send prayer request to all Elders */
 				// $elderpraymail = @mysql_query("SELECT * FROM " . $_SESSION['logintablename'] . " WHERE elder = 'Y'");
 				// $elderpraylink = "https://trinityevangel.ourfamilyconnections.org";								
@@ -131,12 +103,12 @@ if(!$_SESSION['logged in']) {
 	}
 	$mysql -> close();
 	switch($prayer_visible) {
-		case "3":
-			echo "<script language='javascript'>";
-			echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
-			echo "window.location = '../tec_myprayer.php';";
-			echo "</script>";
-			break;
+		// case "3": // Alert popup for all church prayer request - removed in favor of the prayer_request_to_sendmail.js alert is working
+		// 	echo "<script language='javascript'>";
+		// 	echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
+		// 	echo "window.location = '../tec_myprayer.php';";
+		// 	echo "</script>";
+		// 	break;
 		case "1":
 			echo "<script language='javascript'>";
 			echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
