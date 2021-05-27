@@ -237,6 +237,7 @@ require_once('includes/tec_footer.php');
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button class="dropdown-item" data-toggle="modal" data-target="#ModalPrayerNew" type="button">New Prayer Request</button>
+                            <button class="dropdown-item" data-toggle="modal" data-target="" type="button">Export Prayer Requests</button>
                         </div>
                     </div><!-- dropdown -->
                 </div><!-- col xs-6 -->
