@@ -1,7 +1,8 @@
 <?php
 // Send Mail scripts
-// Updated 2021/03/31
+// Updated 2021/05/26
 // This function will send email to users and admins
+// Working on CASE: prayer_request_user right now
 require_once('../dbconnect.php');
 // Event Log  trap
 require_once('../includes/event_logs_update.php');
@@ -25,13 +26,14 @@ $mailtype = "";
     $prayer_email = $_POST['prayer_email_address'];
     $prayer_source = $_POST['requestor_ID'];
     $prayer_name = $_POST['full_name'];
-// echo "<script language='javascript'>";
-// echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
-// echo "</script>";
+echo "<script language='javascript'>";
+echo "alert('Got past Arrived inside if(!mailtype). mailtype = ' + '$mailtype');";
+echo "</script>";
 
     if($mailtype){
         Switch ($mailtype){
             case 'password_reset':
+// *************** THIS CASE IS NON-FUNCTIONAL - SEE TEC_SENDMAIL.PHP
                 // sendmail('password_reset', $themename, $themedomain, $themecolor, $themeforecolor, '', '', $login3, $firstname, $lastname, $username3, $emailaddr3, $key);
                 // Generate Password Reset Key
                 $dateFormat = mktime(date("H"),date("i"),date("s"),date("m"),date("d")+3,date("Y"));
@@ -88,6 +90,7 @@ $mailtype = "";
                 $response = "Mailtype received" . " = " . $mailtype;
             break;
             case 'register_request':
+// *************** THIS CASE IS NON-FUNCTIONAL - SEE TEC_SENDMAIL.PHP
                 // Send notification email to All registration admins (admin_regnotify = 1) for them to ACCEPT/REJECT the request
                 $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_regnotify = '1'";
                 $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select registration admins in Login Table. See register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
@@ -120,45 +123,44 @@ $mailtype = "";
                 else {
                     eventLogUpdate('mail', "User: " .  $firstname . " " . $lastname, "Requesting access email to administrators", "FAILED");
                 }
+                $response = "Mailtype received" . " = " . $mailtype;
+            break;
+            case 'prayer_request_user':
+                // Send notification email to All prayer admins (admin_praynotify = 1) for them to ACCEPT/REJECT the prayer request
+                $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'";
+                $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select prayer admins in Login Table. See tec_newprayer.php. Error : " . $mysql->errno . " : " . $mysql->error);
+                while ($mailrow = $mailquery->fetch_assoc())
+                {
+                    $mailtest = $mailrow['email_addr'];
+                    $mailto = $mailtest . " , " . $mailto;
+                }
+                $maillink = $domain;
+                $mailsubject = "Prayer Request from " . $prayer_name . "\n..";
+                $mailmessage = "<html><body>";
+                $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
+                $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
+                $mailmessage .= $customer . "</p>";
+                $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
+                $mailmessage .= "<p><strong>" . $prayer_name . "</strong> has requested to submit a prayer request to <strong>" . $customer . "'s</strong> family directory.</p>";
+                $mailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Prayer Admin</strong> menu item, and accept or reject this prayer request.</p>";
+                $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
+                $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
+                $mailmessage .= "</body></html>";
+                $mailfrom = "newprayerrequest@ourfamilyconnections.org";
+                $mailheaders = "From:" . $mailfrom . "\r\n";
+                $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
+                $mailheaders .= "MIME-Version: 1.0\r\n";
+                $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                if($emailworks){
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
+                    }
+                else {
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
+                }
 
                 $response = "Mailtype received" . " = " . $mailtype;
-                break;
-                case 'prayer_request_user':
-                    // Send notification email to All prayer admins (admin_praynotify = 1) for them to ACCEPT/REJECT the prayer request
-                    $mailadmins = "SELECT email_addr FROM " . $_SESSION['logintablename'] . " WHERE admin_praynotify = '1'";
-                    $mailquery = $mysql->query($mailadmins) or die("A database error occurred when trying to select prayer admins in Login Table. See tec_newprayer.php. Error : " . $mysql->errno . " : " . $mysql->error);
-                    while ($mailrow = $mailquery->fetch_assoc())
-                    {
-                        $mailtest = $mailrow['email_addr'];
-                        $mailto = $mailtest . " , " . $mailto;
-                    }
-                    $maillink = $domain;
-                    $mailsubject = "Prayer Request from " . $prayer_name . "\n..";
-                    $mailmessage = "<html><body>";
-                    $mailmessage .= "<p>(This was sent from an unmonitored mailbox)</p>";
-                    $mailmessage .= "<p style='background-color: " .  $headercolorvalue . "; font-size: 30px; font-weight: bold; color: " . $headerforecolorvalue . "; padding: 25px; width=100%;'>";
-                    $mailmessage .= $customer . "</p>";
-                    $mailmessage .= "<p>Hello <strong>" . $customer . "</strong> Administrators</p>";
-                    $mailmessage .= "<p><strong>" . $prayer_name . "</strong> has requested to submit a prayer request to <strong>" . $customer . "'s</strong> family directory.</p>";
-                    $mailmessage .= "<p>Login to our site using your admin credentials, select the <strong>Prayer Admin</strong> menu item, and accept or reject this prayer request.</p>";
-                    $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
-                    $mailmessage .= "<p><br />Thank you!<br />The OurFamilyConnections team.</p>";            
-                    $mailmessage .= "</body></html>";
-                    $mailfrom = "newprayerrequest@ourfamilyconnections.org";
-                    $mailheaders = "From:" . $mailfrom . "\r\n";
-                    $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
-                    $mailheaders .= "MIME-Version: 1.0\r\n";
-                    $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                    $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
-                    if($emailworks){
-                        eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
-                        }
-                    else {
-                        eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
-                    }
-    
-                    $response = "Mailtype received" . " = " . $mailtype;
-                    break;
+            break;
                 // case 'approved_member':
             //     $maillink = $domain;
             //     $mailto = $email;
