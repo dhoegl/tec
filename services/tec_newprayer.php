@@ -125,6 +125,6 @@ if(!$_SESSION['logged in']) {
 // echo "alert('Bad request to new prayer request script. Alert your Ourfamilyconnections admin with this error message.');";
 // echo "window.location = '../tec_myprayer.php';";
 // echo "</script>";
-// header("location:../tec_myprayer.php");
+header("location:../tec_myprayer.php");
 ?>
 
