@@ -3,7 +3,7 @@
 // Updated 2021/05/26
 // This function will send email to users and admins
 // Working on CASE: prayer_request_user right now
-require_once('../dbconnect.php');
+require_once('../tec_dbconnect.php');
 // Event Log  trap
 require_once('../includes/event_logs_update.php');
 $text = array();
@@ -151,17 +151,18 @@ echo "</script>";
                 $mailheaders .= "Reply-To:" . $mailfrom . "\r\n";
                 $mailheaders .= "MIME-Version: 1.0\r\n";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                // $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
-                // if($emailworks){
-                //     eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
-                //     }
-                // else {
-                //     eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
-                // }
+                $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
+                if($emailworks){
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
+                    }
+                else {
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
+                }
 
-                // $response = "Mailtype received" . " = " . $mailtype;
+                $response = "Mailtype received" . " = " . $mailtype;
             break;
-                // case 'approved_member':
+            //     case 'approved_member':
+// *************** THIS CASE IS NON-FUNCTIONAL - SEE TEC_SENDMAIL.PHP
             //     $maillink = $domain;
             //     $mailto = $email;
             //     $mailsubject = "Approved access to the " . $customer . " family directory" . "\n..";
