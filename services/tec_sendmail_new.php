@@ -1,6 +1,9 @@
 <?php
 // Send Mail scripts
 // Updated 2021/05/26
+// Called from
+//  -- prayer_request_to_sendmail.js
+// Plus others
 // This function will send email to users and admins
 // Fixed CASE: prayer_request_user
 require_once('../tec_dbconnect.php');
@@ -186,7 +189,7 @@ echo "</script>";
                 $mailmessage .= "<strong>Prayer Title: </strong> " . $prayer_title . "<br />";
                 $mailmessage .= "<strong>Prayer Text: </strong> " . $prayer_text . "<br /><br />";
                 $mailmessage .= "You have two options:<br />";
-                $mailmessage .= "<ul><li>Send a direct email to the requestor at <a href='mailto:" . $email . "'>" . $email . "</a>></li>";
+                $mailmessage .= "<ul><li>Send a direct email to the requestor at <a href='mailto:" . $prayer_email . "'>" . $prayer_email . "</a></li>";
                 $mailmessage .= "<li>Contact them via text or phone call using their contact information located in the Directory.</li></ul>";
                 $mailmessage .= "<p>Login to our site using your credentials, and select the requestor's profile from the Directory.</p>";
                 $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
