@@ -160,10 +160,10 @@ echo "</script>";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "SUCCESS");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval. SUCCESS" , "prayerID= " . $prayerID);
                     }
                 else {
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to administrators", "FAILED");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "FAILED prayer request email send to administrators." , "prayerID= " . $prayerID);
                 }
 
                 $response = "Mailtype received" . " = " . $mailtype;
@@ -203,10 +203,10 @@ echo "</script>";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Elder prayer. prayerID= " . $prayerID, "SUCCESS");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Elder prayer. SUCCESS" , "prayerID= " . $prayerID);
                     }
                 else {
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Elder prayer. prayerID= " . $prayerID, "FAILED");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "FAILED email send for Elder prayer request." , "prayerID= " . $prayerID);
                 }
 
                 $response = "Mailtype received" . " = " . $mailtype;
