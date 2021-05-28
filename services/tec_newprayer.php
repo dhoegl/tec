@@ -105,13 +105,13 @@ if(!$_SESSION['logged in']) {
 	switch($prayer_visible) {
 		case "3": // Alert popup for all church prayer request - removed in favor of the prayer_request_to_sendmail.js alert is working
 			echo "<script language='javascript'>";
-			// echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
+			echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
 			echo "window.location = '../tec_myprayer.php';";
 			echo "</script>";
 			break;
-		case "1":
+		case "1": // Alert popup for Elder prayer request
 			echo "<script language='javascript'>";
-			// echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
+			echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
 			echo "window.location = '../tec_myprayer.php';";
 			echo "</script>";
 			break;
