@@ -36,7 +36,7 @@ function prayerrequestnew(prayerID, prayeremailfrom, prayerowner, prayername, Lo
         console.log("ajax response text for prayer request = " + teststat2);
         alert("Your request has been successfully submitted.\nPlease allow 24-48 hours for our administrators to approve your request.");
         $welcomepage = window.location.hostname;
-        window.locaation = $welcomepage;
+        window.location = $welcomepage;
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
         // location.reload();
         return result;
@@ -89,7 +89,7 @@ function prayerrequesteldernew(prayerID, prayeremailfrom, prayerowner, prayernam
         console.log("ajax response text for prayer request = " + teststat2);
         alert("Your request has been successfully submitted to our elders.\nPlease allow 24-48 hours for an elder to contact you.");
         $welcomepage = window.location.hostname;
-        window.locaation = $welcomepage;
+        window.location = $welcomepage;
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
         // location.reload();
         return result;
