@@ -186,7 +186,7 @@ echo "</script>";
                 $mailmessage .= "<strong>Prayer Title: </strong> " . $prayer_title . "<br />";
                 $mailmessage .= "<strong>Prayer Text: </strong> " . $prayer_text . "<br /><br />";
                 $mailmessage .= "You have two options:<br />";
-                $mailmessage .= "<ul><li>Send a direct email to the requestor at <mailto:" . $email . "></li>";
+                $mailmessage .= "<ul><li>Send a direct email to the requestor at <a href='mailto:" . $email . "'>" . $email . "</a>></li>";
                 $mailmessage .= "<li>Contact them via text or phone call using their contact information located in the Directory.</li></ul>";
                 $mailmessage .= "<p>Login to our site using your credentials, and select the requestor's profile from the Directory.</p>";
                 $mailmessage .= "<p><a href=http://" . $maillink . ">" . $customer . "</a></p>";
@@ -200,10 +200,10 @@ echo "</script>";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to elders", "SUCCESS");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Elder prayer. prayerID= " . $prayerID, "SUCCESS");
                     }
                 else {
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval to elders", "FAILED");
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Elder prayer. prayerID= " . $prayerID, "FAILED");
                 }
 
                 $response = "Mailtype received" . " = " . $mailtype;
