@@ -35,8 +35,9 @@ function prayerrequestnew(prayerID, prayeremailfrom, prayerowner, prayername, Lo
         console.log("ajax response data for prayer request = " + teststat);
         console.log("ajax response text for prayer request = " + teststat2);
         alert("Your request has been successfully submitted.\nPlease allow 24-48 hours for our administrators to approve your request.");
-        $welcomepage = window.location.hostname;
-        window.location = $welcomepage;
+        // $welcomepage = window.location.hostname;
+        // window.location = $welcomepage;
+        window.location.reload();
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
         // location.reload();
         return result;
@@ -52,6 +53,7 @@ function prayerrequestnew(prayerID, prayeremailfrom, prayerowner, prayername, Lo
             alert("Prayer Request Failure: " + teststat + " at " + teststat2);
             // reportError(teststat);
             //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
+            window.location.reload();
             // location.reload();
             return result;
         });
@@ -88,9 +90,10 @@ function prayerrequesteldernew(prayerID, prayeremailfrom, prayerowner, prayernam
         console.log("ajax response data for prayer request = " + teststat);
         console.log("ajax response text for prayer request = " + teststat2);
         alert("Your request has been successfully submitted to our elders.\nPlease allow 24-48 hours for an elder to contact you.");
-        $welcomepage = window.location.hostname;
-        window.location = $welcomepage;
+        // $welcomepage = window.location.hostname;
+        // window.location = $welcomepage;
         // window.location = "//tec.ourfamilyconnections.org/welcome.php";
+        window.location.reload();
         // location.reload();
         return result;
     });
@@ -105,6 +108,7 @@ function prayerrequesteldernew(prayerID, prayeremailfrom, prayerowner, prayernam
             alert("Prayer Request Failure: " + teststat + " at " + teststat2);
             // reportError(teststat);
             //alert("A problem has occurred with your approval - ofc_approve_registrant. Please copy this error and contact your OurFamilyConnections administrator for details.");
+            window.location.reload();
             // location.reload();
             return result;
         });
