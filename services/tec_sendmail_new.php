@@ -160,10 +160,10 @@ echo "</script>";
                 $mailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
                 $emailworks = mail($mailto,$mailsubject,$mailmessage,$mailheaders);
                 if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting prayer request approval. SUCCESS" , "prayerID= " . $prayerID);
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "Requesting Church prayer approval. SUCCESS" , "prayerID= " . $prayerID);
                     }
                 else {
-                    eventLogUpdate('mail', "User: " .  $prayer_name, "FAILED prayer request email send to administrators." , "prayerID= " . $prayerID);
+                    eventLogUpdate('mail', "User: " .  $prayer_name, "FAILED Churcg prayer email sent to administrators." , "prayerID= " . $prayerID);
                 }
 
                 $response = "Mailtype received" . " = " . $mailtype;
