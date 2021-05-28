@@ -102,29 +102,29 @@ if(!$_SESSION['logged in']) {
 		}
 	}
 	$mysql -> close();
-	// switch($prayer_visible) {
-		// case "3": // Alert popup for all church prayer request - removed in favor of the prayer_request_to_sendmail.js alert is working
-		// 	echo "<script language='javascript'>";
-		// 	echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
-		// 	echo "window.location = '../tec_myprayer.php';";
-		// 	echo "</script>";
-		// 	break;
-	// 	case "1":
-	// 		echo "<script language='javascript'>";
-	// 		echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
-	// 		echo "window.location = '../tec_myprayer.php';";
-	// 		echo "</script>";
-	// 		break;
-	// 	default:
-	// 	echo "<script language='javascript'>";
-	// 	echo "alert('Unknown prayer request visibility. Please re-submit your request');";
-	// 	echo "window.location = '../tec_myprayer.php';";
-	// 	echo "</script>";
-	// }
+	switch($prayer_visible) {
+		case "3": // Alert popup for all church prayer request - removed in favor of the prayer_request_to_sendmail.js alert is working
+			echo "<script language='javascript'>";
+			// echo "alert('Your Prayer Request has been submitted. Once approved by our church elders, it will be posted for your church family to view and follow.');";
+			echo "window.location = '../tec_myprayer.php';";
+			echo "</script>";
+			break;
+		case "1":
+			echo "<script language='javascript'>";
+			// echo "alert('Your Prayer Request has been sent to our church elders. Someone will get back to you shortly. Please watch your email.');";
+			echo "window.location = '../tec_myprayer.php';";
+			echo "</script>";
+			break;
+		default:
+		echo "<script language='javascript'>";
+		// echo "alert('Unknown prayer request visibility. Please re-submit your request');";
+		echo "window.location = '../tec_myprayer.php';";
+		echo "</script>";
+	}
 // echo "<script language='javascript'>";
 // echo "alert('Bad request to new prayer request script. Alert your Ourfamilyconnections admin with this error message.');";
 // echo "window.location = '../tec_myprayer.php';";
 // echo "</script>";
-header("location:../tec_myprayer.php");
+// header("location:../tec_myprayer.php");
 ?>
 
