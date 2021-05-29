@@ -48,61 +48,46 @@ jQ8(document).ready(function() {
             targets:  [ 0 ]
  			},
 			{
-       		className: "churchcode",
+       		className: "prayer_id",
        		"targets": [ 1 ] 
            	},
 			{
-        		className: "firstname",
-                // "responsivePriority": [ 2 ],
-        		"targets": [ 2 ] 
+       		className: "date",
+       		"targets": [ 2 ] 
+           	},
+			{
+			className: "type",
+			"targets": [ 3 ] 
         	},
 			{
-        		className: "lastname",
-                // "responsivePriority": [ 2 ],
-        		"targets": [ 3 ] 
+			className: "fullname",
+			"targets": [ 4 ] 
         	},
 			{
-        		className: "gender",
-                // "responsivePriority": [ 2 ],
-        		"targets": [ 4 ] 
+			className: "title",
+			"targets": [ 5 ] 
         	},
 			{
-        		className: "username",
-        		"targets": [ 5 ] 
+			className: "prayer_approve",
+			"targets": [ 8 ] 
         	},
 			{
-        		className: "email",
-        		"targets": [ 6 ] 
-        	},
-			{
-        		className: "regdate",
-        		"targets": [ 7 ] 
-        	},
-			{
-        		className: "applicant_approve",
-        		"targets": [ 8 ] 
-        	},
-			{
-       		    className: "applicant_reject",
-       		    "targets": [ 9 ] 
+			className: "prayer_reject",
+			"targets": [ 9 ] 
             },
             {
-        		className: "applicant_email",
-        		"targets": [ 10 ] 
-             },
-             {
-        		className: "loginid",
-        		"targets": [ 11 ] 
-        	 },
-             {
-        		className: "dirid",
-        		"targets": [ 12 ] 
-        	 },
-             {
-        		className: "regcount",
-        		"targets": [ 13 ] 
-        	 }
-         ]
+			className: "prayer_email",
+			"targets": [ 10 ] 
+            },
+            {
+			className: "user_id",
+			"targets": [ 12 ] 
+        	},
+            {
+			className: "praycount",
+			"targets": [ 13 ] 
+        	}
+        ]
     });
     // console.log("Made it to View_Unregisteredapplicantslist");
 });

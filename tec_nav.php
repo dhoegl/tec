@@ -1,4 +1,17 @@
 <!-- Navbar-->
+<!-- Activeparam -->
+<!-- 1 = Home -->
+<!-- 2 = Profile -->
+<!-- 3 = Directory (family) -->
+<!-- 4 = Calendar -->
+<!-- 5 = Prayer -->
+<!-- 6 = Events -->
+<!-- 7 =  -->
+<!-- 8 =  -->
+<!-- 9 = Registration Admin -->
+<!-- 10 = Help -->
+<!-- 11 = Prayer Admin -->
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark orange darken-4">
 <a class="navbar-brand" href="tec_welcome.php">
         <img id="nav_logo" width="30" height="30" class="d-inline-block align-top" alt="Logo" />
@@ -110,6 +123,17 @@
         else
         {
           echo '<li class="nav-item"><a class="nav-link" href="tec_help.php">Help</a></li>';
+        }
+        if($_SESSION['pray_admin'] == '1')
+        {
+          if($activeparam == '11')
+          {
+              echo '<li class="nav-item active"><a class="nav-link" href="tec_prayeradmin.php">Registration Admin</a></li>';
+          }
+          else
+          {
+              echo '<li class="nav-item"><a class="nav-link" href="tec_prayeradmin.php">Registration Admin</a></li>';
+          }
         }
         // if($_SESSION['pray_admin'] == '1')
         // {
