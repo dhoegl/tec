@@ -128,11 +128,11 @@
         {
           if($activeparam == '11')
           {
-              echo '<li class="nav-item active"><a class="nav-link" href="tec_prayeradmin.php">Registration Admin</a></li>';
+              echo '<li class="nav-item active"><a class="nav-link" href="tec_prayeradmin.php">Prayer Admin</a></li>';
           }
           else
           {
-              echo '<li class="nav-item"><a class="nav-link" href="tec_prayeradmin.php">Registration Admin</a></li>';
+              echo '<li class="nav-item"><a class="nav-link" href="tec_prayeradmin.php">Prayer Admin</a></li>';
           }
         }
         // if($_SESSION['pray_admin'] == '1')
