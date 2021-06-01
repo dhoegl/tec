@@ -8,36 +8,35 @@ if(!$_SESSION['logged in']) {
 
 /* Populate DataTable */
 /* Query unapproved prayer listing: visible = 3 (all) and approved = 0 */
-		$unapprovedprayerquery = "SELECT * FROM $prayer_tbl_name p INNER JOIN $dir_tbl_name d on p.owner_id = d.idDirectory WHERE p.approved = 0 AND p.visible = '3'";
-		$unapprovedprayerresult = @mysql_query($unapprovedprayerquery) or die(" Unapproved Prayer Request table query error. Error:" . mysql_errno() . " " . mysql_error());
-		$unapprovedprayercount = mysql_num_rows($unapprovedprayerresult);
-
+		// $unapprovedprayerquery = "SELECT * FROM $prayer_tbl_name p INNER JOIN $dir_tbl_name d on p.owner_id = d.idDirectory WHERE p.approved = 0 AND p.visible = '3'";
+		$unapprovedprayerquery = "SELECT p.create_date AS prayerupdatedate, m.fullname AS fullname, m.firstname AS firstname, m.lastname AS lastname, p.prayer_id AS prayerid, p.title AS prayertitle, p.prayer_text AS prayertext, p.pray_praise AS praypraise, p.updated AS updatereq FROM " . $_SESSION['prayertable'] . " p INNER JOIN " . $_SESSION['logintablename'] . " m on m.login_ID = p.owner_id WHERE p.visible = '3' and p.status = '1' and p.approved='0' ORDER BY p.create_date DESC";
+		$unapprovedprayerresult = $mysql->query($unapprovedprayerquery) or die(" Unapproved Prayer Request table query error. Error:" . $mysql->error);
+		$unapprovedprayercount = $unapprovedprayerresult->num_rows;
 		$listarray = array();
-
 		if ($unapprovedprayercount == 0)
 		{
-			echo "no prayer data";
+			$noprayer = 'no prayer data';
 		}
-		while($unapprovedrow = @mysql_fetch_assoc($unapprovedprayerresult)) {
-				$prayerupdate = date("M-d-Y", strtotime($unapprovedrow['prayerupdatedate']));
-				$prayerid = $unapprovedrow['prayerid'];
-				$prayer_title = $unapprovedrow['prayertitle'];
-				$prayer_text = $unapprovedrow['prayertext'];
-				$fullname = $unapprovedrow['fullname'];				
-				$glance = "<strong>" . $prayer_title . " </strong><br />" . substr($unapprovedrow['prayertext'],0,50) . "...";
-				$praypraise = $unapprovedrow['praypraise'];
-				$detail_button = "Details";
-
-				// Stores each database record to an array 
-//					$buildjson = array($prayerid, $prayerupdate, $fullname, $glance, $praypraise, $detail_button, $prayer_text); 
-					$buildjson = array('id' => $prayerid, 'prayerdate' => $prayerupdate, 'fullname' => $fullname, 'prayertitle' => $prayer_title, 'glance' => $glance, 'praypraise' => $praypraise, 'detailbutton' => $detail_button, 'prayertext' => $prayer_text); 
- 					// Adds each array into the container array 
- 					array_push($listarray, $buildjson); 
+		while($unapprovedrow = $unapprovedprayerresult->fetch_assoc()) {
+			$praycontrol = "<tr><td></td>";
+			$prayerid = "<td>" . $unapprovedrow['prayerid'] . "</td>";
+			$prayerupdate = "<td>" . date("M d, Y", strtotime($unapprovedrow['prayerupdatedate'])) . "</td>";
+			$fullname = "<td>" . $unapprovedrow['fullname'] . "</td>";				
+			$praypraise = "<td>" . $unapprovedrow['praypraise'] . "</td>";
+			$prayer_title = "<td>" . $unapprovedrow['prayertitle'] . "</td>";
+			$approve_button = "<td><a class='btn btn-success btn-sm' href='#'>Approve</a></td>";
+			$reject_button = "<td><a class='btn btn-danger btn-sm' href='#'>Reject</a></td>";
+			$view_button = "<td><a class='btn btn-primary btn-sm' href='#'>View</a></td>";
+			$prayer_text = "<td>" . $unapprovedrow['prayertext'] . "</td></tr>";
+		
+			// Stores each database record to an array 
+			$buildjson = array($praycontrol, $prayerid, $prayerupdate, $fullname, $praypraise, $prayer_title, $approve_button, $reject_button, $view_button, $prayer_text); 
+			// $buildjson = array('id' => $prayerid, 'prayerdate' => $prayerupdate, 'fullname' => $fullname, 'prayertitle' => $prayer_title, 'glance' => $glance, 'praypraise' => $praypraise, 'detailbutton' => $detail_button, 'prayertext' => $prayer_text); 
+ 			// Adds each array into the container array 
+ 			array_push($listarray, $buildjson); 
 			}
 			// Prepend array with parent element
 			$listarray = array('data' => $listarray);
-
-
 	header('Content-type: application/json');
 	echo json_encode($listarray); 
 

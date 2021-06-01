@@ -380,27 +380,31 @@ Click on '<u>reject</u>' to reject the prayer request. Request will remain in ou
 
 	<thead>
 		<tr>
+			<th class="dtr-prayeradmincolumn"></th>
 			<th>ID</th>
+			<th>Date</th>
+			<th>From</th>
+			<th>Type</th>
+			<th>Title</th>
 			<th>Approve</th>
 			<th>Reject</th>
-			<th>Date</th>
-			<th>Type</th>
-			<th>From</th>
-			<th>Title</th>
 			<th>View</th>
+			<th>Text</th>
 		</tr>
 	
 	</thead>
 	<tfoot>
 		<tr>
+			<th class="dtr-prayeradmincolumn"></th>
 			<th>ID</th>
+			<th>Date</th>
+			<th>From</th>
+			<th>Type</th>
+			<th>Title</th>
 			<th>Approve</th>
 			<th>Reject</th>
-			<th>Date</th>
-			<th>Type</th>
-			<th>From</th>
-			<th>Title</th>
 			<th>View</th>
+			<th>Text</th>
 		</tr>
 	</tfoot>
 
