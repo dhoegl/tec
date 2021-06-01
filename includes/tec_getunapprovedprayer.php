@@ -19,6 +19,7 @@ if(!$_SESSION['logged in']) {
 		{
 			$noprayer = 'no prayer data';
 		}
+		else {
 		while($unapprovedrow = $unapprovedprayerresult->fetch_assoc()) {
 			$praycontrol = "<tr><td></td>";
 			$prayerid = "<td>" . $unapprovedrow['prayerid'] . "</td>";
@@ -41,6 +42,6 @@ if(!$_SESSION['logged in']) {
 			$listarray = array('data' => $listarray);
 	header('Content-type: application/json');
 	echo json_encode($listarray); 
-
+}
 ?>
 
