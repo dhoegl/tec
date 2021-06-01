@@ -46,43 +46,55 @@ jQ8(document).ready(function() {
             targets:  [ 0 ]
  			},
 			{
-       		className: "prayer_id",
+       		className: "churchcode",
        		"targets": [ 1 ] 
            	},
 			{
-       		className: "date",
+       		className: "firstname",
        		"targets": [ 2 ] 
            	},
 			{
-			className: "type",
+			className: "lastname",
 			"targets": [ 3 ] 
         	},
 			{
-			className: "fullname",
+			className: "gender",
 			"targets": [ 4 ] 
         	},
 			{
-			className: "title",
+			className: "username",
 			"targets": [ 5 ] 
         	},
 			{
-			className: "prayer_approve",
+			className: "email",
+			"targets": [ 6 ] 
+        	},
+			{
+			className: "regdate",
+			"targets": [ 7 ] 
+        	},
+			{
+			className: "applicant_approve",
 			"targets": [ 8 ] 
         	},
 			{
-			className: "prayer_reject",
+			className: "applicant_reject",
 			"targets": [ 9 ] 
             },
             {
-			className: "prayer_email",
+			className: "applicant_email",
 			"targets": [ 10 ] 
             },
             {
-			className: "user_id",
+			className: "loginid",
+			"targets": [ 11 ] 
+        	},
+            {
+			className: "dirid",
 			"targets": [ 12 ] 
         	},
             {
-			className: "praycount",
+			className: "regcount",
 			"targets": [ 13 ] 
         	}
         ]
