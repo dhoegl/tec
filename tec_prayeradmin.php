@@ -1,5 +1,5 @@
 <?php 
-//Last Updated 05/28/2021: Admin accept/reject script for prayer requests
+//Last Updated 05/31/2021: Admin accept/reject script for prayer requests
 session_start();
 if(!$_SESSION['logged in']) {
 	session_destroy();
@@ -256,25 +256,6 @@ jQ109(document).ready(function () {
 
 </script>
 
-<!-- Detect 'Update' button click to open my_popup3 -->
-<script type="text/javascript">
- var jQ51 = jQuery.noConflict();
-	jQ51(document).ready(function() {
-		jQ51("#updatePrayer").click(function () {
-	console.log("Update button clicked to open my_popup3 - $clickbuttonID (jQ51) = " + $clickbuttonid);
-	jQ51(".my_popup3title").text(" " + prayerTitle);
-	jQ51("#updatetext").val('');
-// Launch Update Prayer Popup
-// http://dev.vast.com/jquery-popup-overlay/
-		jQ51('#my_popup3').popup({
-		background: true, focusdelay: 400, transition: 'all 0.3s', vertical: 'top', autozindex: true, outline: true, keepfocus: true, blur: false, color: "#D1E0B2",
-		onopen: function () {
-			console.log("Popup3 Opened for Update");
-		}
-		});
-	});
- });
-</script>
 
 <!-- Detect 'Send' update button click -->
 <script type="text/javascript" >
@@ -311,9 +292,7 @@ var jQ152 = jQuery.noConflict();
 
 </script>
 
-
 </head>
-
 <body>
     <!--Navbar-->
     <?php
@@ -323,7 +302,6 @@ var jQ152 = jQuery.noConflict();
     ?>
     <!-- Intro Section -->
     <div class="container-fluid profile_bg bottom-buffer">
-    <!--<div class="container-fluid bottom-buffer" id="backsplash">-->
         <div class="row pt-2">
             <div class="col-sm-12">
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -380,7 +358,6 @@ var jQ152 = jQuery.noConflict();
 										<th>View</th>
 										<th>Text</th>
 									</tr>
-								
 								</thead>
 								<tfoot class="table-dark">
 									<tr>
@@ -404,343 +381,6 @@ var jQ152 = jQuery.noConflict();
         </div> <!-- Row -->
 	</div> <!-- Container -->
 
-<!--***************************** Create new Prayer Request POPUP ***********************************-->
-<!--***************************** Create new Prayer Request POPUP ***********************************-->
-<!--***************************** Create new Prayer Request POPUP ***********************************-->
-<div id="my_popup">
-	<h2>New Prayer Request</h2>
-        <br />
-        <br />
-        <h3>Enter details about this prayer request and click Send</h3>
-        <br />
-        <br />
-		<form name='newprayerform' method='post' action='tecnewprayer.php'> 		
-        <table id="praytable" style="border: 3px solid powderblue;" width="100%" align="left" cellpadding="0" cellspacing="1" border="0">
- 		 		 <tr>
- 		 		 	<td><input type="hidden" name='visible' value='3'></input></td>
- 		 		 </tr>
-				<tr>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-				</tr>
-	 			<tr>
-	 		 		<td width='25%' align='right'><strong>On Behalf of:</strong></td>
-	 		 		<td width='75%'><input name='onbehalfof' type='text' id='onbehalfof' size="40"></td>
-	 			</tr>
-				<tr>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-				</tr>
-				<tr>
-					<td align="right"><strong>Praise :</strong></td> 		 		 
-					<td><input type="radio" name="prayer" value="Prayer" checked="checked">Prayer</input></td> 		 		 
- 		 		</tr>
- 		 		 <tr>
- 		 		 	<td width="25%">&nbsp</td>
- 		 		 	<td><input type="radio" name="prayer" value="Praise">Praise</input></td>
- 		 		 </tr>
-        </table>
-			<table id="praytable" style="border: 3px solid powderblue;" width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
-	 			<tr>
-	 		 		<td><br /></td>
-	 			</tr>
-	 			<tr>
-	 		 		<td width='25%' align='right'><strong>Title:</strong></td>
-	 		 		<td width='75%'><input name='requesttitle' type='text' id='requesttitle' size="40"></td>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-	 			</tr>
-	 			<tr>
-	 		 		<td width='25%' align='right'><strong>Details:</strong></td>
-	 		 		<td><textarea name="requesttext" rows="6" cols="40" ></textarea>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-<?php				
-					$fullname = $_SESSION['firstname'] . " " . $recordLast; 
- 					echo "<td><input type='hidden' name='fullname' value= '" . $fullname . "' /></td>";
-					if($_SESSION['gender'] == 'M') 
-					{
-	 					echo "<td><input type='hidden' name='email' value= '" . $recordEmail1 . "' /></td>";
-	 				}
-	 				else //SESSION = F 
-	 				{
- 						echo "<td><input type='hidden' name='email' value= '" . $recordEmail2 . "' /></td>";
- 					}
-?>
-	 			</tr>
-	 			<tr>
-<!-- 	 		 		<td>&nbsp</td>
- -->
-<?php	 		
- 					
- 					echo "<td><input type='hidden' name='requestorID' value= '" . $_SESSION['idDirectory'] . "' /></td>";
-?>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td align="right"><input type="submit" class="button_flat_blue_small" name='submitrequest' value='Send' /></td>
-	 		 		<td width='25%' align="right"><input type="reset" class="my_popup_close button_flat_blue_small" name="cancel" value="Cancel" /></td>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-	 			</tr>
-	 			<tr>
-	 				<td colspan="3" align="center">New prayer requests from this page require Elder approval.<br />Once sent, click on Prayer Admin tab to approve.<br />Church family will be notified as soon as it's approved.</td>
-	 			</tr>   
- 		 	</table>
-		</form>
-<br />
-</div>
-
-<!-- ************************************* -->
-<!-- View Prayer Details POPUP dialog            -->
-<!-- ************************************* -->
- <div id="my_popup2">
-	<h2>Prayer Request Details</h2>
-        <br />
-        <br />
-        <h3>View the details of this prayer request.</h3>
-        <br />
-        <hr>
-			<form name='form1' method='post' action=''> 		
-			<table id="praytable" style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
-							<tr class="praytable_even">
-								<td colspan="1"><strong>Type: </strong></td>
-								<td colspan="2" class="praypraise"> </td>
-							</tr>
-							<tr class="praytable_odd">
-								<td colspan="1"><strong>Date: </strong></td>
-								<td colspan="2" class="praydate"> </td>
-							</tr>
-							<tr class="praytable_even">
-								<td colspan="1"><strong>From: </strong></td>
-								<td colspan="2" class="praywho"> </td>
-							</tr>
-							<tr class="praytable_odd">
-								<td colspan="1"><strong>Title: </strong></td>
-								<td colspan="2" class="praytitle"> </td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<hr />
-								</td>
-							</tr>
-			</table>
-			<table style="border: 3px solid powderblue;" width="100%" align='left' cellpadding='0' cellspacing='1' border="0">
-							<tr class="praytable_text">
-								<td colspan="5">
-									<div class="praytext" style="height: 200px; overflow: auto; white-space: pre-wrap;"></div>
-								</td>
-							</tr>
-							<tr>
-								<td>
- 								</td>
- 							</tr>
-			</table>
-	      <table width="100%" align="left" cellpadding="0" cellspacing="1" border="0">
- 		 		 			<tr class="praytable_buttons" style="border: 1px;">
-<!-- 		 		 		 		<td width="100"></td>
-  		 		 		 		<td width="100"></td>
- -->
-   		 		 		 		<td colspan="2" align="left"><input type="button" class="button_flat_blue_small" id="sendMail" name="sendMail" value="Send Email" /></td>
-   		 		 		 		<td colspan="2" align="right"><input type="button" class="my_popup2_close button_flat_blue_small" name="cancel" value="Close" /></td>
-  		 		 			</tr>
- 		 		 			<tr>
- 		 		 			</tr>
- 		 		 		<p>
- 		 		 		<p>
-			</table>
- 			</form>
-			
-			<br />
-
-</div>
-
-
-<!--***************************** Update Prayer Request POPUP ***********************************-->
-<!--***************************** Update Prayer Request POPUP ***********************************-->
-<!--***************************** Update Prayer Request POPUP ***********************************-->
-<div id="my_popup3">
-	<h2>Update Prayer Request</h2>
-        <br />
-        <br />
-        <h3>Update your prayer request and click <strong>Send</strong> when done.</h3>
-        <p><strong>Update Only</strong> keeps the prayer request open, allowing further updates as desired.</p> 
-        <p><strong>Answer</strong> your prayer request will close the request - future updates will require a new prayer request.</p>
-        <hr>
-        <p id="updateTitle" class="my_popup3title"> </p>
-		<form id="updateprayerform" name='updateprayerform' method='post' action=' '> 		
-      	<table id="praytable" style="border: 3px solid powderblue;" width="100%" align="left" cellpadding="0" cellspacing="1" border="0">
-<!--      		<tr>
-      			<td align="right"><strong>Title : </strong></td>
-      			<td width="5%"></td>
-      			<td style="font-size: 14px" colspan="2" class="my_popup3title"></td>
-				</tr>
--->      		<tr>
-      			<td width="25%">&nbsp</td>
-<!--      			<td colspan="2" class="my_popup3title"> </td>
--->      		</tr>
-      		<tr>
-      			<td></td>
-      		</tr>
-      		<tr>
-					<td align="right"><strong>Update : </strong></td>
-				</tr>
- 		 		<tr>
- 		 			<td width="25%">&nbsp</td>
- 		 		 	<td><input type="radio" name='answered' value='0' checked="checked">Update Only</input></td>
- 		 		</tr>
- 		 		<tr>
- 		 			<td width="25%">&nbsp</td>
- 		 		 	<td><input type="radio" name='answered' value='1'>Answer/Close</input></td>
- 		 		</tr>
-				<tr>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-				</tr>
-<!--        </table>
-			<table width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
--->
-	 			<tr>
-	 		 		<td><br /></td>
-	 			</tr>
-	 			<tr>
-	 		 		<td width='25%' align='right'><strong>Update Details:</strong></td>
-	 		 		<td colspan="2"><textarea id="updatetext" name="requesttext" rows="6" cols="40" ></textarea></td>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-<?php				
-					$fullname = $_SESSION['firstname'] . " " . $recordLast; 
- 					echo "<td><input type='hidden' name='fullname' value= '" . $fullname . "' /></td>";
-//					if($_SESSION['gender'] == 'M') 
-//					{
-//	 					echo "<td><input type='hidden' name='email' value= '" . $recordEmail1 . "' /></td>";
-//	 				}
-//	 				else //SESSION = F 
-//	 				{
-// 						echo "<td><input type='hidden' name='email' value= '" . $recordEmail2 . "' /></td>";
-// 					}
-?>
-	 			</tr>
-	 			<tr>
-<!-- 	 		 		<td>&nbsp</td>
- -->
- <?php	 		
- 					
- 					echo "<td><input type='hidden' name='requestorID' value= '" . $profileaddr . "' /></td>";
-?>
-				</tr>
-			</table>
-			<table width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
-	 		 	<tr>
-	 		 		<td align="right"><input type="button" id="submitUpdate" class="my_popup3_close button_flat_blue_small" name='submitrequest' value='Send' /></td>
-	 		 		<td width='25%' align="right"><input type="reset" class="my_popup3_close button_flat_blue_small" name="cancel" value="Cancel" /></td>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-	 			</tr>
- 		 	</table>
-		</form>
-<br />
-</div>
-
-<!--***************************** Update Church Prayer Requests POPUP ***********************************-->
-<!--***************************** Update Church Prayer Requests POPUP ***********************************-->
-<!--***************************** Update Church Prayer Requests POPUP ***********************************-->
-<div id="my_popup4">
-	<h2>All Church Prayer Requests</h2>
-        <br />
-        <br />
-        <h3>Select a prayer request to update</h3>
-        <br />
-        <br />
-		<table id="allprayertable" class="display" cellspacing="0" width="100%">
-      	  <thead>
-         	   <tr>
-						<th>id</th>
-						<th>Opened</th>
-						<th>Name</th>
-						<th>Title</th>
-						<th>Update</th>
-            	</tr>
-        		</thead>
-        		<tfoot>
-            	<tr>
-						<th>id</th>
-						<th>Opened</th>
-						<th>Name</th>
-						<th>Title</th>
-						<th>Update</th>
-            	</tr>
-        		</tfoot>
-    	</table>
-
-		<form name='myprayerform' method='post' action='tecchurchprayer.php'> 		
-			<table id="praytable" style="border: 3px solid powderblue;" width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
-							<tr class="praytable_even">
-								<td colspan="1"><strong>Type: </strong></td>
-								<td colspan="2" class="praypraise"> </td>
-								<td align="right" colspan="1"><strong>Answered: </strong></td>
-								<td align="center" colspan="1" class="prayanswer"> </td>
-							</tr>
-							<tr class="praytable_odd">
-								<td colspan="1"><strong>Date: </strong></td>
-								<td colspan="4" class="praydate"> </td>
-							</tr>
-							<tr class="praytable_even">
-								<td colspan="1"><strong>From: </strong></td>
-								<td colspan="4" class="praywho"> </td>
-							</tr>
-							<tr class="praytable_odd">
-								<td colspan="1"><strong>Title: </strong></td>
-								<td colspan="4" class="praytitle"> </td>
-							</tr>
-							<tr>
-								<td colspan="5">
-									<hr />
-								</td>
-							</tr>
-			</table>
-			<table style="border: 3px solid powderblue;" width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
-							<tr class="praytable_text">
-								<td colspan="5">
-									<div class="praytext" style="height: 200px; overflow: auto; white-space: pre-wrap;">
-									</div>								
-								 </td>
-							</tr>
-							<tr>
-								<td>
- 								</td>
- 							</tr>
-	 			<tr>
-<!-- 	 		 		<td>&nbsp</td>
- -->
- <?php	 		
- 					
- 					echo "<td><input type='hidden' name='requestorID' value= '" . $profileaddr . "' /></td>";
-?>
-				</tr>        
-			</table>
-			<table width="100%" align="left" cellpadding="0" cellspacing="1" border="0" >
-				<tr>
-	 		 		<td align="right"><input type="button" class="my_popup3_open button_flat_blue_small" id="updatePrayer" name="update" value="Update" /></td>
-	 		 		<td align="left"> </td>
-	 		 		<td width='25%' align="right"><input type="submit" class="my_popup4_close button_flat_blue_small" name="cancel" value="Cancel" /></td>
-	 			</tr>
-	 			<tr>
-	 				<td><strong>NOTE: </strong>Answered prayers are closed and cannot be updated. Submit a new prayer request to re-open.</td>
-	 			</tr>
-	 			<tr>
-	 				<td>&nbsp</td>
-	 			</tr>
- 		 	</table>
-		</form>
-<br />
-</div>
 
     <!-- SCRIPTS -->
     <!-- Bootstrap tooltips -->
