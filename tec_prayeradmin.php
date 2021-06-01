@@ -76,7 +76,7 @@ require_once('tec_dbconnect.php');
 
 <?php
 // Get Unapproved Prayer List
-   include('/includes/tec_view_unapprovedprayerlist.php');
+   include('includes/tec_view_unapprovedprayerlist.php');
    
 // Get Unapproved Prayer jQuery
 //    include('/includes/tec_get_unapprovedprayer_jquery.php');
