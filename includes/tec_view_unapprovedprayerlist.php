@@ -6,7 +6,10 @@ jQ8(document).ready(function() {
 jQ8('#unapprovedprayertable').DataTable({
 //			"processing": true,
 //			"serverSide": true,
-        "ajax": "../includes/tec_getunapprovedprayer.php",
+        	"ajax": {
+				url: '../includes/tec_getunapprovedprayer.php',
+				type: 'GET',
+			},
 //			"bJQueryUI": true,
 //			"sScrollY": "300px",
 //			"bPaginate": true,
@@ -21,7 +24,7 @@ jQ8('#unapprovedprayertable').DataTable({
 //			"bFilter": true,
 //			"bSort": true,
 //			"bInfo": false,
-//			"bAutoWidth": true,
+			"bAutoWidth": true,
 //			"sWrapper": "25px",
 //			"orderClasses": false,
 			"responsive": true,
