@@ -404,7 +404,8 @@ jQ11(document).ready(function () {
             // console.log("Gender = " + Gender);
             // console.log("Firstname = " + FirstName);
             // console.log("Lastname = " + LastName);
-            jQ11.ajaxSetup({ cache: false });
+            // The next line was an attempt to fix a bug that causes iPhone to throw an ajax error when rejecting an applicant. Works fine on desktop.
+            // jQ11.ajaxSetup({ cache: false });
             jQ11.ajax({
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
