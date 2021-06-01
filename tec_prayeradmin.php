@@ -13,11 +13,11 @@ require_once('tec_dbconnect.php');
 
 
 //Query for users requesting to register but not yet approved
-$sqlquery = "SELECT * FROM " . $_SESSION['logintablename'] . " WHERE active = 0";
-$result = $mysql->query($sqlquery) or die("A database error occurred when trying to select registrants for Dir and Login Table. See tec_regadmin.php. Error : " . $mysql->errno . " : " . $mysql->error);
+// $sqlquery = "SELECT * FROM " . $_SESSION['logintablename'] . " WHERE active = 0";
+// $result = $mysql->query($sqlquery) or die("A database error occurred when trying to select registrants for Dir and Login Table. See tec_regadmin.php. Error : " . $mysql->errno . " : " . $mysql->error);
 
 // Mysql_num_row is count of table rows returned. Expect at least 1
-$count = $result->num_rows;
+// $count = $result->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,13 +79,13 @@ $count = $result->num_rows;
    include('/includes/tec_view_unapprovedprayerlist.php');
    
 // Get Unapproved Prayer jQuery
-   include('/includes/tec_get_unapprovedprayer_jquery.php');
+//    include('/includes/tec_get_unapprovedprayer_jquery.php');
 
 // Get All Prayer List
-   include('/includes/tec_view_allprayerlist.php');
+//    include('/includes/tec_view_allprayerlist.php');
    
 // Get All Prayer jQuery
-   include('/includes/tec_get_allprayer_jquery.php');
+//    include('/includes/tec_get_allprayer_jquery.php');
    
 ?>
 
@@ -315,111 +315,94 @@ var jQ152 = jQuery.noConflict();
 </head>
 
 <body>
-<div id="container">
-	<div id="header">
-
-		<div id="header_text">
-			<p>Bringing</p>
-			<p>our Family</p>
-			<p>Together</p>
-		</div>
-		<ul>
-			<li> <a href='/tecwelcome.php'>Welcome</a></li>
-<?php
-	require_once('tecmenu.php');
-
-?>
-		</ul>
-	</div>
-	<div id="content">
-
-			<h2>Prayer Request Administration</h2>
-<table id="detailheading" border="0">
-
-<tr>
-<td colspan="2" align="center">
-<h3>Approve or Reject Prayer Requests</h3>
-</td>
-<td colspan="2" class="popbox" align="center">
-<h3>All Church Prayer Mgmt.</h3>
-</td>
-</tr>
-
-<tr>
-<td class="header">
-To Approve prayer request
-</td>
-<td class="header">
-To Reject prayer request
-</td>
-<td class="popbox">
-<button class='my_popup_open button_flat_green_small' id='prayer_new_button'>New request</button>
-</td>
-<td class="popbox">
-<button class='my_popup4_open button_flat_green_small' id='church_prayer_button'>Update prayer</button>
-</td>
-</tr>
-<tr>
-<td class="content">
-Click on '<u>approve</u>' to publicly post prayer request. Request will be immediately available on trinityevangel.ourfamilyconnections.org website.
-</td>
-<td class="content">
-Click on '<u>reject</u>' to reject the prayer request. Request will remain in our database, but not publicly visible.
-</td>
-</tr>
-
-<tr>
-<br />
-</tr>
-
-</table>
-
-<table id="unapprovedprayertable" class="display" cellpadding="0" cellspacing="0" border="0">
-
-<!--	<table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">-->
-
-	<thead>
-		<tr>
-			<th class="dtr-prayeradmincolumn"></th>
-			<th>ID</th>
-			<th>Date</th>
-			<th>From</th>
-			<th>Type</th>
-			<th>Title</th>
-			<th>Approve</th>
-			<th>Reject</th>
-			<th>View</th>
-			<th>Text</th>
-		</tr>
-	
-	</thead>
-	<tfoot>
-		<tr>
-			<th class="dtr-prayeradmincolumn"></th>
-			<th>ID</th>
-			<th>Date</th>
-			<th>From</th>
-			<th>Type</th>
-			<th>Title</th>
-			<th>Approve</th>
-			<th>Reject</th>
-			<th>View</th>
-			<th>Text</th>
-		</tr>
-	</tfoot>
-
-	</table>
-
-
-
-
-		<div id="footerline"></div>
-	</div>
-	
-<?php
-	require_once('/tecfooter.php');
-?>
-</div>
+    <!--Navbar-->
+    <?php
+    $activeparam = '11'; // sets nav element highlight
+    require_once('tec_nav.php');
+    require_once('includes/tec_footer.php');
+    ?>
+    <!-- Intro Section -->
+    <div class="container-fluid profile_bg bottom-buffer">
+    <!--<div class="container-fluid bottom-buffer" id="backsplash">-->
+        <div class="row pt-2">
+            <div class="col-sm-12">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Using the Prayer Admin page
+                </button>
+            </div><!-- col sm-12 -->
+        </div><!-- row -->
+        <div class="collapse" id="collapseExample">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-body">
+                        <h4 class="card-title">
+                            Click on the
+                            <span class="btn btn-primary">View</span> button to view the entire prayer request
+                        </h4>
+                        <ul class="card-text">
+                            <li>You can send an email to the registration request originator directly from your email client when it pops up</li>
+                        </ul>
+                    </div><!-- card -->
+                </div><!-- col-sm-6 -->
+                <div class="col-sm-6">
+                    <div class="card card-body">
+                        <h4 class="card-title">Approving and Rejecting Prayer Requests</h4>
+                        <ul class="card-text">
+                            <li>
+                                Click on
+                                <span class="btn btn-success">Approve</span> to approve the prayer request. The request will immediately be visible on the Prayer page.
+                            </li>
+                            <li>
+                                Click on
+                                <span class="btn btn-danger">Reject</span> to reject the prayer request. The request will remain in our database, but flagged as rejected and will no longer be visible or accessible.
+                            </li>
+                        </ul>
+                    </div><!-- card -->
+                </div><!-- col-sm-6 -->
+            </div><!-- row -->
+        </div><!-- collapse -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card bg-light border-primary px-2 my-2 w-100">
+                    <div class="card-body">
+                        <div class="table-responsive-xs">
+							<table id="unapprovedprayertable" class="display" cellpadding="0" cellspacing="0" border="0">
+								<thead class="table-dark">
+									<tr>
+										<th class="dtr-prayeradmincolumn"></th>
+										<th>ID</th>
+										<th>Date</th>
+										<th>From</th>
+										<th>Type</th>
+										<th>Title</th>
+										<th>Approve</th>
+										<th>Reject</th>
+										<th>View</th>
+										<th>Text</th>
+									</tr>
+								
+								</thead>
+								<tfoot class="table-dark">
+									<tr>
+										<th class="dtr-prayeradmincolumn"></th>
+										<th>ID</th>
+										<th>Date</th>
+										<th>From</th>
+										<th>Type</th>
+										<th>Title</th>
+										<th>Approve</th>
+										<th>Reject</th>
+										<th>View</th>
+										<th>Text</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div> <!-- table-responsive -->
+                    </div> <!-- card-body -->
+                </div> <!-- card -->
+            </div> <!-- col-sm-12 -->
+        </div> <!-- Row -->
+	</div> <!-- Container -->
 
 <!--***************************** Create new Prayer Request POPUP ***********************************-->
 <!--***************************** Create new Prayer Request POPUP ***********************************-->
