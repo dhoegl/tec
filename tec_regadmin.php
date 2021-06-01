@@ -408,6 +408,7 @@ jQ11(document).ready(function () {
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
                 dataType: 'text',
+                cache: false,
                 data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName }
             })
                 .done(function (jqXHR, textStatus) {
