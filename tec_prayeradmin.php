@@ -114,32 +114,6 @@ require_once('tec_dbconnect.php');
 </script>
 
 
-<!-- Get Which Prayer Item's 'View' button was clicked -->
- <script type="text/javascript">
-var $clickbuttonid = "NA";
-var jQ9 = jQuery.noConflict();
-jQ9(document).ready(function () {
-	jQ9("#unapprovedprayertable tbody").on("click", 'tr', function () {
-		jQ9("tr.praytable_even").show();
-		jQ9("tr.praytable_odd").show();
-		jQ9("tr.praytable_text").show();
-		jQ9("#updatePrayer").show();
-		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
-		$clickbuttonid = prayerID;
-		console.log("$prayerid clicked = " + $clickbuttonid);
-		var prayerDate = jQ9(this).closest('tr').find(".prayer_update").text();
-		var prayerWho = jQ9(this).closest('tr').find(".prayer_who").text();
-		var prayerTitle = jQ9(this).closest('tr').find(".prayer_title").text();
-		var prayerType = jQ9(this).closest('tr').find(".prayer_type").text();
-		var prayerText = jQ9(this).closest('tr').find(".full_text").text();
-// Launch Unapproved Prayer Popup
-	jQ9("#my_popup2").popup({
-		background: true, outline: true, keepfocus: true, blur: false, color: "#D1E0B2",
-		});
-	});
-});
-
-</script>
 
 <!-- Get Which Prayer Item's 'Approve' button was clicked -->
  <script type="text/javascript">
@@ -235,26 +209,6 @@ jQ11(document).ready(function () {
 
 
 
-<!-- Get Which Prayer Items 'Update' button was clicked -->
- <script type="text/javascript">
-var $clickbuttonid = "NA";
-var prayerWho = "NA";
-var prayerTitle = "NA";
-var jQ109 = jQuery.noConflict();
-jQ109(document).ready(function () {
-	jQ109("#allprayertable tbody").on("click", 'tr', function () {
-		var prayerID = jQ9(this).closest('tr').find(".indexcol").text();
-		$clickbuttonid = prayerID;
-		console.log("$clickbuttonid (jQ9) = " + $clickbuttonid);
-		var prayerDate = jQ109(this).closest('tr').find(".prayer_update").text();
-		prayerWho = jQ109(this).closest('tr').find(".prayer_who").text();
-		prayerTitle = jQ109(this).closest('tr').find(".prayer_title").text();
-		var prayerType = jQ109(this).closest('tr').find(".type").text();
-		var prayerText = jQ109(this).closest('tr').find(".full_text").text();
-	});
-});
-
-</script>
 
 
 <!-- Detect 'Send' update button click -->
