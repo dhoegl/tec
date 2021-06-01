@@ -27,9 +27,9 @@ if(!$_SESSION['logged in']) {
 			$fullname = "<td>" . $unapprovedrow['full_name'] . "</td>";				
 			$praypraise = "<td>" . $unapprovedrow['praypraise'] . "</td>";
 			$prayer_title = "<td>" . $unapprovedrow['prayertitle'] . "</td>";
-			$approve_button = "<td><a class='btn btn-success btn-sm' href='#'>Approve</a></td>";
-			$reject_button = "<td><a class='btn btn-danger btn-sm' href='#'>Reject</a></td>";
-			$view_button = "<td><a class='btn btn-primary btn-sm' href='#'>View</a></td>";
+			$approve_button = "<td><button type='button' class='btn btn-success btn-sm' href='#'>Approve</button></td>";
+			$reject_button = "<td><button type='button' class='btn btn-danger btn-sm' href='#'>Reject</button></td>";
+			$view_button = "<td><button type='button' class='btn btn-primary btn-sm' href='#'>View</button></td>";
 			$prayer_text = "<td>" . $unapprovedrow['prayertext'] . "</td></tr>";
 		
 			// Stores each database record to an array 
