@@ -73,6 +73,15 @@
 		visibility: hidden;
 	}
 }
+/* Hide the + and - icons when screen width is wide enough to display all columns */
+/* tec Active Prayer table */
+@media screen and (min-width: 852px) {
+	table#unapprovedprayertable .dtr-control {
+		visibility: hidden;
+	}
+	.dtr-prayeradmincolumn {
+		visibility: hidden;
+	}
 
 .profile_bg {
     /*background-color: #B4A7D6;*/
