@@ -26,23 +26,21 @@ jQ8(document).ready(function() {
 //			"orderClasses": false,
             "responsive": true,
          "columnDefs": [ 
-			{
-            "targets": -4,
-            "data": null,
-            //"responsivePriority": [ 2 ],
-            "defaultContent": "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#ModalTBD'>Send Email</button>"
-			},
-			{
-            "targets": -5,
-            "data": null,
-            //"responsivePriority": [ 2 ],
-            "defaultContent": "<button type='button' class='btn btn-danger applicant_reject btn-sm' data-toggle='modal' data-target='#ModalRegReject'>Reject</button>"
-			},
-			{
-            "targets": -6,
-            "data": null,
-            "defaultContent": "<button type='button' class='btn btn-success applicant_approve btn-sm' data-toggle='modal' data-target='#ModalRegApprove'>Approve</button>"
-			},
+			// {
+            // "targets": -4,
+            // "data": null,
+            // "defaultContent": "<button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#ModalTBD'>Send Email</button>"
+			// },
+			// {
+            // "targets": -5,
+            // "data": null,
+            // "defaultContent": "<button type='button' class='btn btn-danger applicant_reject btn-sm' data-toggle='modal' data-target='#ModalRegReject'>Reject</button>"
+			// },
+			// {
+            // "targets": -6,
+            // "data": null,
+            // "defaultContent": "<button type='button' class='btn btn-success applicant_approve btn-sm' data-toggle='modal' data-target='#ModalRegApprove'>Approve</button>"
+			// },
 			{
 			orderable: false,
             targets:  [ 0 ]

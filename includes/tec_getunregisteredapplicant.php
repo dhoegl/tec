@@ -22,23 +22,23 @@ else {
     $regcount = 0;
     while($unregisteredqueryrow = $unregisteredqueryresult->fetch_assoc()) {
         ++$regcount; // similar to $regcount = $regcount + 1
-        $regdate = date("M d, Y", strtotime($unregisteredqueryrow['regdate']));
         $regcontrol = "<tr><td></td>";
-        $loginid = "<td>" . $unregisteredqueryrow['loginID'] . "</td>";
-        $directoryid = "<td>" . $unregisteredqueryrow['idDirectory'] . "</td>";
+        $regdate = "<td>" . date("M d, Y", strtotime($unregisteredqueryrow['regdate'])) . "</td>";
         $churchcode = "<td>" . $unregisteredqueryrow['churchcode'] . "</td>";
         $firstname = "<td>" . $unregisteredqueryrow['firstname'] . "</td>";
         $lastname = "<td>" . $unregisteredqueryrow['lastname'] . "</td>";
         $username = "<td>" . $unregisteredqueryrow['user'] . "</td>";
         $gender = "<td>" . $unregisteredqueryrow['gender'] . "</td>";
         $email = "<td>" . $unregisteredqueryrow['email'] . "</td>";
-        $approve_button = "Approve";
-        $reject_button = "Reject";
-        $email_button = "Send Email";
-
+        $approve_button = "<td><button type='button' class='btn btn-success applicant_approve btn-sm' data-toggle='modal' data-target='#ModalRegApprove'>Approve</button></td>";
+        $reject_button = "<td><button type='button' class='btn btn-danger applicant_reject btn-sm' data-toggle='modal' data-target='#ModalRegReject'>Reject</button></td>";
+        $email_button = "<td><button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#ModalTBD'>Send Email</button></td>";
+        $loginid = "<td>" . $unregisteredqueryrow['loginID'] . "</td>";
+        $directoryid = "<td>" . $unregisteredqueryrow['idDirectory'] . "</td>";
+        $regcount2 = "<td>" . $regcount  . "</td></tr>";
 
         // Stores each database record to an array
-        $buildjson = array($regcontrol, $churchcode, $firstname, $lastname, $gender, $username, $email, $regdate, $approve_button, $reject_button, $email_button, $loginid, $directoryid, $regcount);
+        $buildjson = array($regcontrol, $churchcode, $firstname, $lastname, $gender, $username, $email, $regdate, $approve_button, $reject_button, $email_button, $loginid, $directoryid, $regcount2);
         // Adds each array into the container array
         array_push($listarray, $buildjson);
     }
