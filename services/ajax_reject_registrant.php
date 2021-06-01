@@ -19,13 +19,13 @@ if ( isset($_POST['Selected']) ) {
     eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Reject", "LoginID: " . $Login2 . " - Directory entry: " . $Directory2);
 
     $text[] = array('Status' => 'Reject Success');
-    header('Content-type: application/json');
+    // header('Content-type: application/json');
     // echo json_encode($text);
     echo $text;
 }
 else{
     $text[] = array('Status' => 'Reject Failed');
-    header('Content-type: application/json');
+    // header('Content-type: application/json');
     // echo json_encode($text);
     echo $text;
 }
