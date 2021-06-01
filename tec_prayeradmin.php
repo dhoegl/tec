@@ -140,6 +140,20 @@ require_once('tec_dbconnect.php');
         </div><!-- collapse -->
         <div class="row">
             <div class="col-sm-12">
+                <div class="card card-image"
+                    style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center rgba-black-strong">
+                        <div class="w-100">
+                            <h3 class="card-title pt-2"><strong>PRAYER ADMINISTRATION</strong></h3>
+                            <p>Approve or Reject new prayer requests.</p>
+                        </div>
+                    </div>
+                </div><!-- Card -->
+            </div><!-- Col-md-12 -->
+        </div><!-- Row -->
+        <div class="row">
+            <div class="col-sm-12">
                 <div class="card bg-light border-primary px-2 my-2 w-100">
                     <div class="card-body">
                         <div class="table-responsive-xs">
