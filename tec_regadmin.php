@@ -404,11 +404,11 @@ jQ11(document).ready(function () {
             // console.log("Gender = " + Gender);
             // console.log("Firstname = " + FirstName);
             // console.log("Lastname = " + LastName);
+            jQ11.ajaxSetup({ cache: false });
             jQ11.ajax({
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
                 dataType: 'text',
-                cache: false,
                 data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName }
             })
                 .done(function (jqXHR, textStatus) {
