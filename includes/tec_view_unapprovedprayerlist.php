@@ -26,25 +26,24 @@ jQ8('#unapprovedprayertable').DataTable({
 //			"orderClasses": false,
 			"responsive": true,
          "columnDefs": [ 
-//			{
-//            "targets": -2,
-//            "data": null,
-//            "defaultContent": "<button class='my_popup_open button_flat_blue_small'>Details</button>"
-//			},
 			{
             "targets": -2,
             "data": null,
             "defaultContent": "<button class='my_popup2_open button_flat_blue_small view_button'>View</button>"
 			},
+            "targets": -6,
+            "data": null,
+            "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#ModalPrayerEmail'>Send Email</button>"
+			},
 			{
             "targets": -7,
             "data": null,
-            "defaultContent": "<button class='prayer_reject_button button_flat_blue_small'>Reject</button>"
+            "defaultContent": "<button type='button' class='btn btn-danger PRAYER_reject' data-toggle='modal' data-target='#ModalPrayerReject'>Reject</button>"
 			},
 			{
             "targets": -8,
             "data": null,
-            "defaultContent": "<button class='prayer_approve_button button_flat_blue_small'>Approve</button>"
+            "defaultContent": "<button type='button' class='btn btn-success prayer_approve' data-toggle='modal' data-target='#ModalPrayerApprove'>Approve</button>"
 			},
 			{
 				orderable: false,

@@ -52,6 +52,8 @@ if(isset($_POST['registersubmit']))
     // insert Registrant into Login table
     $regloginquery = "INSERT INTO " . $_SESSION['logintablename'] . " (church_ID, username, password, idDirectory, firstname, lastname, gender, email_addr, fullname) VALUES ('$church_code','$user_name','$pass_word','$regInsert_DirID','$first_name','$last_name','$gender','$email_address','$full_name')";
     $reglogintableupdate = $mysql->query($regloginquery) or die("A database error occurred when trying to add new registrant in Dir Table. See tec_register_submit.php. Error : " . $mysql->errno . " : " . $mysql->error);
+    // Get Profile ID from above Insert
+    $regInsert_LoginID = $mysql->insert_id;
 
     $regdirtableupdate->close();
     // DO NOT ATTEMPT TO CLOSE A NON-PARAMETERIZED QUERY 
@@ -80,7 +82,7 @@ if(isset($_POST['registersubmit']))
     $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
     if($emailworks){
-        eventLogUpdate('mail', "User: " .  $first_name . " " . $last_name, "Requesting access email to administrators", "SUCCESS");
+        eventLogUpdate('mail', "User: " .  $first_name . " " . $last_name, "Requesting access email to administrators", "LoginID = " . $regInsert_LoginID);
         ?>   
         <!-- Notify registrant that their request is being reviewed.  -->
         <script language='javascript'>
@@ -96,9 +98,9 @@ if(isset($_POST['registersubmit']))
     eventLogUpdate('report error', 'tec_register_submit.php', 'Error: NONE', 'YAY!!');
     ?>   
     <!-- Notify registrant that their request is being reviewed.  -->
-    <script language='javascript'>
+    <!-- <script language='javascript'>
         alert("An error has occurred when attempting to submit your registration.\nPlease contact your OurFamilyConnections administrator.");
-    </script>
+    </script> -->
 <?php
 
 }
