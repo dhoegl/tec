@@ -116,14 +116,6 @@
               echo '<li class="nav-item"><a class="nav-link" href="tec_regadmin.php">Registration Admin</a></li>';
           }
         }
-        if($activeparam == '10') //  $activeparam sets nav element highlight on Nav bar - originates on all pages to identify (by 'Active' class and bold text) which page is being displayed
-        {
-          echo '<li class="nav-item active"><a class="nav-link" href="tec_help.php">Help</a></li>';
-        }
-        else
-        {
-          echo '<li class="nav-item"><a class="nav-link" href="tec_help.php">Help</a></li>';
-        }
         if($_SESSION['pray_admin'] == '1')
         {
           if($activeparam == '11')
@@ -134,6 +126,14 @@
           {
               echo '<li class="nav-item"><a class="nav-link" href="tec_prayeradmin.php">Prayer Admin</a></li>';
           }
+        }
+        if($activeparam == '10') //  $activeparam sets nav element highlight on Nav bar - originates on all pages to identify (by 'Active' class and bold text) which page is being displayed
+        {
+          echo '<li class="nav-item active"><a class="nav-link" href="tec_help.php">Help</a></li>';
+        }
+        else
+        {
+          echo '<li class="nav-item"><a class="nav-link" href="tec_help.php">Help</a></li>';
         }
         // if($_SESSION['pray_admin'] == '1')
         // {
