@@ -39,7 +39,7 @@ function sendmail($mailtype, $param1, $param2, $param3, $param4, $param5, $param
             $regmailheaders .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             $emailworks = mail($regmailto,$regmailsubject,$regmailmessage,$regmailheaders);
             if($emailworks){
-                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "SUCCESS");
+                    eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "LoginID = ". $param3);
                     }
                 else {
                     eventLogUpdate('mail', "User: " .  $param4 . " " . $param5, "Registrant Approve email", "FAILED");
