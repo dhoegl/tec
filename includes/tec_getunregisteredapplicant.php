@@ -32,7 +32,7 @@ else {
         $email = "<td>" . $unregisteredqueryrow['email'] . "</td>";
         $approve_button = "<td><button type='button' class='btn btn-success applicant_approve btn-sm' data-toggle='modal' data-target='#ModalRegApprove'>Approve</button></td>";
         $reject_button = "<td><button type='button' class='btn btn-danger applicant_reject btn-sm' data-toggle='modal' data-target='#ModalRegReject'>Reject</button></td>";
-        $email_button = "<td><button type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#ModalTBD'>Send Email</button></td>";
+        $email_button = "<td><button type='button' class='btn btn-primary btn-sm applicant_email' data-toggle='modal' data-target='#ModalTBD'>Send Email</button></td>";
         $loginid = "<td>" . $unregisteredqueryrow['loginID'] . "</td>";
         $directoryid = "<td>" . $unregisteredqueryrow['idDirectory'] . "</td>";
         $regcount2 = "<td>" . $regcount  . "</td></tr>";
