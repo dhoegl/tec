@@ -20,11 +20,13 @@ if ( isset($_POST['Selected']) ) {
 
     $text[] = array('Status' => 'Reject Success');
     header('Content-type: application/json');
-    echo json_encode($text);
+    // echo json_encode($text);
+    echo $text;
 }
 else{
     $text[] = array('Status' => 'Reject Failed');
     header('Content-type: application/json');
-    echo json_encode($text);
+    // echo json_encode($text);
+    echo $text;
 }
 ?>
