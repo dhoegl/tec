@@ -143,7 +143,7 @@ require_once('tec_dbconnect.php');
                 <div class="card bg-light border-primary px-2 my-2 w-100">
                     <div class="card-body">
                         <div class="table-responsive-xs">
-							<table id="unapprovedprayertable" class="display" cellpadding="0" cellspacing="0" border="0">
+							<table id="unapprovedprayertable" class="table table-sm table-striped 'display responsive nowrap'" width="100%">
 								<thead class="table-dark">
 									<tr>
 										<th class="dtr-prayeradmincolumn"></th>
