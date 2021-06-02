@@ -424,19 +424,20 @@ jQ11(document).ready(function () {
                     location.reload();
                     return result;
                 })
-                .fail(function (jqXHR, textStatus, error) {
+                // .fail(function (jqXHR, textStatus, error) {
+                .fail(function () {
                     //  Get the result
                     //result = (rtnData === undefined) ? null : rtnData.d;
-                    var result = "fail";
-                    var teststat = textStatus;
-                    var teststat2 = jqXHR.responseText;
-                    var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
-                    var xhrerror = "jqXHR = " + jqXHR + " error = " + error;
-                    // console.log("ajax response data = " + teststat);
+                    // var result = "fail";
+                    // var teststat = textStatus;
+                    // var teststat2 = jqXHR.responseText;
+                    // var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
+                    // var xhrerror = "jqXHR = " + jqXHR.responseText + " error = " + error;
+                    console.log("ajax response data = " + e);
                     // console.log("ajax response text = " + teststat2);
                     // reportError(teststat);
                     // reportError(xhrstatus);
-                    reportError(xhrerror);
+                    reportError(e);
                     location.reload();
                     return result;
                 });
