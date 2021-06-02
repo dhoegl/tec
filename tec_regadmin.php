@@ -431,10 +431,12 @@ jQ11(document).ready(function () {
                     var teststat = textStatus;
                     var teststat2 = jqXHR.responseText;
                     var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
+                    var xhrerror = "jqXHR = " + jqXHR + " error = " + error;
                     // console.log("ajax response data = " + teststat);
                     // console.log("ajax response text = " + teststat2);
                     // reportError(teststat);
-                    reportError(xhrstatus);
+                    // reportError(xhrstatus);
+                    reportError(xhrerror);
                     location.reload();
                     return result;
                 });
