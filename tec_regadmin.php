@@ -424,15 +424,17 @@ jQ11(document).ready(function () {
                     location.reload();
                     return result;
                 })
-                .fail(function (jqXHR, textStatus) {
+                .fail(function (jqXHR, textStatus, error) {
                     //  Get the result
                     //result = (rtnData === undefined) ? null : rtnData.d;
                     var result = "fail";
                     var teststat = textStatus;
                     var teststat2 = jqXHR.responseText;
+                    var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
                     // console.log("ajax response data = " + teststat);
                     // console.log("ajax response text = " + teststat2);
-                    reportError(teststat);
+                    // reportError(teststat);
+                    reportError(xhrstatus);
                     location.reload();
                     return result;
                 });
