@@ -16,17 +16,17 @@ if ( isset($_POST['Selected']) ) {
     $text = array();
     $regrejectloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '2'" .  " WHERE login_ID = '". $Login2 . "'";
     $regrejectlogin = $mysql->query($regrejectloginquery) or die("A database error occurred when trying to reject new Registrant info into Login table. See ajax_reject_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
-    eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['idDirectory'], "Registrant Reject", "LoginID: " . $Login2 . " - Directory entry: " . $Directory2);
+    eventLogUpdate('admin_update', "Admin ID: " .  $_SESSION['user_id'], "Registrant Reject", "LoginID: " . $Login2 . " - Directory entry: " . $Directory2);
 
     $text[] = array('Status' => 'Reject Success');
-    // header('Content-type: application/json');
-    // echo json_encode($text);
+    header('Content-type: application/json');
+    echo json_encode($text);
     echo $text;
 }
 else{
     $text[] = array('Status' => 'Reject Failed');
-    // header('Content-type: application/json');
-    // echo json_encode($text);
+    header('Content-type: application/json');
+    echo json_encode($text);
     echo $text;
 }
 ?>

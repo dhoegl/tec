@@ -313,6 +313,7 @@ var $rejectURL = "NA";
 var testforSelect = "0";
 var jQ11 = jQuery.noConflict();
 jQ11(document).ready(function () {
+    jQ11.ajaxSetup({ cache: false }); // for iPhones so they get fresh data
     jQ11("#unregisteredapplicant tbody").off("click", '.applicant_reject');
     jQ11("#unregisteredapplicant tbody").on("click", '.applicant_reject', function () {
         // console.log("Session Name = " + sname);
