@@ -436,6 +436,7 @@ jQ11(document).ready(function () {
                     // var xhrerror = "jqXHR = " + jqXHR.responseText + " error = " + error;
                     console.log("ajax response data = " + e);
                     // console.log("ajax response text = " + teststat2);
+                    alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // reportError(teststat);
                     // reportError(xhrstatus);
                     reportError(e);
