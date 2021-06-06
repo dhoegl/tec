@@ -396,8 +396,9 @@ jQ11(document).ready(function () {
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
-        jQ11("#modal_reject_submit").off("click");
-        jQ11("#modal_reject_submit").on("click", function () {
+        // jQ11("#modal_reject_submit").off("click");
+        // jQ11("#modal_reject_submit").on("click", function () {
+        jQ11("#modal_reject_submit").click(function () {
             // console.log("Reject Yes clicked");
             // console.log("Selected = " + testforSelect);
             // console.log("Directory ID = " + DirID);
