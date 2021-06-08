@@ -396,9 +396,9 @@ jQ11(document).ready(function () {
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
         // **************************** Get Which Rejected Member 'Reject Yes' button was selected ********************
-        // jQ11("#modal_reject_submit").off("click");
-        // jQ11("#modal_reject_submit").on("click", function () {
-        jQ11("#modal_reject_submit").click(function () {
+        jQ11("#modal_reject_submit").off("click");
+        jQ11("#modal_reject_submit").on("click", function () {
+        // jQ11("#modal_reject_submit").click(function () {
             // console.log("Reject Yes clicked");
             // console.log("Selected = " + testforSelect);
             // console.log("Directory ID = " + DirID);
@@ -419,8 +419,8 @@ jQ11(document).ready(function () {
                     var result = "success";
                     var teststat = textStatus;
                     teststat2 = jqXHR.responseText;
-                    // console.log("ajax reject response data = " + teststat);
-                    // console.log("ajax reject response text = " + teststat2);
+                    console.log("ajax reject response data = " + teststat);
+                    console.log("ajax reject response text = " + teststat2);
                     alert("Registrant has been disabled in the database.");
                     location.reload();
                     return result;
