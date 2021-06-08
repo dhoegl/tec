@@ -2,9 +2,9 @@
 //New Registrant Reject script
 //Called from tec_regadmin.php
 //Last Updated 2020/12/09
-echo "<script language='javascript'>";
-echo "console.log('Made it to ajax_reject_registrant.php');";
-echo "</script>";
+// echo "<script language='javascript'>";
+// echo "console.log('Made it to ajax_reject_registrant.php');";
+// echo "</script>";
 if ( isset($_POST['Selected']) ) {
     require('../tec_dbconnect.php');
     include('../includes/event_logs_update.php');
@@ -15,7 +15,7 @@ if ( isset($_POST['Selected']) ) {
     $Gender2 = $_POST['Gender'];
     $FirstName2 = $_POST['FirstName'];
     $LastName2 = $_POST['LastName'];
-    $Email2 = $_POST['Email'];
+    // $Email2 = $_POST['Email'];
     $text = array();
     $regrejectloginquery = "UPDATE " . $_SESSION['logintablename'] . " SET active = '2'" .  " WHERE login_ID = '". $Login2 . "'";
     $regrejectlogin = $mysql->query($regrejectloginquery) or die("A database error occurred when trying to reject new Registrant info into Login table. See ajax_reject_registrant.php. Error:" . $mysql->errno . " : " . $mysql->error);
