@@ -399,13 +399,13 @@ jQ11(document).ready(function () {
         jQ11("#modal_reject_submit").off("click");
         jQ11("#modal_reject_submit").on("click", function () {
         // jQ11("#modal_reject_submit").click(function () {
-            // console.log("Reject Yes clicked");
-            // console.log("Selected = " + testforSelect);
-            // console.log("Directory ID = " + DirID);
-            // console.log("LoginID = " + LoginID);
-            // console.log("Gender = " + Gender);
-            // console.log("Firstname = " + FirstName);
-            // console.log("Lastname = " + LastName);
+            console.log("Reject Yes clicked");
+            console.log("Selected = " + testforSelect);
+            console.log("Directory ID = " + DirID);
+            console.log("LoginID = " + LoginID);
+            console.log("Gender = " + Gender);
+            console.log("Firstname = " + FirstName);
+            console.log("Lastname = " + LastName);
             // The next line was an attempt to fix a bug that causes iPhone to throw an ajax error when rejecting an applicant. Works fine on desktop.
             // jQ11.ajaxSetup({ cache: false });
             jQ11.ajax({
