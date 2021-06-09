@@ -2,9 +2,9 @@
 //New Registrant Reject script
 //Called from tec_regadmin.php
 //Last Updated 2020/12/09
-// echo "<script language='javascript'>";
-// echo "console.log('Made it to ajax_reject_registrant.php');";
-// echo "</script>";
+echo "<script language='javascript'>";
+echo "console.log('Made it to ajax_reject_registrant.php');";
+echo "</script>";
 if ( isset($_POST['Selected']) ) {
     require('../tec_dbconnect.php');
     include('../includes/event_logs_update.php');
