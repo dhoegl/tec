@@ -103,6 +103,60 @@ $count = $result->num_rows;
         console.log("Line = " + $line);
     };
     </script>
+<!-- **************************** Call Reject Ajax when 'Reject Yes' button is clicked ******************** -->
+<!-- **************************** Call Reject Ajax when 'Reject Yes' button is clicked ******************** -->
+<!-- **************************** Call Reject Ajax when 'Reject Yes' button is clicked ******************** -->
+
+    <script>
+        // Ajax call to reject registrant when 'Reject Yes' button is clicked
+        var Select = "";
+        var Directory_ID = "";
+        var Log_In = "";
+        var Gender_sex = "";
+        var First_Name = "";
+        var Last_Name = "";
+
+        function regreject(Select, Directory_ID, Log_In, Gender_sex, First_Name, Last_Name) {
+            // (testforSelect, DirID, LoginID, Gender, FirstName, LastName)
+            jQ11.ajax({
+                url: '../services/ajax_reject_registrant.php',
+                type: 'POST',
+                dataType: 'text',
+                data: { Selected: Select, Directory: Directory_ID, Login: Log_In, Gender: Gender_sex, FirstName: First_Name, LastName: Last_Name }
+            })
+                .done(function (jqXHR, textStatus) {
+                    //  Get the result
+                    var result = "success";
+                    var teststat = textStatus;
+                    teststat2 = jqXHR.responseText;
+                    console.log("ajax reject success response data = " + teststat);
+                    console.log("ajax reject success response text = " + teststat2);
+                    alert("Registrant has been disabled in the database.");
+                    location.reload();
+                    return result;
+                })
+                // .fail(function (jqXHR, textStatus, error) {
+                .fail(function () {
+                    //  Get the result
+                    //result = (rtnData === undefined) ? null : rtnData.d;
+                    // var result = "fail";
+                    // var teststat = textStatus;
+                    // var teststat2 = jqXHR.responseText;
+                    // var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
+                    // var xhrerror = "jqXHR = " + jqXHR.responseText + " error = " + error;
+                    console.log("ajax response reject fail data = " + e);
+                    // console.log("ajax response text = " + teststat2);
+                    alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
+                    // reportError(teststat);
+                    // reportError(xhrstatus);
+                    reportError(e);
+                    location.reload();
+                    return result;
+                });
+
+        }
+    </script>
+
     <script type="text/javascript">
         //var jQA = jQuery.noConflict();
         //jQA(document).ready(function () {
@@ -407,26 +461,29 @@ jQ11(document).ready(function () {
             console.log("Firstname = " + FirstName);
             console.log("Lastname = " + LastName);
             // The next line was an attempt to fix a bug that causes iPhone to throw an ajax error when rejecting an applicant. Works fine on desktop.
-            jQ11.ajaxSetup({ cache: false });
-            jQ11.ajax({
-                url: '../services/ajax_reject_registrant.php',
-                type: 'POST',
-                dataType: 'text',
-                data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName }
-            })
-                .done(function (jqXHR, textStatus) {
+            // Mobile (iOS) fails to execute the ajax call below. Attempting to re-direct this call into a function (regreject)
+            regreject (testforSelect, DirID, LoginID, Gender, FirstName, LastName);
+
+            // jQ11.ajaxSetup({ cache: false });
+            // jQ11.ajax({
+            //     url: '../services/ajax_reject_registrant.php',
+            //     type: 'POST',
+            //     dataType: 'text',
+            //     data: { Selected: testforSelect, Directory: DirID, Login: LoginID, Gender: Gender, FirstName: FirstName, LastName: LastName }
+            // })
+            //     .done(function (jqXHR, textStatus) {
                     //  Get the result
-                    var result = "success";
-                    var teststat = textStatus;
-                    teststat2 = jqXHR.responseText;
-                    console.log("ajax reject success response data = " + teststat);
-                    console.log("ajax reject success response text = " + teststat2);
-                    alert("Registrant has been disabled in the database.");
-                    location.reload();
-                    return result;
-                })
+                //     var result = "success";
+                //     var teststat = textStatus;
+                //     teststat2 = jqXHR.responseText;
+                //     console.log("ajax reject success response data = " + teststat);
+                //     console.log("ajax reject success response text = " + teststat2);
+                //     alert("Registrant has been disabled in the database.");
+                //     location.reload();
+                //     return result;
+                // })
                 // .fail(function (jqXHR, textStatus, error) {
-                .fail(function () {
+                // .fail(function () {
                     //  Get the result
                     //result = (rtnData === undefined) ? null : rtnData.d;
                     // var result = "fail";
@@ -434,15 +491,15 @@ jQ11(document).ready(function () {
                     // var teststat2 = jqXHR.responseText;
                     // var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
                     // var xhrerror = "jqXHR = " + jqXHR.responseText + " error = " + error;
-                    console.log("ajax response reject fail data = " + e);
+                    // console.log("ajax response reject fail data = " + e);
                     // console.log("ajax response text = " + teststat2);
-                    alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
+                    // alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // reportError(teststat);
                     // reportError(xhrstatus);
-                    reportError(e);
-                    location.reload();
-                    return result;
-                });
+                //     reportError(e);
+                //     location.reload();
+                //     return result;
+                // });
         });
     });
 });
