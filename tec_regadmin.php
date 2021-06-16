@@ -235,10 +235,10 @@ jQ10(document).ready(function () {
         if (testforChild.hasClass("child")) {
             // console.log("Child IS closest TR class");
             LoginID = testforChild.prev("tr").find(".loginid").text();
-            // console.log("LoginID = " + LoginID);
+            console.log("LoginID = " + LoginID);
             jQ10("#loginidApprove").html("<h6> LoginID: " + LoginID + "</h6>");
             DirID = testforChild.prev("tr").find(".dirid").text();
-            // console.log("DirID = " + DirID);
+            console.log("DirID = " + DirID);
             jQ10("#diridApprove").html("<h6> DirectoryID: " + DirID + "</h6>");
             ChurchCode = testforChild.prev("tr").find(".churchcode").text();
             // console.log("ChurchCode = " + ChurchCode);
