@@ -462,7 +462,7 @@ jQ11(document).ready(function () {
             console.log("Lastname = " + LastName);
             // The next line was an attempt to fix a bug that causes iPhone to throw an ajax error when rejecting an applicant. Works fine on desktop.
             // Mobile (iOS) fails to execute the ajax call below. Attempting to re-direct this call into a function (regreject)
-            regreject (testforSelect, DirID, LoginID, Gender, FirstName, LastName);
+            regreject(testforSelect, DirID, LoginID, Gender, FirstName, LastName);
 
             // jQ11.ajaxSetup({ cache: false });
             // jQ11.ajax({
