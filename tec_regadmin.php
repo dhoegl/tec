@@ -120,6 +120,7 @@ $count = $result->num_rows;
             // (testforSelect, DirID, LoginID, Gender, FirstName, LastName)
             console.log("Made it into the regreject function");
             var jQ13 = jQuery.noConflict();
+            jQ13(document).ready(function () {
             jQ13.ajax({
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
@@ -155,8 +156,8 @@ $count = $result->num_rows;
                     location.reload();
                     return result;
                 });
-
-        }
+            };
+        };
     </script>
 
     <script type="text/javascript">
