@@ -156,7 +156,7 @@ $count = $result->num_rows;
                     location.reload();
                     return result;
                 });
-            };
+            });
         };
     </script>
 
