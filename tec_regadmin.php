@@ -123,7 +123,7 @@ $count = $result->num_rows;
             jQ13.ajax({
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
-                dataType: 'json',
+                // dataType: 'json',
                 data: { Selected: Select, Directory: Directory_ID, Login: Log_In, Gender: Gender_sex, FirstName: First_Name, LastName: Last_Name }
             })
                 .done(function (jqXHR, textStatus) {
