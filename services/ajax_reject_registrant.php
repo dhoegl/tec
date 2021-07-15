@@ -33,7 +33,7 @@ else{
     $status = 'Status';
     $failed = 'Reject Failed';
     $text->Status = $status;
-    $text->Success = $failed;
+    $text->Failed = $failed;
     header('Content-type: application/json');
     echo json_encode($text);
     echo $text;
