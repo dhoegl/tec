@@ -139,10 +139,15 @@ $count = $result->num_rows;
                 })
                 .fail(function (jqXHR, textStatus) {
                     //  Get the result
+                    var result = "failed";
+                    var teststat = textStatus;
+                    var teststat2 = jqXHR;
+                    console.log("ajax reject failure response data = " + teststat);
+                    console.log("ajax reject failure response text = " + teststat2);
                     alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // reportError(teststat);
                     // reportError(xhrstatus);
-                    reportError(e);
+                    // reportError(e);
                     location.reload();
                     return result;
                 });
