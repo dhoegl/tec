@@ -117,7 +117,6 @@ $count = $result->num_rows;
         var Last_Name = "";
 
         function regreject(Select, Directory_ID, Log_In, Gender_sex, First_Name, Last_Name) {
-            // (testforSelect, DirID, LoginID, Gender, FirstName, LastName)
             console.log("Made it into the regreject function");
             var jQ13 = jQuery.noConflict();
             jQ13(document).ready(function () {
@@ -138,17 +137,8 @@ $count = $result->num_rows;
                     location.reload();
                     return result;
                 })
-                // .fail(function (jqXHR, textStatus, error) {
                 .fail(function () {
                     //  Get the result
-                    //result = (rtnData === undefined) ? null : rtnData.d;
-                    // var result = "fail";
-                    // var teststat = textStatus;
-                    // var teststat2 = jqXHR.responseText;
-                    // var xhrstatus = jqXHR.status + ': ' + jqXHR.statusText;
-                    // var xhrerror = "jqXHR = " + jqXHR.responseText + " error = " + error;
-                    console.log("ajax response reject fail data = " + e);
-                    // console.log("ajax response text = " + teststat2);
                     alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // reportError(teststat);
                     // reportError(xhrstatus);
