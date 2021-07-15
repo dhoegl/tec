@@ -130,14 +130,14 @@ $count = $result->num_rows;
                     //  Get the result
                     var result = "success";
                     var teststat = textStatus;
-                    teststat2 = jqXHR.responseText;
+                    var teststat2 = jqXHR.responseText;
                     console.log("ajax reject success response data = " + teststat);
                     console.log("ajax reject success response text = " + teststat2);
                     alert("Registrant has been disabled in the database.");
                     location.reload();
                     return result;
                 })
-                .fail(function () {
+                .fail(function (jqXHR, textStatus) {
                     //  Get the result
                     alert("A problem has occurred with your rejection at tec_regadmin. Please copy this error and contact your OurFamilyConnections administrator for details.");
                     // reportError(teststat);
