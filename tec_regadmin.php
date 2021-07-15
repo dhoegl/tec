@@ -130,7 +130,7 @@ $count = $result->num_rows;
                     //  Get the result
                     var result = "success";
                     var teststat = textStatus;
-                    var teststat2 = jqXHR.responseText;
+                    var teststat2 = jqXHR;
                     console.log("ajax reject success response data = " + teststat);
                     console.log("ajax reject success response text = " + teststat2);
                     alert("Registrant has been disabled in the database.");
