@@ -25,7 +25,6 @@ if ( isset($_POST['Selected']) ) {
     $text->Success = $success;
     header('Content-type: application/json');
     echo json_encode($text);
-    echo $text;
 }
 else{
     // $text[] = array('Status' => 'Reject Failed');
@@ -36,6 +35,5 @@ else{
     $text->Failed = $failed;
     header('Content-type: application/json');
     echo json_encode($text);
-    echo $text;
 }
 ?>
