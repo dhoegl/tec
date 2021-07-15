@@ -121,6 +121,8 @@ $count = $result->num_rows;
             var jQ13 = jQuery.noConflict();
             jQ13(document).ready(function () {
             jQ13.ajax({
+                cache: false,
+            	headers: { "cache-control": "no-cache" },
                 url: '../services/ajax_reject_registrant.php',
                 type: 'POST',
                 dataType: 'json',
